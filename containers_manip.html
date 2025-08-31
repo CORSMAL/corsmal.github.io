@@ -1,0 +1,771 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<head profile="http://gmpg.org/xfn/11"> 
+  <link rel="shortcut icon" href="favicon.ico" /> 
+
+  <title>
+    CORSMAL Containers Manipulation
+  </title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <meta http-equiv="imagetoolbar" content="no" />
+  <meta http-equiv="KeyWords" content="code, software, CORSMAL, robotics, touch, vision, audio, signal processing, human behaviour, challenge"/> 
+  <meta name="image" property="og:image" content="images/CORSMAL_logo.png">
+  <link rel="stylesheet" href="css/layout.css" type="text/css" /> 
+  <script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>  
+  <script type="text/javascript" src="js/jquery.slidepanel.setup.js"></script> 
+  <script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+  <script type="text/javascript" src="js/jquery.tabs.setup.js"></script>
+</head>
+
+<body id="top">
+  <div class="wrapper row1">
+   <div id="header" class="clear">
+    <div class="fl_left">
+      <ul>
+       <li>
+        <p>
+          <a href="index.html"><img src="images/CORSMAL_logo.png" style="padding:0px 0px 0px 0px;height:75px" alt="CORSMAL"/></a>
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+<!--2###################################################################################################### --> 
+<div class="wrapper row2"; style="margin-bottom: 7px;">
+ <div class="rnd"> <!-- ###### --> 
+  <div id="topnav"> 
+    <ul style="margin-top: 5px;">
+      <li><a href="index.html"><b>Home</b></a></li> 
+      <li><a href="objectives.html"><b>Objectives</b></a></li>
+      <li><a href="publications.html"><b>Publications</b></a></li> 
+      <li><a href="blog.html"><b>Blog</b></a></li> 
+      <li><a href="events.html"><b>Events</b></a></li>
+      <li><a href="code.html"><b>Code</b></a></li>
+      <li class="active"><a href="data.html"><b>Data</b></a></li> 
+      <li><a href="benchmark.html"><b>Benchmark</b></a></li>
+      <li><a href="challenge.html"><b>Challenge</b></a></li>
+      <li class="last"><a href="team.html"><b>Team</b></a></li>
+    </ul>
+  </div>
+  <!-- ###### --> 
+</div>
+</div>
+<!-- 3####################################################################################################### --> 
+<div class="wrapper row1"> 
+  <div id="container" class="clear">
+    <!-- <div style="background-color:#ff8080;border-style: dashed;font: 14px Helvetica; color: #000000;">
+      <p style="margin: 10px 10px 10px 10px;"><b>PLANNED MAINTENANCE: 9 - 11 November!</b> 
+        The dataset will not be available in these days and a new re-structured version will be released. Sorry for the inconvenience. For any information or enquiry, you can always contact us at <a href="mailto:corsmal-challenge@qmul.ac.uk"><u>corsmal-challenge@qmul.ac.uk</u></a>
+      </p>
+    </div> -->
+    <div id="latestnewspage" class="clear">
+      <h2>
+        <p class="xmsonormal" style="text-align:center;text-justify:inter-ideograph;margin-bottom:0px">
+          <b><span style="font-size:16.0pt">CORSMAL Containers Manipulation</span></b>
+        </p>
+      </h2>
+     <p align="justify">
+       The dataset consists of 1,140 audio-visual recordings with 12 human subjects manipulating 15 containers, split into 5 cups, 5 drinking glasses, and 5 food boxes. These containers are made of different materials, such as plastic, glass and paper. Each container can be empty or filled with water, rice or pasta at two different levels of fullness: 50% and 90% with respect to the capacity of the container. The combination of containers and fillings results in a total of 95 configurations acquired for three scenarios with an increasing level of difficulty, caused by occlusions or subject motions:
+     </p>
+          <ul style="padding:0px">
+            <li class="clear">      
+              <p>
+                <img src="images/s1.png" alt="Scenario 1" style="float:left; margin:0 15px 15px 0; clear:left; width:150px;"/>
+                Scenario 1. The subject sits in front of the robot, while a container is on a table. The subject pours the filling into the container, while trying not to touch the container, or shakes an already filled food box, and then initiates the handover of the container to the robot.
+              </p>
+            </li>
+            <li class="clear">      
+              <p>
+                <img src="images/s2.png" alt="Scenario 2" style="float:left; margin:0 15px 15px 0; clear:left; width:150px;"/>
+                Scenario 2.
+                The subject sits in front of the robot, while holding a container. The subject pours the filling from a jar into a glass/cup or shakes an already filled food box, and then initiates the handover of the container to the robot. 
+              </p>
+            </li>
+            <li class="clear">      
+              <p>
+                <img src="images/s3.png" alt="Scenario 3" style="float:left; margin:0 15px 15px 0; clear:left; width:150px;"/>
+                Scenario 3.
+                A container is held by the subject while standing to the side of the robot, potentially visible from one third-person view camera only. The subject pours the filling from a jar into a glass/cup or shakes an already filled food box, takes a few steps to reach the front of the robot and then initiates the handover of the container to the robot. 
+              </p>
+            </li>
+          </ul>
+          <p align="justify">
+          Each scenario is recorded with two different backgrounds and under two different lighting conditions. The first background condition involves a plain tabletop with the subject wearing a texture-less t-shirt, while the second background condition involves the table covered with a graphics-printed tablecloth and the subject wearing a patterned shirt. The lighting conditions include  ceiling room lights and controlled lights. The 95 configurations are executed by a different subject for each scenario and for each background/illumination condition.
+          </p>
+     <br>
+   </div>
+
+
+   <table align="center" style="border:0px;padding-left:0px"> 
+    <tr>
+     <td width="18%" style="border:0px;padding:0px;vertical-align: middle;"></td>
+     <td width="18%" style="border:0px;padding:0px" align="center">Camera 1</td>
+     <td width="18%" style="border:0px;padding:0px" align="center">Camera 2</td>
+     <td width="18%" style="border:0px;padding:0px" align="center">Camera 3</td>
+     <td width="18%" style="border:0px;padding:0px" align="center">Camera 4</td>
+     <td width="18%" style="border:0px;padding:0px" align="center">Audio</td>
+   </tr>
+   <tr>
+     <td style="border:0px;padding:0px;vertical-align: middle;">Scenario 1<br> Red cup <br> (empty)</td>
+     <td style="border:0px;padding:0px 0px 10px 0px;vertical-align: middle;" align="center"><img src="resources/red_cup/s0_fi0_fu0_b0_l0_c1.gif" alt=”animated” width="150px" /></td>
+     <td style="border:0px;padding:0px 0px 10px 0px;vertical-align: middle;" align="center"><img src="resources/red_cup/s0_fi0_fu0_b0_l0_c2.gif" alt=”animated” width="150px" /></td>
+     <td style="border:0px;padding:0px 0px 10px 0px;vertical-align: middle;" align="center"><img src="resources/red_cup/s0_fi0_fu0_b0_l0_c3.gif" alt=”animated” width="150px" /></td>
+     <td style="border:0px;padding:0px 0px 10px 0px;vertical-align: middle;" align="center"><img src="resources/red_cup/s0_fi0_fu0_b0_l0_c4.gif" alt=”animated” width="150px" /></td>
+     <td style="border:0px;padding:0px 0px 10px 0px;vertical-align: middle;" align="center"> 
+      <audio style="width:100%" controls> <source src="resources/red_cup/s0_fi0_fu0_b0_l0_audio.wav" type="audio/wav"> Your browser does not support the audio tag.
+      </audio>
+    </td>
+  </tr>
+  <tr>
+   <td style="border:0px;padding:0px;vertical-align:middle;">Scenario 2 <br> Wine glass <br> (50% rice)</td>
+   <td style="border:0px;padding:5px 0px 5px 0px" align="center"><img src="resources/wine_glass/s1_fi2_fu1_b1_l1_c1.gif" alt=”animated” width="150px" /></td> 
+   <td style="border:0px;padding:5px 0px 5px 0px" align="center"><img src="resources/wine_glass/s1_fi2_fu1_b1_l1_c2.gif" alt=”animated” width="150px" /></td>
+   <td style="border:0px;padding:5px 0px 5px 0px" align="center"><img src="resources/wine_glass/s1_fi2_fu1_b1_l1_c3.gif" alt=”animated” width="150px" /></td> 
+   <td style="border:0px;padding:5px 0px 5px 0px" align="center"><img src="resources/wine_glass/s1_fi2_fu1_b1_l1_c4.gif" alt=”animated” width="150px" /></td>
+   <td style="border:0px;padding:0px;vertical-align: middle;" align="center"> 
+    <audio style="width:100%" controls> <source src="resources/wine_glass/s1_fi2_fu1_b1_l1_audio.wav" type="audio/wav"> Your browser does not support the audio tag.  
+    </audio>
+  </td>
+</tr>
+<tr>
+  <td style="border:0px;padding:0px;vertical-align: middle;">Scenario 3 <br> Tea box <br> (90% pasta)</td>
+  <td style="border:0px;padding:5px 0px 5px 0px" align="center"><img src="resources/tea_box/s2_fi1_fu2_b0_l1_c1.gif" alt=”animated” width="150px" /></td> 
+  <td style="border:0px;padding:5px 0px 5px 0px" align="center"><img src="resources/tea_box/s2_fi1_fu2_b0_l1_c2.gif" alt=”animated” width="150px" /></td>
+  <td style="border:0px;padding:5px 0px 5px 0px" align="center"><img src="resources/tea_box/s2_fi1_fu2_b0_l1_c3.gif" alt=”animated” width="150px" /></td>
+  <td style="border:0px;padding:5px 0px 5px 0px" align="center"><img src="resources/tea_box/s2_fi1_fu2_b0_l1_c4.gif" alt=”animated” width="150px" /></td>
+  <td style="border:0px;padding:0px;vertical-align: middle;" align="center"> 
+   <audio style="width:100%" controls>
+    <source src="resources/tea_box/s2_fi1_fu2_b0_l1_audio.wav" type="audio/wav"> Your browser does not support the
+      audio tag.  
+    </audio> 
+  </td> 
+</tr> 
+</table>
+<br>
+<img src="images/ccm_setup.png" alt="CCM setup"  style="float:right; padding:40px 0px 20px 45px;width:50%">
+ <p align="justify"> 
+  The dataset was acquired with 4 Intel RealSense D435i devices and one microphone array. Each Intel RealSense D435i device consists of 3 cameras and provides spatially aligned RGB, narrow-baseline stereo infrared and depth images at 30 Hz with 1280x720 pixels resolution. One D435i is mounted on a robot arm that does not move during the acquisition and provides a more realistic view of the operating area from the robot perspective. Another D435i is worn by the person at chest level to provide a first-person view, while the remaining two devices are placed at the sides of the robot arm as third-person views that look at the operating area. The microphone array is placed on a table and consists of 8 Boya BY-M1 omnidirectional Lavelier microphones arranged in a circular shape of radius 15 cm. Audio signals are sampled synchronously at 44.1 kHz with a multi-channel audio recorder. All signals are software-synchronized with a rate of 30 Hz. The calibration information (intrinsic and extrinsic parameters) for each Intel RealSense D435i and the inertial measurements of the Intel RealSense D435i used as body-worn camera are also provided.
+ </p>
+ <!-- <div align="middle" ,="" style="margin-bottom:15px;margin-top:15px">           
+  <img src="images/ccm_setup.png" alt="CCM setup"  style="float:left; padding:0px 0px 0px 0px;width:65%">
+ </div> -->
+
+<p>
+   <a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/mic_loc.txt" target="_blank"><u>Microphone locations</u></a><br>
+   <a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/README.md" target="_blank"><u>README</u></a><br>
+</p>
+<div align="justify">
+<b><span style="font-size:14.0pt">Data organisation</span></b><br>
+<p >
+  The dataset is split into training set (9 containers, 684 configurations), public test set (3 unseen containers, 228 configurations), and private test set (3 unseen containers, 228 configurations). The containers for each set are evenly distributed among the three categories. The dataset is annotated with the capacity of the container, the filling type, the filling level, the mass of the container, the mass of the filling, the maximum width and height (and depth for boxes) of each object.
+</p>
+<p align="justify">
+  To facilitate the download, we provide archive ZIP files for each Intel RealSense D435i (view 1, view 2, view 3, view 4) and type of data (RGB, depth, infrared, IMU), and for the audio data. Depth data is provided as raw images. RGB and infrared data are provided as MP4 video files. Configurations are already shuffled and provided with a incremental numerical filename. ZIP files are split in chuncks of maximum 4.3 GB.
+</p>
+<p>
+  Because of the CORSMAL Challenges, we provide annotations only for the training set. The public testing set is currently <b>password protected</b>.
+  Please <a href="mailto:a.xompero@qmul.ac.uk"><u>email us</u></a> to provide the password. The second testing set remains private for validations of the participants' solutions to the CORSMAL Challenge.  
+</p>
+</div>
+<div align="justify">
+<b><span style="font-size:14.0pt">Important notes</span></b><br>
+<ul>
+  <li>
+    We aim at releasing both the public and private testing sets as open access in 2025 via <a href="https://qmro.qmul.ac.uk/xmlui/handle/123456789/103670"><u>QMRO</u></a>
+  </li>
+  <li>
+    The organisation of the files and filenames in the dataset have been changed compared to how the datasets was originally released for the first CORSMAL Challenge. This change was done to facilitate the download and the parsing/loading of the dataset. We provide mapping of the filenames and data structure with previous version of the dataset for the training set: <a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_annotations_train_set_mapping.txt" target="_blank"><u>ccm_annotations_train_set_mapping</u></a>
+  </li>
+  <li>
+     The audio file 00377.wav of the training set is longer than what is supposed to be, due to a missing interruption of the audio recording. The duration of the configuration is 13.10 s and hence the audio file can be trimmed at the time instant.
+  </li>
+</ul>
+</div>
+<br>
+<div id="ccmtrainset">
+<b><span style="font-size:14.0pt">Training set</span></b><br>
+<table align="center" style="padding-left:0px;border:0px"> 
+   <tr>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+   </tr>
+   <tr>
+      <td style="vertical-align: middle;border:0px" align="center"><img src="images/red_cup.jpg" alt="CORSMAL-Challenge red cup" width="90"></td>
+      <td style="vertical-align: middle;border:0px" align="center"><img src="images/small_white_cup.jpg" alt="CORSMAL-Challenge small white cup" width="90"></td>
+      <td style="vertical-align: middle;border:0px" align="center"><img src="images/small_transparent_cup.jpg" alt="CORSMAL-Challenge small transparent cup" width="90"></td>
+      <td style="vertical-align: middle;border:0px" align="center"><img src="images/green_glass.jpg" alt="CORSMAL-Challenge green glass" width="90"></td>
+      <td style="vertical-align: middle;border:0px" align="center"><img src="images/wine_glass.jpg" alt="CORSMAL-Challenge wine glass" width="90"></td>
+      <td style="vertical-align: middle;border:0px" align="center"><img src="images/champagne_flute_glass.jpg" alt="CORSMAL-Challenge flute glass" width="90"></td>
+      <td style="vertical-align: middle;border:0px" align="center"><img src="images/cereal_box.jpg" alt="CORSMAL-Challenge cereal box" width="90"></td>
+      <td style="vertical-align: middle;border:0px" align="center"><img src="images/biscuit_box.jpg" alt="CORSMAL-Challenge biscuit box" width="90"></td>
+      <td style="vertical-align: middle;border:0px" align="center"><img src="images/tea_box.jpg" alt="CORSMAL-Challenge tea box" width="90"></td>
+   </tr>
+      <tr>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Red cup</td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Small white cup</td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Small transparent cup</td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Green glass</td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Wine glass</td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Champagne flute glass</td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Cerela box</td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Biscuit box</td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Tea box</td>
+   </tr>
+ </table>
+<p align="justify">
+  Please download the data that you only need. The storage of all training set is of about 230 GB.
+  </p>
+
+  <table align="center" style="padding-left:0px">
+    <tr>
+     <td width="20%" style="vertical-align: middle;" align="center"></td>
+     <td width="20%" style="vertical-align: middle;" align="center">View1</td>
+     <td width="20%" style="vertical-align: middle;" align="center">View2</td>
+     <td width="20%" style="vertical-align: middle;" align="center">View3</td>
+     <td width="20%" style="vertical-align: middle;" align="center">View4</td>
+    </tr>
+    <tr>
+     <td style="vertical-align: middle;" align="center">RGB</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_rgb.z01?sequence=99&isAllowed=y">ccm_train_view1_rgb.z01</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_rgb.zip">ccm_train_view1_rgb.zip</a></u>(~2.5GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_rgb.z01">ccm_train_view2_rgb.z01</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_rgb.zip">ccm_train_view2_rgb.zip</a></u>(~2.4GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_rgb.z01">ccm_train_view3_rgb.z01</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_rgb.zip">ccm_train_view3_rgb.zip</a></u>(~3.3GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_rgb.z01">ccm_train_view4_rgb.z01</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_rgb.z02">ccm_train_view4_rgb.z02</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_rgb.zip">ccm_train_view4_rgb.zip</a></u>(~0.3GB)<br>
+    </td>
+    </tr>
+    <tr>
+     <td style="vertical-align: middle;" align="center">Depth</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.z01">ccm_train_view1_depth.z01</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.z02">ccm_train_view1_depth.z02</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.z03">ccm_train_view1_depth.z03</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.z04">ccm_train_view1_depth.z04</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.z05">ccm_train_view1_depth.z05</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.z06">ccm_train_view1_depth.z06</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.z07">ccm_train_view1_depth.z07</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.z08">ccm_train_view1_depth.z08</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.z09">ccm_train_view1_depth.z09</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.z10">ccm_train_view1_depth.z10</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.z11">ccm_train_view1_depth.z11</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.z12">ccm_train_view1_depth.z12</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.z13">ccm_train_view1_depth.z13</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.z14">ccm_train_view1_depth.z14</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_depth.zip">ccm_train_view1_depth.zip</a></u>(~1.5GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_depth.z01">ccm_train_view2_depth.z01</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_depth.z02">ccm_train_view2_depth.z02</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_depth.z03">ccm_train_view2_depth.z03</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_depth.z04">ccm_train_view2_depth.z04</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_depth.z05">ccm_train_view2_depth.z05</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_depth.z06">ccm_train_view2_depth.z06</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_depth.z07">ccm_train_view2_depth.z07</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_depth.z08">ccm_train_view2_depth.z08</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_depth.z09">ccm_train_view2_depth.z09</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_depth.z10">ccm_train_view2_depth.z10</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_depth.z11">ccm_train_view2_depth.z11</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_depth.z12">ccm_train_view2_depth.z12</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_depth.z13">ccm_train_view2_depth.z13</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_depth.zip">ccm_train_view2_depth.zip</a></u>(~2.7GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_depth.z01">ccm_train_view3_depth.z01</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_depth.z02">ccm_train_view3_depth.z02</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_depth.z03">ccm_train_view3_depth.z03</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_depth.z04">ccm_train_view3_depth.z04</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_depth.z05">ccm_train_view3_depth.z05</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_depth.z06">ccm_train_view3_depth.z06</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_depth.z07">ccm_train_view3_depth.z07</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_depth.z08">ccm_train_view3_depth.z08</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_depth.z09">ccm_train_view3_depth.z09</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_depth.z10">ccm_train_view3_depth.z10</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_depth.z11">ccm_train_view3_depth.z11</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_depth.z12">ccm_train_view3_depth.z12</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_depth.z13">ccm_train_view3_depth.z13</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_depth.zip">ccm_train_view3_depth.zip</a></u>(~1.2GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_depth.z01">ccm_train_view4_depth.z01</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_depth.z02">ccm_train_view4_depth.z02</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_depth.z03">ccm_train_view4_depth.z03</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_depth.z04">ccm_train_view4_depth.z04</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_depth.z05">ccm_train_view4_depth.z05</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_depth.z06">ccm_train_view4_depth.z06</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_depth.z07">ccm_train_view4_depth.z07</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_depth.z08">ccm_train_view4_depth.z08</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_depth.z09">ccm_train_view4_depth.z09</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_depth.zip">ccm_train_view4_depth.zip</a></u>(~0.2GB)<br>
+    </td>
+    </tr>
+    <tr>
+     <td style="vertical-align: middle;" align="center">Infrared</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_infrared1.zip">ccm_train_view1_ir1.zip</a></u>(~2.2GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_infrared2.zip">ccm_train_view1_ir2.zip</a></u>(~2.2GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_infrared1.zip">ccm_train_view2_ir1.zip</a></u>(~2.2GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_infrared2.zip">ccm_train_view2_ir2.zip</a></u>(~2.2GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_infrared1.zip">ccm_train_view3_ir1.zip</a></u>(~2.8GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_infrared2.zip">ccm_train_view3_ir2.zip</a></u>(~2.8GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_infrared1.z01">ccm_train_view4_ir1.z01</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_infrared1.zip">ccm_train_view4_ir1.zip</a></u>(~3.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_infrared2.z01">ccm_train_view4_ir2.z01</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_infrared2.zip">ccm_train_view4_ir2.zip</a></u>(~3.5GB)<br>
+    </td>
+    </tr>
+        <tr>
+     <td style="vertical-align: middle;" align="center">Calib.</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_calib.zip">ccm_train_view1_calib.zip</a></u>(~0.9MB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_calib.zip">ccm_train_view2_calib.zip</a></u>(~0.9MB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_calib.zip">ccm_train_view3_calib.zip</a></u>(~0.9MB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_calib.zip">ccm_train_view4_calib.zip</a></u>(~0.3MB)<br>
+    </td>
+    </tr>
+    </tr>
+        <tr>
+     <td style="vertical-align: middle;" align="center">IMU</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <!-- <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_accel.zip">ccm_train_view1_accel.zip</a></u>(~0.9GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_gyro.zip">ccm_train_view1_gyro.zip</a></u>(~0.9GB)<br> -->
+      /
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <!-- <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view2_accel.zip">ccm_train_view2_accel.zip</a></u>(~0.9GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_gyro.zip">ccm_train_view1_gyro.zip</a></u>(~0.9GB)<br> -->
+      /
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <!-- <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view3_accel.zip">ccm_train_view3_accel.zip</a></u>(~0.9GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view1_gyro.zip">ccm_train_view1_gyro.zip</a></u>(~0.9GB)<br> -->
+      /
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_view4_imu.zip">ccm_train_view4_imu.zip</a></u>(~0.05GB)<br>
+    </td>
+    </tr>
+   </table>
+   <br>
+   Audio: <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_audio.zip">ccm_train_audio.zip</a></u> (~2.8GB)<br>
+   <a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_train_annotation.json" target="_blank"><u>Annotation</u></a><br>
+   <a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/CORSMAL_training_containers_sheet.pdf" target="_blank"><u>List of containers and their physical properties</u></a><br>
+  <br>
+ Script to download the training set (<a href="data/CCM/run_download_training.sh" target="_blank"><u>Unix</u></a>, 
+ <a href="data/CCM/run_download_training.bat" target="_blank"><u>Windows</u></a>) (~300GB)<br>
+ <br>
+</div>
+<b><span style="font-size:14.0pt">Public testing set</span></b><br>
+<table align="center" style="padding-left:0px;border:0px"> 
+   <tr>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+   </tr>
+   <tr>
+      <td style="vertical-align: middle;border:0px" align="center"></td>
+      <td style="vertical-align: middle;border:0px" align="center"></td>
+      <td style="vertical-align: middle;border:0px" align="center"></td>
+      <td style="vertical-align: middle;border:0px" align="center" bgcolor="#e6e6e6"><img src="images/beer_cup.jpg" alt="CORSMAL-Challenge beer cup" width="90"></td>
+      <td style="vertical-align: middle;border:0px" align="center" bgcolor="#e6e6e6"><img src="images/cocktail_glass.jpg" alt="CORSMAL-Challenge cocktail glass" width="90"></td>
+      <td style="vertical-align: middle;border:0px" align="center" bgcolor="#e6e6e6"><img src="images/fusilli_box.jpg" alt="CORSMAL-Challenge fusilli_box" width="90"></td>
+      <td style="vertical-align: middle;border:0px" align="center"></td>
+      <td style="vertical-align: middle;border:0px" align="center"></td>
+      <td style="vertical-align: middle;border:0px" align="center"></td>
+   </tr>
+      <tr>
+     <td width="11%" style="vertical-align: top;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Beer cup</td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Cocktail glass</td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Fusilli pasta box</td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center"></td>
+   </tr>
+ </table>
+<table align="center" style="padding-left:0px">
+    <tr>
+     <td width="20%" style="vertical-align: middle;" align="center"></td>
+     <td width="20%" style="vertical-align: middle;" align="center">View1</td>
+     <td width="20%" style="vertical-align: middle;" align="center">View2</td>
+     <td width="20%" style="vertical-align: middle;" align="center">View3</td>
+     <td width="20%" style="vertical-align: middle;" align="center">View4</td>
+    </tr>
+    <tr>
+     <td style="vertical-align: middle;" align="center">RGB</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view1_rgb.zip">ccm_test_pub_view1_rgb.zip</a></u>(~2.3GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view2_rgb.zip">ccm_test_pub_view2_rgb.zip</a></u>(~2.3GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view3_rgb.zip">ccm_test_pub_view3_rgb.zip</a></u>(~2.5GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view4_rgb.zip">ccm_test_pub_view4_rgb.zip</a></u>(~3.3GB)<br>
+    </td>
+    </tr>
+    <tr>
+     <td style="vertical-align: middle;" align="center">Depth</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view1_depth.z01">ccm_test_pub_view1_depth.z01</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view1_depth.z02">ccm_test_pub_view1_depth.z02</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view1_depth.z03">ccm_test_pub_view1_depth.z03</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view1_depth.z04">ccm_test_pub_view1_depth.z04</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view1_depth.zip">ccm_test_pub_view1_depth.zip</a></u>(~4.0GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view2_depth.z01">ccm_test_pub_view2_depth.z01</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view2_depth.z02">ccm_test_pub_view2_depth.z02</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view2_depth.z03">ccm_test_pub_view2_depth.z03</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view2_depth.z04">ccm_test_pub_view2_depth.z04</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view2_depth.zip">ccm_test_pub_view2_depth.zip</a></u>(~2.5GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view3_depth.z01">ccm_test_pub_view3_depth.z01</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view3_depth.z02">ccm_test_pub_view3_depth.z02</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view3_depth.z03">ccm_test_pub_view3_depth.z03</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view3_depth.z04">ccm_test_pub_view3_depth.z04</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view3_depth.zip">ccm_test_pub_view3_depth.zip</a></u>(~2.3GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view4_depth.z01">ccm_test_pub_view4_depth.z01</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view4_depth.z02">ccm_test_pub_view4_depth.z02</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view4_depth.z03">ccm_test_pub_view4_depth.z03</a></u>(~4.3GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view4_depth.zip">ccm_test_pub_view4_depth.zip</a></u>(~0.5GB)<br>
+    </td>
+    </tr>
+    <tr>
+     <td style="vertical-align: middle;" align="center">Infrared</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view1_infrared1.zip">ccm_test_pub_view1_ir1.zip</a></u>(~0.8GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view1_infrared2.zip">ccm_test_pub_view1_ir2.zip</a></u>(~0.8GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view2_infrared1.zip">ccm_test_pub_view2_ir1.zip</a></u>(~0.8GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view2_infrared2.zip">ccm_test_pub_view2_ir2.zip</a></u>(~0.8GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view3_infrared1.zip">ccm_test_pub_view3_ir1.zip</a></u>(~1.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view3_infrared2.zip">ccm_test_pub_view3_ir2.zip</a></u>(~1.0GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view4_infrared1.zip">ccm_test_pub_view4_ir1.zip</a></u>(~2.5GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view4_infrared2.zip">ccm_test_pub_view4_ir2.zip</a></u>(~2.6GB)<br>
+    </td>
+    </tr>
+        <tr>
+     <td style="vertical-align: middle;" align="center">Calib.</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view1_calib.zip">ccm_test_pub_view1_calib.zip</a></u>(~0.9MB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view2_calib.zip">ccm_test_pub_view2_calib.zip</a></u>(~0.9MB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view3_calib.zip">ccm_test_pub_view3_calib.zip</a></u>(~0.9MB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view4_calib.zip">ccm_test_pub_view4_calib.zip</a></u>(~0.3MB)<br>
+    </td>
+    </tr>
+    </tr>
+        <tr>
+     <td style="vertical-align: middle;" align="center">IMU</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      /
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      /
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      /
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_view4_imu.zip">ccm_test_pub_view4_imu.zip</a></u>(~0.05GB)<br>
+    </td>
+    </tr>
+   </table>
+   <br>
+   Audio: <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_audio.zip">ccm_test_pub_audio.zip</a></u> (~2.8GB)<br><br>
+   Script to download public testing set (<a href="data/CCM/run_download_public_testing.sh" target="_blank"><u>Unix</u></a>, 
+ <a href="data/CCM/run_download_public_testing.bat" target="_blank"><u>Windows</u></a>) (~95GB). <br>
+    Annotation of the container ID: <a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_pub_annotation_container_id.csv"><u>ccm_test_pub_annotation_container_id.csv</u></a><br>
+<br>
+<br>
+<div>
+  <b><span style="font-size:14.0pt">Private testing set</span></b><br>
+  <table align="center" style="padding-left:0px;border:0px"> 
+   <tr>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+   </tr>
+   <tr>
+      <td style="vertical-align: middle;border:0px" align="center"></td>
+      <td style="vertical-align: middle;border:0px" align="center"></td>
+      <td style="vertical-align: middle;border:0px" align="center"></td>
+      <td style="vertical-align: middle;border:0px" align="center" bgcolor="#e6e6e6"><img src="images/medium_white_cup.jpg" alt="CORSMAL-Challenge beer cup" width="90"></td>
+      <td style="vertical-align: middle;border:0px" align="center" bgcolor="#e6e6e6"><img src="images/margarita_glass.jpg" alt="CORSMAL-Challenge cocktail glass" width="90"></td>
+      <td style="vertical-align: middle;border:0px" align="center" bgcolor="#e6e6e6"><img src="images/spaghetti_box.jpg" alt="CORSMAL-Challenge fusilli_box" width="90"></td>
+      <td style="vertical-align: middle;border:0px" align="center"></td>
+      <td style="vertical-align: middle;border:0px" align="center"></td>
+      <td style="vertical-align: middle;border:0px" align="center"></td>
+   </tr>
+      <tr>
+     <td width="11%" style="vertical-align: top;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Medium white cup</td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Margarita glass</td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center">Spaghetti box</td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center"></td>
+     <td width="11%" style="vertical-align: top;border:0px" align="center"></td>
+   </tr>
+  </table>
+  <!--  -->
+  <table align="center" style="padding-left:0px">
+    <tr>
+     <td width="20%" style="vertical-align: middle;" align="center"></td>
+     <td width="20%" style="vertical-align: middle;" align="center">View1</td>
+     <td width="20%" style="vertical-align: middle;" align="center">View2</td>
+     <td width="20%" style="vertical-align: middle;" align="center">View3</td>
+     <td width="20%" style="vertical-align: middle;" align="center">View4</td>
+    </tr>
+    <tr>
+     <td style="vertical-align: middle;" align="center">RGB</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view1_rgb.zip">ccm_test_priv_view1_rgb.zip</a></u>(~2.1GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view2_rgb.zip">ccm_test_priv_view2_rgb.zip</a></u>(~2.1GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view3_rgb.zip">ccm_test_priv_view3_rgb.zip</a></u>(~2.4GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view4_rgb.zip">ccm_test_priv_view4_rgb.zip</a></u>(~2.8GB)<br>
+    </td>
+    </tr>
+    <tr>
+     <td style="vertical-align: middle;" align="center">Depth</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view1_depth.z01">ccm_test_priv_view1_depth.z01</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view1_depth.z02">ccm_test_priv_view1_depth.z02</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view1_depth.z03">ccm_test_priv_view1_depth.z03</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view1_depth.z04">ccm_test_priv_view1_depth.z04</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view1_depth.zip">ccm_test_priv_view1_depth.zip</a></u>(~3.6GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view2_depth.z01">ccm_test_priv_view2_depth.z01</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view2_depth.z02">ccm_test_priv_view2_depth.z02</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view2_depth.z03">ccm_test_priv_view2_depth.z03</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view2_depth.z04">ccm_test_priv_view2_depth.z04</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view2_depth.zip">ccm_test_priv_view2_depth.zip</a></u>(~2.6GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view3_depth.z01">ccm_test_priv_view3_depth.z01</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view3_depth.z02">ccm_test_priv_view3_depth.z02</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view3_depth.z03">ccm_test_priv_view3_depth.z03</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view3_depth.z04">ccm_test_priv_view3_depth.z04</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view3_depth.zip">ccm_test_priv_view3_depth.zip</a></u>(~2.0GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view4_depth.z01">ccm_test_priv_view4_depth.z01</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view4_depth.z02">ccm_test_priv_view4_depth.z02</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view4_depth.z03">ccm_test_priv_view4_depth.z03</a></u>(~4.0GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view4_depth.zip">ccm_test_priv_view4_depth.zip</a></u>(~0.7GB)<br>
+    </td>
+    </tr>
+    <tr>
+     <td style="vertical-align: middle;" align="center">Infrared</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view1_infrared1.zip">ccm_test_priv_view1_ir1.zip</a></u>(~0.8GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view1_infrared2.zip">ccm_test_priv_view1_ir2.zip</a></u>(~0.8GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view2_infrared1.zip">ccm_test_priv_view2_ir1.zip</a></u>(~0.8GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view2_infrared2.zip">ccm_test_priv_view2_ir2.zip</a></u>(~0.8GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view3_infrared1.zip">ccm_test_priv_view3_ir1.zip</a></u>(~0.9GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view3_infrared2.zip">ccm_test_priv_view3_ir2.zip</a></u>(~0.9GB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view4_infrared1.zip">ccm_test_priv_view4_ir1.zip</a></u>(~2.4GB)<br>
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view4_infrared2.zip">ccm_test_priv_view4_ir2.zip</a></u>(~2.5GB)<br>
+    </td>
+    </tr>
+        <tr>
+     <td style="vertical-align: middle;" align="center">Calib.</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view1_calib.zip">ccm_test_priv_view1_calib.zip</a></u>(~0.3MB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view2_calib.zip">ccm_test_priv_view2_calib.zip</a></u>(~0.3MB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view3_calib.zip">ccm_test_priv_view3_calib.zip</a></u>(~0.3MB)<br>
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view4_calib.zip">ccm_test_priv_view4_calib.zip</a></u>(~0.1MB)<br>
+    </td>
+    </tr>
+    </tr>
+        <tr>
+     <td style="vertical-align: middle;" align="center">IMU</td>
+     <td style="vertical-align: top;font-size: 9pt;" align="center">
+      /
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      /
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      /
+    </td>
+    <td style="vertical-align: top;font-size: 9pt;" align="center">
+      <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_view4_imu.zip">ccm_test_priv_view4_imu.zip</a></u>(~0.02GB)<br>
+    </td>
+    </tr>
+   </table>
+   <br>
+   Audio: <u><a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_audio.zip">ccm_test_priv_audio.zip</a></u> (~0.8GB)<br><br>
+   <!-- Script to download public testing set (<a href="data/CCM/run_download_public_testing.sh" target="_blank"><u>Unix</u></a>,  -->
+ <!-- <a href="data/CCM/run_download_public_testing.bat" target="_blank"><u>Windows</u></a>) (~95GB). <br> -->
+    <!-- Annotation of the container ID: <a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/103670/ccm_test_priv_annotation_container_id.csv"><u>ccm_test_priv_annotation_container_id.csv</u></a><br> -->
+<br>
+<br>
+</div>
+<h3><span style="font-size:14.0pt"><b>Info and queries</b></span></h3>
+<p align="justify">   
+  For any enquiries, questions, concerns and general feedback, please <a href="mailto:a.xompero@qmul.ac.uk"><u>contact us</u></a>.
+</p>
+<br>
+<h3><span style="font-size:14.0pt"><b>License</b></span></h3>
+<p align="justify">   
+  This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by-nc/4.0/"><u>http://creativecommons.org/licenses/by-nc/4.0/</u></a>.
+</p>
+<br>
+<h3><span style="font-size:14.0pt"><b>Acknowledgments</b></span></h3>
+<p>
+  If you use the dataset, please use this citation: <br>
+  <b>CORSMAL Containers Manipulation (1.0) [Data set]</b><br>
+  A. Xompero, R. Sanchez-Matilla, R. Mazzon, and A. Cavallaro<br>
+  Queen Mary University of London. <a href="https://doi.org/10.17636/101CORSMAL1"><u>https://doi.org/10.17636/101CORSMAL1</u></a><br>
+</p>
+<p>
+  You can also refer to the following publication:<br>
+  <b>The CORSMAL benchmark for the prediction of the properties of containers</b><br>
+  A. Xompero, S. Donaher, V. Iashin, F. Palermo, G. Solak, C. Coppola, R. Ishikawa, Y. Nagao, R. Hachiuma, Q. Liu, F. Feng, C. Lan, R. H. M. Chan, G. Christmann, J. Song, G. Neeharika, C. K. T. Reddy, D. Jain, B. U. Rehman, A. Cavallaro<br>
+  IEEE Access, vol. 10, April 2022. <a href="https://doi.org/10.1109/ACCESS.2022.3166906"><u>https://doi.org/10.1109/ACCESS.2022.3166906</u></a>
+</p>
+
+<br>
+ 
+</div>
+</div>
+</div>
+<!-- ####################################################################################################### -->
+<!-- Begin of Sponsors and Partners div -->
+<div class="wrapper row1">
+  <div id="header" class="clear" style="padding: 0px 0px 0px 20px;width:920px">
+    <div class="fl_left" style="margin-top: 0px;">
+      <ul>
+        <li style="padding: 0 0 0 0">
+          <p>
+            <b>Sponsors</b>
+            <br>
+            <br>
+          </p>
+          <p>
+            <a href="http://www.chistera.eu" TARGET = "_blank"><img src="images/chist-era_logo_crop.png" style="height:35px;" alt="Chistera logo"/></a>
+            <a href="https://epsrc.ukri.org/" target="_blank"><img src="images/EPSRC_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="EPSRC logo"></a>
+            <a href="http://www.agence-nationale-recherche.fr/en/" target="_blank"><img src="images/ANR_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="ANR logo"></a>
+            <a href="http://www.snf.ch/en/Pages/default.aspx" target="_blank"><img src="images/FNS_logo.jpg" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="FNS logo"></a>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="fl_right" style="margin-top: 0px;">
+      <ul style="margin-bottom: 0px;">
+        <li style="margin: 0px 4px 0px 0; padding: 0 0px 0 0;">
+          <p>
+            <b>Partners</b>
+            <br>
+            <br>
+          </p>
+          <p>
+            <a href="https://www.qmul.ac.uk/" target="_blank"><img src="images/QMUL_logo.jpg" alt="Queen Mary University of London" style="padding:5px 10px 0px 0px;height:45px;"></a>
+            <a href="http://www.sorbonne-universite.fr/en" target="_blank">
+              <img src="images/Sorbonne_University_logo.png" alt="Sorbonne University" style="padding:5px 10px 0px 0px;height:45px;">
+            </a>
+            <a href="https://www.epfl.ch/en/home/" target="_blank">
+              <img src="images/EPFL_logo.png" alt="EPFL" style="padding:5px 0px 0px 0px;height:45px;">
+            </a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- End of Sponsors and Partners div -->
+<br><br>
+<!-- ####################################################################################################### -->
+<!-- <div class="clearing">&nbsp;</div>-->
+<div class="wrapper bottomPg">
+  <div id="copyright">
+    <div id="fl_left" style="font-size:12px">
+      © Copyright CORSMAL 2019-2022
+    </div>    
+  </div>
+</div>
+<!-- footer -->
+<!--added to clear error with content element -->
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<head profile="http://gmpg.org/xfn/11">
+	<link rel="shortcut icon" href="favicon.ico" />
+
+	<title>CORSMAL: Collaborative object recognition, shared manipulation and learning | blog</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta http-equiv="KeyWords" content="blog, CORSMAL, robotics, touch, vision, audio, signal processing, human behaviour"/>
+	<meta name="image" property="og:image" content="images/CORSMAL_logo.png">
+	
+	<link rel="stylesheet" href="css/layout.css" type="text/css" />
+	<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.slidepanel.setup.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tabs.setup.js"></script>
+</head>
+<body id="top">
+	<div class="wrapper row1">
+		<div id="header" class="clear">
+			<div class="fl_left">
+				<ul>
+					<li>
+						<p>
+							<a href="index.html"><img src="images/CORSMAL_logo.png" style="padding:0px 0px 0px 0px;height:75px" alt="CORSMAL"/></a>
+						</p>
+					</li>
+				</ul>
+			</div>
+</div>
+</div>
+<!-- 2###################################################################################################### -->
+<div class="wrapper row2"; style="margin-bottom: 7px;">
+	<div class="rnd">
+		<!-- ###### -->
+		<div id="topnav">
+			<ul style="margin-top: 5px;">
+				<li><a href="index.html"><b>Home</b></a></li>
+				<li><a href="objectives.html"><b>Objectives</b></a></li>
+				<li><a href="publications.html"><b>Publications</b></a></li>
+				<li class="active"><a href="blog.html"><b>Blog</b></a></li>
+				<li><a href="events.html"><b>Events</b></a></li>
+				<li><a href="code.html"><b>Code</b></a></li>
+				<li><a href="data.html"><b>Data</b></a></li>
+				<li><a href="benchmark.html"><b>Benchmark</b></a></li>
+				<li><a href="challenge.html"><b>Challenge</b></a></li>
+				<li class="last"><a href="team.html"><b>Team</b></a></li>
+			</ul>
+		</div>
+		<!-- ###### -->
+	</div>
+</div>
+<!-- 3####################################################################################################### -->
+<div class="wrapper row1">
+	<div id="container" class="clear">
+		<div id="latestnewspage" class="clear">
+			<!--<h2>About us</h2>-->
+			<h2><p class=xmsonormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+				style='font-size:16.0pt' name="top">Blog</span></b><o:p></o:p></p></h2>
+				<div style="text-align: justify;">
+					<a name="fillingproperties"></a>
+					<p style='font-size:14.0pt'>
+						<b>Recognizing the type and amount of content and the capacity of a container manipulated by a person for human-robot collaboration</b>
+					</p>
+					<p>
+						CORSMAL featured a series of challenges where participants were invited to solve a range of tasks where a person manipulates a container for foods and drinks prior to hand the container over to a robot. The tasks were defined with the aim to understand different <b>physical properties</b> of containers and their content, such as the recognition of the amount of content (filling level classification), the type of content (filling type classification), and the capacity of drinking glasses, cups, or food boxes. See <a href="https://doi.org/10.17636/101CORSMAL1"><u>CORSMAL Container Manipulation</u></a>, a dataset consisting of 1,140 audio-visual recordings with 15 different containers, 3 content types, and 3 content levels, for more details. 
+					</p>
+					<p style="text-align: center">
+						<image src="images/000049.gif" alt="Empty cup" width="19%">
+						<image src="images/000025.gif" alt="Pouring water full" width="19%">
+						<image src="images/shaking.gif" alt="Shaking box" width="19%">
+						<image src="images/pouring_rice_full.gif" alt="Pouring rice full" width="19%">
+						<image src="images/000021.gif" alt="Pouring pasta half 	full" width="19%">
+						</p>
+					<p>
+					<p>
+						Two <b>challenges</b> were hosted during the <a href="http://cis.eecs.qmul.ac.uk/school2021.html"><u>schools</u></a> organised by the Centre for Intelligent Sensing at Queen Mary University of London, one <a href="ICPR2020challenge.html"><u>challenge</u></a> was hosted at the 2020 International Conference on Pattern Recognition (ICPR), and one <a href="ICASSP2022challenge.html"><u>challenge</u></a> was hosted at the 2022 IEEE International Conference on Acoustic, Speech and Signal Processing (ICASSP). A recent article, written together with the participants and published in IEEE Access, provides a formal <b>review</b> of six solutions submitted by the teams that took part to the challenge hosted at ICPR2020 for solving the tasks of the challenge.
+					</p>
+					<p>
+						The solution provided by Neeharika et al. is a sound-based classification of filling type and level with a 5-layer fully connected neural network that takes as input the absolute value of the Short-Time Fourier Transform (STFT).
+					</p>
+					<p>
+						The solution provided by Christmann and Song recognises the filling type with a neural network consisting of 2 convolutional layers and 1 linear layer and taking 40 normalized MFCC features as input. The solution also <b>regresses</b> the container capacity by extracting a region of interest (ROI) around the object localised in the <b>depth data</b> of the frontal view and providing the ROI and its size to a neural network that has 4 conv-batchnorm layers followed by 3 linear layers.
+						<br>
+						The <a href="https://github.com/guichristmann/CORSMAL-Challenge-2020-Submission" target=_blank><u>code</u></a> is available on GitHub.
+					</p>
+					<p style="text-align: center">
+						<image src="images/challenge/ntnuerc-1.png" alt="" width="25%" style="margin: 0 75px 0 0;">
+
+						<image src="images/challenge/ntnuerc-2.png" alt="" width="19%" style="margin: 0 0px 0 75px;">
+					</p>
+					<p>
+						The solution provided by Liu et al. in “<a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_33"><u>VA2Mass: Towards the Fluid Filling Mass Estimation via Integration of Vision & Audio</u></a>” recognises first the container category (cup, glass, box) with a majority voting on objects detected for each frame of the videos in the four camera views. For filling type and level classification, the solution trained a total of 6 <b>category-specific Multi-layer perceptrons</b> (MLPs) that takes as input spectrogram of the audio signals selected based on the recognised object category. For estimating the container capacity, the solution used Gaussian processes to regress the container capacity, depending on the estimated container category.
+					</p>
+					<p>
+						The solution provided by Donaher et al. in “<a href="https://doi.org/10.48550/arXiv.2103.15999"><u>Audio classification of the content of food containers and drinking glasses</u></a>” jointly estimates the filling type and level to avoid infeasible cases (e.g., empty water or half-full none). The solution <b>decomposed the problem into two steps</b>, namely action recognition and content classification, and devised three independent CNNs. The first CNN (action classifier) identifies the manipulation performed by the human, i.e., shaking or pouring, and the other two CNNs are task-specific and determine the filling type and level. The choice of which task-specific network should be used is conditioned by the decision of the first CNN.<br>
+						The <a href="https://github.com/CORSMAL/ACC/" target=_blank><u>code</u></a> is available on GitHub.
+					</p>
+					<p>
+						The solution provided by Ishikawa et al. in “<a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_32"><u>Audio-Visual Hybrid Approach for Filling Mass Estimation</u></a>” tackles the three tasks with different algorithms. For recognising the content properties, multi-channel audio signals are converted into a log-Mel spectrogram of a fixed-size and audio frames extracted with a sliding window are provided as input to a convolutional neural network model with a VGG backbone. A <b>majority voting</b> is used to determine the filling type, whereas <b>three stacked LSTMs</b> are used to determine the filling level. For estimating the container capacity, the solution approximates the point cloud from the depth data of the localised object into a <b>3D cuboid</b> and then computes the volume.<br>
+						The <a href="https://github.com/YuichiNAGAO/ICPRchallenge2020" target=_blank><u>code</u></a> is available on GitHub.
+					</p>
+					<p style="text-align: center">
+						<image src="images/challenge/acc_vs_hvrl.png" alt="" width="75%">
+					</p>
+					<p>
+						The solution provided by Iashin et al. in “<a href="https://doi.org/10.48550/arXiv.2012.01311"><u>Top-1 CORSMAL Challenge 2020 submission: Filling mass estimation using multi-modal observations of human-robot handovers</u></a>” also tackles the three tasks with different algorithms. For filling type classification, the solution <b>averages</b> the class probabilities predicted by a deep learning model (CNN + GRU ) and a traditional machine learning model (Random Forest), using only features extracted from the input audio signal. For filling level classification, the solution uses the same approach as before but also includes visual features extracted from the image sequences of all camera views by using R(2+1)D, a spatio-temporal CNN that is based on residual connections and convolutional layers that approximate 3D convolution by a 2D convolution (spatial) followed by a 1D convolution (temporal).  Long temporal relations between the features of each window are estimated by using a RNN with a GRU model and logits from each camera view are summed together before applying the final softmax to obtain the class probabilities from the visual input. For estimating the container capacity, the solution uses a geometric-based approach that approximates the container shape to a <b>cylinder in 3D</b> via energy-based minimization to fit the points to the real shape of the object as observed in the RGB images of a wide-baseline stereo camera and constrained by the object masks.<br>
+						The <a href="https://github.com/v-iashin/CORSMAL" target=_blank><u>code</u></a> is available on GitHub.
+					</p>
+					<p style="text-align: center">
+						<image src="images/challenge/bit.svg" alt="" width="75%">
+					</p>
+					<p>
+						If you want to know more about the algorithms and a more <b>in-depth analysis</b> and comparisons of the results, check out the IEEE Access article, <a href="https://doi.org/10.1109/ACCESS.2022.3166906" target=_blank><u>The CORSMAL benchmark for the prediction of the properties of containers</u></a>.
+					</p>
+					<br>
+					</p> -->
+					[<a href="#top"><u>back to top of the page</u></a>]
+				</div>
+				<br>
+				<br>
+				<!-- -->
+				<div style="text-align: justify;">
+					<a name="safe_handovers"></a>
+					<p style='font-size:14.0pt'>
+						<b>How safe is it for a robot to handover a filled drinking glass to a human?</b>
+					</p>
+					<p>
+						Safe human-to-robot handovers of unknown objects require accurate estimation of hand poses and object properties, such as shape, trajectory, and weight. Accurately estimating these properties with a real setup is challenging because no information about the object is available a priori to the robot. Most of the existing setups rely on accurate predictions from additional and expensive motion capture systems; objects that are easily recognisable in the scene because of their shape or colour, or equipped with markers; and/or thy rely on the use of scanned 3D object models. Handing over small containers, such as drinking glasses and cups, is then even more challenging due to their varying physical properties, such as deformability, transparency, and fragility, and changes in the appearance and shape when filled with a content.
+					</p>
+					<p>
+						In addition to this, testing handover algorithms with real robots may be dangerous for both human, object and robot itself, especially when for example the object is a container made of glass and open at the top, filled with a liquid. In order to safely perform the handover, the robot should understand the intention of the human passing the object and approach the human hand in an area of the object considered optimal to not harm the human, and grasp the object by closing the gripper with sufficient forces to hold the object while the human releases their hold.
+					</p>
+					<p>
+						Yik Lung Pang, a PhD student with the Centre for Intelligent Sensing at Queen Mary University of London, supervised by <a href="http://eecs.qmul.ac.uk/~coh/" ><u>Dr. Changjae Oh</u></a> and <a href="http://www.eecs.qmul.ac.uk/~andrea/" ><u>Prof. Andrea Cavallaro</u></a>, and in collaboration with the Postdoctoral Research Assistant <a href="http://www.eecs.qmul.ac.uk/~ax300/" ><u>Alessio Xompero</u></a>, investigated this problem under CORSMAL. The four researchers addressed potential safety issues for human and object before handing over it to the robot in a real environment, while requiring minimal hardware setup. They proposed a real-to-simulation framework that estimates the physical properties of unknown containers and their content from real videos of people manipulating the objects. These simulation environments provide an accurate, yet safe alternative for the development and evaluation of algorithms for human-to-robot handovers.
+					</p>
+					<p align="center">
+						<video width="600" controls=""> <source src="resources/safe_ho/overview.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+					</p>
+					<p>
+						The real-to-simulation framework includes
+						<ol>
+						<li>handover setup in the simulation environment PyBullet,</li>
+						<li>vision baseline to localise and track the container, and estimate its physical properties and the poses of the human hand,</li>
+						<li>robot controls to safely grasp the container, and</li>
+						<li>estimation of human and object safety.</li>
+					</ol>
+					</p>
+					<p>
+						Within the real-to-simulation framework the safeness of the handover is estimated as the probability of the robot gripper to touch the human hand (human safety) and the probability to drop, break or squeeze the container (object safety). To further increase the safety for the human, a safe grasp region that accounts for the available and unoccluded regions on the container held by the person, is estimated. The framework showed the safeness of handovers when using noisy estimates of the physical properties from a range of perceptual algorithms, including the vision algorithm and different perceptual and multi-modal algorithms (vision, sound), on selected video recordings from the CORSMAL Containers Manipulation dataset, where humans interact with different containers before a handover. While the proposed approach for safe region estimation avoids the robot to attempt grasping the object when the available grasping area is too small, accurately recognising the containers under different conditions (e.g., hand occlusions, different content types, transparencies, etc.) is still challenging and opens new research questions to the community.
+					</p>
+					<p>
+						The framework should encourage the development of further multi-modal algorithms, even without a physical robotic arm, fragile or deformable containers are manipulated, as well as when scanned 3D object models or expensive equipment, such as motion capture systems and markers, are both unavailable.
+					</p>
+					<p>
+						The work titled “Towards Safe Human-to-robot handovers of unknown containers” was published at the IEEE International Conference on Robot and Human Interactive Communication (RO-MAN) and was presented during the conference held virtually from the 8th to the 12th of August 2021 by Yik. Watch Yik’s presentation at RO-MAN 2021 by clicking <a href="https://youtu.be/QzdaSSgzlcM" ><u>here</u></a> or read the publication <a href="https://arxiv.org/abs/2107.01309" ><u>here</u></a>.
+					</p>
+					<p style="text-align: center">
+						<image src="images/safe_ho/20211125_NAVERLABS_AI_for_Robotics_QMUL_CIS_SafeHandovers.png" alt="Safe Handovers Poster" width="100%">
+					</p>
+					<p>
+						Alessio also presented the work as a poster session at the <a href="https://europe.naverlabs.com/research/2nd-ai-for-robotics-international-workshop-by-naver-labs-europe/" TARGET = "_blank"><u>2nd NAVER LABS Europe International Workshop on AI for Robotics</u></a>. The workshop was organised online on 29th and 30th November 2021.
+					</p>
+					[<a href="safe_ho.html"><u>link</u></a>][<a href="#top"><u>back to top of the page</u></a>]
+				</div>
+				<br>
+				<br>
+				<div style="text-align: justify;">
+					<a name="ICDLEpiRobPresentation"></a>
+					<p style='font-size:14.0pt'>
+						<b>ICDL-EpiRob 2020 Presentation: How careful is a person in handing over an empty or full cup?</b>
+					</p>
+					<p>
+						The fast advancements in robotics and perception make the deployment of smart robots in people houses and warehouses more and more an everyday reality, resulting in people cooperating with such robots and even handing objects to them. However, an apparently simple task like a dynamic and fluid object handover between two people may not be so easy to develop between a human and a robot. CORSMAL is investigating this problem with container-like objects (e.g. cups) whose properties, such as shape, size and material, may vary and at the same time, these objects might be either empty or be fully filled with water. Under these different circumstances, a person can manipulate the object differently and may increase the amount of attention when the object is not empty, thus creating different conditions for the control and decisions of the robot trying to achieve a smooth handover.
+					</p>
+					<p>
+						Nuno Ferreira Duarte, a Ph.D. student with the University of Lisboa and visiting student supervised by Prof. Aude Billard within the LASA lab at EPFL, investigated this problem under CORSMAL. Nuno designed a dynamical system that models the wrist kinematic movement during object handover to learn the adaptation of human manipulation to these object properties (empty cup or cup full of water). From prior acquisitions of human-to-human handovers, the dynamical system can distinguish between two behaviours: careful and not careful manipulation of objects. The model is then deployed within a robot controller to adapt on the fly the grasping and motion control during the human-to-robot handover based on the behaviour (and implicitly the type of object) of the person during the object manipulation. Nuno experimentally showed that this new dynamical system helps the robot controller understand if the person is being careful while manipulating the object for real-time human-to-robot interactions, as well as for tasks like pick-and-place that was not performed in the prior human-to-human experiments. 
+					</p>
+					<p>
+						Nuno's work, titled “From human action understanding to robot action execution: how the physical properties of handled objects modulate non-verbal cues”, was published at the Joint IEEE 10th International Conference on Development and Learning and Epigenetic Robotics (ICDL-EpiRob), and it was presented during the conference held virtually from the 26th to the 30th of October 2020. Watch Nuno’s presentation at ICDL-EpiRob 2020 by clicking <a href="https://www.youtube.com/watch?v=4Et36pMfkAo"><u>here</u></a> or read his publication <a href="resources/2020.10.29_CORSMAL_ICDL-EpiRob_paper.pdf"><u>here</u></a>. 
+					</p>
+					<p style="text-align: center">
+						<img src="resources/icdl2020_vid1.gif" alt="ICDL-EpiRob2020" width="400">
+						<img src="resources/icdl2020_vid2.gif" alt="ICDL-EpiRob2020" width="400">
+					</p>
+					[<a href="#top"><u>back to top of the page</u></a>]
+				</div>
+				<br>
+
+				
+				<a name="CORSMALChallengeSummerSchool20"></a>
+				<p style='font-size:14.0pt'>
+					<b>CORSMAL Challenge at the 2020 Intelligent Sensing Summer School</b>
+				</p>
+				<p>
+				The 2020 CORSMAL Challenge was hosted from 1st to 4th Sep at the 8th Intelligent Sensing Summer School, an event organised by the Centre for Intelligent Sensing and sponsored by the Alan Turing Institute and the Institute of Applied Data Science.
+				</p>
+				<p>
+				The challenge focuses on the estimation of the properties of previously unseen containers and their content (filling), while they are manipulated by a human and prior to a human-to-robot handover. Robot must determine on-the-fly the weight of a container to apply the correct force when grasping it, avoiding slippage, crashing the container or spilling its content. Therefore, the challenge defines the weight of the object handled by the human as the sum of the mass of an unseen container and the mass of the unknown filling within the container. 
+				</p>
+				<p>
+				To compute the filling mass present in each container, participants were challenged to propose and develop a solution in three days about the estimation of the container capacity and the filling type and level. The event provided the participants with a large, multi- sensor, multi-modal dataset, CORSMAL Containers Manipulation (<a href="https://corsmal.eecs.qmul.ac.uk/containers_manip.html"><u>https://corsmal.eecs.qmul.ac.uk/containers_manip.html</u></a>), consisting of 668 recordings for training and 236 for testing with different containers (9 training and 3 testing, evenly distributed among cups, glasses, and boxes) and three fillings (pasta, rice, water). Each team could choose which task to address, and which modality (audio, RGB videos, depth data, infrared videos), and which view (for visual data) to exploit. Although, the challenge encouraged teams to address all the tasks to win the final prize. 
+				</p>
+				<p>
+				The team Challengers proposed to solve the classification of filling type and level using audio data. After suppressing the noise in each audio signal via spectral gating, the team extracted the absolute value of the Short-Time Fourier Transform (STFT) as input feature for a classifier based on a 5-layer fully connected neural network, trained with Adam optimizer and dropout on the last layer to reduce overfitting. 
+				</p>
+				<p>
+				The team NTNU-ERC also classified the filling type using audio data to overcome limitations and challenges of visual data related to opaque containers, pouring action performed outside the field of view in some recordings, and missing annotation of the container localisation. Unlike Challengers, NTNU-ERC extracted 40 normalized MFCC features in a window size of 20 ms at 22 kHz, with a maximum length of 30 s. As there are sequences shorter than the window size, the team used zero-padding to preserve the same duration across audio data. MFCC features were then used as input to a neural network that consists of two convolutional layers and one linear layer and is trained with SGD optimizer. In addition to classifying the filling type, NTNU-ERC proposed to regress the container capacity by extracting a region of interest (ROI) around the object localised in the depth data of the fixed camera view mounted on the robot arm and providing the ROI and its size to a neural network. The network consists of four convolutional-batchnorm layers followed by three linear layers and trained with Adam optimizer. The size of the ROI (2-element vector) was concatenated to the feature between the second and third linear layer. To find the most reliable ROI, the team exploited the prior knowledge that the person will extend the arm towards the robot, while holding the container, and thus considered only detection up to 700 mm far from the camera processing the video backwards. Since the detector could find also the jug as second object, the team selected the closest contour to feed into the network.  
+				</p>
+				<p>
+				The winning team, Because It's Tactile, addressed all the three tasks with independent solutions and different choices of input modalities. For filling type classification, the team extracted Short-Term features from windows of the spectral representation of stereo audio-signals converted to mono, and then provided the features as input to a random forest-based classifier. For filling level classification, the teams adopted a multi-modal solution with a late fusion strategy. From the audio signal, a set of features is extracted using a VGGish network, while a R(2+1)D architecture extracts the feature from the RGB videos. The features are independently provided as input to two recurrent neural networks with gate recurrent unit (GRU) to handle the intrinsic temporal relations of the signals. Finally, the team concatenated the output features as "expert" opinions to perform the final classification. For estimating the container capacity, the team enhanced the approach provided by CORSMAL, LoDE (<a href="LoDE.html"><u>LoDE.html</u></a>), with depth and infrared data, and exploited the book class from the MS COCO dataset to handle boxes, given the LoDE limitation to handle only glasses/bottles. The modified LoDE reconstructs the object shape with a sparse of 3D points using the first frame and the window from the frame 20 until the last frame of the video.
+				</p>
+				<p>
+				A panel of four judges assessed the solutions and presentation provided by the teams in terms of objective performance scores (50%) with the final score weighed based on the number of tasks submitted, innovation and creativity (20%), quality of the presentation (20%), and distribution of workload across team members (10%). Because It’s Tactile achieved the top score in all criteria and won the CORSMAL Challenge at the 2020 Intelligent Summer School. Regarding the objective performance scores, Because It’s Tactile achieved the best results for filling type and filling level classifications with 93.83% and 79.38% Weighted Average F1-score, respectively, while NTNU-ERC achieved 68.25% Average Capacity Score, followed by Because It's Tactile with 37.95%. On the overall score (filling mass computed from the estimation of the other tasks for each recording), Because It's Tactile ranked first with 42.04% Average filling Mass Score, NTNU-ERC second with 38.89, and Challengers third with 38.47%.  
+				</p>
+				<p>
+				Congratulations to the winning team and very well done to the other participants!<br>
+				Stay tuned for the next CORSMAL Challenge! 
+				</p>
+				<p>
+				<a href="http://cis.eecs.qmul.ac.uk/school2020.html">[<u>link</u>]</a>[<a href="#top"><u>back to top of the page</u></a>]
+				</p>
+				<p>
+					<img src="images/CORSMALChallengeSummerSchool20.png" alt="CORSMAL Challenge Summer School 2020"  height="" width="100%"/></a>
+				</p>
+				<br><br>
+				
+				
+				<a name="CORSMALChallengeICME20"></a>
+				<p style='font-size:14.0pt'>
+					<b>Multi-modal fusion and learning for robotics</b>
+				</p>
+				<p>
+					On Wednesday 8 July, during the 2020 IEEE International Conference on Multimedia and Expo, we held a CORSMAL event on “<a href="ICME2020challenge.html"><u>Multi-modal fusion and learning for robotics”</u></a>, which included several short presentations from experts and discussions with the audience.
+				</p>
+				<p>
+					The event was streamed live with the invited speakers, Giulia Vezzani (DeepMind), Yasemin Bekiroglu (UCL & Chalmers), Vincent Lepetit (ENPC ParisTech), and Rich Walker (Shadow Robot Company) talking in the first part. In the second part of the event, there was a short talk by Shahbaz Abdul Khader (KTH), followed by Alessio Xompero (QMUL) and Ricardo Sanchez-Matilla (QMUL). Alessio presented two Open datasets, namely <a href="containers.html"><u>CORSMAL Containers</u></a> and <a href="containers_manip.html"><u>CORSMAL Containers Manipulation</u></a>, as well as <a href="LoDE.html"><u>LoDE</u></a>, a method to estimate the shape of previoulsy unseen object instances in 3D, while Ricardo introduced our <a href="benchmark.html"><u>Benchmark for Human-to-Robot Handover</u></a>. 
+				</p>
+				<p>
+					Each group of four presentations was followed by informative discussions with the audience on challenges in multi-modal sensing and machine learning for robotics.
+				</p>
+				<p>
+					We enjoyed this event and thank all the speakers for their contribution, and we look forward to seeing you at the next CORSMAL events, which will take place in September, during the <a href="http://cis.eecs.qmul.ac.uk/school2020.html"><u>2020 Intelligent Sensing Summer School</u></a>, and in January, during the 25th International Conference on Pattern Recognition (<a href="ICPR2020challenge.html"><u>ICPR2020</u></a>).					
+				</p>			
+				<p>
+					<!-- <a href="https://2020.ieeeicme-virtual.org/session/corsmal-challenge-multi-modal-fusion-and-learning-robotics" TARGET = "_blank"><u>[videos]</u></a> -->
+					<a href="https://www.youtube.com/playlist?list=PLFG15NZcvk5hNgpVahkePoMa_bORbTQPs" TARGET = "_blank"><u>[videos]</u></a> [<a href="#top"><u>back to top of the page</u></a>]
+				</p>
+				<p>
+					<img src="images/icme_blog_post.png" alt="ICME Blog image"  height="" width="100%"/></a>
+				</p>
+				<br><br>
+<!--  -->
+				<a name="OpenScience2020"></a>
+				<p style='font-size:14.0pt'>
+					<b>CHIST-ERA Workshop on Open Science in Transnational Research</b>
+				</p>
+				
+				<p>
+				The CHIST-ERA Workshop on Open Science in Transnational Research was organised by the Swiss National Science Foundation (SNSF) on 6 March 2020 at SNSF, Bern (Switzerland). Open Science experts and CHIST-ERA representatives assessed the policies for Open Science in Europe as well as practises, platforms and tools currently available to researchers.
+				</p>
+
+				<p>The event was  streamed live (<a href="https://www.chistera.eu/chist-era-workshop-open-science-transnational-research" TARGET = "_blank"><u>agenda</u></a>) and, among other speakers, Prof. Andrea Cavallaro presented the Collaborative Object Recognition, Shared Manipulation And Learning (CORSMAL) project.
+				The presentation introduced our <a href="benchmark.html"><u>benchmark for human-to-robot handover</u></a>, 
+				two Open datasets, namely <a href="containers.html"><u>CORSMAL Containers Dataset</u></a> and <a href="containers_manip.html"><u>CORSMAL Containers Manipulation Dataset</u></a>, and the upcoming CORSMAL events at the IEEE International Conference on Multimedia and Expo 2020 (<a href="ICME2020challenge.html"><u>ICME2020</u></a>) and at the International Conference on Pattern Recognition 2020 (<a href="ICPR2020challenge.html"><u>ICPR2020</u></a>). 
+				</p>
+				
+				<p>
+				The CORSMAL project aims at releasing software, data, and research findings across the partners and CHIST-ERA Workshop provided an optimal forum where to discuss Open Science and the best practice to shape new policies and the related roadmap.
+				</p>
+
+				<p>
+					<a href="resources/2020.03.06_CORSMAL_Open_Science_in_Transnational_Research.pdf" TARGET = "_blank"><u>[presentation]</u></a> [<a href="#top"><u>back to top of the page</u></a>]
+				</p>
+
+				<p>
+					<a href="resources/2020.03.06_CORSMAL_Open_Science_in_Transnational_Research.pdf" TARGET = "_blank"><img src="images/OpenScience_slide.png" alt="CORSMAL Open Science slide"  height="" width="100%"/></a>
+				</p>
+
+
+
+					<br><br>
+
+
+
+
+				<a name="ICME2020"></a>
+				<p style='font-size:14.0pt'>
+					<b>CORSMAL Challenge: Multi-modal fusion and learning for robotics at ICME 2020</b>
+				</p>
+
+				<p>
+					Participants will create machine learning models for estimating the physical properties of containers that have never been seen before. The only prior information available is a set of container categories (glasses, cups and food boxes) and a set of filling types (water, pasta, and rice).
+				</p>
+
+				<p>
+					Within the Challenge, an annotated dataset composed of video (RGB, infrared and depth), audio (microphone array), and inertial (accelerometer and gyroscope) data is released for training and development of new models. The dataset comprises more than 1,000 sequences composed of 15 containers, 3 fillings, and 3 fullness levels.
+				</p>
+
+				<p>
+					All details and data can be found at <a href="ICME2020_Challenge.html" TARGET = "_blank"><u>ICME2020_Challenge.html</u></a>.
+				</p>
+
+				<p>
+					Follow all the updates <a href="http://twitter.com/corsmal" TARGET = "_blank"><u>@corsmal</u></a>.
+				</p>
+
+				<p>
+					<video style="border: 3px solid #EEE;" width="100%" controls>
+						<source src="resources/ICME2020.mp4" type="video/mp4">
+						Your browser does not support the video tag.</video>
+					</p>
+
+
+
+
+
+					<br><br>
+
+
+
+
+					<a name="CORSMAL_Challenge2019"></a>
+					<p style='font-size:14.0pt'>
+						<b>CORSMAL Challenge at the 2019 Intelligent Sensing Summer School (London, 2-6 September)</b>
+					</p>
+
+					<p>
+						The first CORSMAL challenge was held during the 2019 Intelligent Sensing Summer School (<a href="http://cis.eecs.qmul.ac.uk/school2019.html" TARGET = "_blank"><u>http://cis.eecs.qmul.ac.uk/school2019.html</u></a>) at Queen Mary University of London.
+					</p>
+
+					<p>
+						The overall aim of the challenge was to enable a dynamic hand-over between a human and a robot of an unseen object (e.g. a cup) with an unknown filling. Participants worked in small groups on various tasks, such as the estimation of the object dimensions, mass, and fullness, as well as grasp points estimation, object tracking and pose estimation. Each team designed and implemented a solution for a chosen task, and presented their work [<a href="https://github.com/CORSMAL/2019_CORSMAL_Challenge" TARGET = "_blank"><u>slides</u></a>] in front of a panel of judges.			
+					</p>
+
+					<p>
+						Groups had a short time to work on the challenge (36 hours!), and their solution included detection and localisation of objects trough hand tracking and depth map segmentation for object tracking, and object dimension estimation with the design of Convolutions Neural Networks for object dimension estimations.
+					</p>
+
+					<p>
+						<a href="https://github.com/CORSMAL/2019_CORSMAL_Challenge" TARGET = "_blank"><img src="images/TeamSlides_CORSMAL_challenge_2019.png" alt="Team Slides CORSMAL challenge 2019"  height="" width="100%"/></a>
+					</p>
+
+
+					<p>The winning team localized the object of interest and estimated the grasp points through a Real-Time Hand-Detector based on Single Shoot Detector neural network followed by a segmentation-depth based procedure to localise the object held by the person.
+					</p>
+
+					<p>Stay tuned for the next CORSMAL challenge!
+					</p>
+
+					<p>
+						<a href="http://cis.eecs.qmul.ac.uk/school2019.html" TARGET = "_blank"><img src="images/TeamsPrizes_CORSMAL_challenge_2019.png" alt="Teams Prizes CORSMAL challenge 2019"  height="" width="100%"/></a>
+					</p>
+					<br><br>
+					<a name="Benchmarking"></a>
+					<p style='font-size:14.0pt'>
+						<b>Benchmarking: from single modality to multi-modal perception for robotics</b>
+					</p>
+					<p>
+						Benchmarking is fundamental to advance research. Here we expose the benchmarks used in perception (video and audio) and robotics, while you can check out our previous post to know more about Open Research Data &#38; Data Sharing link.
+					</p>
+
+					<p>
+						The vision community has developed multiple evaluation platforms, including the KITTI Vision Benchmark Suite (<a href="http://www.cvlibs.net/datasets/kitti" TARGET = "_blank"><u>http://www.cvlibs.net/datasets/kitti</u></a>) that consists of a dataset captured by a set of sensors in a car for tasks such as stereo-camera processing, optical flow, visual odometry, 3D object detection and 3D tracking, by providing raw data, benchmarks and evaluation metrics for the different tasks; the Multiple Objects Tracking (MOT <a href="https://motchallenge.net" TARGET = "_blank"><u>https://motchallenge.net</u></a>) benchmark that allows a fair evaluation of multi-person tracking algorithms by providing a dataset, person detections, a common evaluation protocol and several specific challenges; and the Middlebury Stereo Vision campaign (<a href="http://vision.middlebury.edu/stereo" TARGET = "_blank"><u>http://vision.middlebury.edu/stereo</u></a>) for the evaluation of stereo-vision algorithms by distributing several stereo datasets with ground-truth disparities and by allowing an online submission system to automatically evaluate new algorithms. Audio-focused campaigns include the Signal Separation Evaluation Campaign (SiSEC <a href="https://sisec.inria.fr" TARGET = "_blank"><u>https://sisec.inria.fr</u></a>) which is community-based and allows the comparison of the performance of source audio separation systems on the same data and metrics; and the CHiME (<a href="http://spandh.dcs.shef.ac.uk/chime_challenge/index.html" TARGET = "_blank"><u>http://spandh.dcs.shef.ac.uk/chime_challenge/index.html</u></a>) Speech Separation and Recognition Challenge which aims to standardise data and evaluation metrics for conversational speech recognition.
+					</p>
+
+					<p>
+						In robotics, there exists the YCB benchmark (<a href="http://www.ycbbenchmarks.com" TARGET = "_blank"><u>http://www.ycbbenchmarks.com</u></a>) that facilitates benchmarking for robotic manipulation by providing a set objects with different shapes, sizes, textures, weight and rigidity, their mesh models and high-resolution RGB-D scans as well as widely used manipulation sets for models easy to incorporate into manipulation and planning software platforms;  the Amazon Picking Challenge (<a href="http://amazonpickingchallenge.org" TARGET = "_blank"><u>http://amazonpickingchallenge.org</u></a>) that is designed to evaluate solutions for robotic pick-and-place in tasks that go from picking packages in a logistics centre to bin-picking in a manufacturing plant, from unloading groceries at home to clearing debris after a disaster; the ACRV picking benchmark (<a href="http://juxi.net/dataset/acrv-picking-benchmark" TARGET = "_blank"><u>http://juxi.net/dataset/acrv-picking-benchmark</u></a>) that contains 42 commonly-available shelf objects,  a set of stencils and standardised task setups to replicated real-world conditions; and the Surreal Robotics Suite (<a href="https://surreal.stanford.edu" TARGET = "_blank"><u>https://surreal.stanford.edu</u></a>) that is a toolkit and simulation benchmark designed to enable reproducible robotics research and to make Deep Reinforcement Learning in robot manipulation accessible to everyone, by introducing an open-source, reproducible and scalable distributed reinforcement learning framework.
+					</p>
+
+					<p>CORSMAL will be providing the research community with a benchmark for multi-modal perception. Follow us on twitter <a href="https://twitter.com/corsmal" TARGET = "_blank"><u>@corsmal</u></a> for updates.
+					</p>
+
+
+
+
+					<br><br>
+
+
+					<a name="CHISTERA_seminar2019"></a> 
+					<p style='font-size:14.0pt'>
+						<b>CHIST-ERA Projects Seminar 2019</b>
+					</p>
+
+					<p>
+						The CORSMAL team has contributed to the Open Research Data 	&#38; Data Sharing special session CHIST-ERA Projects Seminar 2019, held on 3 and 4 April in Bucharest (<a href="resources/2019.04.03__CORSMAL_Open_Science_Session.pdf" TARGET = "_blank"><u>link</u></a> to the slides of our presentation). 
+					</p>
+
+					<p>
+						Open Research Data and Data Sharing are parts of the Open Science movement that aims to enable sustainable and reproducible research. CORSMAL aims to share Data and Models that enable human-robot handover of unknown objects.
+					</p>
+
+					<p>
+						Significant efforts are required to properly obtain, annotate and curate Data, and an Open platform can accelerate the design and validation of new solutions and accelerate the spreading of novel ideas. Along with Data, an Open Evaluation Methodology 	&#38; Experiment Reproducibility is fundamental to formally assess the performance. Examples of such platforms already exist for computer vision and audio analysis (research areas directly related to CORSMAL), as well as for specific robotic tasks. However, the human-in-the-loop scenario considered in our project makes Reproducibility a very challenging task.   
+					</p>
+
+					<p>
+						CORSMAL is committed to Open Science and we aim to create and distribute Datasets, Models and Evaluation Protocols for the development of collaborative solutions for human-robot object handover through visual, auditory and tactile sensing. We hope that our efforts will enable the advancement of the research and the formulation of new solutions to predict the movements of a person and to estimate the physical properties of objects, and in turn allow accurate, robust and safe planning for the handover. 
+					</p>
+
+					<p>
+						Stay tuned!
+					</p>
+
+					<p>
+						<br>
+						<a href="resources/2019.04.03__CORSMAL_Open_Science_Session.pdf" TARGET = "_blank"><img src="images/CHISTERA_meeting.png" alt="CHISTERA meeting slide"  height="" width="100%"/></a>
+					</p>
+
+
+					<br><br>
+
+
+				</div>				
+			</div>
+		</div>
+
+
+<div class="wrapper row1">
+	<div id="header" class="clear" style="padding: 0px 0px 0px 20px;width:920px">
+		<div class="fl_left" style="margin-top: 0px;">
+			<ul>
+				<li style="padding: 0 0 0 0">
+					<p>
+						<b>Sponsors</b>
+						<br>
+						<br>
+					</p>
+					<p>
+						<a href="http://www.chistera.eu" TARGET = "_blank"><img src="images/chist-era_logo_crop.png" style="height:35px;" alt="Chistera logo"/></a>
+						<a href="https://epsrc.ukri.org/" target="_blank"><img src="images/EPSRC_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="EPSRC logo"></a>
+						<a href="http://www.agence-nationale-recherche.fr/en/" target="_blank"><img src="images/ANR_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="ANR logo"></a>
+						<a href="http://www.snf.ch/en/Pages/default.aspx" target="_blank"><img src="images/FNS_logo.jpg" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="FNS logo"></a>
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div class="fl_right" style="margin-top: 0px;">
+			<ul style="margin-bottom: 0px;">
+				<li style="margin: 0px 4px 0px 0; padding: 0 0px 0 0;">
+					<p>
+						<b>Partners</b>
+						<br>
+						<br>
+					</p>
+					<p>
+						<a href="https://www.qmul.ac.uk/" target="_blank"><img src="images/QMUL_logo.jpg" alt="Queen Mary University of London" style="padding:5px 10px 0px 0px;height:45px;"></a>
+						<a href="http://www.sorbonne-universite.fr/en" target="_blank">
+							<img src="images/Sorbonne_University_logo.png" alt="Sorbonne University" style="padding:5px 10px 0px 0px;height:45px;">
+						</a>
+						<a href="https://www.epfl.ch/en/home/" target="_blank">
+							<img src="images/EPFL_logo.png" alt="EPFL" style="padding:5px 0px 0px 0px;height:45px;">
+						</a>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<br><br>
+<!-- ####################################################################################################### -->
+<!-- <div class="clearing">&nbsp;</div>-->
+<div class="wrapper bottomPg">
+	<div id="copyright">
+		<div id="fl_left" style="font-size:12px">
+			© Copyright CORSMAL 2019-2022
+		</div>	  
+	</div>
+</div>
+<!-- footer -->
+<!--added to clear error with content element -->
+</body>
+</html>

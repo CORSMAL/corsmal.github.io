@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr" class="gr__corsmal_eecs_qmul_ac_uk">
+<head profile="http://gmpg.org/xfn/11">
+	<link rel="shortcut icon" href="favicon.ico" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>CORSMAL: 6D Pose Estimation of Hand-held Containers</title>
+
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta http-equiv="KeyWords" content="code, software, CORSMAL, robotics, touch, vision, audio, signal processing, human behaviour, challenge, ">
+	<link rel="stylesheet" href="css/layout.css" type="text/css">
+	<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.slidepanel.setup.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tabs.setup.js"></script>
+
+	<script type="text/javascript">
+		window.TableLoader = {
+			tables:{},
+			register:function(table, func){
+				this.tables[table] = func;
+			},
+			trigger:function(key){
+				var self = this;
+
+				if(this.tables[key]){
+					this.tables[key]();
+					this.tables[key] = function(){};
+
+					var keys = Object.keys(this.tables);
+					var index = keys.indexOf(key);
+
+					if(index){
+						this.tables[keys[index - 1]]();
+						this.tables[keys[index - 1]] = function(){};
+					}
+
+					if(index < keys.length - 1){
+						this.tables[keys[index + 1]]();
+						this.tables[keys[index + 1]] = function(){};
+					}
+				}
+
+				if(key == "theming"){
+					var themes = Object.keys(this.tables).slice(-7);
+
+					themes.forEach(function(item){
+						self.trigger(item);
+					})
+				}
+			},
+			loadFirst:function(){
+				first = Object.keys(this.tables)[0];
+
+				if(first){
+					this.trigger(first);
+				}
+			}
+		}
+	</script>
+
+<script> 
+  function AppearMetadata(metadata_id) {
+  	var y = document.getElementsByClassName("metadata");
+  	for (var i = 0; i < y.length; i ++) {
+    	y[i].style.display = 'none';
+		}
+
+    var x = document.getElementById(metadata_id);
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+</script>
+
+<link href="benchmark/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="benchmark/dist/js/tabulator.min.js"></script>
+<link href="https://unpkg.com/tabulator-tables@4.4.3/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.4.3/dist/js/tabulator.min.js"></script>
+
+	<style type="text/css">
+		/*tr:hover {background-color: #f5f5f5;}*/
+		.tg  {border-collapse:collapse;border-spacing:0;}
+		.tg td{border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg th{border-color:black;border-style:solid;border-width:1px;font-weight:normal;font-size:14.0pt;overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg .tg-km2t{border-color:#ffffff;font-weight:bold;font-size:14.0pt;text-align:left;vertical-align:top}
+		.tg .tg-zv4m{border-color:#ffffff;font-size:14.0pt;text-align:left;vertical-align:top}
+	</style>
+
+</head>
+<body id="top" data-gr-c-s-loaded="true">
+	<div class="wrapper row1">
+		<div id="header" class="clear">
+			<div class="fl_left">
+				<ul>
+					<li>
+						<p>
+							<a href="index.html"><img src="images/CORSMAL_logo.png" style="padding:0px 0px 0px 0px;height:75px" alt="CORSMAL"></a>
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 2###################################################################################################### -->
+	<div class="wrapper row2" ;="" style="margin-bottom: 7px;">
+		<div class="rnd">
+			<!-- ###### -->
+			<div id="topnav">
+				<ul style="margin-top: 5px;">
+					<li><a href="index.html"><b>Home</b></a></li>
+					<li><a href="objectives.html"><b>Objectives</b></a></li>
+					<li><a href="publications.html"><b>Publications</b></a></li>
+					<li><a href="blog.html"><b>Blog</b></a></li>
+					<li><a href="events.html"><b>Events</b></a></li>
+					<li><a href="code.html"><b>Code</b></a></li>
+					<li><a href="data.html"><b>Data</b></a></li>
+					<li><a href="benchmark.html"><b>Benchmark</b></a></li>
+					<li><a href="challenge.html"><b>Challenge</b></a></li>
+					<li class="last"><a href="team.html"><b>Team</b></a></li>
+				</ul>
+			</div>
+			<!-- ###### -->
+		</div>
+	</div>
+	<!-- 3####################################################################################################### -->
+	<div class="wrapper row1">
+		<div id="container" class="clear">
+			<div id="latestnewspage" class="clear">
+
+
+				<h1><p class="xmsonormal" style="text-align:center;text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:16.0pt">A Mixed-Reality Dataset for Category-level 6D Pose and Size Estimation<br>of Hand-occluded Containers</span></b></p></h1>
+				<p align="justify"> 
+					Estimating the 6D pose and size of household containers is challenging due to large intra-class variations in the object properties, such as shape, size, appearance, and transparency. The task is made more difficult when these objects are held and manipulated by a person due to varying degrees of hand occlusions caused by the type of grasps and by the viewpoint of the camera observing the person holding the object. In this paper, we present a mixed-reality dataset of hand-occluded containers for category-level 6D object pose and size estimation. The dataset consists of 138,240 images of rendered hands and forearms holding 48 synthetic objects, split into 3 grasp categories over 30 real backgrounds. We re-train and test an existing model for 6D object pose estimation on our mixed-reality dataset. We discuss the impact of the use of this dataset in improving the task of 6D pose and size estimation.
+				</p>
+				<div style="text-align: center;">
+					<img src="images/pose/final_v4.png" style="padding:0px 0px 0px 0px;" alt="som" width=50%>	
+					<p>
+						6D pose estimation for a container manipulated by a person on our mixed-reality (left) and on CORSMAL Containers Manipulation (right) datasets. A model can first identify and localise the container on the image, predict the 3D normalised coordinates, and then recover the pose and size of the object in 3D.
+					</p>
+					<br>
+					<table align="center" style="padding-left:0px;border:0px"> 
+						<tbody>
+							<tr>
+						    <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+						    <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+						    <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+						  </tr>
+						  <tr>
+						    <td width="11%" style="vertical-align: middle;border:0px" align="center">ArXiv Pre-print</td>
+						    <td width="11%" style="vertical-align: middle;border:0px" align="center">Dataset</td>
+						    <td width="11%" style="vertical-align: middle;border:0px" align="center">Model code (CHOC-NOCS)</td>
+						  </tr>
+						  <tr>
+						    <td width="11%" style="vertical-align: middle;border:0px" align="center"><a href="https://doi.org/10.48550/arXiv.2211.10470"><img src="https://img.shields.io/badge/cs.CV- %09arXiv%3A2211.10470-%23B31B1B.svg"></a></td>
+						    <td width="11%" style="vertical-align: middle;border:0px" align="center"><a href="https://doi.org/10.5281/zenodo.5085800"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5085800.svg" alt="DOI"></a></td>
+						    <td width="11%" style="vertical-align: middle;border:0px" align="center"><a href="https://github.com/CORSMAL/CHOC-NOCS"><img src="https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white" alt="DOI"></a></a></td>
+						  </tr>
+						  <tr>
+						    <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+						    <td width="11%" style="vertical-align: middle;border:0px" align="center"></td>
+						</tbody>
+					</table>
+				</div>
+				<p class="xmsonormal" style="text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:14.0pt">The CORSMAL Hand-Occluded Containers (CHOC) dataset</span></b>
+				</p>
+				<p align="justify">
+					We provide a novel mixed-reality dataset that renders synthetic objects as well as forearms and hands while holding the objects on a real scene. The dataset specifically aims at object instances belonging to categories that can be used for manipulation and handover (drinking glasses, cups, food boxes) and whose object properties highly vary in size, shape, transparency/opaqueness and textures (or absence of texture).<br><br>
+				</p>
+				
+<!-- 				<div style="text-align: center;">
+					<img src="resources/objectpose/som_horizontal.png" style="padding:0px 0px 0px 0px;" alt="som">	
+				</div> -->
+				<div>
+					<h3 align="left"><b>Objects</b></h3>
+					<p style="text-align:justify;">
+						The dataset consists of 48 synthetic container instances grouped into 3 categories: box (top), non-stem (middle), stem (bottom). Instances are gathered from <a href="https://shapenet.org/"><u>ShapeNetSem</u></a>. The table below show the containers and their physical properties. Note that object dimensions are rounded to the closest integer, and objects are sorted by the volume of their corresponding primitive shape (cuboid for <i>boxes</i>, cylinder for <i>stem</i>  and <i>non-stem</i>).<br><br>
+					</p>
+					<img src="images/pose/containers_properties.png" style="padding:0px 0px 0px 0px;width:100%" alt="som">
+					<br><br><br>
+					<h3 align="left"><b>Grasp types</b></h3>
+					<p style="text-align: justify;padding:0px 0px 0px 0px;">
+						We define six ways to hold an object based on the used hand and the the position of the hand on the object: grasp at the bottom with left hand (Grasp 1); grasp on top with left hand (Grasp 2); natural grasp with left hand (Grasp 3); grasp at the bottom with right hand (Grasp 4); grasp on top with right hand (Grasp 5); and, natural grasp with right hand (Grasp 6). We use the MANO hand model and the GraspIt! tool to manually generate right-hand grasps for each of the 48 objects, and we mirror the right-hand grasps to generate the left-hand versions. Because of the varying object shapes and sizes, we manually annotate a total of 288 grasps. The image shows the 144 grasps annotated for the right hand.
+					</p>
+					<img src="images/pose/grasps1.png" style="padding:10px 0px 10px 20px;width:47%;float:left" alt="som">
+					<img src="images/pose/grasps_2.png" style="padding:10px 0px 10px 20px;width:47%;" alt="som">
+					<br><br><br>
+					<h3 align="left"><b>Backgrounds</b></h3>
+					<img src="images/pose/backgrounds.png" style="padding:10px 0px 10px 20px;width:53%;float:right" alt="som">
+					<p style="text-align: justify;padding:0px 10px 0px 0px;">
+						We acquired 30 images with an Intel D435i RealSense sensor in 10 different scenes (5 outdoor, 5 indoor) under 3 different views. Each background contains a flat surface - e.g., a table or counter - where the (handheld) objects are rendered. The sensor provides spatially aligned RGB and depth images with a resolution of 640x480 pixels. Depth images are captured up to a maximum distance of 6 m, and we apply spatial smoothing, temporal smoothing, hole filling, and decimation as filters during acquisition. For each background, we manually annotate a lighting setup using Blender to resemble the real scene conditions as close as we can when rendering the object on top of the backgrounds. We use sun-like source light for outdoor scenarios, whereas the lighting setup can include multiple omnidirectional and directional point-like source lights and rectangle area-base lights for indoor scenarios to reproduce bulb-lights, LEDs, and windows. These source lights are adjusted in terms of position, orientation, colour and energy strength. 
+					</p>
+					<br>
+					<!-- <h3 align="left"><b>Statistics</b></h3> -->
+				</div>
+
+				<div>
+					<p class="xmsonormal" style="text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:14.0pt">Experimental setup</span></b></p>
+					<p>
+						We split the dataset into training, validation, and testing sets by leaving out six instances for validation and six instances for testing (two instances per category). This results in 103,680 images (36 instances) for training, 17,280 (6 instances) for validation, and 17,280 images (6 instances) for testing.
+					</p>
+					<img src="images/pose/obj_splits.png" style="width:100%;text-align: center;" alt="splits">
+					<br><br><br>
+				</div>
+					
+				<div>
+					<p class="xmsonormal" style="text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:14.0pt">Resources</span></b>
+					<table align="left" style="padding-left:0px;border:0px"> 
+						<tbody>
+							<tr>
+						    <td width="40%" style="vertical-align: middle;border:0px" align="left">ArXiv pre-print</td>
+						    <td width="10%" style="vertical-align: middle;border:0px" align="left"><a href="https://doi.org/10.48550/arXiv.2211.10470"><img src="https://img.shields.io/badge/cs.CV- %09arXiv%3A2211.10470-%23B31B1B.svg" alt="DOI"></a></td>
+						    <td width="10%" style="vertical-align: middle;border:0px" align="left"></td>
+						  </tr>
+							<tr>
+						    <td width="40%" style="vertical-align: middle;border:0px" align="left">CORSMAL Hand-Occluded Containers (CHOC) dataset</td>
+						    <td width="10%" style="vertical-align: middle;border:0px" align="left"><a href="https://doi.org/10.5281/zenodo.5085800"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5085800.svg" alt="DOI"></a></td>
+						    <td width="10%" style="vertical-align: middle;border:0px" align="left"></td>
+						  </tr>
+							<tr>
+						    <td width="40%" style="vertical-align: middle;border:0px" align="left">Trained CHOC-NOCS model (parameters)</td>
+						    <td width="10%" style="vertical-align: middle;border:0px" align="left"><a href="https://doi.org/10.5281/zenodo.7438645"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7438645.svg" alt="DOI"></a></td>
+						    <td width="10%" style="vertical-align: middle;border:0px" align="left"></td>
+						  </tr>
+							<tr>
+						  	<td width="40%" style="vertical-align: middle;border:0px" align="left">Code of the CHOC-NOCS model</td>
+						  	<td width="10%" style="vertical-align: middle;border:0px" align="left"><a href="https://doi.org/10.5281/zenodo.7406418"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7406418.svg" alt="DOI"></a></td>
+						  	<td width="10%" style="vertical-align: middle;border:0px" align="left"><a href="https://github.com/CORSMAL/CHOC-NOCS"><img src="https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white" alt="DOI"></a></td>
+						    
+						  </tr>
+						  <tr>
+						  	<td width="40%" style="vertical-align: middle;border:0px" align="left">Toolkit for the CHOC dataset</td>
+						  	<td width="10%" style="vertical-align: middle;border:0px" align="left"></td>
+						  	<td width="10%" style="vertical-align: middle;border:0px" align="left"><a href="https://github.com/CORSMAL/CHOC-dataset-toolkit"><img src="https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white" alt="DOI"></a></td>
+						  </tr>
+						  <tr>
+						    <td width="40%" style="vertical-align: middle;border:0px" align="left">Toolkit to render composite images (CHOC mixed-reality set)</td>
+						    <td width="10%" style="vertical-align: middle;border:0px" align="left"></td>
+						    <td width="10%" style="vertical-align: middle;border:0px" align="left"><a href="https://github.com/CORSMAL/CHOC-renderer"><img src="https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white" alt="DOI"></a></td>					    
+						  </tr>
+						</tbody>
+					</table>
+					<br>
+				</div>
+				<br>
+			</div>	
+		</div>
+	</div>
+
+
+<!-- ####################################################################################################### -->
+<!-- Begin of Sponsors and Partners div -->
+<div class="wrapper row1">
+	<div id="header" class="clear" style="padding: 0px 0px 0px 20px;width:920px">
+		<div class="fl_left" style="margin-top: 0px;">
+			<ul>
+				<li style="padding: 0 0 0 0">
+					<p>
+						<b>Sponsors</b>
+						<br>
+						<br>
+					</p>
+					<p>
+						<a href="http://www.chistera.eu" TARGET = "_blank"><img src="images/chist-era_logo_crop.png" style="height:35px;" alt="Chistera logo"/></a>
+						<a href="https://epsrc.ukri.org/" target="_blank"><img src="images/EPSRC_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="EPSRC logo"></a>
+						<a href="http://www.agence-nationale-recherche.fr/en/" target="_blank"><img src="images/ANR_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="ANR logo"></a>
+						<a href="http://www.snf.ch/en/Pages/default.aspx" target="_blank"><img src="images/FNS_logo.jpg" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="FNS logo"></a>
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div class="fl_right" style="margin-top: 0px;">
+			<ul style="margin-bottom: 0px;">
+				<li style="margin: 0px 4px 0px 0; padding: 0 0px 0 0;">
+					<p>
+						<b>Partners</b>
+						<br>
+						<br>
+					</p>
+					<p>
+						<a href="https://www.qmul.ac.uk/" target="_blank"><img src="images/QMUL_logo.jpg" alt="Queen Mary University of London" style="padding:5px 10px 0px 0px;height:45px;"></a>
+						<a href="http://www.sorbonne-universite.fr/en" target="_blank">
+							<img src="images/Sorbonne_University_logo.png" alt="Sorbonne University" style="padding:5px 10px 0px 0px;height:45px;">
+						</a>
+						<a href="https://www.epfl.ch/en/home/" target="_blank">
+							<img src="images/EPFL_logo.png" alt="EPFL" style="padding:5px 0px 0px 0px;height:45px;">
+						</a>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- End of Sponsors and Partners div -->
+<br><br>
+<!-- ####################################################################################################### -->
+<!-- <div class="clearing">&nbsp;</div>-->
+<div class="wrapper bottomPg">
+	<div id="copyright">
+		<div id="fl_left" style="font-size:12px">
+			© Copyright CORSMAL 2019-2022
+		</div>	  
+	</div>
+</div>
+<!-- footer -->
+<!--added to clear error with content element -->
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<head profile="http://gmpg.org/xfn/11">
+	<link rel="shortcut icon" href="favicon.ico" />
+
+	<title>CORSMAL: Collaborative object recognition, shared manipulation and learning | code</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta http-equiv="KeyWords" content="code, software, CORSMAL, robotics, touch, vision, audio, signal processing, human behaviour"/>
+	<meta name="image" property="og:image" content="images/CORSMAL_logo.png">
+	<link rel="stylesheet" href="css/layout.css" type="text/css" />
+	<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.slidepanel.setup.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tabs.setup.js"></script>
+
+<style type="text/css">
+	tr:hover {background-color: #f5f5f5;}
+	.tg  {border-collapse:collapse;border-spacing:0;}
+	.tg td{border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg th{border-color:black;border-style:solid;border-width:1px;font-weight:normal;font-size:12.0pt;overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg .tg-km2t{border-color:#ffffff;font-weight:bold;font-size:12.0pt;text-align:left;vertical-align:top}
+			.tg .tg-zv4m{border-color:#ffffff;font-size:13.0pt;text-align:left;vertical-align:top}
+</style>
+</head>
+
+<body id="top">
+	<div class="wrapper row1">
+		<div id="header" class="clear">
+			<div class="fl_left">
+				<ul>
+					<li>
+						<p>
+							<a href="index.html"><img src="images/CORSMAL_logo.png" style="padding:0px 0px 0px 0px;height:75px" alt="CORSMAL"/></a>
+						</p>
+					</li>
+				</ul>
+			</div>
+</div>
+</div>
+<!-- 2###################################################################################################### -->
+<div class="wrapper row2"; style="margin-bottom: 7px;">
+	<div class="rnd">
+		<!-- ###### -->
+		<div id="topnav">
+			<ul style="margin-top: 5px;">
+				<li><a href="index.html"><b>Home</b></a></li>
+				<li><a href="objectives.html"><b>Objectives</b></a></li>
+				<li><a href="publications.html"><b>Publications</b></a></li>
+				<li ><a href="blog.html"><b>Blog</b></a></li>
+				<li ><a href="events.html"><b>Events</b></a></li>
+				<li class="active"><a href="code.html"><b>Code</b></a></li>
+				<li><a href="data.html"><b>Data</b></a></li>
+				<li><a href="benchmark.html"><b>Benchmark</b></a></li>
+				<li><a href="challenge.html"><b>Challenge</b></a></li>
+				<li class="last"><a href="team.html"><b>Team</b></a></li>
+			</ul>
+		</div>
+		<!-- ###### -->
+	</div>
+</div>
+<!-- 3####################################################################################################### -->
+<div class="wrapper row1">
+	<div id="container" class="clear">
+		<div id="software" class="clear">
+			<h2><p class=xmsonormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+				style='font-size:16.0pt'>Code</span></b></p></h2>
+<!-- 				<p>
+					<b>Software from the project</b><br>
+					Official CORSMAL GitHub: <a href="https://github.com/CORSMAL" TARGET = "_blank"><u>https://github.com/CORSMAL</u></a>
+				</p> -->
+				<table class="tg" width="100%">
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/CORSMAL/Benchmark" TARGET = "_blank">
+								<img src="images/handover_code.png" alt="Benchmark" width="200"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+								<b>Human-to-Robot Handovers of Unseen Containers with Unknown Filling</b><br>
+								Baseline for a human-to-robot handovers of an unseen containers.
+								<br>
+								[<a href="https://github.com/CORSMAL/Benchmark" target="_blank"><u>code</u></a>]
+								[<a href="benchmark.html" TARGET = "_BLANK"><u>details</u></a>]
+								<br>
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/CORSMAL/safe_handover" TARGET = "_blank">
+								<img src="images/real2sim_setup.png" alt="Safe Handovers" width="200"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+								<b>Towards safe human-to-robot handovers of unknown containers</b><br>
+								Software of the real-to-simulation framework to conduct safe human-to-robot handovers with visual estimations of the physical properties of unknown cups or drinking glasses and of the human hands from videos of a person manipulating the object. 
+								<br>
+								[<a href="https://github.com/CORSMAL/safe_handover" target="_blank"><u>code</u></a>]
+								[<a href="safe_handover.html" TARGET = "_BLANK"><u>details</u></a>]
+								<br>
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/CORSMAL/LoDE" TARGET = "_blank">
+								<img src="images/lode_img.png" alt="LoDE" width="200"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+								<b>LoDE: Localisation and Object Dimensions Estimator</b><br>
+								Software of the method that jointly localises container-like objects and estimates their dimensions with a generative 3D sampling model and a multi-view 3D-2D  iterative shape fitting, using two wide-baseline, calibrated RGB cameras.
+								<br>
+								[<a href="https://github.com/CORSMAL/LoDE" target="_blank"><u>code</u></a>]
+								[<a href="LoDE.html" TARGET = "_BLANK"><u>details</u></a>]
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/CORSMAL/whc" TARGET = "_blank">
+								<img src="images/github_repo_img.png" alt="Benchmark" width="200"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+								<b>WHC: Whole-Body Control with QP</b><br>
+								Generic whole body control library with QP: inverse dynamics and kinematics.
+								<br>				
+								[<a href="https://github.com/CORSMAL/whc" target="_blank"><u>code</u></a>]
+								<br>
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/NunoDuarte/carefull-detection" TARGET = "_blank">
+								<img src="images/carefulness.png" alt="Carefulness detection" width="200"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+								<b>Carefulness detection</b><br>
+								Dynamical Systems that can classify new, unknown handovers, as Careful Objects (comparable to handling a cup full of water) or Not-Careful Objects (comparable to handling an empty cup).
+								<br>				
+								[<a href="https://github.com/NunoDuarte/carefull-detection" target="_blank"><u>code</u></a>]
+								<br>
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/CORSMAL/ACC" TARGET = "_blank">
+								<img src="images/acc_image.png" alt="ACC" width="200"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+								<b>ACC: Audio Content Classification </b><br>
+								Software of the method that identifies the action performed by a person manipulating a food box or drinking glass (shaking or pouring) and then jointly classifies the content type and level witihin the container, using audio data converted into spectrograms. 
+								<br>
+								[<a href="https://github.com/CORSMAL/ACC" target="_blank"><u>code</u></a>]
+								[<a href="audio_classification.html" TARGET = "_BLANK"><u>details</u></a>]
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/amodas/PRIME-augmentations" TARGET = "_blank">
+								<img src="images/prime_eccv22.png" alt="PRIME" width="200"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>PRIME: A few primitives can boost robustness to common corruptions</b><br>
+							Software of PRIME, a generic, plug-n-play data augmentation scheme that consists of simple families of max-entropy image transformations for conferring robustness against common corruptions.<br>	
+							[<a href="https://github.com/amodas/PRIME-augmentations" target="_blank"><u>code</u></a>]
+							[<a href="https://doi.org/10.48550/arXiv.2112.13547" TARGET = "_BLANK"><u>paper</u></a>]
+							<!-- [<a href="https://lts4.github.io/neural-anisotropy-directions/" TARGET = "_BLANK"><u>details</u></a>] -->
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/amodas/neural-anisotropy-directions" TARGET = "_blank">
+								<img src="images/NeuralAnisotropy.png" alt="Neural Anisotropy Directions" width="200"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>NADs: Neural Anisotropy Directions</b><br>
+							Software that reproduces the results of Neural Anisotropy Directions: A sequence of vectors that encapsulate the directional inductive bias of an architecture and encode its preference to separate the input data based on some particular features.<br>	
+							[<a href="https://github.com/amodas/neural-anisotropy-directions" target="_blank"><u>code</u></a>]
+							[<a href="https://proceedings.neurips.cc/paper/2020/file/cff02a74da64d145a4aed3a577a106ab-Paper.pdf" TARGET = "_BLANK"><u>paper</u></a>]
+							[<a href="https://lts4.github.io/neural-anisotropy-directions/" TARGET = "_BLANK"><u>details</u></a>]
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/amodas/hold-me-tight" TARGET = "_blank">
+								<img src="images/HoldMeTight.png" alt="Hold Me Tight" width="200"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Hold me tight!</b><br>
+							Software that reproduce the results and influence of discriminative features on deep network boundaries.<br>				
+							[<a href="https://github.com/amodas/hold-me-tight" target="_blank"><u>code</u></a>]
+							[<a href="https://proceedings.neurips.cc/paper/2020/file/1ea97de85eb634d580161c603422437f-Paper.pdf" TARGET = "_BLANK"><u>paper</u></a>]
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/CORSMAL/ColorFool" TARGET = "_blank">
+								<img src="images/colorfool_preview2.png" alt="ColorFool" width="200"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>ColorFool: Semantic Adversarial Colorization</b><br>
+							Software that identifies image regions using a semantic segmentation model and generates adversarial images via perturbing color of semantic regions in the natural color range. <br>				
+							[<a href="https://github.com/CORSMAL/ColorFool" target="_blank"><u>code</u></a>]
+							[<a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Shamsabadi_ColorFool_Semantic_Adversarial_Colorization_CVPR_2020_paper.pdf" TARGET = "_BLANK"><u>paper</u></a>]
+							[<a href="ColorFool.html" TARGET = "_BLANK"><u>details</u></a>]
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/CORSMAL/CORSMALChallengeEvalToolkit" TARGET = "_blank">
+								<video width="200" autoplay loop><source  src="resources/output_4.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Challenge Evaluation Toolkit</b><br>
+							Official evaluation toolkit for the CORSMAL Challenge.<br>				
+							[<a href="https://github.com/CORSMAL/CORSMALChallengeEvalToolkit" target="_blank"><u>code</u></a>]
+							[<a href="challenge.html" TARGET = "_BLANK"><u>details</u></a>]
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/CORSMAL/CHOC-dataset-toolkit" TARGET = "_blank">
+								<img src="images/pose/final_v4.png" alt="CHOC"  width="200" style="vertical-align: middle;"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Toolkit for the CHOC dataset</b><br>
+							Official toolkit with utilities for the CORSMAL Hand-Occluded Containers dataset.<br>				
+							[<a href="https://github.com/CORSMAL/CHOC-dataset-toolkit"><u>code</u></a>]
+							[<a href="pose.html"><u>details</u></a>]
+							[<a href="https://doi.org/10.5281/zenodo.5085800"><u>dataset</u></a>]
+						</td>
+					</tr>
+					<!-- -->
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/Saafke/CHOC-renderer" TARGET = "_blank">
+								<img src="https://github.com/Saafke/CHOC-renderer/raw/main/images/000692.png" alt="CHOC"  width="200" style="vertical-align: middle;"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Toolkit for rendering composite images</b><br>
+							Official toolkit to automatically render composite images of handheld containers (synthetic objects, hands and forearms) over real backgrounds using Blender and Python.<br>				
+							[<a href="https://github.com/CORSMAL/CHOC-renderer"><u>code</u></a>]
+							[<a href="pose.html"><u>details</u></a>]
+							[<a href="https://doi.org/10.5281/zenodo.5085800"><u>dataset</u></a>]
+						</td>
+					</tr>
+					<!-- -->
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/Saafke/CHOC-renderer" TARGET = "_blank">
+								<img src="images/pose/final_v4.png" alt="CHOC-NOCS"  width="200" style="vertical-align: middle;"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>CHOC-NOCS for 6D object pose estimation with hand occlusions</b><br>
+							Software to run the multi-branch convolutional neural network, adapted from NOCS and re-trained in QMUL, for the task of category-level 6D pose estimation on images of hand-occluded containers.<br>				
+							[<a href="https://github.com/CORSMAL/CHOC-NOCS"><u>code</u></a>]
+							[<a href="pose.html"><u>details</u></a>]
+							[<a href="https://doi.org/10.5281/zenodo.5085800"><u>dataset</u></a>]
+						</td>
+					</tr>
+				</table>
+
+				<br>
+				<p>
+					<b>Software from people using project data and models</b>
+				</p>
+				<table class="tg" width="100%">
+									<tr>
+					<td class="tg-zv4m" style="vertical-align: top;" align="center">
+						<a href="https://arxiv.org/abs/2203.01192" TARGET = "_blank">
+							<img src="https://github.com/Noone65536/CORSMAL-Challenge-2022-Squids/raw/main/Images/Task345.png" alt="Squids" width="200"/><br>
+							<img src="https://github.com/Noone65536/CORSMAL-Challenge-2022-Squids/raw/main/Images/Task12.png" alt="Squids" width="200"/>
+						</a>				
+					</td>
+					<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Improving Generalization of Deep Networks for Estimating Physical Properties of Containers and Fillings</b><br>
+							Software of the solution submitted by the team Squids at the 2022 ICASSP CORSMAL challenge.
+							<br>
+							[<a href="https://github.com/Noone65536/CORSMAL-Challenge-2022-Squids" target="_blank"><u>code</u></a>]
+							[<a href="https://arxiv.org/abs/2203.01192" TARGET = "_blank"><u>paper</u></a>]
+					</td>
+				</tr>
+				<tr>
+					<td class="tg-zv4m" style="vertical-align: top;text-align: center;" align="center">
+						<a href="https://github.com/YuigaWada/CORSMAL2021" TARGET = "_blank">
+							<img src="images/challenge/keio22.png" alt="KEIO-ICS" width="160"/>
+						</a>				
+					</td>
+					<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Shared Transformer Encoder with Mask-based 3D Model Estimation for Container Mass Estimation</b><br>
+							Software of the solution submitted by the team KEIO-ICS at the 2022 ICASSP CORSMAL challenge.
+							<br>
+							[<a href="https://github.com/YuigaWada/CORSMAL2021" target="_blank"><u>code</u></a>]
+					</td>
+				</tr>
+				<tr>
+					<td class="tg-zv4m" style="vertical-align: top;">
+						<a href="https://arxiv.org/abs/2203.01207" TARGET = "_blank">
+							<img src="images/challenge/visual22c.png" alt="Visual" width="200"/>
+						</a>				
+					</td>
+					<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Container localisation and mass estimation with an RGB-D camera</b><br>
+							Software of the solution submitted by the team Visual at the 2022 ICASSP CORSMAL challenge.
+							<br>
+							[<a href="https://github.com/CORSMAL/Visual" target="_blank"><u>code</u></a>]
+							[<a href="https://arxiv.org/abs/2203.01207" TARGET = "_blank"><u>paper</u></a>]
+					</td>
+				</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/v-iashin/CORSMAL" TARGET = "_blank">
+								<img src="images/ICPR2020/bit_paper.PNG" alt="Because It's Tactile" width="200"/>
+							</a>				
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+								<b>Filling mass estimation using multi-modal observations of human-robot handovers</b><br>
+								Software of the solution submitted by the Because It's Tactile team at the 2020 CORSMAL challenge.<br>
+								[<a class="papercite_pdf" href="https://github.com/v-iashin/CORSMAL" target="_blank"><u>code</u></a>]
+								[<a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_31" TARGET = "_blank"><u>paper</u></a>]
+								[<a class="papercite_pdf" title="YouTube" href="https://youtu.be/lvPMcDaXL0A" target="_blank"><u>video</u></a>]
+								[<a class="papercite_pdf" title="Download" href="resources/challenge/icpr20/2021.01.15_BecauseItsTactile_slides.pdf" target="_blank"><u>slides</u></a>] 
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/YuichiNAGAO/ICPRchallenge2020" TARGET = "_blank">
+								<img src="images/ICPR2020/hvrl_paper.PNG" alt="HVLR" width="200"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+								<b>Audio-Visual Hybrid Approach for Filling Mass Estimation</b><br>
+								Software of the solution submitted by the HVRL team at the 2020 CORSMAL challenge.<br>
+								[<a class="papercite_pdf" href="https://github.com/YuichiNAGAO/ICPRchallenge2020" target="_blank"><u>code</u></a>]
+								[<a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_32" TARGET = "_blank"><u>paper</u></a>]
+								[<a class="papercite_pdf" title="YouTube" href="https://youtu.be/R9O4JTkmabk" target="_blank"><u>video</u></a>]
+								[<a class="papercite_pdf" title="Download" href="resources/challenge/icpr20/2021.01.15_HVRL_slides.pdf" target="_blank"><u>slides</u></a>]
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/guichristmann/CORSMAL-Challenge-2020-Submission" TARGET = "_blank">
+								<img src="images/challenge/ntnu_code.png" alt="NTNU-ERC" width="200"/>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+								<b>NTNU-ERC solution for filling mass estimation</b><br>
+								Software of the solution submitted by the NTNU-ERC team at the 2020 CORSMAL challenge.<br>
+								[<a class="papercite_pdf" href="https://github.com/guichristmann/CORSMAL-Challenge-2020-Submission" target="_blank"><u>code</u></a>]
+								[<a class="papercite_pdf" title="Download" href="resources/challenge/icpr20/2021.01.15_HVRL_slides.pdf" target="_blank"><u>slides</u></a>]
+						</td>
+					</tr>
+				</table>
+
+				<br>
+				<p>
+					<b>Other software from the CORSMAL team and related to the project</b>
+				</p>
+				<table class="tg" width="100%">
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://nbfigueroa.github.io/multi-arm-coordination/" TARGET = "_blank">
+								<img src="" alt="" width="200"/>
+							</a>				
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>A unified framework for coordinated multi-arm motion planning</b><br>
+							S. S. Mirrazavi Salehian, N. Figueroa, A. Billard<br>
+							The International Journal of Robotics Research, Vol. 37, Issue 10, pp. 1205-1232, April 2018.<br>
+							Libraries for a unified framework designed to perform a coordinated multi-arm motion planning: a centralised inverse kinematics solver under self-collision avoidance.<br>
+							[<a class="papercite_pdf" href="https://nbfigueroa.github.io/multi-arm-coordination/" target="_blank"><u>code</u></a>]
+							[<a class="papercite_pdf" href="https://infoscience.epfl.ch/record/253721/files/IJRR.pdf" target="_blank"><u>paper</u></a>]
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/epfl-lasa/load-share-estimation" TARGET = "_blank">
+								<img src="" alt="" width="200"/>
+							</a>				
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>A human-inspired controller for fluid human-robot handovers</b><br>
+							J. Medina, F. Duvallet, M. Karnam, A. Billard<br>
+							Proc. of Int. Conference on Humanoid Robots, Cancun, Mexico, 15-17 November 2016.<br>
+							ROS package for estimating the load share of an object while being supported by a robot and a third party (such as a person).<br>
+							[<a class="papercite_pdf" href="https://github.com/epfl-lasa/load-share-estimation" target="_blank"><u>code</u></a>]
+							[<a class="papercite_pdf" href="https://ieeexplore.ieee.org/document/7803296" target="_blank"><u>paper</u></a>]
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://github.com/epfl-lasa/kuka-lwr-ros" TARGET = "_blank">
+								<img src="" alt="" width="200"/>
+							</a>				
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Kuka-lwr-ros</b><br>
+							ROS package to control the KUKA LWR 4 (both simulation and physical robot).<br>
+							[<a class="papercite_pdf" href="https://github.com/epfl-lasa/kuka-lwr-ros" target="_blank"><u>code</u></a>]							
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="ftp://spit.eecs.qmul.ac.uk/pub/long-short/LSTMCNN_ACVR2017.zip" TARGET = "_blank">
+								<img src="" alt="" width="200"/>
+							</a>				
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>A long short-term memory convolutional neural network for first-person vision activity recognition</b><br>
+							G. Abebe, A. Cavallaro<br>
+							Proc. of ICCV workshop on Assistive Computer Vision and Robotics (ACVR), Venice, October 28, 2017.<br>
+							Software for first person vision activities.<br>
+							[<a class="papercite_pdf" href="ftp://spit.eecs.qmul.ac.uk/pub/long-short/LSTMCNN_ACVR2017.zip" target="_blank"><u>code</u></a>]
+							[<a class="papercite_pdf" href="https://www.eecs.qmul.ac.uk/~andrea/papers/2017_ACVR_LSTM_BodyCam_Abebe_Cavallaro.pdf" target="_blank"><u>paper</u></a>]				
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="ftp://spit.eecs.qmul.ac.uk/pub/inertial-vision/IVCKTWS_ACVR2017.zip" TARGET = "_blank">
+								<img src="" alt="" width="200"/>
+							</a>				
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Inertial-Vision: cross-domain knowledge transfer for wearable sensors</b><br>
+							G. Abebe, A. Cavallaro<br>
+							Proc. of ICCV workshop on Assistive Computer Vision and Robotics (ACVR), Venice, October 28, 2017.<br>
+							Software for classifying the activities from first-person videos using cross-domain knowledge transfer for wearable sensors.<br>
+							[<a class="papercite_pdf" href="ftp://spit.eecs.qmul.ac.uk/pub/inertial-vision/IVCKTWS_ACVR2017.zip" target="_blank"><u>code</u></a>]
+							[<a class="papercite_pdf" href="http://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w22/Abebe_Inertial-Vision_Cross-Domain_Knowledge_ICCV_2017_paper.pdf" target="_blank"><u>paper</u></a>]				
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="http://www.eecs.qmul.ac.uk/~andrea/dwnld/AORCA_AVSS2017.zip" TARGET = "_blank">
+								<img src="" alt="" width="200"/>
+							</a>				
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Active visual tracking in multi-agent scenarios</b><br>
+							Y. Wang, A. Cavallaro<br>
+							Proc. of IEEE Int. Conference on Advanced Signal and Video based Surveillance (AVSS), Lecce, 29 August - 1 September, 2017.<br>
+							Software for active visual target tracking in multi-agent scenarios.<br>
+							[<a class="papercite_pdf" href="http://www.eecs.qmul.ac.uk/~andrea/dwnld/AORCA_AVSS2017.zip" target="_blank"><u>code</u></a>]
+							[<a class="papercite_pdf" href="https://www.eecs.qmul.ac.uk/~andrea/papers/2017_AVSS_ActiveVisualTrackingInMultiAgentScenarios_Wang_Cavallaro.pdf" target="_blank"><u>paper</u></a>]				
+						</td>
+					</tr>
+				</table>
+				<br><br>
+			</div>				
+		</div>
+	</div>
+
+
+<div class="wrapper row1">
+	<div id="header" class="clear" style="padding: 0px 0px 0px 20px;width:920px">
+		<div class="fl_left" style="margin-top: 0px;">
+			<ul>
+				<li style="padding: 0 0 0 0">
+					<p>
+						<b>Sponsors</b>
+						<br>
+						<br>
+					</p>
+					<p>
+						<a href="http://www.chistera.eu" TARGET = "_blank"><img src="images/chist-era_logo_crop.png" style="height:35px;" alt="Chistera logo"/></a>
+						<a href="https://epsrc.ukri.org/" target="_blank"><img src="images/EPSRC_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="EPSRC logo"></a>
+						<a href="http://www.agence-nationale-recherche.fr/en/" target="_blank"><img src="images/ANR_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="ANR logo"></a>
+						<a href="http://www.snf.ch/en/Pages/default.aspx" target="_blank"><img src="images/FNS_logo.jpg" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="FNS logo"></a>
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div class="fl_right" style="margin-top: 0px;">
+			<ul style="margin-bottom: 0px;">
+				<li style="margin: 0px 4px 0px 0; padding: 0 0px 0 0;">
+					<p>
+						<b>Partners</b>
+						<br>
+						<br>
+					</p>
+					<p>
+						<a href="https://www.qmul.ac.uk/" target="_blank"><img src="images/QMUL_logo.jpg" alt="Queen Mary University of London" style="padding:5px 10px 0px 0px;height:45px;"></a>
+						<a href="http://www.sorbonne-universite.fr/en" target="_blank">
+							<img src="images/Sorbonne_University_logo.png" alt="Sorbonne University" style="padding:5px 10px 0px 0px;height:45px;">
+						</a>
+						<a href="https://www.epfl.ch/en/home/" target="_blank">
+							<img src="images/EPFL_logo.png" alt="EPFL" style="padding:5px 0px 0px 0px;height:45px;">
+						</a>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<br><br>
+
+
+<!-- ####################################################################################################### -->
+<!-- <div class="clearing">&nbsp;</div>-->
+<div class="wrapper bottomPg">
+	<div id="copyright">
+		<div id="fl_left" style="font-size:12px">
+			© Copyright CORSMAL 2019-2022
+		</div>	  
+	</div>
+</div>
+<!-- footer -->
+<!--added to clear error with content element -->
+</body>
+</html>

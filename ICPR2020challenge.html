@@ -1,0 +1,843 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<head profile="http://gmpg.org/xfn/11"> 
+	<link rel="shortcut icon" href="favicon.ico" /> 
+
+<title>
+	CORSMAL: Collaborative object recognition, shared manipulation and learning | ICPR 2020 Competition
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="KeyWords" content="code, software, CORSMAL, robotics, touch, vision, audio, signal processing, human behaviour, competition, challenge, ICPR"/> 
+<meta name="image" property="og:image" content="images/CORSMAL_logo.png">
+<link rel="stylesheet" href="css/layout.css" type="text/css" /> 
+<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>  
+<script type="text/javascript" src="js/jquery.slidepanel.setup.js"></script> 
+<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.tabs.setup.js"></script>
+
+<script type="text/javascript">
+	window.TableLoader = {
+		tables:{},
+		register:function(table, func){
+			this.tables[table] = func;
+		},
+		trigger:function(key){
+			var self = this;
+
+			if(this.tables[key]){
+				this.tables[key]();
+				this.tables[key] = function(){};
+
+				var keys = Object.keys(this.tables);
+				var index = keys.indexOf(key);
+
+				if(index){
+					this.tables[keys[index - 1]]();
+					this.tables[keys[index - 1]] = function(){};
+				}
+
+				if(index < keys.length - 1){
+					this.tables[keys[index + 1]]();
+					this.tables[keys[index + 1]] = function(){};
+				}
+			}
+
+			if(key == "theming"){
+				var themes = Object.keys(this.tables).slice(-7);
+
+				themes.forEach(function(item){
+					self.trigger(item);
+				})
+			}
+		},
+		loadFirst:function(){
+			first = Object.keys(this.tables)[0];
+
+			if(first){
+				this.trigger(first);
+			}
+		}
+	}
+</script>
+
+<script type="text/javascript">
+	var tabledata =
+	[
+	{id:1,team:"Random",modality:"",view1:null,view2:null,view3:null,view4:null,task1:33.35.toFixed(2),task2:21.24.toFixed(2),task3:31.63.toFixed(2),global:38.47.toFixed(2)},
+	{id:2,team:"Mask R-CNN + ResNet-18",modality:"RGB",view1:true,view2:null,view3:null,view4:null,task1:58.51.toFixed(2),task2:30.85.toFixed(2),task3:null,global:19.46.toFixed(2)},	
+	{id:3,team:"Mask R-CNN + ResNet-18",modality:"RGB",view1:null,view2:true,view3:null,view4:null,task1:48.90.toFixed(2),task2:28.75.toFixed(2),task3:null,global:17.28.toFixed(2)},
+	{id:4,team:"Mask R-CNN + ResNet-18",modality:"RGB",view1:null,view2:null,view3:true,view4:null,task1:36.52.toFixed(2),task2:21.14.toFixed(2),task3:null,global:15.15.toFixed(2)},
+	{id:5,team:"Mask R-CNN + ResNet-18",modality:"RGB",view1:null,view2:null,view3:null,view4:true,task1:25.12.toFixed(2),task2:14.12.toFixed(2),task3:null,global:12.95.toFixed(2)},
+	{id:6,team:"NTNU-ERC",modality:"Audio+Depth",view1:null,view2:null,view3:true,view4:null,task1:null,task2:81.97.toFixed(2),task3:66.92.toFixed(2),global:38.56.toFixed(2)},
+	{id:7,team:"Challengers",modality:"Audio",view1:null,view2:null,view3:null,view4:null,task1:50.73.toFixed(2),task2:78.58.toFixed(2),task3:null,global:29.25.toFixed(2)},
+	// {id:8,team:"Because It's Tactile",modality:"RGB+D+IR+Audio",view1:true,view2:true,view3:null,view4:null,task1:79.38.toFixed(2),task2:93.83.toFixed(2),task3:37.95.toFixed(2),global:42.05.toFixed(2)},
+	{id:8,team:"Because It's Tactile",modality:"RGB+D+IR+Audio",view1:true,view2:true,view3:null,view4:null,task1:78.14.toFixed(2),task2:93.83.toFixed(2),task3:60.56.toFixed(2),global:64.98.toFixed(2)},
+	{id:9,team:"HVRL",modality:"Audio+RGB+D",view1:true,view2:null,view3:null,view4:null,task1:82.63.toFixed(2),task2:97.83.toFixed(2),task3:57.19.toFixed(2),global:63.32.toFixed(2),runtime:467},
+	{id:10,team:"Concatenation",modality:"",view1:null,view2:null,view3:null,view4:null,task1:44.31.toFixed(2),task2:41.77.toFixed(2),task3:63.00.toFixed(2),global:52.80.toFixed(2)},
+	{id:11,team:"SCC-Net",modality:"Audio",view1:null,view2:null,view3:null,view4:null,task1:84.21.toFixed(2),task2:93.34.toFixed(2),task3:null,global:28.02.toFixed(2)},
+	// {id:2,team:"Smartcameras",modality:"RGB videos",view1:true,view2:null,view3:true,view4:true,task1:0.00,task2:0.00,task3:30.69,global:18.25},
+	];
+
+	var tabledatapriv =
+	[
+	{id:1,team:"Random",modality:"",view1:null,view2:null,view3:null,view4:null,task1:41.86.toFixed(2),task2:27.52.toFixed(2),task3:17.53.toFixed(2),global:31.65.toFixed(2)},
+	{id:2,team:"Mask R-CNN + ResNet-18",modality:"RGB",view1:true,view2:null,view3:null,view4:null,task1:32.93.toFixed(2),task2:13.04.toFixed(2),task3:null,global:9.59.toFixed(2)},	
+	{id:3,team:"Mask R-CNN + ResNet-18",modality:"RGB",view1:null,view2:true,view3:null,view4:null,task1:26.73.toFixed(2),task2:15.54.toFixed(2),task3:null,global:6.99.toFixed(2)},
+	{id:4,team:"Mask R-CNN + ResNet-18",modality:"RGB",view1:null,view2:null,view3:true,view4:null,task1:25.52,task2:9.04.toFixed(2),task3:null,global:9.96.toFixed(2)},
+	{id:5,team:"Mask R-CNN + ResNet-18",modality:"RGB",view1:null,view2:null,view3:null,view4:true,task1:21.99,task2:11.23.toFixed(2),task3:null,global:10.25.toFixed(2)},
+	{id:6,team:"NTNU-ERC",modality:"Audio+Depth",view1:null,view2:null,view3:true,view4:null,task1:null,task2:91.67.toFixed(2),task3:67.67.toFixed(2),global:39.80.toFixed(2)},
+	{id:7,team:"Challengers",modality:"Audio",view1:null,view2:null,view3:null,view4:null,task1:47.08.toFixed(2),task2:71.75.toFixed(2),task3:null,global:23.21.toFixed(2)},
+	{id:8,team:"Because It's Tactile",modality:"RGB+D+IR+Audio",view1:true,view2:true,view3:null,view4:null,task1:81.16.toFixed(2),task2:94.70.toFixed(2),task3:60.58.toFixed(2),global:65.15.toFixed(2)},
+	{id:9,team:"HVRL",modality:"Audio+RGB+D",view1:true,view2:null,view3:null,view4:null,task1:74.43.toFixed(2),task2:96.08.toFixed(2),task3:52.38.toFixed(2),global:61.01.toFixed(2)},
+	{id:10,team:"Concatenation",modality:"",view1:null,view2:null,view3:null,view4:null,task1:42.70.toFixed(2),task2:41.90.toFixed(2),task3:62.14.toFixed(2),global:54.14.toFixed(2)},
+	{id:11,team:"SCC-Net",modality:"Audio",view1:null,view2:null,view3:null,view4:null,task1:80.98,task2:92.58.toFixed(2),task3:null,global:22.92.toFixed(2)},
+	// {id:1,team:"Baseline",modality:"RGB images",view1:null,view2:null,view3:true,view4:true,task1:35.48,task2:26.42,task3:80.58,global:52.78},
+	// {id:2,team:"Smartcameras",modality:"RGB videos",view1:true,view2:null,view3:true,view4:true,task1:0.00,task2:0.00,task3:30.69,global:18.25},
+	];
+
+
+	var tabledatacomb =
+	[
+	{id:1,team:"Random",modality:"",view1:null,view2:null,view3:null,view4:null,task1:37.62.toFixed(2),task2:24.38.toFixed(2),task3:24.58.toFixed(2),global:35.06.toFixed(2)},
+	{id:2,team:"Mask R-CNN + ResNet-18",modality:"RGB",view1:true,view2:null,view3:null,view4:null,task1:47.00.toFixed(2),task2:23.05.toFixed(2),task3:null,global:14.53.toFixed(2)},	
+	{id:3,team:"Mask R-CNN + ResNet-18",modality:"RGB",view1:null,view2:true,view3:null,view4:null,task1:39.00.toFixed(2),task2:22.90.toFixed(2),task3:null,global:12.14.toFixed(2)},
+	{id:4,team:"Mask R-CNN + ResNet-18",modality:"RGB",view1:null,view2:null,view3:true,view4:null,task1:31.46.toFixed(2),task2:15.63.toFixed(2),task3:null,global:12.56.toFixed(2)},
+	{id:5,team:"Mask R-CNN + ResNet-18",modality:"RGB",view1:null,view2:null,view3:null,view4:true,task1:23.68.toFixed(2),task2:12.70.toFixed(2),task3:null,global:11.60.toFixed(2)},
+	{id:6,team:"NTNU-ERC",modality:"Audio+Depth",view1:null,view2:null,view3:true,view4:null,task1:null,task2:86.89.toFixed(2),task3:67.30.toFixed(2),global:39.18.toFixed(2)},
+	{id:7,team:"Challengers",modality:"Audio",view1:null,view2:null,view3:null,view4:null,task1:48.71.toFixed(2),task2:75.24.toFixed(2),task3:null,global:26.23.toFixed(2)},
+	{id:8,team:"Because It's Tactile",modality:"RGB+D+IR+Audio",view1:true,view2:true,view3:null,view4:null,task1:79.65.toFixed(2),task2:94.26.toFixed(2),task3:60.57.toFixed(2),global:65.06.toFixed(2)},
+	{id:9,team:"HVRL",modality:"Audio+RGB+D",view1:true,view2:null,view3:null,view4:null,task1:78.56.toFixed(2),task2:96.95.toFixed(2),task3:54.79.toFixed(2),global:62.16.toFixed(2)},
+	{id:10,team:"Concatenation",modality:"",view1:null,view2:null,view3:null,view4:null,task1:43.53.toFixed(2),task2:41.83.toFixed(2),task3:62.57.toFixed(2),global:53.47.toFixed(2)},
+	{id:11,team:"SCC-Net",modality:"Audio",view1:null,view2:null,view3:null,view4:null,task1:82.66.toFixed(2),task2:93.09.toFixed(2),task3:null,global:25.47.toFixed(2)},
+	// {id:1,team:"Baseline",modality:"RGB images",view1:null,view2:null,view3:true,view4:true,task1:35.48,task2:26.42,task3:80.58,global:52.78},
+	// {id:2,team:"Smartcameras",modality:"RGB videos",view1:true,view2:null,view3:true,view4:true,task1:0.00,task2:0.00,task3:30.69,global:18.25},
+	];
+
+	var tabledatatask1 =
+	[
+	{id:1,team:"Random",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:33.35.toFixed(2),private:41.86.toFixed(2),combined:37.62.toFixed(2)},
+	{id:2,team:"Mask R-CNN + RN18",audio:null,rgb1:true,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:58.51.toFixed(2),private:32.93.toFixed(2),combined:47.00.toFixed(2)},
+	{id:3,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:true,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:48.90.toFixed(2),private:26.73.toFixed(2),combined:39.00.toFixed(2)},
+	{id:4,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:true,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:36.52.toFixed(2),private:25.52.toFixed(2),combined:31.46.toFixed(2)},
+	{id:5,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:true,depth4:null,ir4:null,public:25.12.toFixed(2),private:21.99.toFixed(2),combined:23.68.toFixed(2)},
+	{id:6,team:"Challengers",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:50.73.toFixed(2),private:47.08.toFixed(2),combined:48.71.toFixed(2)},
+	// {id:7,team:"NTNU-ERC",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:33.35.toFixed(2),private:41.86.toFixed(2),combined:37.62.toFixed(2)},
+	{id:8,team:"Concatenation",audio:true,rgb1:true,depth1:null,ir1:null,rgb2:true,depth2:null,ir2:null,rgb3:true,depth3:null,ir3:null,rgb4:true,depth4:null,ir4:null,public:44.31.toFixed(2),private:42.70.toFixed(2),combined:43.53.toFixed(2)},
+	{id:9,team:"HVRL",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:82.63.toFixed(2),private:74.43.toFixed(2),combined:78.56.toFixed(2)},
+	{id:10,team:"Because It's Tactile",audio:true,rgb1:true,depth1:null,ir1:null,rgb2:true,depth2:null,ir2:null,rgb3:true,depth3:null,ir3:null,rgb4:true,depth4:null,ir4:null,public:78.14.toFixed(2),private:81.16.toFixed(2),combined:79.65.toFixed(2)},
+	{id:11,team:"SCC-Net",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:84.21.toFixed(2),private:80.98.toFixed(2),combined:82.66.toFixed(2)},
+	];
+
+	var tabledatatask2 =
+	[
+	{id:1,team:"Random",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:21.24.toFixed(2),private:27.52.toFixed(2),combined:24.38.toFixed(2)},
+	{id:2,team:"Mask R-CNN + RN18",audio:null,rgb1:true,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:30.85.toFixed(2),private:13.04.toFixed(2),combined:23.05.toFixed(2)},
+	{id:3,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:true,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:28.75.toFixed(2),private:15.54.toFixed(2),combined:22.90.toFixed(2)},
+	{id:4,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:true,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:21.14.toFixed(2),private:9.04.toFixed(2),combined:15.63.toFixed(2)},
+	{id:5,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:true,depth4:null,ir4:null,public:14.12.toFixed(2),private:11.23.toFixed(2),combined:12.70.toFixed(2)},
+	{id:6,team:"Challengers",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:78.58.toFixed(2),private:71.75.toFixed(2),combined:75.24.toFixed(2)},
+	{id:7,team:"NTNU-ERC",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:81.97.toFixed(2),private:91.67.toFixed(2),combined:86.89.toFixed(2)},
+	{id:8,team:"Concatenation",audio:true,rgb1:true,depth1:null,ir1:null,rgb2:true,depth2:null,ir2:null,rgb3:true,depth3:null,ir3:null,rgb4:true,depth4:null,ir4:null,public:41.77.toFixed(2),private:41.90.toFixed(2),combined:41.83.toFixed(2)},
+	{id:9,team:"HVRL",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:97.83.toFixed(2),private:96.08.toFixed(2),combined:96.95.toFixed(2)},
+	{id:10,team:"Because It's Tactile",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:93.83.toFixed(2),private:94.70.toFixed(2),combined:94.26.toFixed(2)},
+	{id:11,team:"SCC-Net",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:93.34.toFixed(2),private:92.85.toFixed(2),combined:93.09.toFixed(2)},
+	];
+
+	var tabledatatask3 =
+	[
+	{id:1,team:"Random",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:31.63.toFixed(2),private:17.53.toFixed(2),combined:24.58.toFixed(2)},
+	// {id:2,team:"Mask R-CNN + RN18",audio:null,rgb1:true,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:30.85.toFixed(2),private:13.04.toFixed(2),combined:23.05.toFixed(2)},
+	// {id:3,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:true,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:28.75.toFixed(2),private:15.54.toFixed(2),combined:22.90.toFixed(2)},
+	// {id:4,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:true,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:21.14.toFixed(2),private:9.04.toFixed(2),combined:15.63.toFixed(2)},
+	// {id:5,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:true,depth4:null,ir4:null,public:14.12.toFixed(2),private:11.23.toFixed(2),combined:12.70.toFixed(2)},
+	// {id:6,team:"Challengers",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:78.58.toFixed(2),private:71.75.toFixed(2),combined:75.24.toFixed(2)},
+	{id:7,team:"NTNU-ERC",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:true,ir3:null,rgb4:null,depth4:null,ir4:null,public:66.92.toFixed(2),private:67.67.toFixed(2),combined:67.30.toFixed(2)},
+	{id:8,team:"Concatenation",audio:null,rgb1:true,depth1:null,ir1:null,rgb2:true,depth2:null,ir2:null,rgb3:true,depth3:null,ir3:null,rgb4:true,depth4:null,ir4:null,public:63.00.toFixed(2),private:62.14.toFixed(2),combined:62.57.toFixed(2)},
+	{id:9,team:"HVRL",audio:null,rgb1:true,depth1:true,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:57.19.toFixed(2),private:52.38.toFixed(2),combined:54.79.toFixed(2)},
+	{id:10,team:"Because It's Tactile",audio:null,rgb1:true,depth1:true,ir1:true,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:60.56.toFixed(2),private:60.58.toFixed(2),combined:60.57.toFixed(2)},
+	// {id:11,team:"SCC-Net",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:93.34.toFixed(2),private:92.85.toFixed(2),combined:93.09.toFixed(2)},
+	];
+
+	var tabledatatask4 =
+	[
+	{id:1,team:"Random",desc:"Baseline with random estimations for each task.",task1:true,task2:true,task3:true,public:38.47.toFixed(2),private:31.65.toFixed(2),combined:35.06.toFixed(2)},
+	{id:2,team:"Mask R-CNN + RN18",desc:"Vision baseline for filling properties estimation. Only view 1 (left-side of the robot).",task1:true,task2:true,task3:null,public:19.46.toFixed(2),private:9.59.toFixed(2),combined:14.53.toFixed(2)},
+	{id:3,team:"Mask R-CNN + RN18",desc:"Vision baseline for filling properties estimation. Only view 2 (right-side of the robot).",task1:true,task2:true,task3:null,public:17.28.toFixed(2),private:6.99.toFixed(2),combined:12.14.toFixed(2)},
+	{id:4,team:"Mask R-CNN + RN18",desc:"Vision baseline for filling properties estimation. Only view 3 (robot view).",task1:true,task2:true,task3:null,public:15.15.toFixed(2),private:9.96.toFixed(2),combined:12.56.toFixed(2)},
+	{id:5,team:"Mask R-CNN + RN18",desc:"Vision baseline for filling properties estimation. Only view 4 (person view).",task1:true,task2:true,task3:null,public:12.95.toFixed(2),private:10.25.toFixed(2),combined:11.60.toFixed(2)},
+	{id:6,team:"Challengers",desc:"Sound-based classification of filling type and level with STFT and 5-layers fully connected neural network.",task1:true,task2:true,task3:null,public:29.25.toFixed(2),private:23.21.toFixed(2),combined:26.23.toFixed(2)},
+	{id:7,team:"NTNU-ERC",desc:"MFCC features in a 20s-window + neural network to classify filling type. Object detection and selection of the closest contours (up to 700 mm) in the depth data + regression with a CNN for container capacity. ",task1:null,task2:true,task3:true,public:38.56.toFixed(2),private:39.80.toFixed(2),combined:39.18.toFixed(2)},
+	{id:8,team:"Concatenation",desc:"Multi-modal learning with audio features and prior of container categories through object detection for inferring container capacity and fluid properties.",task1:true,task2:true,task3:true,public:52.80.toFixed(2),private:54.14.toFixed(2),combined:53.47.toFixed(2)},
+	{id:9,team:"HVRL",desc:"Log-Mel spectrogram-based audio features as input to VGG-based CNN and LSTM for filling properties estimation. Container volume from the shape approximation as cuboid of the 3D point cloud obtained with RGB-D data and object detection with Mask R-CNN.",task1:true,task2:true,task3:true,public:63.32.toFixed(2),private:61.01.toFixed(2),combined:62.16.toFixed(2)},
+	{id:10,team:"Because It's Tactile",desc:"GRU+ Random Forest for filling properties estimation. LoDE with RGB-D-IR data from selected frames in a video for volume estimation.",task1:true,task2:true,task3:true,public:64.98.toFixed(2),private:65.15.toFixed(2),combined:65.06.toFixed(2)},
+	{id:11,team:"SCC-Net",desc:"Sound-based hierarchical ensemble of DNNs to jointly classify filling type and level.",task1:true,task2:true,task3:null,public:28.02.toFixed(2),private:22.92.toFixed(2),combined:25.47.toFixed(2)},
+	];
+</script>
+
+<script> 
+  function AppearMetadata(metadata_id) {
+  	var y = document.getElementsByClassName("metadata");
+  	for (var i = 0; i < y.length; i ++) {
+    	y[i].style.display = 'none';
+		}
+
+    var x = document.getElementById(metadata_id);
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+</script>
+
+
+<link href="benchmark/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="benchmark/dist/js/tabulator.min.js"></script>
+<link href="https://unpkg.com/tabulator-tables@4.4.3/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.4.3/dist/js/tabulator.min.js"></script>
+
+<style>
+	/* NAVIGATION */
+	nav {0
+		width: 100%;
+		margin: 0 auto;
+		background: #fff;
+	}
+
+	/* By Dominik Biedebach @domobch */
+	nav ul {
+		list-style: none;
+		text-align: center;
+	}
+	nav ul li {
+		display: inline-block;
+	}
+	nav ul li a {
+		display: block;
+		padding: 15px;
+		text-decoration: none;
+		color: #aaa;
+		font-weight: 800;
+		margin: 0 10px;
+	}
+	nav ul li a,
+	nav ul li a:after,
+	nav ul li a:before {
+		transition: all .5s;
+	}
+	nav ul li a:hover {
+		color: #555;
+	}
+
+	/* stroke */
+	nav.stroke ul li a,
+	nav.fill ul li a {
+		position: relative;
+	}
+	nav.stroke ul li a:after,
+	nav.fill ul li a:after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 0%;
+		content: '.';
+		color: transparent;
+		background: #333;
+		height: 1px;
+	}
+	nav.stroke ul li a:hover:after {
+		width: 100%;
+	}
+
+
+	#teams {
+	  list-style-type: none;
+	  margin: 0;
+	  padding: 0;
+	  width: 200px;
+	  background-color: #f1f1f1;
+	}
+
+	#teams li a {
+	  display: block;
+	  color: #000;
+	  padding: 8px 16px;
+	  text-decoration: none;
+	}
+
+	/* Change the link color on hover */
+	#teams li a:hover {
+	  background-color: #555;
+	  color: white;
+	}
+
+	tr:hover {background-color: #f5f5f5;}
+	.tg  {border-collapse:collapse;border-spacing:0;}
+	.tg td{border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg th{border-color:black;border-style:solid;border-width:1px;font-weight:normal;font-size:14.0pt;overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg .tg-km2t{border-color:#ffffff;font-weight:bold;font-size:14.0pt;text-align:left;vertical-align:top}
+			.tg .tg-zv4m{border-color:#ffffff;font-size:14.0pt;text-align:left;vertical-align:top}
+
+</style>
+
+</head>
+
+<body id="top">
+	<div class="wrapper row1">
+		<div id="header" class="clear">
+			<div class="fl_left">
+				<ul>
+					<li>
+						<p>
+							<a href="index.html"><img src="images/CORSMAL_logo.png" style="padding:0px 0px 0px 0px;height:75px" alt="CORSMAL"/></a>
+						</p>
+					</li>
+				</ul>
+			</div>
+</div>
+</div>
+<!--2###################################################################################################### --> 
+<div class="wrapper row2"; style="margin-bottom: 7px;">
+	<div class="rnd"> <!-- ###### --> 
+		<div id="topnav"> 
+			<ul style="margin-top: 5px;">
+				<li><a href="index.html"><b>Home</b></a></li> 
+				<li><a href="objectives.html"><b>Objectives</b></a></li>
+				<li><a href="publications.html"><b>Publications</b></a></li> 
+				<li><a href="blog.html"><b>Blog</b></a></li> 
+				<li class="active"><a href="events.html"><b>Events</b></a></li>
+				<li ><a href="code.html"><b>Code</b></a></li>
+				<li><a href="data.html"><b>Data</b></a></li> 
+					<li><a href="benchmark.html"><b>Benchmark</b></a></li>
+				<li class="last"><a href="challenge.html"><b>Challenge</b></a></li>
+				<li><a href="team.html"><b>Team</b></a></li>
+			</ul>
+		</div>
+		<!-- ###### --> 
+	</div>
+</div>
+<!-- 3####################################################################################################### --> 
+<div class="wrapper row1"> 
+	<div id="container" class="clear">
+		<div id="latestnewspage" class="clear">
+			<h2>
+				<p class="xmsonormal" style="text-align:center;text-justify:inter-ideograph;margin-bottom:0px">
+					<b><span style="font-size:16.0pt">The 2020 CORSMAL Challenge</span></b>
+				</p>
+			</h2>
+
+			<h2>
+				<p class="xmsonormal" style="text-align:center;text-justify:inter-ideograph;margin-bottom:5px">
+					<b><span style="font-size:16.0pt">Multi-modal fusion and learning for robotics </span></b><o:p></o:p>
+				</p>
+			</h2>
+
+			<p align="center">
+				<a href="https://www.theiet.org/" target="_blank"><img src="images/IET_logo_new.png" alt="IET logo" style="height:35px"/></a>
+					<a href="http://www.chistera.eu" TARGET = "_blank"><img src="images/chist-era_logo_crop.png" style="height:45px;" alt="Chistera logo"/></a>
+					<a href="https://icpr2020.com/" TARGET = "_blank"><img src="images/icpr2020logo_landscape.png" style="height:65px;margin:-15px -5px -15px 0;" alt="ICPR Logo"/></a>
+			</p>
+
+			<p align="center">
+				<video style="border: 3px solid #EEE;" width="500" controls>
+					<source src="resources/ICPR2020.mp4" type="video/mp4">
+					Your browser does not support the video tag.</video>
+					<br><br>
+				</p>
+			</p>
+			<p id="program">
+					<b><span style="font-size:14.0pt">Program (15 Jan 2021, starts at 3pm CET)</span></b>
+				</p>
+ 				<table class="tg" width="100%">
+				<tbody>
+					<tr>
+						<!-- <td class="tg-zv4m" ></td> -->
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">3:00 pm CET</a><br><b>Welcome and opening</td>
+					</tr>
+					<tr>
+						<!-- <td class="tg-zv4m" ><img src="images/ICME2020/speakers/AndreaCavallaro.jpg" alt="blank image" width="150px" /></td> -->
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">3:05 pm CET</a><br><b>Collaborative Object Recognition, Shared Manipulation and Learning</b><br>
+							Andrea Cavallaro<br><i>Queen Mary University of London &amp; Alan Turing Institute</i>
+						<!-- 	<a class="papercite_pdf" title="Download" href="resources/ICME2020/presentations/ICME2020_GC1_CORSMAL_Cavallaro.pdf"><u>Slides</u></a>
+							&nbsp | &nbsp -->
+							<!-- <a class="papercite_pdf" title="" href="https://2020.ieeeicme-virtual.org/presentation/grand-challenges/gc1-welcome-and-introduction"><u>Video</u></a> -->
+							<!-- <a class="papercite_pdf" title="" href=""><u>Video</u></a> -->
+						</td>
+					</tr>
+					<tr>
+						<!-- <td class="tg-zv4m" ><img src="images/ICME2020/speakers/AlessioXompero.jpg" alt="blank image" width="150px" /></td> -->
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">3:20 pm CET</a><br><b>The CORSMAL Challenge</b><br>
+							Alessio Xompero<br><i>Queen Mary University of London</i>
+						</td>
+					</tr>
+					<tr>
+						<!-- <td class="tg-zv4m" ><img src="images/ICPR2020/participants/Vladimir_150x165.jpg" alt="" width="150px" /></td> -->
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">3:35 pm CET</a><br><b>Top-1 CORSMAL Challenge 2020 submission: Filling mass estimation using multi-modal observations of human-robot handovers</b>
+						<br>
+						[<a class="papercite_pdf" title="link" href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_31" target="_blank"><u>paper</u></a>]
+						[<a class="papercite_pdf" title="YouTube" href="https://youtu.be/lvPMcDaXL0A" target="_blank"><u>video</u></a>]
+						[<a class="papercite_pdf" title="Download" href="resources/challenge/icpr20/2021.01.15_BecauseItsTactile_slides.pdf" target="_blank"><u>slides</u></a>]
+						[<a class="papercite_pdf" title="Download" href="https://arxiv.org/pdf/2012.01311.pdf" target="_blank"><u>arxiv</u></a>]
+						[<a class="papercite_pdf" title="link" href="https://github.com/v-iashin/CORSMAL" target="_blank"><u>code</u></a>]
+							<!-- &nbsp | &nbsp
+							 <a class="papercite_pdf" title="" href=""><u>Certificate</u></a>-->	
+						<br>					
+						<br>Because It's Tactile team (<i>Tampere University, Finland; Queen Mary University of London, U.K.</i>)<br>
+						<table class="tg" width="50%">
+							<tbody>
+								<tr>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/ICPR2020/participants/Vladimir_150x165.jpg" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/ICPR2020/participants/Francesca_150x165.jpg" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/ICPR2020/participants/Gokhan_150x165.jpg" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/ICPR2020/participants/Claudio_150x165.jpg" alt="" width="75px" /></td>
+								</tr>
+								<tr>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><b>Vladimir Iashin<b></td>
+									<td class="tg-zv4m" style="text-align: center;width:25%">Francesca Palermo</td>
+									<td class="tg-zv4m" style="text-align: center;width:25%">Gokhan Solak</td>
+									<td class="tg-zv4m" style="text-align: center;width:25%">Claudio Coppola</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<!-- <td class="tg-zv4m" style="vertical-align: middle;"><img src="images/ICPR2020/participants/ReinaIshikawa.JPG" alt="" width="150px" /><br><img src="images/ICPR2020/participants/YuichiNagao.jpg" alt="" width="150px" /></td> -->
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">3:45 pm CET</a><br><b>Audio-Visual Hybrid Approach for Filling Mass Estimation</b>
+							<!-- <br>Speakers: Reina Ishikawa & Yuichi Nagao<br><i>Keio University, Japan</i> -->
+						<br>
+						[<a class="papercite_pdf" title="link" href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_32" target="_blank"><u>paper</u></a>]
+						[<a class="papercite_pdf" title="YouTube" href="https://youtu.be/R9O4JTkmabk" target="_blank"><u>video</u></a>]
+						[<a class="papercite_pdf" title="Download" href="resources/challenge/icpr20/2021.01.15_HVRL_slides.pdf" target="_blank"><u>slides</u></a>]
+						[<a class="papercite_pdf" title="link" href="https://github.com/YuichiNAGAO/ICPRchallenge2020" target="_blank"><u>code</u></a>]
+						<br>
+						<br>
+						HVRL team (<i>Keio University, Japan</i>)
+						<br>
+						<table class="tg" width="50%">
+							<tbody>
+								<tr>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/ICPR2020/participants/ReinaIshikawa.JPG" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/ICPR2020/participants/YuichiNagao.jpg" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /></td>
+								</tr>
+								<tr>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><b>Reina Ishikawa</b></td>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><b>Yuichi Nagao</b></td>
+									<td class="tg-zv4m" style="text-align: center;width:25%">Ryo Hachiuma</td>
+									<td class="tg-zv4m" style="text-align: center;width:25%">Hideo Saito</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<!-- <td class="tg-zv4m" ><img src="images/ICPR2020/participants/QiLiu.jpg" alt="" width="150px" /></td> -->
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">3:55 pm CET</a><br><b>VA2Mass: Towards the Fluid Filling Mass Estimation via Integration of Vision & Audio</b>
+							<!-- <br>Speaker: Qi Liu<br><i>City University of Hong Kong</i> -->
+						<br>
+						[<a class="papercite_pdf" title="link" href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_33" target="_blank"><u>paper</u></a>]
+						[<a class="papercite_pdf" title="YouTube" href="https://youtu.be/p0mTowy1Opc" target="_blank"><u>video</u></a>]
+						[<a class="papercite_pdf" title="Download" href="resources/challenge/icpr20/2021.01.15_Concatenation_slides.pdf" target="_blank"><u>slides</u></a>]
+						<br>
+						<br>
+						Concatenation team (<i>City University of Hong Kong</i>)
+						<br>
+						<table class="tg" width="50%">
+							<tbody>
+								<tr>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/ICPR2020/participants/QiLiu.jpg" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/ICPR2020/participants/ChuanlinLan.jpg" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/ICPR2020/participants/FanFeng.jpg" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/ICPR2020/participants/RosaChan.jpg" alt="" width="75px" /></td>
+								</tr>
+								<tr>
+									<td class="tg-zv4m" style="text-align: center;width:25%"><b>Qi Liu</b></td>
+									<td class="tg-zv4m" style="text-align: center;width:25%">Chuanlin Lan</td>
+									<td class="tg-zv4m" style="text-align: center;width:25%">Fan Feng</td>
+									<td class="tg-zv4m" style="text-align: center;width:25%">Rosa Chan</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">4:05 pm CET</a><br><b>Round-table</b>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">4:35 pm CET</a><br><b>Challenge leaderboard and next steps</b>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+				<br>
+			<a name="leaderboard"></a>
+			<p align="justify"> 
+				<p id="results" class="xmsonormal" style="text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:14.0pt">Leaderboard</span></b></p>
+				<p align="center">
+					<b>Overall task: Filling mass estimation</b>
+				</p>
+				<div>
+					<img src="images/ICPR2020/leaderboard/overall_task.png" alt="" style="text-align: center;width: 100%">
+				</div>
+				<br>	
+				<p align="center">
+					<b>Task 1: Filling level classification</b>
+				</p>
+				<div>
+					<img src="images/ICPR2020/leaderboard/task1.png" alt="" style="text-align: center;width: 100%">
+				</div>
+				<p align="center">
+					<b>Task 2: Filling type classification</b>
+				</p>
+				<div>
+					<img src="images/ICPR2020/leaderboard/task2.png" alt="" style="text-align: center;width: 100%">
+				</div>
+				<p align="center">
+					<b>Task 3: Container capacity estimation</b>
+				</p>
+				<div>
+					<img src="images/ICPR2020/leaderboard/task3.png" alt="" style="text-align: center;width: 100%">
+				</div>
+					<p align="justify">
+						Legend:<br>
+						- View 1: view from the fixed camera on the left side of the manipulator<br>
+						- View 2: view from the fixed camera on the right side of the manipulator<br>
+						- View 3: view from the fixed camera mounted on the manipulator (robot)<br>
+						- View 4: view from the moving camera worn by the demonstrator (human)<br>
+						- A: audio modality<br>
+						- RGB: colour data<br>
+						- D: depth data<br>
+						- IR: infrared data from narrow-baseline stereo camera<br>
+					</p>
+				</p>
+				<br>
+				<div style="height:auto;width:100%;overflow:hidden;">
+					<p id="results" class="xmsonormal" style="text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:14.0pt">Submissions</span></b></p>
+					<div style="width:200px; float:left;">
+						<b>Team name</b><br>
+						<ul id="teams">
+						  <li><a class="" title="Show metadata" onclick="AppearMetadata('bit_metadata')">Because It's Tactile</a></li>
+							<li><a class="" title="Show metadata" onclick="AppearMetadata('hvrl_metadata')">HVRL</a></li>
+						  <li><a class="" title="Show metadata" onclick="AppearMetadata('concatenation_metadata')">Concatenation</a></li>
+							<li><a class="" title="Show metadata" onclick="AppearMetadata('ntnuerc_metadata')">NTNU-ERC</a></li>
+						  <li><a class="" title="Show metadata" onclick="AppearMetadata('challengers_metadata')">Challengers</a></li>
+						</ul>
+        	</div>
+        	<div style="margin-left:220px;" >
+        			<b>Metadata</b><br>
+        			<table class="metadata" style="border: none;">
+        				<tbody>
+        					<tr>
+        						<tr>
+        						<td style="text-align:left;border: none;width:100px">Team name:</td>
+        						<td style="text-align:left;border: none;"></td>
+				        	</tr>
+				        	<!-- <tr>
+        						<tr>
+        						<td style="text-align:left;border: none;width:100px">Team members:</td>
+        						<td style="text-align:left;border: none;"></td>
+				        	</tr> -->
+        					<tr>
+        						<td style="text-align:left;border: none;">Task 1:</td>
+        						<td style="text-align:left;border: none;"></td>
+				        	</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Task 2:</td>
+        						<td style="text-align:left;border: none;"></td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Task 3:</td>
+        						<td style="text-align:left;border: none;"></td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Summary:</td>
+        						<td style="text-align:left;border: none;"></td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Paper:</td>
+        						<td style="text-align:left;border: none;"></td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Webpage:</td>
+        						<td style="text-align:left;border: none;"></td>
+        					</tr>
+        				</tbody>
+        			</table>
+        			<table class="metadata" id="bit_metadata" style="display:none;border: none;">
+        				<tbody>
+        					<tr>
+        						<tr>
+        						<td style="text-align:left;border: none;width:100px">Team name:</td>
+        						<td colspan="4" style="text-align:left;border: none;">Because It's Tactile</td>
+				        	</tr>
+        					<tr>
+        						<tr>
+        						<td style="text-align:left;border: none;">Task 1:</td>
+        						<td colspan="4" style="text-align:left;border: none;">Audio + RGB from all views. GRU(VGGish) + GRU(R(2+1)d [RGB-only]) for each view, and RandomForest(classical audio features)</td>
+				        	</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Task 2:</td>
+        						<td colspan="4" style="text-align:left;border: none;">Audio. GRU(VGGish) and and RandomForest</td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Task 3:</td>
+        						<td colspan="4" style="text-align:left;border: none;">RGB + IR + Depth (left-side view). LoDE on detector's predictions; if no object was detected, use of the train set's average</td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Summary:</td>
+        						<td colspan="4" style="text-align:left;border: none;">We sum up logits from all four views obtained from GRU on top of R(2+1)d features to form one prediction for each event, which are, then, averaged with the GRU output on top of VGGish features, and RandomForest predictions on top of 30+ classical audio features (eg mfccs, chromagram, energy, spread). LoDE with Mask R-CNN for object detection (glass, bottle, or book for boxes), in frame 1 and 20 of the videos (view 1, RGB-D-IR) to estimate container capacity. Average of the train set is used if no detection.</td>
+        						<!-- R(2+1)d feature extraction followed by GRU for each RGB view, and sum of the logits. VGGish feature extraction Average -->
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Paper:</td>
+        						<td colspan="4" style="text-align:left;border: none;"><a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_31" TARGET = "_blank"><u>Top-1 CORSMAL Challenge 2020 submission: Filling mass estimation using multi-modal observations of human-robot handovers</u></a></td>
+        					</tr>
+        									        	<tr>
+        						<td style="text-align:left;border: none;">ArXiv:</td>
+        						<td colspan="4" style="text-align:left;border: none;"><a href="https://arxiv.org/pdf/2012.01311.pdf"><u>https://arxiv.org/pdf/2012.01311.pdf</u></a></td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Code:</td>
+        						<td colspan="4" style="text-align:left;border: none;"><a href="https://github.com/v-iashin/CORSMAL"><u>https://github.com/v-iashin/CORSMAL</u></a></td>
+        					</tr>
+        					</tr>
+        				</tbody>
+        			</table>
+        			<table class="metadata" id="hvrl_metadata" style="display:none;border: none;">
+        				<tbody>
+        					<tr>
+        						<tr>
+        						<td style="text-align:left;border: none;width:100px">Team name:</td>
+        						<td colspan="4" style="text-align:left;border: none;">HVRL</td>
+				        	</tr>
+				        	<!-- <tr>
+        						<tr>
+        						<td style="text-align:left;border: none;width:100px">Team members:</td>
+        						<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/ReinaIshikawa.JPG" alt="" width="75px" /><br>Reina Ishikawa</td>
+        						<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/YuichiNagao.jpg" alt="" width="75px" /><br>Yuichi Nagao</td>
+        						<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /><br>Ryo Hachiuma</td>
+        						<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /><br>Hideo Saito</td>
+				        	</tr> -->
+        					<tr>
+        						<tr>
+        						<td style="text-align:left;border: none;">Task 1:</td>
+        						<td colspan="4" style="text-align:left;border: none;">Audio. From the prediction model for Task2, intermediate features are extracted and pass through LSTM models.</td>
+				        	</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Task 2:</td>
+        						<td colspan="4" style="text-align:left;border: none;">Audio. Raw audio waveform converted into a log-Mel spectrogram that is cropped into a fixed-size and provided as input to convolutional neural network model with a VGG backbone.</td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Task 3:</td>
+        						<td colspan="4" style="text-align:left;border: none;">RGB + Depth from view 1: fixed camera on the left side of the manipulator (robot). Mask-RCNN detects the target object (silhouette) and a point cloud is obtained from a selected frame in the video. The volume of the container is then computed by approximating the object shape as a cuboid from the point cloud.</td>
+        					</tr>
+<!-- 				        	<tr>
+        						<td style="text-align:left;border: none;">Summary:</td>
+        						<td colspan="4" style="text-align:left;border: none;"></td>
+        					</tr> -->
+				        	<tr>
+        						<td style="text-align:left;border: none;">Paper:</td>
+        						<td colspan="4" style="text-align:left;border: none;"><a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_32"><u>Audio-Visual Hybrid Approach for Filling Mass Estimation</u></a></td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Code:</td>
+        						<td colspan="4" style="text-align:left;border: none;"><a href="https://github.com/YuichiNAGAO/ICPRchallenge2020"><u>https://github.com/YuichiNAGAO/ICPRchallenge2020</u></a></td>
+        					</tr>
+        					</tr>
+        				</tbody>
+        			</table>
+        			<table class="metadata" id="concatenation_metadata" style="display:none;border: none;">
+        				<tbody>
+        					<tr>
+        						<tr>
+        						<td style="text-align:left;border: none;width:100px">Team name:</td>
+        						<td colspan="4" style="text-align:left;border: none;">Concatenation</td>
+				        	</tr>
+				        	<!-- <tr>
+        						<tr>
+        						<td style="text-align:left;border: none;width:100px">Team members:</td>
+        						<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/QiLiu.jpg" alt="" width="75px" /><br>Qi Liu</td>
+        						<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/ChuanlinLan.jpg" alt="" width="75px" /><br>Chuanlin Lan</td>
+        						<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/FanFeng.jpg" alt="" width="75px" /><br>Fan Feng</td>
+        						<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/RosaChan.jpg" alt="" width="75px" /><br>Rosa Chan</td>
+				        	</tr> -->
+        					<tr>
+        						<td style="text-align:left;border: none;">Task 1:</td>
+        						<td colspan="4" style="text-align:left;border: none;">Audio and RGB from all views. Integrate the audio feature learning and the knowledge of container categories via the object detection pre-trained model.</td>
+				        	</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Task 2:</td>
+        						<td colspan="4" style="text-align:left;border: none;">Audio and RGB from all views. Integrate the audio feature learning and the knowledge of container categories via the object detection pre-trained model.</td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Task 3:</td>
+        						<td colspan="4" style="text-align:left;border: none;">RGB from all views. Sample from the shape distribution based on the prior of container categories</td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Summary:</td>
+        						<td colspan="4" style="text-align:left;border: none;">The solution is divided into three folds to help the agent shape a rich understanding of the pouring procedure. First, the agent obtains the prior of container categories (cup, glass, box) through the object detection framework. Second, audio features are integrated with the prior to make the agent learn a multi-modal feature space. Finally, the agent infers the distribution of both the container capacity and fluid properties.</td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Paper:</td>
+        						<td colspan="4" style="text-align:left;border: none;"><a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_33"><u>VA2Mass: Towards the Fluid Filling Mass Estimation via Integration of Vision & Audio</u></a></td>
+        					</tr>
+<!-- 				        	<tr>
+        						<td style="text-align:left;border: none;">Webpage:</td>
+        						<td colspan="4" style="text-align:left;border: none;"></td>
+        					</tr> -->
+        				</tbody>
+        			</table>
+        			<table class="metadata" id="ntnuerc_metadata" style="display:none;border: none;">
+        				<tbody>
+        					<tr>
+        						<tr>
+        						<td style="text-align:left;border: none;width:100px">Team name:</td>
+        						<td style="text-align:left;border: none;">NTNU-ERC</td>
+				        	</tr>
+        					<tr>
+        						<td style="text-align:left;border: none;">Task 1:</td>
+        						<td style="text-align:left;border: none;">N/A</td>
+				        	</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Task 2:</td>
+        						<td style="text-align:left;border: none;">Audio</td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Task 3:</td>
+        						<td style="text-align:left;border: none;">Depth from view 3: the fixed camera mounted on the manipulator (robot)</td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Summary:</td>
+        						<td style="text-align:left;border: none;">Extraction of 40 normalized MFCC features in a window size of 20 ms at 22 kHz, with a maximum length of 30 s, and zero-padding to preserve the same duration across audio data. Filling type classification with a neural network consisting of 2 convolutional layers and 1 linear layer. Regression of the container capacity by extracting a region of interest (ROI) around the object localised in the depth data (view 3) and providing the ROI and its size to a neural network (4 convolutional-batchnorm followed by 3 linear layers). The size of the ROI is concatenated to the feature between the 2nd and 3rd linear layer. Only detections/ROIs up to 700 mm far from the camera, while processing the video backwards, are considered (prior knowledge that the person will extend the arm towards the robot). The closest contour is selected, if multiple detections in a frame.</td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Report:</td>
+        						<td style="text-align:left;border: none;"><a href="resources/challenge/2020.11.30_CORSMAL_NTNU-ERC_Report.pdf"><u>NTNU-ERC Report</u></td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Code:</td>
+        						<td style="text-align:left;border: none;"><a href="https://github.com/guichristmann/CORSMAL-Challenge-2020-Submission"><u>https://github.com/guichristmann/CORSMAL-Challenge-2020-Submission</u></td>
+        					</tr>
+        				</tbody>
+        			</table>
+        			<table class="metadata" id="challengers_metadata" style="display:none;border: none;">
+        				<tbody>
+        					<tr>
+        						<tr>
+        						<td style="text-align:left;border: none;width:100px">Team name:</td>
+        						<td style="text-align:left;border: none;">Challengers</td>
+				        	</tr>
+        					<tr>
+        						<td style="text-align:left;border: none;">Task 1:</td>
+        						<td style="text-align:left;border: none;">Audio</td>
+				        	</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Task 2:</td>
+        						<td style="text-align:left;border: none;">Audio</td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Task 3:</td>
+        						<td style="text-align:left;border: none;">N/A</td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Summary:</td>
+        						<td style="text-align:left;border: none;">Sound-based classification of filling type and level: After suppressing the noise in each audio signal via spectral gating, the absolute value of the Short-Time Fourier Transform (STFT) is extracted as input feature for a classifier based on a 5-layer fully connected neural network, trained with Adam optimizer and dropout on the last layer to reduce overfitting.</td>
+        					</tr>
+				        	<!-- <tr>
+        						<td style="text-align:left;border: none;">Paper:</td>
+        						<td style="text-align:left;border: none;"></td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Webpage:</td>
+        						<td style="text-align:left;border: none;"></td>
+        					</tr> -->
+        				</tbody>
+        			</table>
+					</div>
+				</div>
+				<br>
+				<p id="organisers">
+					<b><span style="font-size:14.0pt">Organisers</span></b>
+				</p>
+				<p align="justify">
+					Alessio Xompero, Queen Mary University of London (UK)<br>
+					Andrea Cavallaro, Queen Mary University of London (UK)<br>
+					Apostolos Modas, École polytechnique fédérale de Lausanne (Switzerland)<br>
+					Aude Billard, École polytechnique fédérale de Lausanne (Switzerland)<br>
+					Dounia Kitouni, Sorbonne Université (France)<br>
+					Kaspar Althoefer, Queen Mary University of London (UK)<br>
+					Konstantinos Chatzilygeroudis, University of Patras (Greece)<br>
+					Nuno Ferreira Duarte, École polytechnique fédérale de Lausanne (Switzerland)<br>
+					Pascal Frossard, École polytechnique fédérale de Lausanne (Switzerland)<br>
+					Ricardo Sanchez-Matilla, Queen Mary University of London (UK)<br>
+					Riccardo Mazzon, Queen Mary University of London (UK) <br>
+					Véronique Perdereau, Sorbonne Université (France)<br>
+				</p>
+				<br>
+				</div>
+		</div>
+	</div>
+	<!-- ####################################################################################################### -->
+<!-- Begin of Sponsors and Partners div -->
+<div class="wrapper row1">
+	<div id="header" class="clear" style="padding: 0px 0px 0px 20px;width:920px">
+		<div class="fl_left" style="margin-top: 0px;">
+			<ul>
+				<li style="padding: 0 0 0 0">
+					<p>
+						<b>Sponsors</b>
+						<br>
+						<br>
+					</p>
+					<p>
+						<a href="http://www.chistera.eu" TARGET = "_blank"><img src="images/chist-era_logo_crop.png" style="height:35px;" alt="Chistera logo"/></a>
+						<a href="https://epsrc.ukri.org/" target="_blank"><img src="images/EPSRC_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="EPSRC logo"></a>
+						<a href="http://www.agence-nationale-recherche.fr/en/" target="_blank"><img src="images/ANR_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="ANR logo"></a>
+						<a href="http://www.snf.ch/en/Pages/default.aspx" target="_blank"><img src="images/FNS_logo.jpg" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="FNS logo"></a>
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div class="fl_right" style="margin-top: 0px;">
+			<ul style="margin-bottom: 0px;">
+				<li style="margin: 0px 4px 0px 0; padding: 0 0px 0 0;">
+					<p>
+						<b>Partners</b>
+						<br>
+						<br>
+					</p>
+					<p>
+						<a href="https://www.qmul.ac.uk/" target="_blank"><img src="images/QMUL_logo.jpg" alt="Queen Mary University of London" style="padding:5px 10px 0px 0px;height:45px;"></a>
+						<a href="http://www.sorbonne-universite.fr/en" target="_blank">
+							<img src="images/Sorbonne_University_logo.png" alt="Sorbonne University" style="padding:5px 10px 0px 0px;height:45px;">
+						</a>
+						<a href="https://www.epfl.ch/en/home/" target="_blank">
+							<img src="images/EPFL_logo.png" alt="EPFL" style="padding:5px 0px 0px 0px;height:45px;">
+						</a>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- End of Sponsors and Partners div -->
+<br><br>
+<!-- ####################################################################################################### -->
+<!-- <div class="clearing">&nbsp;</div>-->
+<div class="wrapper bottomPg">
+	<div id="copyright">
+		<div id="fl_left" style="font-size:12px">
+			© Copyright CORSMAL 2019-2022
+		</div>	  
+	</div>
+</div>
+<!-- footer -->
+<!--added to clear error with content element -->
+</body>
+</html>

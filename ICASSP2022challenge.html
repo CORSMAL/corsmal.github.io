@@ -1,0 +1,1715 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<head profile="http://gmpg.org/xfn/11"> 
+	<link rel="shortcut icon" href="favicon.ico" /> 
+
+<title>
+	CORSMAL: Collaborative object recognition, shared manipulation and learning | The CORSMAL Challenge
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="KeyWords" content="code, software, CORSMAL, robotics, touch, vision, audio, signal processing, human behaviour, competition, challenge, ICASSP"/>
+<meta name="image" property="og:image" content="images/CORSMAL_logo.png">
+
+<link rel="stylesheet" href="css/layout.css" type="text/css" /> 
+<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>  
+<script type="text/javascript" src="js/jquery.slidepanel.setup.js"></script> 
+<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.tabs.setup.js"></script>
+
+<script type="text/javascript">
+	window.TableLoader = {
+		tables:{},
+		register:function(table, func){
+			this.tables[table] = func;
+		},
+		trigger:function(key){
+			var self = this;
+
+			if(this.tables[key]){
+				this.tables[key]();
+				this.tables[key] = function(){};
+
+				var keys = Object.keys(this.tables);
+				var index = keys.indexOf(key);
+
+				if(index){
+					this.tables[keys[index - 1]]();
+					this.tables[keys[index - 1]] = function(){};
+				}
+
+				if(index < keys.length - 1){
+					this.tables[keys[index + 1]]();
+					this.tables[keys[index + 1]] = function(){};
+				}
+			}
+
+			if(key == "theming"){
+				var themes = Object.keys(this.tables).slice(-7);
+
+				themes.forEach(function(item){
+					self.trigger(item);
+				})
+			}
+		},
+		loadFirst:function(){
+			first = Object.keys(this.tables)[0];
+
+			if(first){
+				this.trigger(first);
+			}
+		}
+	}
+
+
+
+	function AppearLegend(legend_id) {
+		var x = document.getElementById(legend_id);
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+</script>
+
+
+<script type="text/javascript">
+	
+	var tabledatacombined =
+	[
+	{id:1,team:"Random",task1:true,task2:true,task3:true,task4:true,task5:true,s1:37.62.toFixed(2),s2:24.38.toFixed(2),s3:24.58.toFixed(2),s4:29.42.toFixed(2),s5:32.33.toFixed(2),s6:25.36.toFixed(2),s7:42.48.toFixed(2),s8:35.06.toFixed(2),s9:56.31.toFixed(2),s10:72.11.toFixed(2),overall:39.11.toFixed(2)},
+	{id:2,team:"Average",task1:true,task2:true,task3:true,task4:true,task5:true,s1:33.15.toFixed(2),s2:23.01.toFixed(2),s3:40.73.toFixed(2),s4:22.06.toFixed(2),s5:76.89.toFixed(2),s6:58.19.toFixed(2),s7:64.32.toFixed(2),s8:42.31.toFixed(2),s9:58.30.toFixed(2),s10:70.01.toFixed(2),overall:44.51.toFixed(2)},
+	{id:8,team:"Visual",task1:null,task2:null,task3:null,task4:true,task5:null,s1:0.00.toFixed(2),s2:0.00.toFixed(2),s3:0.00.toFixed(2),s4:49.64.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:0.00.toFixed(2),s9:53.34.toFixed(2),s10:60.54.toFixed(2),overall:9.05.toFixed(2)},
+	{id:9,team:"KEIO-ICS",task1:true,task2:true,task3:true,task4:true,task5:true,s1:65.73.toFixed(2),s2:80.72.toFixed(2),s3:72.26.toFixed(2),s4:40.19.toFixed(2),s5:69.09.toFixed(2),s6:59.74.toFixed(2),s7:70.07.toFixed(2),s8:70.50.toFixed(2),s9:60.41.toFixed(2),s10:73.17.toFixed(2),overall:66.16.toFixed(2)},
+	{id:10,team:"Squids",task1:true,task2:true,task3:true,task4:true,task5:true,s1:77.40.toFixed(2),s2:99.13.toFixed(2),s3:59.51.toFixed(2),s4:58.78.toFixed(2),s5:80.01.toFixed(2),s6:76.09.toFixed(2),s7:74.33.toFixed(2),s8:65.26.toFixed(2),s9:71.19.toFixed(2),s10:79.32.toFixed(2),overall:73.43.toFixed(2)},
+// {id:11,team:"Squids-Audio",task1:true,task2:true,task3:null,task4:null,task5:null,s1:75.53.toFixed(2),s2:99.13.toFixed(2),s3:0.00.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:25.64.toFixed(2),s9:0.00.toFixed(2),s10:0.00.toFixed(2),overall:25.04.toFixed(2)}
+{id:4,team:"Concatenation",task1:true,task2:true,task3:true,task4:null,task5:null,s1:43.53.toFixed(2),s2:41.83.toFixed(2),s3:62.57.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:53.47.toFixed(2),s9:64.13.toFixed(2),s10:78.76.toFixed(2),overall:35.89.toFixed(2)},
+{id:7,team:"ACC",task1:true,task2:true,task3:null,task4:null,task5:null,s1:80.84.toFixed(2),s2:94.50.toFixed(2),s3:0.00.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:25.07.toFixed(2),s9:55.52.toFixed(2),s10:73.94.toFixed(2),overall:31.52.toFixed(2)},
+{id:5,team:"HVRL",task1:true,task2:true,task3:true,task4:null,task5:null,s1:78.56.toFixed(2),s2:96.95.toFixed(2),s3:54.79.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:62.16.toFixed(2),s9:66.84.toFixed(2),s10:72.91.toFixed(2),overall:47.04.toFixed(2)},
+{id:6,team:"BIT",task1:true,task2:true,task3:true,task4:null,task5:null,s1:79.65.toFixed(2),s2:94.26.toFixed(2),s3:60.57.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:65.06.toFixed(2),s9:65.04.toFixed(2),s10:80.40.toFixed(2),overall:48.35.toFixed(2)},
+{id:2,team:"Challengers",task1:true,task2:true,task3:null,task4:null,task5:null,s1:48.71.toFixed(2),s2:75.24.toFixed(2),s3:0.00.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:26.23.toFixed(2),s9:55.54.toFixed(2),s10:74.18.toFixed(2),overall:25.26.toFixed(2)},
+{id:3,team:"NTNU",task1:null,task2:true,task3:true,task4:null,task5:null,s1:0.00.toFixed(2),s2:86.89.toFixed(2),s3:67.30.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:39.18.toFixed(2),s9:63.27.toFixed(2),s10:79.91.toFixed(2),overall:31.33.toFixed(2)},
+// {id:1,team:"Squids2",task1:true,task2:true,task3:true,task4:true,task5:true,s1:77.40.toFixed(2),s2:99.13.toFixed(2),s3:71.55.toFixed(2),s4:58.31.toFixed(2),s5:82.76.toFixed(2),s6:77.48.toFixed(2),s7:80.65.toFixed(2),s8:75.04.toFixed(2),s9:66.65.toFixed(2),s10:73.28.toFixed(2),overall:75.21.toFixed(2)}
+];
+
+var tabledatatest_pub =
+[
+	// {id:0,team:"Random",task1:true,task2:true,task3:true,task4:true,task5:true,s1:33.35.toFixed(2),s2:21.24.toFixed(2),s3:31.63.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:38.47.toFixed(2),s9:0.00.toFixed(2),s10:0.00.toFixed(2),overall:15.59.toFixed(2)},
+	// {id:1,team:"Average",task1:true,task2:true,task3:true,task4:true,task5:true,s1:33.42.toFixed(2),s2:22.91.toFixed(2),s3:54.39.toFixed(2),s4:21.88.toFixed(2),s5:79.56.toFixed(2),s6:65.53.toFixed(2),s7:82.90.toFixed(2),s8:44.83.toFixed(2),s9:0.00.toFixed(2),s10:0.00.toFixed(2),overall:31.68.toFixed(2)},
+	{id:1,team:"Random",task1:true,task2:true,task3:true,task4:true,task5:true,s1:33.35.toFixed(2),s2:21.24.toFixed(2),s3:31.63.toFixed(2),s4:30.59.toFixed(2),s5:26.82.toFixed(2),s6:22.55.toFixed(2),s7:50.34.toFixed(2),s8:38.47.toFixed(2),s9:53.79.toFixed(2),s10:69.14.toFixed(2),overall:38.93.toFixed(2)},
+	{id:2,team:"Average",task1:true,task2:true,task3:true,task4:true,task5:true,s1:33.42.toFixed(2),s2:22.91.toFixed(2),s3:54.39.toFixed(2),s4:21.88.toFixed(2),s5:79.56.toFixed(2),s6:65.53.toFixed(2),s7:82.90.toFixed(2),s8:44.83.toFixed(2),s9:57.08.toFixed(2),s10:63.98.toFixed(2),overall:46.81.toFixed(2)},
+	{id:8,team:"Visual",task1:null,task2:null,task3:null,task4:true,task5:null,s1:0.00.toFixed(2),s2:0.00.toFixed(2),s3:0.00.toFixed(2),s4:53.14.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:0.00.toFixed(2),s9:50.40.toFixed(2),s10:66.37.toFixed(2),overall:9.56.toFixed(2)},
+	{id:9,team:"KEIO-ICS",task1:true,task2:true,task3:true,task4:true,task5:true,s1:68.14.toFixed(2),s2:83.56.toFixed(2),s3:71.95.toFixed(2),s4:43.61.toFixed(2),s5:73.23.toFixed(2),s6:61.81.toFixed(2),s7:78.58.toFixed(2),s8:71.07.toFixed(2),s9:59.12.toFixed(2),s10:78.44.toFixed(2),overall:68.39.toFixed(2)},
+	{id:10,team:"Squids",task1:true,task2:true,task3:true,task4:true,task5:true,s1:75.55.toFixed(2),s2:99.56.toFixed(2),s3:75.05.toFixed(2),s4:55.25.toFixed(2),s5:83.08.toFixed(2),s6:81.31.toFixed(2),s7:88.74.toFixed(2),s8:73.07.toFixed(2),s9:68.55.toFixed(2),s10:76.28.toFixed(2),overall:75.96.toFixed(2)},
+// {id:11,team:"Squids-Audio",task1:true,task2:true,task3:null,task4:null,task5:null,s1:74.06.toFixed(2),s2:99.56.toFixed(2),s3:0.00.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:28.34.toFixed(2),s9:0.00.toFixed(2),s10:0.00.toFixed(2),overall:25.25.toFixed(2)}
+{id:4,team:"Concatenation",task1:true,task2:true,task3:true,task4:null,task5:null,s1:44.31.toFixed(2),s2:41.77.toFixed(2),s3:63.00.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:52.80.toFixed(2),s9:60.67.toFixed(2),s10:79.22.toFixed(2),overall:35.73.toFixed(2)},
+{id:7,team:"ACC",task1:true,task2:true,task3:null,task4:null,task5:null,s1:80.22.toFixed(2),s2:95.12.toFixed(2),s3:0.00.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:28.25.toFixed(2),s9:55.37.toFixed(2),s10:77.34.toFixed(2),overall:32.08.toFixed(2)},
+{id:5,team:"HVRL",task1:true,task2:true,task3:true,task4:null,task5:null,s1:82.63.toFixed(2),s2:97.83.toFixed(2),s3:57.19.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:63.32.toFixed(2),s9:66.61.toFixed(2),s10:66.96.toFixed(2),overall:47.64.toFixed(2)},
+{id:6,team:"BIT",task1:true,task2:true,task3:true,task4:null,task5:null,s1:78.14.toFixed(2),s2:93.83.toFixed(2),s3:60.56.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:64.98.toFixed(2),s9:65.00.toFixed(2),s10:78.01.toFixed(2),overall:47.91.toFixed(2)},
+{id:2,team:"Challengers",task1:true,task2:true,task3:null,task4:null,task5:null,s1:50.73.toFixed(2),s2:78.58.toFixed(2),s3:0.00.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:29.25.toFixed(2),s9:54.88.toFixed(2),s10:72.64.toFixed(2),overall:26.20.toFixed(2)},
+{id:3,team:"NTNU",task1:null,task2:true,task3:true,task4:null,task5:null,s1:0.00.toFixed(2),s2:81.97.toFixed(2),s3:66.92.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:38.56.toFixed(2),s9:61.01.toFixed(2),s10:77.14.toFixed(2),overall:30.34.toFixed(2)},
+// {id:1,team:"Squids2",task1:true,task2:true,task3:true,task4:true,task5:true,s1:75.55.toFixed(2),s2:99.56.toFixed(2),s3:73.23.toFixed(2),s4:67.97.toFixed(2),s5:90.22.toFixed(2),s6:83.46.toFixed(2),s7:90.84.toFixed(2),s8:75.23.toFixed(2),s9:65.34.toFixed(2),s10:73.41.toFixed(2),overall:77.31.toFixed(2)}
+];
+
+var tabledatatest_priv =
+[
+	// {id:0,team:"Random",task1:true,task2:true,task3:true,task4:true,task5:true,s1:41.86.toFixed(2),s2:27.52.toFixed(2),s3:17.53.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:31.65.toFixed(2),s9:0.00.toFixed(2),s10:0.00.toFixed(2),overall:14.82.toFixed(2)},
+	// {id:1,team:"Average",task1:true,task2:true,task3:true,task4:true,task5:true,s1:32.57.toFixed(2),s2:23.16.toFixed(2),s3:27.08.toFixed(2),s4:22.24.toFixed(2),s5:74.23.toFixed(2),s6:50.85.toFixed(2),s7:45.74.toFixed(2),s8:43.39.toFixed(2),s9:0.00.toFixed(2),s10:0.00.toFixed(2),overall:25.67.toFixed(2)},
+	{id:1,team:"Random",task1:true,task2:true,task3:true,task4:true,task5:true,s1:41.86.toFixed(2),s2:27.52.toFixed(2),s3:17.53.toFixed(2),s4:28.25.toFixed(2),s5:37.84.toFixed(2),s6:28.16.toFixed(2),s7:34.62.toFixed(2),s8:31.65.toFixed(2),s9:58.87.toFixed(2),s10:74.80.toFixed(2),overall:39.25.toFixed(2)},
+	{id:2,team:"Average",task1:true,task2:true,task3:true,task4:true,task5:true,s1:32.57.toFixed(2),s2:23.16.toFixed(2),s3:27.08.toFixed(2),s4:22.24.toFixed(2),s5:74.23.toFixed(2),s6:50.85.toFixed(2),s7:45.74.toFixed(2),s8:39.79.toFixed(2),s9:59.53.toFixed(2),s10:75.48.toFixed(2),overall:42.10.toFixed(2)},
+	{id:3,team:"Visual",task1:null,task2:null,task3:null,task4:true,task5:null,s1:0.00.toFixed(2),s2:0.00.toFixed(2),s3:0.00.toFixed(2),s4:46.14.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:0.00.toFixed(2),s9:56.31.toFixed(2),s10:55.25.toFixed(2),overall:8.56.toFixed(2)},
+	{id:4,team:"KEIO-ICS",task1:true,task2:true,task3:true,task4:true,task5:true,s1:63.21.toFixed(2),s2:77.84.toFixed(2),s3:72.57.toFixed(2),s4:36.77.toFixed(2),s5:64.96.toFixed(2),s6:57.67.toFixed(2),s7:61.56.toFixed(2),s8:69.92.toFixed(2),s9:61.71.toFixed(2),s10:68.41.toFixed(2),overall:63.98.toFixed(2)},
+	{id:5,team:"Squids",task1:true,task2:true,task3:true,task4:true,task5:true,s1:79.22.toFixed(2),s2:98.69.toFixed(2),s3:43.97.toFixed(2),s4:62.32.toFixed(2),s5:76.95.toFixed(2),s6:70.87.toFixed(2),s7:59.93.toFixed(2),s8:57.45.toFixed(2),s9:73.85.toFixed(2),s10:82.08.toFixed(2),overall:70.85.toFixed(2)},
+// {id:11,team:"Squids-Audio",task1:true,task2:true,task3:null,task4:null,task5:null,s1:76.93.toFixed(2),s2:98.69.toFixed(2),s3:0.00.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:22.95.toFixed(2),s9:0.00.toFixed(2),s10:0.00.toFixed(2),overall:24.82.toFixed(2)}
+{id:4,team:"Concatenation",task1:true,task2:true,task3:true,task4:null,task5:null,s1:42.70.toFixed(2),s2:41.90.toFixed(2),s3:62.14.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:54.14.toFixed(2),s9:67.64.toFixed(2),s10:78.34.toFixed(2),overall:36.06.toFixed(2)},
+{id:7,team:"ACC",task1:true,task2:true,task3:null,task4:null,task5:null,s1:81.46.toFixed(2),s2:93.92.toFixed(2),s3:0.00.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:21.89.toFixed(2),s9:55.68.toFixed(2),s10:70.87.toFixed(2),overall:30.99.toFixed(2)},
+{id:5,team:"HVRL",task1:true,task2:true,task3:true,task4:null,task5:null,s1:74.43.toFixed(2),s2:96.08.toFixed(2),s3:52.38.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:61.01.toFixed(2),s9:67.08.toFixed(2),s10:78.30.toFixed(2),overall:46.39.toFixed(2)},
+{id:6,team:"BIT",task1:true,task2:true,task3:true,task4:null,task5:null,s1:81.16.toFixed(2),s2:94.70.toFixed(2),s3:60.58.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:65.15.toFixed(2),s9:65.09.toFixed(2),s10:82.56.toFixed(2),overall:48.77.toFixed(2)},
+{id:2,team:"Challengers",task1:true,task2:true,task3:null,task4:null,task5:null,s1:47.08.toFixed(2),s2:71.75.toFixed(2),s3:0.00.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:23.21.toFixed(2),s9:56.20.toFixed(2),s10:75.58.toFixed(2),overall:24.34.toFixed(2)},
+{id:3,team:"NTNU",task1:null,task2:true,task3:true,task4:null,task5:null,s1:0.00.toFixed(2),s2:91.67.toFixed(2),s3:67.67.toFixed(2),s4:0.00.toFixed(2),s5:0.00.toFixed(2),s6:0.00.toFixed(2),s7:0.00.toFixed(2),s8:39.80.toFixed(2),s9:65.55.toFixed(2),s10:82.42.toFixed(2),overall:32.29.toFixed(2)},
+// {id:1,team:"Squids2",task1:true,task2:true,task3:true,task4:true,task5:true,s1:79.22.toFixed(2),s2:98.69.toFixed(2),s3:69.87.toFixed(2),s4:48.65.toFixed(2),s5:75.29.toFixed(2),s6:71.51.toFixed(2),s7:70.45.toFixed(2),s8:74.86.toFixed(2),s9:67.98.toFixed(2),s10:73.17.toFixed(2),overall:73.11.toFixed(2)}
+];
+
+var tabledatagroup1 =
+[
+	// {id:0,team:"Random",public:9.73.toFixed(2),private:7.87.toFixed(2),combined:8.88.toFixed(2)},
+	// {id:1,team:average,public:9.73.toFixed(2),private:7.87.toFixed(2),combined:8.88.toFixed(2)},
+	{id:0,team:"Random",public:8.94.toFixed(2),private:11.93.toFixed(2),combined:10.49.toFixed(2)},
+// {id:1,team:Average,public:9.73.toFixed(2),private:7.87.toFixed(2),combined:8.88.toFixed(2)},
+{id:2,team:"Challengers",public:40.61.toFixed(2),private:38.34.toFixed(2),combined:39.55.toFixed(2)},
+{id:4,team:"Concatenation",public:24.59.toFixed(2),private:23.98.toFixed(2),combined:24.32.toFixed(2)},
+{id:5,team:"HVRL",public:82.14.toFixed(2),private:73.40.toFixed(2),combined:77.81.toFixed(2)},
+{id:6,team:"BIT",public:75.00.toFixed(2),private:77.86.toFixed(2),combined:76.45.toFixed(2)},
+{id:7,team:"ACC",public:76.02.toFixed(2),private:78.24.toFixed(2),combined:77.15.toFixed(2)},
+{id:9,team:"KEIO-ICS",public:61.20.toFixed(2),private:57.66.toFixed(2),combined:59.32.toFixed(2)},
+{id:10,team:"Squids",public:77.00.toFixed(2),private:79.16.toFixed(2),combined:78.16.toFixed(2)},
+// {id:11,team:"Squids2",public:77.00.toFixed(2),private:79.16.toFixed(2),combined:78.16.toFixed(2)},
+{id:11,team:"Squids-Audio",public:75.56.toFixed(2),private:77.65.toFixed(2),combined:76.66.toFixed(2)}
+]
+
+var tabledatagroup2 =
+[
+{id:0,team:"Random",public:32.43.toFixed(2),private:25.54.toFixed(2),combined:28.99.toFixed(2)},
+{id:1,team:"Average",public:65.19.toFixed(2),private:42.01.toFixed(2),combined:53.60.toFixed(2)},
+{id:8,team:"KEIO-ICS",public:71.58.toFixed(2),private:66.98.toFixed(2),combined:69.28.toFixed(2)},
+{id:10,team:"Squids",public:79.72.toFixed(2),private:56.61.toFixed(2),combined:68.16.toFixed(2)},
+// {id:1,team:"Squids2",public:80.70.toFixed(2),private:71.15.toFixed(2),combined:75.92.toFixed(2)}
+]
+
+var tabledatafillingmass =
+[
+	// {id:2,team:"Average",task1:true,task2:true,task3:true,public:59.05.toFixed(2),private:59.05.toFixed(2),combined:35.06.toFixed(2)},
+	{id:2,team:"Mask R-CNN + RN18",task1:true,task2:true,task3:null,public:19.46.toFixed(2),private:9.59.toFixed(2),combined:14.53.toFixed(2)},
+	{id:3,team:"Mask R-CNN + RN18",task1:true,task2:true,task3:null,public:17.28.toFixed(2),private:6.99.toFixed(2),combined:12.14.toFixed(2)},
+	{id:4,team:"Mask R-CNN + RN18",task1:true,task2:true,task3:null,public:15.15.toFixed(2),private:9.96.toFixed(2),combined:12.56.toFixed(2)},
+	{id:5,team:"Mask R-CNN + RN18",task1:true,task2:true,task3:null,public:12.95.toFixed(2),private:10.25.toFixed(2),combined:11.60.toFixed(2)},
+	{id:0,team:"Random",task1:true,task2:true,task3:true,public:38.47.toFixed(2),private:31.65.toFixed(2),combined:35.06.toFixed(2)},
+	{id:1,team:"Average",task1:true,task2:true,task3:true,public:44.83.toFixed(2),private:39.79.toFixed(2),combined:42.31.toFixed(2)},
+	{id:2,team:"Challengers",task1:true,task2:true,task3:null,public:29.25.toFixed(2),private:23.21.toFixed(2),combined:26.23.toFixed(2)},
+	{id:3,team:"NTNU",task1:null,task2:true,task3:true,public:38.56.toFixed(2),private:39.80.toFixed(2),combined:39.18.toFixed(2)},
+	{id:4,team:"Concatenation",task1:true,task2:true,task3:true,public:52.80.toFixed(2),private:54.14.toFixed(2),combined:53.47.toFixed(2)},
+	{id:5,team:"HVRL",task1:true,task2:true,task3:true,public:63.32.toFixed(2),private:61.01.toFixed(2),combined:62.16.toFixed(2)},
+	{id:6,team:"BIT",task1:true,task2:true,task3:true,public:64.98.toFixed(2),private:65.15.toFixed(2),combined:65.06.toFixed(2)},
+	{id:7,team:"ACC",task1:true,task2:true,task3:null,public:28.25.toFixed(2),private:21.89.toFixed(2),combined:25.07.toFixed(2)},
+	{id:9,team:"KEIO-ICS",task1:true,task2:true,task3:true,public:71.07.toFixed(2),private:69.92.toFixed(2),combined:70.50.toFixed(2)},
+	{id:10,team:"Squids",task1:true,task2:true,task3:true,public:73.07.toFixed(2),private:57.45.toFixed(2),combined:65.26.toFixed(2)},
+	{id:11,team:"Squids-Audio",task1:true,task2:true,task3:null,public:28.34.toFixed(2),private:22.95.toFixed(2),combined:25.64.toFixed(2)},
+	// {id:1,team:"Squids2",task1:true,task2:true,task3:true,public:75.23.toFixed(2),private:74.86.toFixed(2),combined:75.04.toFixed(2)}
+	];
+
+	var tabledatatask1 =
+	[
+	// {id:0,team:"Random",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:33.42.toFixed(2),private:32.57.toFixed(2),combined:33.15.toFixed(2)},
+	{id:2,team:"Mask R-CNN + RN18",audio:null,rgb1:true,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:58.51.toFixed(2),private:32.93.toFixed(2),combined:47.00.toFixed(2)},
+	{id:3,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:true,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:48.90.toFixed(2),private:26.73.toFixed(2),combined:39.00.toFixed(2)},
+	{id:4,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:true,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:36.52.toFixed(2),private:25.52.toFixed(2),combined:31.46.toFixed(2)},
+	{id:5,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:true,depth4:null,ir4:null,public:25.12.toFixed(2),private:21.99.toFixed(2),combined:23.68.toFixed(2)},
+	{id:12,team:"ZCR+MFCC+kNN",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:63.63.toFixed(2),private:54.97.toFixed(2),combined:59.35.toFixed(2)},
+	{id:13,team:"ZCR+MFCC+SVM",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:66.27.toFixed(2),private:57.19.toFixed(2),combined:61.87.toFixed(2)},
+	{id:14,team:"ZCR+MFCC+RF",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:70.04.toFixed(2),private:63.11.toFixed(2),combined:66.80.toFixed(2)},
+	{id:15,team:"A5F+kNN",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:55.49.toFixed(2),private:53.22.toFixed(2),combined:54.47.toFixed(2)},
+	{id:16,team:"A5F+SVM",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:60.77.toFixed(2),private:58.57.toFixed(2),combined:60.09.toFixed(2)},
+	{id:17,team:"A5F+RF",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:64.18.toFixed(2),private:63.94.toFixed(2),combined:64.74.toFixed(2)},
+	{id:18,team:"Spectrogram+kNN",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:59.15.toFixed(2),private:53.47.toFixed(2),combined:56.38.toFixed(2)},
+	{id:19,team:"Spectrogram+SVM",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:47.66.toFixed(2),private:51.54.toFixed(2),combined:49.67.toFixed(2)},
+	{id:20,team:"Spectrogram+RF",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:45.43.toFixed(2),private:45.59.toFixed(2),combined:45.49.toFixed(2)},
+	{id:21,team:"Spectrogram+PCA+kNN",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:39.03.toFixed(2),private:37.16.toFixed(2),combined:38.31.toFixed(2)},
+	{id:22,team:"Spectrogram+PCA+SVM",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:30.08.toFixed(2),private:31.99.toFixed(2),combined:31.64.toFixed(2)},
+	{id:23,team:"Spectrogram+PCA+RF",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:46.79.toFixed(2),private:42.46.toFixed(2),combined:44.66.toFixed(2)},
+	{id:0,team:"Random",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:33.35.toFixed(2),private:41.86.toFixed(2),combined:37.62.toFixed(2)},
+	{id:1,team:"Average",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:33.42.toFixed(2),private:32.57.toFixed(2),combined:33.15.toFixed(2)},
+	{id:2,team:"Challengers",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:50.73.toFixed(2),private:47.08.toFixed(2),combined:48.71.toFixed(2)},
+	{id:4,team:"Concatenation",audio:true,rgb1:true,depth1:null,rgb2:true,depth2:null,rgb3:true,depth3:null,rgb4:true,depth4:null,public:44.31.toFixed(2),private:42.70.toFixed(2),combined:43.53.toFixed(2)},
+	{id:5,team:"HVRL",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:82.63.toFixed(2),private:74.43.toFixed(2),combined:78.56.toFixed(2)},
+	{id:6,team:"BIT",audio:true,rgb1:true,depth1:null,rgb2:true,depth2:null,rgb3:true,depth3:null,rgb4:true,depth4:null,public:78.14.toFixed(2),private:81.16.toFixed(2),combined:79.65.toFixed(2)},
+	{id:7,team:"ACC",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:80.22.toFixed(2),private:81.46.toFixed(2),combined:80.84.toFixed(2)},
+	{id:9,team:"KEIO-ICS",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:68.14.toFixed(2),private:63.21.toFixed(2),combined:65.73.toFixed(2)},
+	{id:10,team:"Squids",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:75.55.toFixed(2),private:79.22.toFixed(2),combined:77.40.toFixed(2)},
+	{id:11,team:"Squids-Audio",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:74.06.toFixed(2),private:76.93.toFixed(2),combined:75.53.toFixed(2)},
+	// {id:10,team:"Squids2",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:75.55.toFixed(2),private:79.22.toFixed(2),combined:77.40.toFixed(2)},
+	];
+
+	var tabledatatask2 =
+	[
+	{id:2,team:"Mask R-CNN + RN18",audio:null,rgb1:true,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:30.85.toFixed(2),private:13.04.toFixed(2),combined:23.05.toFixed(2)},
+	{id:3,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:true,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:28.75.toFixed(2),private:15.54.toFixed(2),combined:22.90.toFixed(2)},
+	{id:4,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:true,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:21.14.toFixed(2),private:9.04.toFixed(2),combined:15.63.toFixed(2)},
+	{id:5,team:"Mask R-CNN + RN18",audio:null,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:true,depth4:null,ir4:null,public:14.12.toFixed(2),private:11.23.toFixed(2),combined:12.70.toFixed(2)},
+	{id:12,team:"ZCR+MFCC+kNN",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:88.19.toFixed(2),private:79.23.toFixed(2),combined:83.73.toFixed(2)},
+	{id:13,team:"ZCR+MFCC+SVM",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:84.23.toFixed(2),private:71.96.toFixed(2),combined:78.67.toFixed(2)},
+	{id:14,team:"ZCR+MFCC+RF",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:92.97.toFixed(2),private:89.74.toFixed(2),combined:91.31.toFixed(2)},
+	{id:15,team:"A5F+kNN",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:76.84.toFixed(2),private:75.96.toFixed(2),combined:76.41.toFixed(2)},
+	{id:16,team:"A5F+SVM",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:64.92.toFixed(2),private:79.72.toFixed(2),combined:72.86.toFixed(2)},
+	{id:17,team:"A5F+RF",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:88.36.toFixed(2),private:87.46.toFixed(2),combined:87.88.toFixed(2)},
+	{id:18,team:"Spectrogram+kNN",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:60.50.toFixed(2),private:68.58.toFixed(2),combined:64.55.toFixed(2)},
+	{id:19,team:"Spectrogram+SVM",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:39.39.toFixed(2),private:41.81.toFixed(2),combined:40.61.toFixed(2)},
+	{id:20,team:"Spectrogram+RF",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:47.98.toFixed(2),private:47.68.toFixed(2),combined:47.82.toFixed(2)},
+	{id:21,team:"Spectrogram+PCA+kNN",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:24.47.toFixed(2),private:28.34.toFixed(2),combined:26.53.toFixed(2)},
+	{id:22,team:"Spectrogram+PCA+SVM",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:20.57.toFixed(2),private:27.60.toFixed(2),combined:24.20.toFixed(2)},
+	{id:23,team:"Spectrogram+PCA+RF",audio:true,rgb1:null,depth1:null,ir1:null,rgb2:null,depth2:null,ir2:null,rgb3:null,depth3:null,ir3:null,rgb4:null,depth4:null,ir4:null,public:28.75.toFixed(2),private:37.79.toFixed(2),combined:33.32.toFixed(2)},
+	{id:0,team:"Random",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:21.24.toFixed(2),private:27.52.toFixed(2),combined:24.38.toFixed(2)},
+	{id:1,team:"Average",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:22.91.toFixed(2),private:23.16.toFixed(2),combined:23.01.toFixed(2)},
+	{id:2,team:"Challengers",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:78.58.toFixed(2),private:71.75.toFixed(2),combined:75.24.toFixed(2)},
+	{id:3,team:"NTNU",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:81.97.toFixed(2),private:91.67.toFixed(2),combined:86.89.toFixed(2)},
+	{id:4,team:"Concatenation",audio:true,rgb1:true,depth1:null,rgb2:true,depth2:null,rgb3:true,depth3:null,rgb4:true,depth4:null,public:41.77.toFixed(2),private:41.90.toFixed(2),combined:41.83.toFixed(2)},
+	{id:5,team:"HVRL",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:97.83.toFixed(2),private:96.08.toFixed(2),combined:96.95.toFixed(2)},
+	{id:6,team:"BIT",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:93.83.toFixed(2),private:94.70.toFixed(2),combined:94.26.toFixed(2)},
+	{id:7,team:"ACC",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:95.12.toFixed(2),private:93.92.toFixed(2),combined:94.50.toFixed(2)},
+	{id:9,team:"KEIO-ICS",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:83.56.toFixed(2),private:77.84.toFixed(2),combined:80.72.toFixed(2)},
+	{id:10,team:"Squids",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:true,depth3:null,rgb4:null,depth4:null,public:99.56.toFixed(2),private:98.69.toFixed(2),combined:99.13.toFixed(2)},
+	// {id:11,team:"Squids-Audio",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:99.56.toFixed(2),private:98.69.toFixed(2),combined:99.13.toFixed(2)},
+	// {id:10,team:"Squids2",audio:true,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:true,depth3:null,rgb4:null,depth4:null,public:99.56.toFixed(2),private:98.69.toFixed(2),combined:99.13.toFixed(2)},
+	];
+
+	var tabledatatask3 =
+	[
+	// {id:0,team:"Random",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:31.63.toFixed(2),private:15.92.toFixed(2),combined:23.78.toFixed(2)},
+	{id:0,team:"Random",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:31.63.toFixed(2),private:17.53.toFixed(2),combined:24.58.toFixed(2)},
+	{id:1,team:"Average",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:54.39.toFixed(2),private:27.08.toFixed(2),combined:40.73.toFixed(2)},
+	{id:3,team:"NTNU",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:true,rgb4:null,depth4:null,public:66.92.toFixed(2),private:67.67.toFixed(2),combined:67.30.toFixed(2)},
+	{id:4,team:"Concatenation",audio:null,rgb1:true,depth1:null,rgb2:true,depth2:null,rgb3:true,depth3:null,rgb4:true,depth4:null,public:63.00.toFixed(2),private:62.14.toFixed(2),combined:62.57.toFixed(2)},
+	{id:5,team:"HVRL",audio:null,rgb1:true,depth1:true,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:57.19.toFixed(2),private:52.38.toFixed(2),combined:54.79.toFixed(2)},
+	{id:6,team:"BIT",audio:null,rgb1:true,depth1:null,rgb2:true,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:60.56.toFixed(2),private:60.58.toFixed(2),combined:60.57.toFixed(2)},
+	{id:9,team:"KEIO-ICS",audio:null,rgb1:true,depth1:null,rgb2:true,depth2:null,rgb3:true,depth3:null,rgb4:null,depth4:null,public:71.95.toFixed(2),private:72.57.toFixed(2),combined:72.26.toFixed(2)},
+	{id:10,team:"Squids",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:true,depth3:true,rgb4:null,depth4:null,public:75.05.toFixed(2),private:43.97.toFixed(2),combined:59.51.toFixed(2)},
+	// {id:1,team:"Squids2",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:true,depth3:true,rgb4:null,depth4:null,public:73.23.toFixed(2),private:69.87.toFixed(2),combined:71.55.toFixed(2)}
+	];
+	
+
+	var tabledatatask4 =
+	[
+	{id:0,team:"Random",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:30.59.toFixed(2),private:28.25.toFixed(2),combined:29.42.toFixed(2)},
+	{id:1,team:"Average",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:null,depth3:null,rgb4:null,depth4:null,public:21.88.toFixed(2),private:22.24.toFixed(2),combined:22.06.toFixed(2)},
+	{id:8,team:"visual",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:true,depth3:true,rgb4:null,depth4:null,public:53.14.toFixed(2),private:46.14.toFixed(2),combined:49.64.toFixed(2)},
+	{id:9,team:"KEIO-ICS",audio:null,rgb1:true,depth1:null,rgb2:true,depth2:null,rgb3:true,depth3:null,rgb4:null,depth4:null,public:43.61.toFixed(2),private:36.77.toFixed(2),combined:40.19.toFixed(2)},
+	{id:10,team:"Squids",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:true,depth3:true,rgb4:null,depth4:null,public:55.25.toFixed(2),private:62.32.toFixed(2),combined:58.78.toFixed(2)},
+	// {id:1,team:"Squids2",audio:null,rgb1:null,depth1:null,rgb2:null,depth2:null,rgb3:true,depth3:true,rgb4:null,depth4:null,public:67.97.toFixed(2),private:48.65.toFixed(2),combined:58.31.toFixed(2)}
+	];
+</script>
+
+<script> 
+	function AppearMetadata(metadata_id) {
+		var y = document.getElementsByClassName("metadata");
+		for (var i = 0; i < y.length; i++) {
+			y[i].style.display = 'none';
+		}
+
+		var x = document.getElementById(metadata_id);
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+
+	$('a[href="#dates"]').click(function(){
+		$("#dates").css("padding-top", "500px");
+	});
+</script>
+
+
+<link href="benchmark/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="benchmark/dist/js/tabulator.min.js"></script>
+<link href="https://unpkg.com/tabulator-tables@4.4.3/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.4.3/dist/js/tabulator.min.js"></script>
+
+<style>
+	
+	#menu_div
+	{
+		position: -webkit-sticky; /* Safari */
+		position: sticky;
+		top: 0;
+		background: #fff;
+	}
+	
+	/* NAVIGATION */
+	nav {0
+		width: 100%;
+		margin: 0 auto;
+		background: #fff;
+		position: static;
+	}
+
+	.fixed-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%; 
+	}
+
+	/* By Dominik Biedebach @domobch */
+	nav ul {
+		list-style: none;
+		text-align: center;
+	}
+	nav ul li {
+		display: inline-block;
+	}
+	nav ul li a {
+		display: block;
+		padding: 15px;
+		text-decoration: none;
+		color: #aaa;
+		font-weight: 300;
+		margin: 0 10px;
+	}
+	nav ul li a,
+	nav ul li a:after,
+	nav ul li a:before {
+		transition: all .5s;
+	}
+	nav ul li a:hover {
+		color: #555;
+	}
+
+	/* stroke */
+	nav.stroke ul li a,
+	nav.fill ul li a {
+		position: relative;
+	}
+	nav.stroke ul li a:after,
+	nav.fill ul li a:after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 0%;
+		content: '.';
+		color: transparent;
+		background: #333;
+		height: 1px;
+	}
+	nav.stroke ul li a:hover:after {
+		width: 100%;
+	}
+
+
+	#teams {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		width: 200px;
+		background-color: #f1f1f1;
+	}
+
+	#teams li a {
+		display: block;
+		color: #000;
+		padding: 8px 16px;
+		text-decoration: none;
+	}
+
+	/* Change the link color on hover */
+	#teams li a:hover {
+		background-color: #555;
+		color: white;
+	}
+
+	#dates, #description, #leaderboard, #evaluation, #rules,
+	#documentation {
+		display: block;
+		margin-top: -50px;
+		padding-top: 50px;
+	}
+
+	.hide {
+		display: none;
+	}
+
+	tr:hover {background-color: #f5f5f5;}
+	.tg  {border-collapse:collapse;border-spacing:0;}
+	.tg td{border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg th{border-color:black;border-style:solid;border-width:1px;font-weight:normal;font-size:14.0pt;overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg .tg-km2t{border-color:#ffffff;font-weight:bold;font-size:14.0pt;text-align:left;vertical-align:top}
+			.tg .tg-zv4m{border-color:#ffffff;font-size:14.0pt;text-align:left;vertical-align:top}
+</style>
+</head>
+<body id="top">
+	<div class="wrapper row1">
+		<div id="header" class="clear">
+			<div class="fl_left">
+				<ul>
+					<li>
+						<p>
+							<a href="index.html"><img src="images/CORSMAL_logo.png" style="padding:0px 0px 0px 0px;height:75px" alt="CORSMAL"/></a>
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--2###################################################################################################### --> 
+	<div class="wrapper row2"; style="margin-bottom: 7px;">
+		<div class="rnd"> <!-- ###### --> 
+			<div id="topnav"> 
+				<ul style="margin-top: 5px;">
+					<li><a href="index.html"><b>Home</b></a></li> 
+					<li><a href="objectives.html"><b>Objectives</b></a></li>
+					<li><a href="publications.html"><b>Publications</b></a></li> 
+					<li><a href="blog.html"><b>Blog</b></a></li> 
+					<!-- <li class="active"><a href="events.html"><b>Events</b></a></li> -->
+					<li><a href="events.html"><b>Events</b></a></li>
+					<li ><a href="code.html"><b>Code</b></a></li>
+					<li><a href="data.html"><b>Data</b></a></li> 
+					<li><a href="benchmark.html"><b>Benchmark</b></a></li>
+					<li class="active"><a href="challenge.html"><b>Challenge</b></a></li>
+					<li class="last"><a href="team.html"><b>Team</b></a></li>
+				</ul>
+			</div>
+			<!-- ###### --> 
+		</div>
+	</div>
+	<!-- 3####################################################################################################### --> 
+	<div class="wrapper row1"> 
+		<div id="container" class="clear">
+			<div id="latestnewspage" class="clear">
+				<div style="float:left;width: 32%;text-align: left;">		
+					<a href="http://www.chistera.eu" TARGET = "_blank"><img src="images/chist-era_logo_crop.png" style="height:65px;" alt="Chistera logo"/></a><br>
+				</div>
+				<div style="float:left;width: 32%;text-align: center;">		
+					<a href="https://www.ieee.org/" TARGET = "_blank"><img src="images/ieee_logo_blue.png" style="height:65px;" alt="IEEE logo"/></a><br>
+				</div>
+				<div style="float:left;width: 32%;text-align: right;">			
+					<a href="https://2022.ieeeicassp.org/index.php" TARGET = "_blank"><img src="images/challenge/ICASSP2022_logo.png" style="height:65px" alt="ICASSP Logo"/></a>
+				</div>
+				<br><br><br><br>
+				<h2>
+					<p class="xmsonormal" style="text-align:center;text-justify:inter-ideograph;margin-bottom:0px">
+						<b><span style="font-size:16.0pt">The CORSMAL challenge:<br>Audio-visual object classification<br>for human-robot collaboration</span></b>
+					</p>
+				</h2>
+				<div align="center">
+					<img src="images/challenge/challenge_main_fig.png" alt=”challenge” width=100% />
+					<br><br>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/zs_M8sU1Kzs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<br><br>
+				</div>
+				<div id="dates" align="center">
+					<br>
+					<div style="background-color:#f1f1f1; color: #000000;width: 80%;text-align: center;padding: 10px;">
+						<div style="float:left;text-align:center">
+							<p style="margin: 0px 10px 10px 10px;text-align: center;font: 18px Helvetica"><b>PRIZE: £1,800</b></p>
+							<p style="margin: 10px 10px 10px 10px;text-align: center;font: 14px Helvetica"><b>Winner</b>: <i>Hengyi Wang, Chaoran Zhu, Ziyin Ma, Changjae Oh</i> (Squids team)<br>Improving generalization of deep networks for<br>estimating physical properties of containers and fillings</p>
+						</div>
+						<div>
+							<p style="text-align:center;margin: 0px 10px 5px 10px;"> Sponsored by</p>
+							<a href="https://www.zebra.com/gb/en.html" TARGET = "_blank" style="text-align: right;"><img src="images/challenge/Zebra_Logo_K.png" style="height:65px" alt="Zebra Logo"/></a>	
+						</div>
+					</div>
+					<br>
+				</div>
+				<br>
+				<div>
+					<p id="program">
+					<!-- <b><span style="font-size:14.0pt">Schedule</span></b><br> -->
+					<b><span style="font-size:14.0pt">Programme (23 June 2022, starts at 12pm BST)</span></b>
+					<!-- <span style="font-size:14.0pt">Saturday 7 May, starts at 9 pm UTC+8 (Singapore) / 2 pm BST (London)<br> -->
+					<!-- <a href="https://2022.ieeeicassp.org/view_session.php?SessionID=1330" TARGET="_blank"><u>Gather Town Area B</u></a></span> -->
+					<br>Free registration: <a href="https://www.eventbrite.co.uk/e/347863578327" target="_blank"><u>https://www.eventbrite.co.uk/347863578327</u></a>
+					<br><br> On the day of the workshop, the event will be streamed live via the <a href="https://www.youtube.com/user/intelsensing" target="_blank"><u>CIS YouTube channel</u></a>, and we will provide a link to <a href="https://app.sli.do/event/oedtsnCJYDwzsjM9SxoN85" target="_blank"><u>Slido</u></a> for Q&A.
+					<!-- <br><a href="https://www.youtube.com/user/intelsensing" target="_blank"><u>YouTube live streaming</u></a> -->
+					<!-- <br><a href="https://app.sli.do/event/oedtsnCJYDwzsjM9SxoN85" target="_blank"><u>Q&A with Slido</u></a> -->
+				</p>
+ 				<table class="tg" width="100%">
+				<tbody>
+					<tr>
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">11:45 am UTC+1 / 19:45 pm UTC+9</a><br><b>Virtual windows opening</td>
+					</tr>
+					<tr>
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">12:00 pm UTC+1 / 20:00 pm UTC+9</a><br><b>Welcome and introduction: Collaborative Object Recognition, Shared Manipulation and Learning</b><br>
+							Andrea Cavallaro<br><i>Queen Mary University of London &amp; Alan Turing Institute</i>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">12:15 pm UTC+1 / 20:15 pm UTC+9</a><br>
+							<b>Audio-Visual Object Classification For Human-Robot Collaboration</b><br>
+							Alessio Xompero, Yik Lung Pang, Timothy Patten, Ahalya Prabhakar, Berk Calli, Andrea Cavallaro
+							<br><i>Queen Mary University of London, U.K.; École polytechnique fédérale de Lausanne, Switzerland; University of Technology Sydney, Australia; Worcester Polytechnic Institute, USA</i>		
+							<br>
+						[<a class="papercite_pdf" title="link" href="https://doi.org/10.1109/ICASSP43922.2022.9746336" target="_blank"><u>paper</u></a>]
+						[<a class="papercite_pdf" title="Download" href="https://doi.org/10.48550/arXiv.2203.01977" target="_blank"><u>arxiv</u></a>]
+						[<a class="papercite_pdf" title="YouTube" href="https://youtu.be/zs_M8sU1Kzs" target="_blank"><u>video</u></a>]
+						<!-- [<a class="papercite_pdf" title="Download" href="resources/challenge/icpr20/2021.01.15_BecauseItsTactile_slides.pdf" target="_blank"><u>slides</u></a>] -->
+						[<a class="papercite_pdf" title="YouTube" href="https://corsmal.eecs.qmul.ac.uk/resources/challenge/CORSMAL__ICASSP2022_poster.pdf"><u>poster</u></a>]
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">12:30 pm UTC+1 / 20:30 pm UTC+9</a><br>
+							<b>Container localisation and mass estimation with an RGB-D camera</b><br>
+							Tommaso Apicella, Giulia Slavic, Edoardo Ragusa, Paolo Gastaldo, Lucio Marcenaro (Visual team)<br>
+							 <i>University of Genoa, Italy</i>
+						<br>
+						[<a class="papercite_pdf" title="link" href="https://doi.org/10.1109/ICASSP43922.2022.9747134" target="_blank"><u>paper</u></a>]
+						<!-- [<a class="papercite_pdf" title="YouTube" href="https://youtu.be/p0mTowy1Opc" target="_blank"><u>video</u></a>] -->
+						<!-- [<a class="papercite_pdf" title="Download" href="resources/challenge/icpr20/2021.01.15_Concatenation_slides.pdf" target="_blank"><u>slides</u></a>] -->
+						[<a class="papercite_pdf" title="link" href="https://doi.org/10.48550/arXiv.2203.01207" target="_blank"><u>arxiv</u></a>]
+						[<a class="papercite_pdf" title="link" href=" 	https://github.com/CORSMAL/Visual" target="_blank"><u>code</u></a>]
+						<br>
+<!-- 						<table class="tg" width="50%">
+							<tbody>
+								<tr>
+									<td class="tg-zv4m" style="text-align: center;width:20%"><img src="images/challenge/Tommaso.png"  alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:20%"><img src="images/challenge/Giulia.png" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:20%"><img src="images/challenge/Edoardo.png" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:20%"><img src="images/challenge/Paolo.png" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:20%"><img src="images/challenge/Lucio.png" alt="" width="75px" /></td>
+				        </tr>
+								<tr>
+									<td class="tg-zv4m" style="text-align: center;width:20%">Tommaso Apicella</td>
+									<td class="tg-zv4m" style="text-align: center;width:20%">Giulia Slavic</td>
+									<td class="tg-zv4m" style="text-align: center;width:20%">Edoardo Ragusa</td>
+									<td class="tg-zv4m" style="text-align: center;width:20%">Paolo Gastaldo</td>
+									<td class="tg-zv4m" style="text-align: center;width:20%">Lucio Marcenaro</td>
+								</tr>
+							</tbody>
+						</table> -->
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">12:45 pm UTC+1 / 20:45 pm UTC+9</a><br>
+							<b>Shared Transformer Encoder with Mask-based Volume Estimation for Filling Mass Estimation</b><br>
+							Tomoya Matsubara, Seitaro Otsuki, Yuiga Wada, Haruka Matsuo, Takumi Komatsu, Yui Iioka, Komei Sugiura, Hideo Saito (KEIO-ICS team)<br>
+							<i>Keio University, Japan</i>
+						<br>
+						[<a class="papercite_pdf" title="link" href="https://doi.org/10.1109/ICASSP43922.2022.9747110" target="_blank"><u>paper</u></a>]
+						<!-- [<a class="papercite_pdf" title="link" href="https://doi.org/10.1109/ICASSP43922.2022.9747110" target="_blank"><u>paper</u></a>] -->
+						<!-- [<a class="papercite_pdf" title="YouTube" href="https://youtu.be/R9O4JTkmabk" target="_blank"><u>video</u></a>] -->
+						<!-- [<a class="papercite_pdf" title="Download" href="resources/challenge/icpr20/2021.01.15_HVRL_slides.pdf" target="_blank"><u>slides</u></a>] -->
+						[<a class="papercite_pdf" title="link" href="https://github.com/YuigaWada/CORSMAL2021" target="_blank"><u>code</u></a>]
+						<br>
+	<!-- 					<table class="tg" width="50%">
+							<tbody>
+								<tr>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /></td>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /></td>
+								</tr>
+								<tr>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%">Tomoya Matsubara</td>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%">Seitaro Otsuki</td>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%">Yuiga Wada</td>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%">Haruka Matsuo</td>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%">Takumi Komatsu</td>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%">Yui Iioka</td>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%">Komei Sugiura</td>
+									<td class="tg-zv4m" style="text-align: center;width:12.5%">Hideo Saito</td>
+								</tr>
+							</tbody>
+						</table> -->
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">13:00 pm UTC+1 / 21:00 pm UTC+9</a><br>
+							<b>Improving generalization of deep networks for estimating physical properties of containers and fillings</b><br>
+							Hengyi Wang, Chaoran Zhu, Ziyin Ma, Changjae Oh (Squids team)<br>
+							<i>University of Birminghan; University College of London; Queen Mary University of London, U.K.</i>
+						<br>
+						[<a class="papercite_pdf" title="link" href="https://doi.org/10.1109/ICASSP43922.2022.9747349" target="_blank"><u>paper</u></a>]
+						<!-- [<a class="papercite_pdf" title="YouTube" href="https://youtu.be/lvPMcDaXL0A" target="_blank"><u>video</u></a>] -->
+						<!-- [<a class="papercite_pdf" title="Download" href="resources/challenge/icpr20/2021.01.15_BecauseItsTactile_slides.pdf" target="_blank"><u>slides</u></a>] -->
+						[<a class="papercite_pdf" title="Download" href="https://doi.org/10.48550/arXiv.2203.01192" target="_blank"><u>arxiv</u></a>]
+						[<a class="papercite_pdf" title="link" href="https://github.com/Noone65536/CORSMAL-Challenge-2022-Squids" target="_blank"><u>code</u></a>]
+<!-- 						<table class="tg" width="50%">
+							<tbody>
+								<tr>
+											<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/challenge/hengyi.jpg" alt="" width="75px" /></td>
+											<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/challenge/chaoran.jpg" alt="" width="75px" /></td>
+											<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/challenge/ziyin.jpg" alt="" width="75px" /></td>
+											<td class="tg-zv4m" style="text-align: center;width:25%"><img src="images/team/ChangjaeOh.jpg" alt="" width="75px" /></td>
+										</tr>
+								<tr>
+									<td class="tg-zv4m" style="text-align: center;width:25%">Hengyi Wang</td>
+									<td class="tg-zv4m" style="text-align: center;width:25%">Chaoran Zhu</td>
+									<td class="tg-zv4m" style="text-align: center;width:25%">Ziyin Ma</td>
+									<td class="tg-zv4m" style="text-align: center;width:25%">Changjae Oh</td>
+								</tr>
+							</tbody>
+						</table> -->
+						</td>
+					</tr>			
+					<tr>
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">13:15 pm UTC+1 / 21:15 pm UTC+9</a><br><b>Q&A with the speakers and discussion</b>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">13:45 pm UTC+1 / 21:45 pm UTC+9</a><br><b>Challenge leaderboard and award</b>
+						</td>
+					</tr>
+										<tr>
+						<td colspan="4" class="tg-zv4m" style="vertical-align: middle;"><a style="color:gray;">13:55 pm UTC+1 / 21:55 pm UTC+9</a><br><b>Closing</b>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+				</div>
+				<br>
+				<div id="leaderboard">
+					<p>
+						<b><span style="font-size:14.0pt">Leaderboards</span></b> 
+					</p>
+					<br>
+					<a class="papercite_pdf" title="Click to make the legend appear/disappear" onclick="AppearLegend('legend_leaderboards')"><u>Legend</u></a>
+					<p align="justify" id="legend_leaderboards" style="display:none;">
+						- View 1: view from the fixed camera on the left side of the manipulator<br>
+						- View 2: view from the fixed camera on the right side of the manipulator<br>
+						- View 3: view from the fixed camera mounted on the manipulator (robot)<br>
+						- View 4: view from the moving camera worn by the demonstrator (human)<br>
+						- A: audio modality<br>
+						- RGB: colour data<br>
+						- D: depth data<br>
+						- IR: infrared data from narrow-baseline stereo camera<br>
+						- ZCR: Zero-crossing rate<br>
+						- MFCC: Mel-frequency cepstrum coefficients<br>
+						- ZCR: Zero-crossing rate<br>
+						- A5F: Audio 5 features (MFCC, chromogram, mel-scaled spectrogram, spectral contrast, tonal centroid)<br>
+						- kNN: k-Nearest Neighbour classifier<br>
+						- SVM: Support Vector Machine classifier<br>
+						- RF: Random Forest classifier<br>
+						- PCA: Principal component analysis<br>
+					</p>
+					<br>
+					<a class="papercite_pdf" title="Click to see the task (appear/disappear)" onclick="AppearLegend('tasks')"><u>Tasks</u></a>
+					<div id="tasks" style="display:none;">
+						<p align="justify"> 
+							The CORSMAL challenge focuses on the estimation of the capacity, dimensions, and mass of containers, the type, mass, and filling (percentage of the container with content), and the overall mass of the container and filling. The specific containers and fillings are unknown to the robot: the only prior is a set of object categories (drinking glasses, cups, food boxes) and a set of filling types (water, pasta, rice). Containers vary in shape and size, and may be empty or filled with an unknown content at 50% or 90% of its capacity.<br>The tasks are as follows: 
+						</p>
+						<ul style="padding:0px" align="justify">
+							<li class="clear">
+								<b>Task 1 (T1)</b> <i>Filling level classification</i>.<br>The goal is to classify the filling level as empty, half full, or full (i.e. 90%) for each configuration
+
+							</li>
+							<li class="clear">
+								<b>Task 2 (T2)</b> <i>Filling type classification</i>.<br>The goal is to  classify the type of filling, if any, as one of these classes: 0 (no content), 1 (pasta), 2 (rice), 3 (water), for each configuration.
+							</li>
+							<li class="clear">
+								<b>Task 3 (T3)</b> <i>Container capacity estimation</i>.<br>The goal is to estimate the capacity of the container for each configuration.
+							</li>
+							<li class="clear">
+								<b>Task 4 (T4)</b> <i>Container mass estimation</i>.<br>The goal is to estimate the mass of the (empty) container for each configuration.
+							</li>
+							<li class="clear">
+								<b>Task 5 (T5)</b> <i>Container dimensions estimation</i>.<br>The goal is to estimate the width at the top and at the bottom, and height of the container for each configuration. 
+							</li>
+						</ul>
+					</div>
+					<br>
+					<a class="papercite_pdf" title="Click to see the performance score appear/disappear" onclick="AppearLegend('evaluation')"><u>Performance scores</u></a>
+					<div id="evaluation" style="display:none;">
+						<p align="justify">
+							To provide a sufficient granularity into the behaviour of the various components of the pipeline, we use 10 performance scores for the challenge tasks across public and private sets. The first 7 scores quantify the accuracy of the estimations for the 5 main tasks. The last 3 scores are an indirect  evaluation of the impact of the estimations on the quality of human-to-robot handover and delivery of the container by the robot. Performance scores will be also computed individually for the public CCM test set, the private CCM test set, and their combination. The scores cover filling level, filling type, container capacity, container width at the top, width at the bottom, and height, container mass, filling mass, object mass (container + filling), and the delivery of the container upright and at a pre-defined target location. 
+						</p>
+						<p align="center">
+							<img src="images/challenge/challenge_performance_scores_table.png" alt="Scores" style="width:80%"><br>
+						</p>
+						<p align="justify">
+							For a measure <i>a</i>, its corresponding ground-truth value is <i>&acirc</i>. The scores are normalised, and the overall score is in the interval [0,100]. <i>F<sub>1</sub></i> is the weighted average F1-score. Filling amount and type are sets of classes (no unit).
+							<br><br>
+							See the <a href="resources/challenge/PerformanceScores.pdf" target="_blank"><u>document</u></a> for technical details on the performance measures.
+						</p>
+					</div>
+					<p align="center">
+						<b>Combined CCM test sets</b>
+					</p>
+    		<div class="combined" id="combined">
+    			<script type="text/javascript">
+    				var table = new Tabulator("#combined",
+    				{
+    					placeholder:"No Data Available",
+    					maxHeight:"100%",
+					layout:"fitColumns",      //fit columns to width of table
+					reactiveData:true, //turn on data reactivity
+					data:tabledatacombined, //load data into table
+					columns:[
+					{title:"Team", field:"team", width:150},
+					{title:"T1", field:"task1", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"T2", field:"task2", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"T3", field:"task3", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"T4", field:"task4", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"T5", field:"task5", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"s1", field:"s1", sorter:"number"},
+					{title:"s2", field:"s2", sorter:"number"},
+					{title:"s3", field:"s3", sorter:"number"},
+					{title:"s4", field:"s4", sorter:"number"},
+					{title:"s5", field:"s5", sorter:"number"},
+					{title:"s6", field:"s6", sorter:"number"},
+					{title:"s7", field:"s7", sorter:"number"},
+					{title:"s8", field:"s8", sorter:"number"},
+					{title:"s9", field:"s9", sorter:"number"},
+					{title:"s10", field:"s10", sorter:"number"},
+					{title:"Overall", field:"overall", sorter:"number"},
+					],
+					initialSort:[
+						{column:"overall", dir:"desc"}, //sort by this first
+						]
+					});
+				</script>
+			</div>
+			<br>
+			<p align="center">
+				<b>CCM public test set</b>
+			</p>
+	    		<div class="example-table" id="test_pub"></div>
+	    		<script type="text/javascript">
+	    			var table = new Tabulator("#test_pub",
+	    			{
+	    				placeholder:"No Data Available",
+	    				maxHeight:"100%",
+					layout:"fitColumns",      //fit columns to width of table
+					reactiveData:true, //turn on data reactivity
+					data:tabledatatest_pub, //load data into table
+					columns:[
+					{title:"Team", field:"team", width:150},
+					{title:"T1", field:"task1", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"T2", field:"task2", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"T3", field:"task3", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"T4", field:"task4", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"T5", field:"task5", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"s1", field:"s1", sorter:"number"},
+					{title:"s2", field:"s2", sorter:"number"},
+					{title:"s3", field:"s3", sorter:"number"},
+					{title:"s4", field:"s4", sorter:"number"},
+					{title:"s5", field:"s5", sorter:"number"},
+					{title:"s6", field:"s6", sorter:"number"},
+					{title:"s7", field:"s7", sorter:"number"},
+					{title:"s8", field:"s8", sorter:"number"},
+					{title:"s9", field:"s9", sorter:"number"},
+					{title:"s10", field:"s10", sorter:"number"},
+					{title:"Overall", field:"overall", sorter:"number"},
+					],
+					initialSort:[
+						{column:"overall", dir:"desc"}, //sort by this first
+						]
+					});
+				</script>
+				<br>
+				<p align="center">
+					<b>CCM private test set</b>
+				</p>
+    		<div class="example-table" id="test_priv"></div>
+    		<script type="text/javascript">
+    			var table = new Tabulator("#test_priv",
+    			{
+    				placeholder:"No Data Available",
+    				maxHeight:"100%",
+					layout:"fitColumns",      //fit columns to width of table
+					reactiveData:true, //turn on data reactivity
+					data:tabledatatest_priv, //load data into table
+					columns:[
+					{title:"Team", field:"team", width:150},
+					{title:"T1", field:"task1", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"T2", field:"task2", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"T3", field:"task3", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"T4", field:"task4", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"T5", field:"task5", width:5, align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+					{title:"s1", field:"s1", sorter:"number"},
+					{title:"s2", field:"s2", sorter:"number"},
+					{title:"s3", field:"s3", sorter:"number"},
+					{title:"s4", field:"s4", sorter:"number"},
+					{title:"s5", field:"s5", sorter:"number"},
+					{title:"s6", field:"s6", sorter:"number"},
+					{title:"s7", field:"s7", sorter:"number"},
+					{title:"s8", field:"s8", sorter:"number"},
+					{title:"s9", field:"s9", sorter:"number"},
+					{title:"s10", field:"s10", sorter:"number"},
+					{title:"Overall", field:"overall", sorter:"number"},
+					],
+					initialSort:[
+						{column:"overall", dir:"desc"}, //sort by this first
+						]
+					});
+				</script>
+				<br>
+				<p align="center">
+					<b>Filling level classification</b>
+				</p>
+				<div class="example-table" id="task1_table"></div>
+				<script type="text/javascript">
+					var table = new Tabulator("#task1_table",
+					{
+						// height:"150px",
+						placeholder:"No Data Available",
+						maxHeight:"100%",
+						layout:"fitColumns",      //fit columns to width of table
+						reactiveData:true, //turn on data reactivity
+						data:tabledatatask1, //load data into table
+						columns:[
+						{title:"Team", field:"team", width:150},
+						{//create column group
+							title:"Input modalities",
+							columns:[
+							{
+								title:"",
+								columns:[
+								{title:"A", field:"audio",    align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+								]
+							},
+
+							{//create column group
+								title:"View 1",
+								columns:[
+								{title:"RGB", field:"rgb1", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+								{title:"D", field:"depth1", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+									// {title:"IR", field:"ir1",   headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								},
+		          {//create column group
+		          	title:"View 2",
+		          	columns:[
+		          	{title:"RGB", field:"rgb2", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+		          	{title:"D", field:"depth2", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+									// {title:"IR", field:"ir2",   headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								},
+		          {//create column group
+		          	title:"View 3",
+		          	columns:[
+		          	{title:"RGB", field:"rgb3", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+		          	{title:"D", field:"depth3", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+									// {title:"IR", field:"ir3",   headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								},
+		          {//create column group
+		          	title:"View 4",
+		          	columns:[
+		          	{title:"RGB", field:"rgb4", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+		          	{title:"D", field:"depth4", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+									// {title:"IR", field:"ir4",   align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								}, 
+								],
+							},
+							{title:"Publ", field:"public",   sorter:"number", align:"right"},
+							{title:"Priv", field:"private",  sorter:"number", align:"right"},
+							{title:"Comb", field:"combined", sorter:"number", align:"right"},
+							],
+							initialSort:[
+							{column:"combined", dir:"desc"}, //sort by this first
+							]
+						});
+					</script>
+					<p align="center">
+						<b>Filling type classification</b>
+					</p>
+					<div class="example-table" id="task2_table"></div>
+					<script type="text/javascript">
+						var table = new Tabulator("#task2_table",
+						{
+						// height:"150px",
+						placeholder:"No Data Available",
+						maxHeight:"100%",
+						layout:"fitColumns",      //fit columns to width of table
+						reactiveData:true, //turn on data reactivity
+						data:tabledatatask2, //load data into table
+						columns:[
+						{title:"Team", field:"team", width:150},
+						{//create column group
+							title:"Input modalities",
+							columns:[
+							{
+								title:"",
+								columns:[
+								{title:"A", field:"audio",    align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+								]
+							},
+
+							{//create column group
+								title:"View 1",
+								columns:[
+								{title:"RGB", field:"rgb1", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+								{title:"D", field:"depth1", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+									// {title:"IR", field:"ir1",   headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								},
+		          {//create column group
+		          	title:"View 2",
+		          	columns:[
+		          	{title:"RGB", field:"rgb2", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+		          	{title:"D", field:"depth2", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+									// {title:"IR", field:"ir2",   headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								},
+		          {//create column group
+		          	title:"View 3",
+		          	columns:[
+		          	{title:"RGB", field:"rgb3", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+		          	{title:"D", field:"depth3", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+									// {title:"IR", field:"ir3",   headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								},
+		          {//create column group
+		          	title:"View 4",
+		          	columns:[
+		          	{title:"RGB", field:"rgb4", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+		          	{title:"D", field:"depth4", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+									// {title:"IR", field:"ir4",   align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								}, 
+								],
+							},
+							{title:"Publ", field:"public",   sorter:"number", align:"right"},
+							{title:"Priv", field:"private",  sorter:"number", align:"right"},
+							{title:"Comb", field:"combined", sorter:"number", align:"right"},
+							],
+							initialSort:[
+							{column:"combined", dir:"desc"}, //sort by this first
+							]
+						});
+					</script>
+					<p align="center">
+						<b>Container capacity estimation</b>
+					</p>
+					<div class="example-table" id="task3_table"></div>
+					<script type="text/javascript">
+						var table = new Tabulator("#task3_table",
+						{
+						// height:"150px",
+						placeholder:"No Data Available",
+						maxHeight:"100%",
+						layout:"fitColumns",      //fit columns to width of table
+						reactiveData:true, //turn on data reactivity
+						data:tabledatatask3, //load data into table
+						headerHozAlign:"center",
+						columns:[
+						{title:"Team", field:"team", width:120},
+						{//create column group
+							title:"Input modalities", headerHozAlign:"center",
+							columns:[
+							{
+								title:"",
+								columns:[
+								{title:"A", field:"audio",    align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+								]
+							},
+							{//create column group
+								title:"View 1",
+								columns:[
+								{title:"RGB", field:"rgb1", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+								{title:"D", field:"depth1", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+									// {title:"IR", field:"ir1",   headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								},
+		          {//create column group
+		          	title:"View 2",
+		          	columns:[
+		          	{title:"RGB", field:"rgb2", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+		          	{title:"D", field:"depth2", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+									// {title:"IR", field:"ir2",   headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								},
+		          {//create column group
+		          	title:"View 3",
+		          	columns:[
+		          	{title:"RGB", field:"rgb3", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+		          	{title:"D", field:"depth3", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+									// {title:"IR", field:"ir3",   headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								},
+		          {//create column group
+		          	title:"View 4",
+		          	columns:[
+		          	{title:"RGB", field:"rgb4", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+		          	{title:"D", field:"depth4", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false, width:10},
+									// {title:"IR", field:"ir4",   align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								}, 
+								],
+							},
+							{title:"Publ", field:"public",   sorter:"number", align:"right"},
+							{title:"Priv", field:"private",  sorter:"number", align:"right"},
+							{title:"Comb", field:"combined", sorter:"number", align:"right"},
+							],
+							initialSort:[
+							{column:"combined", dir:"desc"}, //sort by this first
+							]
+						});
+					</script>
+					<p align="center">
+						<b>Container mass estimation</b>
+					</p>
+					<div class="example-table" id="task4_table"></div>
+					<script type="text/javascript">
+						var table = new Tabulator("#task4_table",
+						{
+						// height:"150px",
+						placeholder:"No Data Available",
+						maxHeight:"100%",
+						layout:"fitColumns",      //fit columns to width of table
+						reactiveData:true, //turn on data reactivity
+						data:tabledatatask4, //load data into table
+						headerHozAlign:"center",
+						columns:[
+						{title:"Team", field:"team"},
+						{//create column group
+							title:"Input modalities",
+							columns:[
+							{
+								title:"",
+								columns:[
+								{title:"A", field:"audio",    align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+								]
+							},
+
+							{//create column group
+								title:"View 1",
+								columns:[
+								{title:"RGB", field:"rgb1", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+								{title:"D", field:"depth1", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									// {title:"IR", field:"ir1",   headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								},
+		          {//create column group
+		          	title:"View 2",
+		          	columns:[
+		          	{title:"RGB", field:"rgb2", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+		          	{title:"D", field:"depth2", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									// {title:"IR", field:"ir2",   headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								},
+		          {//create column group
+		          	title:"View 3",
+		          	columns:[
+		          	{title:"RGB", field:"rgb3", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+		          	{title:"D", field:"depth3", headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									// {title:"IR", field:"ir3",   headerHozAlign:"center", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								},
+		          {//create column group
+		          	title:"View 4",
+		          	columns:[
+		          	{title:"RGB", field:"rgb4", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+		          	{title:"D", field:"depth4", align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									// {title:"IR", field:"ir4",   align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+									],
+								}, 
+								],
+							},
+							{title:"Publ", field:"public",   sorter:"number", align:"right"},
+							{title:"Priv", field:"private",  sorter:"number", align:"right"},
+							{title:"Comb", field:"combined", sorter:"number", align:"right"},
+							],
+							initialSort:[
+							{column:"combined", dir:"desc"}, //sort by this first
+							]
+						});
+					</script>
+					<br>
+					<div style="width:100%;">
+						<div style="width:48%;float:left" align="left">
+							<p>
+								<b>Joint filling type and level classification</b>
+							</p>
+						</div>
+						<div style="width:48%;float:right" align="left">
+							<p align="left">
+								<b>Container dimensions and capacity estimation</b>
+							</p>
+						</div>
+						<div class="example-table" id="group1_table"style="width:48%;float:left" align="center">
+							<script type="text/javascript">
+								var table = new Tabulator("#group1_table",
+								{
+						// height:"150px",
+						placeholder:"No Data Available",
+						maxHeight:"100%",
+						layout:"fitColumns",      //fit columns to width of table
+						reactiveData:true, //turn on data reactivity
+						data:tabledatagroup1, //load data into table
+						headerHozAlign:"center",
+						columns:[
+						{title:"Team", field:"team"},
+						{title:"Publ", field:"public", sorter:"number", align:"right"},
+						{title:"Priv", field:"private", sorter:"number", align:"right"},
+						{title:"Comb", field:"combined", sorter:"number", align:"right"},
+						],
+						initialSort:[
+							{column:"combined", dir:"desc"}, //sort by this first
+							]
+						});
+					</script>
+				</div>
+				<div class="example-table" id="group2_table" style="width:48%;float:right" align="center" ></div>
+				<script type="text/javascript">
+					var table = new Tabulator("#group2_table",
+					{
+						// height:"150px",
+						placeholder:"No Data Available",
+						maxHeight:"100%",
+						layout:"fitColumns",      //fit columns to width of table
+						reactiveData:true, //turn on data reactivity
+						data:tabledatagroup2, //load data into table
+						headerHozAlign:"center",
+						columns:[
+						{title:"Team", field:"team"},
+						{title:"Publ", field:"public", sorter:"number", align:"right"},
+						{title:"Priv", field:"private", sorter:"number", align:"right"},
+						{title:"Comb", field:"combined", sorter:"number", align:"right"},
+						],
+						initialSort:[
+							{column:"combined", dir:"desc"}, //sort by this first
+							]
+						});
+					</script>
+				</div>
+				<div style="width:100%;clear:both;" align="center">
+					<br><br>
+					<p align="center">
+						<b>Filling mass estimation</b>
+					</p>
+				</div>
+				<div class="example-table" id="fillingmass_table"></div>
+				<script type="text/javascript">
+					var table = new Tabulator("#fillingmass_table",
+					{
+						// height:"150px",
+						placeholder:"No Data Available",
+						maxHeight:"100%",
+						layout:"fitColumns",      //fit columns to width of table
+						reactiveData:true, //turn on data reactivity
+						data:tabledatafillingmass, //load data into table
+						columns:[
+						{title:"Team", field:"team"},
+						// {title:"Description", field:"desc", width:370, align:"left", formatter:"textarea", headerSort:false},
+						{title:"T1",   field:"task1",    align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+						{title:"T2",   field:"task2",    align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+						{title:"T3",   field:"task3",    align:"center", formatter:"tickCross", formatterParams:{allowEmpty:true,}, headerSort:false},
+						{title:"Publ", field:"public",   sorter:"number", align:"right"},
+						{title:"Priv", field:"private",  sorter:"number", align:"right"},
+						{title:"Comb", field:"combined", sorter:"number", align:"right"},
+						],
+						initialSort:[
+							{column:"combined", dir:"desc"}, //sort by this first
+							]
+						});
+					</script>
+					<br>
+				</div>
+
+				<div style="height:auto;width:100%;overflow:hidden;" id="teamsolutions">
+					<p id="results" class="xmsonormal" style="text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:12.0pt">Solutions of the teams</span></b></p>
+					Select a team to see the details<br>
+					<div style="width:200px; float:left;">
+						<!-- <b>Team name</b><br> -->
+						<ul id="teams">
+							<li><a class="" title="Show metadata" onclick="AppearMetadata('squids_metadata')">Squids</a></li>
+							<li><a class="" title="Show metadata" onclick="AppearMetadata('keioics_metadata')">KEIO-ICS</a></li>
+							<li><a class="" title="Show metadata" onclick="AppearMetadata('visual_metadata')">Visual</a></li>
+							<li><a class="" title="Show metadata" onclick="AppearMetadata('bit_metadata')">Because It's Tactile</a></li>
+							<li><a class="" title="Show metadata" onclick="AppearMetadata('hvrl_metadata')">HVRL</a></li>
+							<li><a class="" title="Show metadata" onclick="AppearMetadata('concatenation_metadata')">Concatenation</a></li>
+							<li><a class="" title="Show metadata" onclick="AppearMetadata('ntnuerc_metadata')">NTNU-ERC</a></li>
+							<li><a class="" title="Show metadata" onclick="AppearMetadata('challengers_metadata')">Challengers</a></li>
+							<!-- <li><a class="" title="Show metadata" onclick="AppearMetadata('acc_metadata')">ACC</a></li> -->
+						</ul>
+					</div>
+					<div style="margin-left:220px;" >
+						<table class="metadata" id="squids_metadata" style="display:block;border: none;">
+							<tbody>
+								<tr>
+									<tr>
+										<td style="text-align:left;border: none;width:100px">Team name:</td>
+										<td colspan="4" style="text-align:left;border: none;">Squids</td>
+									</tr>
+									<tr>
+										<tr>
+											<td style="text-align:left;border: none;width:100px">Team members:</td>
+											<td style="text-align:center;border: none;"><img src="images/challenge/hengyi.jpg" alt="" width="75px" /><br>Hengyi Wang</td>
+											<td style="text-align:center;border: none;"><img src="images/challenge/chaoran.jpg" alt="" width="75px" /><br>Chaoran Zhu</td>
+											<td style="text-align:center;border: none;"><img src="images/challenge/ziyin.jpg" alt="" width="75px" /><br>Ziyin Ma</td>
+											<td style="text-align:center;border: none;"><img src="images/team/ChangjaeOh.jpg" alt="" width="75px" /><br>Changjae Oh</td>
+										</tr>
+										<tr>
+											<tr>
+												<td style="text-align:left;border: none;">Task 1:</td>
+												<td colspan="4" style="text-align:left;border: none;">Training of an efficient Convolutional Neural Network, e.g. Mobilenet-v2 with Coordinate Attention, to compute deep features from both the sliding windows of the audio signals converted in log-Mel features and the synchronized RGB frames of the video from the fixed, frontal view. Deep audio features are re-used from the fine-tuning of the Mobilenet-v2 for filling type classification, and concatenated with the deep visual features. Concatenated features are fed into an LSTM unit prior to the final prediction with fully connected layers.</td>
+											</tr>
+											<tr>
+												<td style="text-align:left;border: none;">Task 2:</td>
+												<td colspan="4" style="text-align:left;border: none;">Training of an efficient Convolutional Neural Network, e.g. Mobilenet-v2 with coordinate attention, to compute deep audio features from the sliding windows of the audio signals converted in log-Mel features. Deep audio features are fed into an LSTM unit prior to the final prediction via majority voting.</td>
+											</tr>
+											<tr>
+												<td style="text-align:left;border: none;">Task 3:</td>
+												<td colspan="4" style="text-align:left;border: none;">Fine-tuning of an efficient Convolutional Neural Network, e.g. Mobilenet-v2 with coordinate attention, using i) data augmentations, and ii) variance-consistency evaluation. The model is pre-trained on Task 5 (container dimensions estimation) and takes as input RGB-D image crops of the containers extracted with a YOLO-v5 detector from the fixed, frontal view. Data augmentation: image crops and corresponding capacity labels are randomly and proportionally resized by a scaling factor (drawn by a truncated uniform distribution and keeping the distance value fixed) to account for the intrinsic 2D-3D geometric relationship and the limited training data (labels). The variance-consistency evaluation aims at selecting the model that achieves the highest accuracy and the lowest total variance across the samples from the validation set, based on the observation that predictions of the capacity for the same container should be consistent.</td>
+											</tr>
+											<tr>
+												<td style="text-align:left;border: none;">Task 4:</td>
+												<td colspan="4" style="text-align:left;border: none;">Fine-tuning of an efficient Convolutional Neural Network, e.g. Mobilenet-v2 with coordinate attention, using i) data augmentations, and ii) variance-consistency evaluation. The model is pre-trained on Task 5 (container dimensions estimation) and takes as input RGB-D image crops of the containers extracted with a YOLO-v5 detector from the fixed, frontal view.</td>
+											</tr>
+											<tr>
+												<td style="text-align:left;border: none;">Task 5:</td>
+												<td colspan="4" style="text-align:left;border: none;">Training of an efficient Convolutional Neural Network, e.g. Mobilenet-v2 with coordinate attention, using i) data augmentations, and ii) variance-consistency evaluation. The model is pre-trained on Task 5 (container dimensions estimation) and takes as input RGB-D image crops of the containers extracted with a YOLO-v5 detector from the fixed, frontal view.</td>
+											</tr>
+											<tr>
+												<td style="text-align:left;border: none;">Keywords:</td>
+												<td colspan="4" style="text-align:left;border: none;">Transfer learning, Mobilenet-v2, Coordinate Attention, LSTM, Data augmentation, Variance-consistency evaluation</td>
+											</tr>
+											<tr>
+												<td style="text-align:left;border: none;">Paper:</td>
+												<td colspan="4" style="text-align:left;border: none;"><a href="https://arxiv.org/abs/2203.01192" TARGET = "_blank"><u>Improving generalization of deep networks for estimating physical properties of containers and fillings</u></a></td>
+											</tr>
+											<tr>
+												<td style="text-align:left;border: none;">Code:</td>
+												<td colspan="4" style="text-align:left;border: none;"><a href="https://github.com/Noone65536/CORSMAL-Challenge-2022-Squids"><u>https://github.com/Noone65536/CORSMAL-Challenge-2022-Squids</u></a></td>
+											</tr>
+											<tr>
+												<td style="text-align:left;border: none;">Models:</td>
+												<td colspan="4" style="text-align:left;border: none;"><a href="https://github.com/Noone65536/CORSMAL-Challenge-2022-Squids/tree/main/weights-new"><u>Challenge & only audio</u></a>, <a href="https://github.com/Noone65536/CORSMAL-Challenge-2022-Squids/tree/main/weights"><u>new (Squids-2)</u></a> 
+												</td>
+											</tr>
+										</tr>
+									</tbody>
+								</table>
+								<table class="metadata" id="keioics_metadata" style="display:none;border: none;">
+									<tbody>
+										<tr>
+											<tr>
+												<td style="text-align:left;border: none;width:100px">Team name:</td>
+												<td colspan="4" style="text-align:left;border: none;">KEIO-ICS</td>
+											</tr>
+											<tr>
+												<tr>
+													<td style="text-align:left;border: none;width:100px">Team members:</td>
+													<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /><br>Tomoya Matsubara</td>
+													<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /><br>Seitaro Otsuki</td>
+													<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /><br>Yuiga Wada</td>
+													<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /><br>Haruka Matsuo</td>
+												</tr>
+												<tr>
+													<td style="text-align:left;border: none;width:100px"></td>
+													<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /><br>Takumi Komatsu</td>
+													<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /><br>Yui Iioka</td>
+													<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /><br>Komei Sugiura</td>
+													<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /><br>Hideo Saito</td>
+												</tr>
+												<tr>
+													<tr>
+														<td style="text-align:left;border: none;">Task 1:</td>
+														<td colspan="4" style="text-align:left;border: none;">
+															(Jointly with Task 2) A model composed of a shared 2-layer Convolutional Neural Network (depthwise convolutional layer
+															and a pointwise convolutional layer), a shared Transformer (3 encoder blocks, each with a 4-head self-attention layer, 2 Layer-Norm layers, 2 Fully Connected layers) , and 2 task-specific Multi-Layer Perceptron heads (2 fully connected layers). The model takes as input audio signals pre-processed and transformed into mel-spectrograms in logarithmic scale, discarding portions of the signal at the beginning and ending with a randomly amount (e.g., 0-40% and 60-100%, respectively). 
+														</td>
+													</tr>
+													<tr>
+														<td style="text-align:left;border: none;">Task 2:</td>
+														<td colspan="4" style="text-align:left;border: none;">See Task 1.</td>
+													</tr>
+													<tr>
+														<td style="text-align:left;border: none;">Task 3:</td>
+														<td colspan="4" style="text-align:left;border: none;">
+															The method builts on <a href="LoDE.html"><u>LoDE</u></a>, a multi-view iterative fitting approach that estimates the 3D shape (point cloud) of rotationally symmetric objects as a hypothetical cylinder constraint to the binary object masks in two fixed, wide baseline camera views. The method modifies how the radii are reduced across iterations to account for the hand occlusions and smooth the 3D model. For the binary object masks, the method defines a formula to determine the frame and pair of views among the three fixed views (frontal, and 2 sides) where the container is most visible to overcome partial occlusions, low detection confidences, and containers detected too close at the image borders. To estimate the capacity, the volume of the 3D shape is approximated to the Riemman sum of the partial volumes (slicing method) as a canonical frustum.
+														</td>
+													</tr>
+													<tr>
+														<td style="text-align:left;border: none;">Task 4:</td>
+														<td colspan="4" style="text-align:left;border: none;">
+															Regression approach of the container mass with a custom CNN that takes as input a resized image-crop of the container extracted from the best selected frame (see Task 3) and the object mask of the left side, fixed view. The architecture of the CNN has four 3x3 convolutional layers with a padding of size 1 and 3 fully connected (FC) layers. Each convolutional layer is followed by the ReLU activation function, batch normalization, and 2x2 max-pooling layers, and each FC layer by the ReLU activation function and batch normalization layer. The output of the second FC is concatenated with the vector containing the container dimensions (height, width at the bottom, width at the top). To overcome the problem of chipped object masks due to the hand occlusions, mask restoration is addressed by exploiting the symmetrical property of the containers and hence pixel replacement is perfomed after determining the symmetric axis on the image plane.
+														</td>
+													</tr>
+													<tr>
+														<td style="text-align:left;border: none;">Task 5:</td>
+														<td colspan="4" style="text-align:left;border: none;">See Task 3. The container dimensions are estimated as a by-product of the estimated 3D shape.</td>
+													</tr>
+													<tr>
+														<td style="text-align:left;border: none;">Keywords:</td>
+														<td colspan="4" style="text-align:left;border: none;">
+															Convolutional Neural Network, Transformers, Multi-Layer Percpetron, Log-Mel Spectrograms, Best frame selection, LoDE, slicing method, mass regression, object mask restoration. 
+														</td>
+													</tr>
+													<tr>
+														<td style="text-align:left;border: none;">Paper:</td>
+														<td colspan="4" style="text-align:left;border: none;"><a href="" TARGET = "_blank">Shared Transformer Encoder with Mask-based Volume Estimation for Filling Mass Estimation</a></td>
+													</tr>
+													<tr>
+														<td style="text-align:left;border: none;">Code:</td>
+														<td colspan="4" style="text-align:left;border: none;"><a href="https://github.com/YuigaWada/CORSMAL2021"><u>https://github.com/YuigaWada/CORSMAL2021</u></a></td>
+													</tr>
+													<tr>
+														<td style="text-align:left;border: none;">Models:</td>
+														<td colspan="4" style="text-align:left;border: none;"><a href="https://drive.google.com/drive/folders/1QIs-POJIBtgDl1ufYrX5Sopf6RsHjKSb"><u>link</u></a></td>
+													</tr>
+												</tr>
+											</tbody>
+										</table>
+										<table class="metadata" id="visual_metadata" style="display:none;border: none;">
+											<tbody>
+												<tr>
+													<tr>
+														<td style="text-align:left;border: none;width:100px">Team name:</td>
+														<td colspan="4" style="text-align:left;border: none;">Visual</td>
+													</tr>
+													<tr>
+														<tr>
+															<td style="text-align:left;border: none;width:100px">Team members:</td>
+															<td style="text-align:center;border: none;"><img src="images/challenge/Tommaso.png"  alt="" width="75px" /><br>Tommaso Apicella</td>
+															<td style="text-align:center;border: none;"><img src="images/challenge/Giulia.png" alt="" width="75px" /><br>Giulia Slavic</td>
+															<td style="text-align:center;border: none;"><img src="images/challenge/Edoardo.png" alt="" width="75px" /><br>Edoardo Ragusa</td>
+															<!-- <td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /><br>Haruka Matsuo</td> -->
+														</tr>
+														<tr>
+															<td style="text-align:left;border: none;width:100px"></td>
+															<td style="text-align:center;border: none;"><img src="images/challenge/Paolo.png" alt="" width="75px" /><br>Paolo Gastaldo</td>
+															<td style="text-align:center;border: none;"><img src="images/challenge/Lucio.png" alt="" width="75px" /><br>Lucio Marcenaro</td>
+				        			<!-- <td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /><br>Komei Sugiura</td>
+				        				<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" width="75px" /><br>Hideo Saito</td> -->
+				        			</tr>
+     <!--    					<tr>
+        						<tr>
+        						<td style="text-align:left;border: none;">Task 1:</td>
+        						<td colspan="4" style="text-align:left;border: none;">N/A</td>
+				        	</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Task 2:</td>
+        						<td colspan="4" style="text-align:left;border: none;">N/A</td>
+        					</tr>
+				        	<tr>
+        						<td style="text-align:left;border: none;">Task 3:</td>
+        						<td colspan="4" style="text-align:left;border: none;">N/A</td>
+        					</tr> -->
+        					<tr>
+        						<td style="text-align:left;border: none;">Task 4:</td>
+        						<td colspan="4" style="text-align:left;border: none;">Regression of the (empty) container mass with a shallow Convolutional Neural Network that takes RGB image crops from the fixed, frontal view. Patches of the container are detected in a video by using Mask R-CNN pretrained on COCO and selecting relevant categories (e.g., cup, book, wine glass, bottle).
+        						A set of patches is then automatically selected based on the nearest distance to the view by exploiting the depth data within the segmentation mask of the container in the corresponding RGB frame. Predicted masses by the deep model for the selected patches are averaged to obtain the final mass estimation.</td>
+        					</tr>
+<!--         					<tr>
+        						<td style="text-align:left;border: none;">Task 5:</td>
+        						<td colspan="4" style="text-align:left;border: none;">N/A</td>
+        					</tr> -->
+        					<tr>
+        						<td style="text-align:left;border: none;">Keywords:</td>
+        						<td colspan="4" style="text-align:left;border: none;">Convolutional Neural Networks, Object detection, Mass estimation</td>
+        					</tr>
+        					<tr>
+        						<td style="text-align:left;border: none;">Paper:</td>
+        						<td colspan="4" style="text-align:left;border: none;"><a href="https://arxiv.org/abs/2203.01207" TARGET = "_blank"><u>Container localisation and mass estimation with an RGB-D camera</u></a></td>
+        					</tr>
+        					<tr>
+        						<td style="text-align:left;border: none;">Code:</td>
+        						<td colspan="4" style="text-align:left;border: none;"><a href="https://github.com/CORSMAL/Visual"><u>https://github.com/CORSMAL/Visual</u></a></td>
+        					</tr>
+        					<tr>
+        						<td style="text-align:left;border: none;">Models:</td>
+        						<td colspan="4" style="text-align:left;border: none;"><a href="https://github.com/CORSMAL/Visual/tree/main/demo"><u>link</u></a></td>
+        					</tr>
+        				</tr>
+        			</tbody>
+        		</table>
+        		<table class="metadata" id="bit_metadata" style="display:none;border: none;">
+        			<tbody>
+        				<tr>
+        					<tr>
+        						<td style="text-align:left;border: none;width:100px">Team name:</td>
+        						<td colspan="4" style="text-align:left;border: none;">Because It's Tactile</td>
+        					</tr>
+        					<tr>
+        						<tr>
+        							<td style="text-align:left;border: none;width:100px">Team members:</td>
+        							<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/Vladimir_150x165.jpg" alt="" width="75px" /><br>Vladimir Iashin</td>
+        							<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/Francesca_150x165.jpg" alt="" width="75px" /><br>Francesca Palermo</td>
+        							<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/Gokhan_150x165.jpg" alt="" width="75px" /><br>Gokhan Solak</td>
+        							<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/Claudio_150x165.jpg" alt="" width="75px" /><br>Claudio Coppola</td>
+        						</tr>
+        						<tr>
+        							<tr>
+        								<td style="text-align:left;border: none;">Task 1:</td>
+        								<td colspan="4" style="text-align:left;border: none;">Audio + RGB from all views. GRU(VGGish) + GRU(R(2+1)d [RGB-only]) for each view, and RandomForest(classical audio features)</td>
+        							</tr>
+        							<tr>
+        								<td style="text-align:left;border: none;">Task 2:</td>
+        								<td colspan="4" style="text-align:left;border: none;">Audio. GRU(VGGish) and and RandomForest</td>
+        							</tr>
+        							<tr>
+        								<td style="text-align:left;border: none;">Task 3:</td>
+        								<td colspan="4" style="text-align:left;border: none;">RGB + IR + Depth (left-side view). LoDE on detector's predictions; if no object was detected, use of the training set's average</td>
+        							</tr>
+        							<tr>
+        								<td style="text-align:left;border: none;">Summary:</td>
+        								<td colspan="4" style="text-align:left;border: none;">We sum up logits from all four views obtained from GRU on top of R(2+1)d features to form one prediction for each event, which are, then, averaged with the GRU output on top of VGGish features, and RandomForest predictions on top of 30+ classical audio features (eg mfccs, chromagram, energy, spread). LoDE with Mask R-CNN for object detection (glass, bottle, or book for boxes), in frame 1 and 20 of the videos (view 1, RGB-D-IR) to estimate container capacity. Average of the training set is used if no detection.</td>
+        								<!-- R(2+1)d feature extraction followed by GRU for each RGB view, and sum of the logits. VGGish feature extraction Average -->
+        							</tr>
+        							<tr>
+        								<td style="text-align:left;border: none;">Paper:</td>
+        								<td colspan="4" style="text-align:left;border: none;"><a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_31" TARGET = "_blank"><u>Top-1 CORSMAL Challenge 2020 submission: Filling mass estimation using multi-modal observations of human-robot handovers</u></a></td>
+        							</tr>
+<!--         									        	<tr>
+        						<td style="text-align:left;border: none;">ArXiv:</td>
+        						<td colspan="4" style="text-align:left;border: none;"><a href="https://arxiv.org/pdf/2012.01311.pdf"><u>https://arxiv.org/pdf/2012.01311.pdf</u></a></td>
+        					</tr> -->
+        					<tr>
+        						<td style="text-align:left;border: none;">Code:</td>
+        						<td colspan="4" style="text-align:left;border: none;"><a href="https://github.com/v-iashin/CORSMAL"><u>https://github.com/v-iashin/CORSMAL</u></a></td>
+        					</tr>
+        				</tr>
+        			</tbody>
+        		</table>
+        		<table class="metadata" id="hvrl_metadata" style="display:none;border: none;">
+        			<tbody>
+        				<tr>
+        					<tr>
+        						<td style="text-align:left;border: none;width:100px">Team name:</td>
+        						<td colspan="4" style="text-align:left;border: none;">HVRL</td>
+        					</tr>
+        					<tr>
+        						<tr>
+        							<td style="text-align:left;border: none;width:100px">Team members:</td>
+        							<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/ReinaIshikawa.JPG" alt="" width="75px" /><br>Reina Ishikawa</td>
+        							<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/YuichiNagao.jpg" alt="" width="75px" /><br>Yuichi Nagao</td>
+        							<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /><br>Ryo Hachiuma</td>
+        							<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /><br>Hideo Saito</td>
+        						</tr>
+        						<tr>
+        							<tr>
+        								<td style="text-align:left;border: none;">Task 1:</td>
+        								<td colspan="4" style="text-align:left;border: none;">Audio. From the prediction model for Task2, intermediate features are extracted and pass through LSTM models.</td>
+        							</tr>
+        							<tr>
+        								<td style="text-align:left;border: none;">Task 2:</td>
+        								<td colspan="4" style="text-align:left;border: none;">Audio. Raw audio waveform converted into a log-Mel spectrogram that is cropped into a fixed-size and provided as input to convolutional neural network model with a VGG backbone.</td>
+        							</tr>
+        							<tr>
+        								<td style="text-align:left;border: none;">Task 3:</td>
+        								<td colspan="4" style="text-align:left;border: none;">RGB + Depth from view 1: fixed camera on the left side of the manipulator (robot). Mask-RCNN detects the target object (silhouette) and a point cloud is obtained from a selected frame in the video. The volume of the container is then computed by approximating the object shape as a cuboid from the point cloud.</td>
+        							</tr>
+        							<tr>
+        								<td style="text-align:left;border: none;">Summary:</td>
+        								<td colspan="4" style="text-align:left;border: none;">N/A</td>
+        							</tr>
+        							<tr>
+        								<td style="text-align:left;border: none;">Paper:</td>
+        								<td colspan="4" style="text-align:left;border: none;"><a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_32"><u>Audio-Visual Hybrid Approach for Filling Mass Estimation</u></a></td>
+        							</tr>
+        							<tr>
+        								<td style="text-align:left;border: none;">Code:</td>
+        								<td colspan="4" style="text-align:left;border: none;"><a href="https://github.com/YuichiNAGAO/ICPRchallenge2020"><u>https://github.com/YuichiNAGAO/ICPRchallenge2020</u></a></td>
+        							</tr>
+        						</tr>
+        					</tbody>
+        				</table>
+        				<table class="metadata" id="concatenation_metadata" style="display:none;border: none;">
+        					<tbody>
+        						<tr>
+        							<tr>
+        								<td style="text-align:left;border: none;width:100px">Team name:</td>
+        								<td colspan="4" style="text-align:left;border: none;">Concatenation</td>
+        							</tr>
+        							<tr>
+        								<tr>
+        									<td style="text-align:left;border: none;width:100px">Team members:</td>
+        									<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/QiLiu.jpg" alt="" width="75px" /><br>Qi Liu</td>
+        									<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/ChuanlinLan.jpg" alt="" width="75px" /><br>Chuanlin Lan</td>
+        									<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/FanFeng.jpg" alt="" width="75px" /><br>Fan Feng</td>
+        									<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/RosaChan.jpg" alt="" width="75px" /><br>Rosa Chan</td>
+        								</tr>
+        								<tr>
+        									<td style="text-align:left;border: none;">Task 1:</td>
+        									<td colspan="4" style="text-align:left;border: none;">Audio and RGB from all views. Integrate the audio feature learning and the knowledge of container categories via the object detection pre-trained model.</td>
+        								</tr>
+        								<tr>
+        									<td style="text-align:left;border: none;">Task 2:</td>
+        									<td colspan="4" style="text-align:left;border: none;">Audio and RGB from all views. Integrate the audio feature learning and the knowledge of container categories via the object detection pre-trained model.</td>
+        								</tr>
+        								<tr>
+        									<td style="text-align:left;border: none;">Task 3:</td>
+        									<td colspan="4" style="text-align:left;border: none;">RGB from all views. Sample from the shape distribution based on the prior of container categories</td>
+        								</tr>
+        								<tr>
+        									<td style="text-align:left;border: none;">Summary:</td>
+        									<td colspan="4" style="text-align:left;border: none;">The solution is divided into three folds to help the agent shape a rich understanding of the pouring procedure. First, the agent obtains the prior of container categories (cup, glass, box) through the object detection framework. Second, audio features are integrated with the prior to make the agent learn a multi-modal feature space. Finally, the agent infers the distribution of both the container capacity and fluid properties.</td>
+        								</tr>
+        								<tr>
+        									<td style="text-align:left;border: none;">Paper:</td>
+        									<td colspan="4" style="text-align:left;border: none;"><a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_33"><u>VA2Mass: Towards the Fluid Filling Mass Estimation via Integration of Vision & Audio</u></a></td>
+        								</tr>
+        								<tr>
+        									<td style="text-align:left;border: none;">Code:</td>
+        									<td colspan="4" style="text-align:left;border: none;">N/A</td>
+        								</tr>
+        							</tbody>
+        						</table>
+        						<table class="metadata" id="ntnuerc_metadata" style="display:none;border: none;">
+        							<tbody>
+        								<tr>
+        									<tr>
+        										<td style="text-align:left;border: none;width:100px">Team name:</td>
+        										<td colspan="2" style="text-align:left;border: none;">NTNU-ERC</td>
+        									</tr>
+        									<tr>
+        										<tr>
+        											<td style="text-align:left;border: none;width:100px">Team members:</td>
+        											<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /><br>Guilherme Christmann</td>
+        											<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /><br>Jyun-Ting Song</td>
+        										</tr>
+        										<tr>
+        											<td style="text-align:left;border: none;">Task 1:</td>
+        											<td colspan="2" style="text-align:left;border: none;">N/A</td>
+        										</tr>
+        										<tr>
+        											<td style="text-align:left;border: none;">Task 2:</td>
+        											<td colspan="2" style="text-align:left;border: none;">Audio</td>
+        										</tr>
+        										<tr>
+        											<td style="text-align:left;border: none;">Task 3:</td>
+        											<td colspan="2" style="text-align:left;border: none;">Depth from view 3: the fixed camera mounted on the manipulator (robot)</td>
+        										</tr>
+        										<tr>
+        											<td style="text-align:left;border: none;">Summary:</td>
+        											<td colspan="2" style="text-align:left;border: none;">Extraction of 40 normalized MFCC features in a window size of 20 ms at 22 kHz, with a maximum length of 30 s, and zero-padding to preserve the same duration across audio data. Filling type classification with a neural network consisting of 2 convolutional layers and 1 linear layer. Regression of the container capacity by extracting a region of interest (ROI) around the object localised in the depth data (view 3) and providing the ROI and its size to a neural network (4 convolutional-batchnorm followed by 3 linear layers). The size of the ROI is concatenated to the feature between the 2nd and 3rd linear layer. Only detections/ROIs up to 700 mm far from the camera, while processing the video backwards, are considered (prior knowledge that the person will extend the arm towards the robot). The closest contour is selected, if multiple detections in a frame.</td>
+        										</tr>
+        										<tr>
+        											<td style="text-align:left;border: none;">Paper:</td>
+        											<td colspan="2" style="text-align:left;border: none;"><a href="resources/challenge/2020.11.30_CORSMAL_NTNU-ERC_Report.pdf"><u>NTNU-ERC Report</u></td>
+        											</tr>
+        											<tr>
+        												<td style="text-align:left;border: none;">Code:</td>
+        												<td colspan="2" style="text-align:left;border: none;"><a href="https://github.com/guichristmann/CORSMAL-Challenge-2020-Submission"><u>https://github.com/guichristmann/CORSMAL-Challenge-2020-Submission</u></td>
+        												</tr>
+        											</tbody>
+        										</table>
+        										<table class="metadata" id="challengers_metadata" style="display:none;border: none;">
+        											<tbody>
+        												<tr>
+        													<tr>
+        														<td style="text-align:left;border: none;width:100px">Team name:</td>
+        														<td colspan="4" style="text-align:left;border: none;">Challengers</td>
+        													</tr>
+        													<tr>
+        														<tr>
+        															<td style="text-align:left;border: none;width:100px">Team members:</td>
+        															<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /><br>Neeharika</td>
+        															<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /><br>Krishna</td>
+        															<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /><br>Bakhtawar</td>
+        															<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /><br>Dinesh</td>
+        														</tr>
+        														<tr>
+        															<td style="text-align:left;border: none;">Task 1:</td>
+        															<td  colspan="4" style="text-align:left;border: none;">Audio</td>
+        														</tr>
+        														<tr>
+        															<td style="text-align:left;border: none;">Task 2:</td>
+        															<td  colspan="4" style="text-align:left;border: none;">Audio</td>
+        														</tr>
+        														<tr>
+        															<td style="text-align:left;border: none;">Task 3:</td>
+        															<td  colspan="4" style="text-align:left;border: none;">N/A</td>
+        														</tr>
+        														<tr>
+        															<td style="text-align:left;border: none;">Summary:</td>
+        															<td  colspan="4" style="text-align:left;border: none;">Sound-based classification of filling type and level: After suppressing the noise in each audio signal via spectral gating, the absolute value of the Short-Time Fourier Transform (STFT) is extracted as input feature for a classifier based on a 5-layer fully connected neural network, trained with Adam optimizer and dropout on the last layer to reduce overfitting.</td>
+        														</tr>
+        														<tr>
+        															<td style="text-align:left;border: none;">Paper:</td>
+        															<td  colspan="4" style="text-align:left;border: none;">N/A</td>
+        														</tr>
+        														<tr>
+        															<td style="text-align:left;border: none;">Code:</td>
+        															<td  colspan="4" style="text-align:left;border: none;">N/A</td>
+        														</tr>
+        													</tbody>
+        												</table>
+        												<table class="metadata" id="acc_metadata" style="display:none;border: none;">
+        													<tbody>
+        														<tr>
+        															<tr>
+        																<td style="text-align:left;border: none;width:100px">Team name:</td>
+        																<td colspan="4" style="text-align:left;border: none;">Organisers</td>
+        															</tr>
+        															<tr>
+        																<tr>
+        																	<td style="text-align:left;border: none;width:100px">Team members:</td>
+        																	<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /><br>Santiago Donaher</td>
+        																	<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /><br>Alessio Xompero</td>
+        																	<td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /><br>Andrea Cavallaro</td>
+        																	<!-- <td style="text-align:center;border: none;"><img src="images/ICPR2020/participants/avatar.png" alt="" height="82px" /><br>Dinesh</td> -->
+        																</tr>
+        																<tr>
+        																	<td style="text-align:left;border: none;">Task 1:</td>
+        																	<td  colspan="4" style="text-align:left;border: none;">Audio</td>
+        																</tr>
+        																<tr>
+        																	<td style="text-align:left;border: none;">Task 2:</td>
+        																	<td  colspan="4" style="text-align:left;border: none;">Audio</td>
+        																</tr>
+        																<tr>
+        																	<td style="text-align:left;border: none;">Task 3:</td>
+        																	<td  colspan="4" style="text-align:left;border: none;">N/A</td>
+        																</tr>
+        																<tr>
+        																	<td style="text-align:left;border: none;">Summary:</td>
+        																	<td  colspan="4" style="text-align:left;border: none;">Sound-based model that first identifies the action performed by a person with a container and then determines the amount and type of content using an action-specific  classifier. The models consists of three independent CNN classifiers and combines content types and levels into a set of seven feasible classes. Task 1 and Task 2 are jointly performed by the model.</td>
+        																</tr>
+        																<tr>
+        																	<td style="text-align:left;border: none;">Paper:</td>
+        																	<td  colspan="4" style="text-align:left;border: none;"><a href="https://arxiv.org/pdf/2103.15999.pdf"><u>https://arxiv.org/pdf/2103.15999.pdf</u></a></td>
+        																</tr>
+        																<tr>
+        																	<td style="text-align:left;border: none;">Code:</td>
+        																	<td  colspan="4" style="text-align:left;border: none;"><a href="https://github.com/CORSMAL/ACC/"><u>https://github.com/CORSMAL/ACC/</u></a></td>
+        																</tr>
+        															</tbody>
+        														</table>
+        													</div>
+        												</div>
+			<br><br>
+			<div>
+				<p id="organisers">
+					<b><span style="font-size:14.0pt">Organisers</span></b>
+				</p>
+				<p align="justify">
+					Alessio Xompero, Queen Mary University of London (UK)<br>
+					Andrea Cavallaro, Queen Mary University of London (UK)<br>
+					Pascal Frossard, École polytechnique fédérale de Lausanne (Switzerland)<br>
+					Véronique Perdereau, Sorbonne Université (France)<br>
+					Berk Calli, Worcester Polytechnic Institute (USA)<br>
+					Timothy  Patten, University of Technology Sydney (Australia)<br>
+					Ahalya Prabhakar, École polytechnique fédérale de Lausanne (Switzerland)<br>
+					Dounia Kitouni, Sorbonne Université (France)<br>
+					Yik Lung Pang, Queen Mary University of London (UK)<br>
+				</p>
+			</div>	
+		</div>
+	</div>
+	<br><br>
+	<!-- ####################################################################################################### -->
+<!-- Begin of Sponsors and Partners div -->
+<div class="wrapper row1">
+	<div id="header" class="clear" style="padding: 0px 0px 0px 20px;width:920px">
+		<div class="fl_left" style="margin-top: 0px;">
+			<ul>
+				<li style="padding: 0 0 0 0">
+					<p>
+						<b>Sponsors</b>
+						<br>
+						<br>
+					</p>
+					<p>
+						<a href="http://www.chistera.eu" TARGET = "_blank"><img src="images/chist-era_logo_crop.png" style="height:35px;" alt="Chistera logo"/></a>
+						<a href="https://epsrc.ukri.org/" target="_blank"><img src="images/EPSRC_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="EPSRC logo"></a>
+						<a href="http://www.agence-nationale-recherche.fr/en/" target="_blank"><img src="images/ANR_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="ANR logo"></a>
+						<a href="http://www.snf.ch/en/Pages/default.aspx" target="_blank"><img src="images/FNS_logo.jpg" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="FNS logo"></a>
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div class="fl_right" style="margin-top: 0px;">
+			<ul style="margin-bottom: 0px;">
+				<li style="margin: 0px 4px 0px 0; padding: 0 0px 0 0;">
+					<p>
+						<b>Partners</b>
+						<br>
+						<br>
+					</p>
+					<p>
+						<a href="https://www.qmul.ac.uk/" target="_blank"><img src="images/QMUL_logo.jpg" alt="Queen Mary University of London" style="padding:5px 10px 0px 0px;height:45px;"></a>
+						<a href="http://www.sorbonne-universite.fr/en" target="_blank">
+							<img src="images/Sorbonne_University_logo.png" alt="Sorbonne University" style="padding:5px 10px 0px 0px;height:45px;">
+						</a>
+						<a href="https://www.epfl.ch/en/home/" target="_blank">
+							<img src="images/EPFL_logo.png" alt="EPFL" style="padding:5px 0px 0px 0px;height:45px;">
+						</a>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- End of Sponsors and Partners div -->
+<br><br>
+<!-- ####################################################################################################### -->
+<!-- <div class="clearing">&nbsp;</div>-->
+<div class="wrapper bottomPg">
+	<div id="copyright">
+		<div id="fl_left" style="font-size:12px">
+			© Copyright CORSMAL 2019-2022
+		</div>	  
+	</div>
+</div>
+<!-- footer -->
+<!--added to clear error with content element -->
+</body>
+</html>

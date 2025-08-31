@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<head profile="http://gmpg.org/xfn/11">
+	<link rel="shortcut icon" href="favicon.ico" />
+	
+	<title>CORSMAL: Collaborative object recognition, shared manipulation and learning | Benchmark</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta http-equiv="KeyWords" content="code, software, CORSMAL, machine learning, touch, vision, audio, signal processing, human behaviour, benchmark"/>
+	<meta name="image" property="og:image" content="images/CORSMAL_logo.png">
+	
+	<link rel="stylesheet" href="css/layout.css" type="text/css" />
+	<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.slidepanel.setup.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tabs.setup.js"></script>
+
+	<script type="text/javascript">
+		window.TableLoader = {
+			tables:{},
+			register:function(table, func){
+				this.tables[table] = func;
+			},
+			trigger:function(key){
+				var self = this;
+
+				if(this.tables[key]){
+					this.tables[key]();
+					this.tables[key] = function(){};
+
+					var keys = Object.keys(this.tables);
+					var index = keys.indexOf(key);
+
+					if(index){
+						this.tables[keys[index - 1]]();
+						this.tables[keys[index - 1]] = function(){};
+					}
+
+					if(index < keys.length - 1){
+						this.tables[keys[index + 1]]();
+						this.tables[keys[index + 1]] = function(){};
+					}
+				}
+
+				if(key == "theming"){
+					var themes = Object.keys(this.tables).slice(-7);
+
+					themes.forEach(function(item){
+						self.trigger(item);
+					})
+				}
+			},
+			loadFirst:function(){
+				first = Object.keys(this.tables)[0];
+
+				if(first){
+					this.trigger(first);
+				}
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
+		var tabledata =
+		[
+		{id:1,name:"Baseline", score:0.32, s1:0.59,s2:0.55,s3:0.54,s4:0.0,s5:0.0,s6:0.0,s7:0.0,s8:0.94,s9:0.47,s10:0.49,s11:0.41,s12:0.46,s13:0.45,vision:0.19,robotics:0.31,global:0.46,cup1:0.33,cup2:0.31,cup3:0.33,cup4:0.33,empty:0.31,filled:0.34,grasp1:0.33,grasp2:0.31,grasp3: 0.00,left:0.34,center:0.29,right:0.33},
+		];
+
+	</script>
+
+	<link href="benchmark/dist/css/tabulator.min.css" rel="stylesheet">
+	<script type="text/javascript" src="benchmark/dist/js/tabulator.min.js"></script>
+	<link href="https://unpkg.com/tabulator-tables@4.4.3/dist/css/tabulator.min.css" rel="stylesheet">
+	<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.4.3/dist/js/tabulator.min.js"></script>
+
+</head>
+<body id="top">
+	<div class="wrapper row1">
+		<div id="header" class="clear">
+			<div class="fl_left">
+				<ul>
+					<li>
+						<p>
+							<a href="index.html"><img src="images/CORSMAL_logo.png" style="padding:0px 0px 0px 0px;height:75px" alt="CORSMAL"/></a>
+						</p>
+					</li>
+				</ul>
+			</div>
+</div>
+</div>
+<!-- 2###################################################################################################### -->
+<div class="wrapper row2"; style="margin-bottom: 7px;">
+	<div class="rnd">
+		<!-- ###### -->
+		<div id="topnav">
+			<ul style="margin-top: 5px;">
+				<li><a href="index.html"><b>Home</b></a></li>
+				<li><a href="objectives.html"><b>Objectives</b></a></li>
+				<li><a href="publications.html"><b>Publications</b></a></li>
+				<li ><a href="blog.html"><b>Blog</b></a></li>
+				<li ><a href="events.html"><b>Events</b></a></li>
+				<li ><a href="code.html"><b>Code</b></a></li>
+				<li><a href="data.html"><b>Data</b></a></li>
+				<li class="active" style="margin-right: 7px"><a href="benchmark.html"><b>Benchmark</b></a></li> 
+				<li><a href="challenge.html"><b>Challenge</b></a></li>
+				<li class="last"><a href="team.html"><b>Team</b></a></li>
+			</ul>
+		</div>
+		<!-- ###### -->
+	</div>
+</div>
+<!-- 3####################################################################################################### -->
+<div class="wrapper row1">
+	<div id="container" class="clear">
+		<div id="latestnewspage" class="clear">
+			
+			<h2><p class="xmsonormal" style="text-align:left;text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:16.0pt">Benchmark for human-to-robot handovers of unseen containers with unknown filling</span></b></p></h2>
+			
+			<br>
+			
+			<p align="center">
+				<img src="benchmark/resources/handover.gif" alt="Handover header">
+			</p>
+			
+			<br>
+
+			<p align="justify">
+				The real-time estimation through vision of the physical properties of objects manipulated by humans is important to inform the control of robots for performing accurate and safe grasps of objects handed over by humans. However, estimating the 3D pose and dimensions of previously unseen objects using only inexpensive cameras is challenging due to illumination variations, transparencies, reflective surfaces, and occlusions caused both by the human and the robot. In this paper we present a benchmark for dynamic human-to-robot handovers that is based on an affordable experimental setup that does not use a motion capture system, markers, or prior knowledge of specific object models. The benchmark focuses on containers and specifically on plastic drinking cups with an unknown amount of unknown filling. The performance measures assess the overall system as well as its components in order to help isolate elements of the pipeline that need improvements. In addition to the task description and the performance measures, we also present and distribute as open source a baseline implementation for the overall task in order to  enable comparisons and facilitate progress. 
+			</p>
+			<p align="justify">
+				The proposed benchmark aims to assess the generalization capabilities of the robotic control when handing over previously unseen objects filled (or not) with unknown content, hence with a different and unknown mass and stiffness. No object properties are initially known to the robot that must infer these properties on-the-fly, during the execution of the dynamic handover, through multi-modal perception of the scene. 
+				The benchmark requires participants to set up an inexpensive sensing system with up to two cameras. The evaluation is performed through an overall score to rank solutions as well as partial scores to determine differences between methods and provide guidance for improving single elements of a system.
+				To encourage research in this area, we also provide a baseline solution and discuss its evaluation through the proposed benchmark in two different setups.
+			</p>
+			<br>
+			<p align="center">
+				<video width="500" controls> <source src="benchmark/resources/Benchmark.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+				</p>
+				<br>
+				<p>
+					<a href="benchmark/resources/RAL-SI-2020-B19-0835-V1.0.pdf" target="_blank"><u>Benchmark document</u></a>
+				</p>
+				<p>
+					<a href="benchmark/resources/RAL-SI-2020-P19-0835-V1.0.pdf" target="_blank"><u>Protocol document and purchasing links</u></a> 
+				</p>
+				<br>
+				<h3><span style="font-size:14.0pt">The task</span></h3>		
+				<p align="justify">
+					The task consists of three steps, namely human maneuvering, dynamic handover, and robot maneuvering. After the handover, the robot places the object on the table at a pre-defined location. Participants can use any robotic arm with at least 6 degrees of freedom (e.g. KUKA, UR5) equipped with a gripper (e.g. a 2-finger gripper or a complete robotic hand). 
+				</p>
+				<p align="center">
+					<img src="benchmark/resources/task.png" style="padding:0px 0px 0px 0px;width:550px" alt="Benchmark task">
+				</p>
+				<h3><span style="font-size:14.0pt">Setup</span></h3>		
+				<p align="justify">
+					The setup for the benchmark includes a robotic arm, a table, selected objects, filling for the objects and four humans performing the handover.
+					Regarding sensing: it is allowed to use up to two cameras. Touch and pressure sensors on the gripper can be used to facilitate the inference of the object's physical properties.
+				</p>
+				<p align="center">
+					<img src="benchmark/resources/setup.png" style="padding:0px 0px 0px 0px;width:550px" alt="Benchmark setup">
+				</p>
+				<h3><span style="font-size:14.0pt">Grasp, cups, fillings</span></h3>		
+				<p class="xmsonormal" style="text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:14.0pt"></span></b></p>
+				<p align="justify">
+					We select a set of objects that are challenging for both perception and robotics due to the high variability of their physical properties such as material, shape, texture and mass. Specifically, we select four drinking cups with different properties: high deformability, medium transparency (Cup 1); average deformability, low transparency (Cup 2), average deformability, high transparency (Cup 3), and no deformability, high transparency (Cup 4). Cup 4 is the plastic wine glass from the YCB object database. These cups are inexpensive and available worldwide (<a href="benchmark/resources/RAL-SI-2020-P19-0835-V1.0.pdf" target="_blank"><u>Protocol</u></a>), have different shapes and sizes, different degrees of deformability, include textureless regions, transparencies and reflections that make the vision-based pose estimation challenging. Moreover, to further challenge the task, we vary the properties of each cup (mass and deformability) with two different amounts of rice (which are easy to purchase and - unlike liquids - harmless for the hardware): 0% (empty), and 90% (filled) of the total volume of the cup. The filling amounts are rounded to the smaller quarter of 100ml to ease the replicability of the configurations.
+				</p>
+				<table align="center" style="border:0px;padding-left:0px">
+					<tr>	
+						<td style="border:0px;padding:0px"></td>
+						<th style="border:0px;padding:0px;vertical-align: middle;" align="center">Cup 1</th>
+						<th style="border:0px;padding:0px;vertical-align: middle;" align="center">Cup 2</th>
+						<th style="border:0px;padding:0px;vertical-align: middle;" align="center">Cup 3</th>
+						<th style="border:0px;padding:0px;vertical-align: middle;" align="center">Cup 4</th>
+					</tr>
+					<tr>
+						<th style="border:0px;padding:0px;vertical-align: middle;" align="center">Grasp 1</th>
+						<td style="border:0px;padding:0px" align="center"><img src="benchmark/resources/cup1_grasp1.jpg" height="120"/></td>
+						<td style="border:0px;padding:0px" align="center"><img src="benchmark/resources/cup2_grasp1.jpg" height="120"/></td>
+						<td style="border:0px;padding:0px" align="center"><img src="benchmark/resources/cup3_grasp1.jpg" height="120"/></td>
+						<td style="border:0px;padding:0px" align="center"><img src="benchmark/resources/cup4_grasp1.jpg" height="120"/></td>
+					</tr>
+					<tr>
+						<th style="border:0px;padding:0px;vertical-align: middle;" align="center">Grasp 2</th>
+						<td style="border:0px;padding:0px" align="center"><img src="benchmark/resources/cup1_grasp2.jpg" height="120"/></td>
+						<td style="border:0px;padding:0px" align="center"><img src="benchmark/resources/cup2_grasp2.jpg" height="120"/></td>
+						<td style="border:0px;padding:0px" align="center"><img src="benchmark/resources/cup3_grasp2.jpg" height="120"/></td>
+						<td style="border:0px;padding:0px" align="center"><img src="benchmark/resources/cup4_grasp2.jpg" height="120"/></td>
+					</tr>
+					<th style="border:0px;padding:0px;vertical-align: middle;" align="center">Grasp 3</th>
+					<td style="border:0px;padding:0px" align="center"><img src="benchmark/resources/cup1_grasp3.jpg" height="120"/></td>
+					<td style="border:0px;padding:0px" align="center"><img src="benchmark/resources/cup2_grasp3.jpg" height="120"/></td>
+					<td style="border:0px;padding:0px" align="center"><img src="benchmark/resources/cup3_grasp3.jpg" height="120"/></td>
+					<td style="border:0px;padding:0px" align="center"><img src="benchmark/resources/cup4_grasp3.jpg" height="120"/></td>
+				</tr>
+			</table>
+		</p>
+		<br><br>
+			<br>	
+			<a name="submit"></a> 
+			<p align="justify"> 
+				<p class="xmsonormal" style="text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:14.0pt">Submit</span></b></p>
+				<p align="justify">
+					Participants should complete the <a href="benchmark/resources/Submission_form.xlsx"><u>submission form</u></a> and submit by email at <a href="mailto:corsmal-benchmark@qmul.ac.uk?Subject=CORSMAL%20benchmark%20submission" target="_top"><u>corsmal-benchmark@qmul.ac.uk</u></a>.
+				</p>
+			</p>			
+			<br>
+			<a name="baseline"></a> 
+			<p align="justify"> 
+				<p class="xmsonormal" style="text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:14.0pt">Baseline</span></b></p>			
+				<p align="justify">
+					To facilitate participation in the benchmark, we share a baseline as open source <a href="https://github.com/CORSMAL/Benchmark" target="_blank"><u>GitHub code</u></a> and evaluate it on the benchmark under two setups in different laboratories, S1 and S2. The baseline estimates the centroid and the dimensions of a cup in 3D at 18 Hz in a standard desktop. The baseline in S1 uses a simpler robotic control with standard motion planning libraries (<a href="https://moveit.ros.org/" target="_blank"><u>MoveIt</u></a>), while the baseline in S2 also includes task-space control of the robotic manipulator, and prediction/inference of the human intention. We show below some sample results for S2. Below we show sample rsults in S1.
+				</p>
+				<br>
+				<h3><span style="font-size:14.0pt">Results per object and handover location</span></h3>
+				<p align="justify">
+					Sample results for subject 1 and grasp 1 while changing the handover location and cup.
+				</p>
+				<table align="center" style="border:0px;padding-left:0px">
+					<tr>	
+						<td style="border:0px;padding:0px"></td>
+						<th style="border:0px;padding:0px" align="center">Cup 1</th>
+						<th style="border:0px;padding:0px" align="center">Cup 2</th>
+						<th style="border:0px;padding:0px" align="center">Cup 3</th>
+						<th style="border:0px;padding:0px" align="center">Cup 4</th>
+					</tr>
+					<tr>
+						<th style="border:0px;padding:0px;vertical-align: middle;">Handover location 1</th>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesA/cup1_right_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video.</video>
+						</td>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesA/cup2_right_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesA/cup3_right_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesA/cup4_right_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+					</tr>
+					<tr>
+						<th style="border:0px;padding:0px;vertical-align: middle;">Handover location 2</th>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesA/cup1_middle_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesA/cup2_middle_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesA/cup3_middle_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesA/cup4_middle_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+					</tr>
+					<tr>
+						<th style="border:0px;padding:0px;vertical-align: middle;">Handover location 3</th>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesA/cup1_left_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesA/cup2_left_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesA/cup3_left_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesA/cup4_left_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<h3><span style="font-size:14.0pt">Results per subject and human grasp</span></h3>
+				<p align="justify">
+					Sample results for handover location 2 (on front of the robot) and cup 2 while changing the subject location and human grasp.
+				</p>
+				<table align="center" style="border:0px;padding-left:0px">
+					<tr>	
+						<td style="border:0px;padding:0px"></td>
+						<th style="border:0px;padding:0px" align="center">Subject 1</th>
+						<th style="border:0px;padding:0px" align="center">Subject 2</th>
+						<th style="border:0px;padding:0px" align="center">Subject 3</th>
+					</tr>
+					<tr>
+						<th style="border:0px;padding:0px;vertical-align: middle;">Grasp 1</th>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesB/subject1_grasp1_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesB/subject2_grasp1_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesB/subject3_grasp1_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+					</tr>
+					<tr>
+						<th style="border:0px;padding:0px;vertical-align: middle;">Grasp 2</th>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesB/subject1_grasp2_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesB/subject2_grasp2_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+						<td style="border:0px;padding:0px" align="center"><video width="200" controls> <source src="benchmark/resources/samplesB/subject3_grasp2_cut.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+						</td>
+					</tr>
+				</table>
+				<br>
+				Note that the baseline cannot handle Grasp 3: the identification of the grasping regions is to be worked on!
+				<p>
+					<a href="https://github.com/CORSMAL/Benchmark" target="_blank"><u>Baseline source code (GitHub)</u></a>
+				</p>						
+				<br>
+			</p>
+			
+		<h3><span style="font-size:14.0pt"><b>Acknowledgments</b></span></h3>
+		<p>
+			If you use the code and/or the benchmark, please cite the publication: <br>
+			<a href="https://ieeexplore.ieee.org/document/8968407/" TARGET = "_blank"><u><b>Benchmark for Human-to-Robot Handovers of Unseen Containers with Unknown Filling</b></u></a><br>
+			R. Sanchez-Matilla, K. Chatzilygeroudis, A. Modas, N. Ferreira Duarte, A. Xompero, P. Frossard, A. Billard, and A. Cavallaro<br>
+			IEEE Robotics and Automation Letters (RA-L), vol.5, no. 2, Apr. 2020
+		</p>
+	<br>
+		</div>		
+	</div>
+</div>
+
+<!-- ####################################################################################################### -->
+<!-- Begin of Sponsors and Partners div -->
+<div class="wrapper row1">
+	<div id="header" class="clear" style="padding: 0px 0px 0px 20px;width:920px">
+		<div class="fl_left" style="margin-top: 0px;">
+			<ul>
+				<li style="padding: 0 0 0 0">
+					<p>
+						<b>Sponsors</b>
+						<br>
+						<br>
+					</p>
+					<p>
+						<a href="http://www.chistera.eu" TARGET = "_blank"><img src="images/chist-era_logo_crop.png" style="height:35px;" alt="Chistera logo"/></a>
+						<a href="https://epsrc.ukri.org/" target="_blank"><img src="images/EPSRC_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="EPSRC logo"></a>
+						<a href="http://www.agence-nationale-recherche.fr/en/" target="_blank"><img src="images/ANR_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="ANR logo"></a>
+						<a href="http://www.snf.ch/en/Pages/default.aspx" target="_blank"><img src="images/FNS_logo.jpg" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="FNS logo"></a>
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div class="fl_right" style="margin-top: 0px;">
+			<ul style="margin-bottom: 0px;">
+				<li style="margin: 0px 4px 0px 0; padding: 0 0px 0 0;">
+					<p>
+						<b>Partners</b>
+						<br>
+						<br>
+					</p>
+					<p>
+						<a href="https://www.qmul.ac.uk/" target="_blank"><img src="images/QMUL_logo.jpg" alt="Queen Mary University of London" style="padding:5px 10px 0px 0px;height:45px;"></a>
+						<a href="http://www.sorbonne-universite.fr/en" target="_blank">
+							<img src="images/Sorbonne_University_logo.png" alt="Sorbonne University" style="padding:5px 10px 0px 0px;height:45px;">
+						</a>
+						<a href="https://www.epfl.ch/en/home/" target="_blank">
+							<img src="images/EPFL_logo.png" alt="EPFL" style="padding:5px 0px 0px 0px;height:45px;">
+						</a>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- End of Sponsors and Partners div -->
+<br><br>
+<!-- ####################################################################################################### -->
+<!-- <div class="clearing">&nbsp;</div>-->
+<div class="wrapper bottomPg">
+	<div id="copyright">
+		<div id="fl_left" style="font-size:12px">
+			© Copyright CORSMAL 2019-2022
+		</div>	  
+	</div>
+</div>
+<!-- footer -->
+<!--added to clear error with content element -->
+</body>
+</html>
