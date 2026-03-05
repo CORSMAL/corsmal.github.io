@@ -1,0 +1,287 @@
+[
+  {
+    "id": "robot_booster",
+    "name": "Robot Booster",
+    "members": [
+      {
+        "name": "Beiwen Tian",
+        "affiliation": "Tsinghua University (China)",
+        "lead": true
+      }
+    ]
+  },
+  {
+    "id": "broken_arm",
+    "name": "Broken Arm",
+    "members": [
+      {
+        "name": "Nadezhda Varzonova",
+        "affiliation": "University of Klagenfurt (Austria)",
+        "lead": true
+      },
+      {
+        "name": "Daniel Bugelnig",
+        "affiliation": "University of Klagenfurt (Austria)",
+        "lead": false
+      },
+      {
+        "name": "Christoph Rauter",
+        "affiliation": "University of Klagenfurt (Austria)",
+        "lead": false
+      },
+      {
+        "name": "Markus Kraeuter",
+        "affiliation": "University of Klagenfurt (Austria)",
+        "lead": false
+      },
+      {
+        "name": "Valerian Pichler",
+        "affiliation": "University of Klagenfurt (Austria)",
+        "lead": false
+      }
+    ]
+  },
+  {
+    "id": "iitgn_robotics",
+    "name": "IITGN Robotics Lab",
+    "members": [
+      {
+        "name": "Debojit Das",
+        "affiliation": "Indian Institute of Technology Gandhinagar (India)",
+        "lead": true
+      },
+      {
+        "name": "Samay Jain",
+        "affiliation": "Indian Institute of Technology Gandhinagar (India)",
+        "lead": false
+      },
+      {
+        "name": "Paras Prashant Shirvale",
+        "affiliation": "Indian Institute of Technology Gandhinagar (India)",
+        "lead": false
+      },
+      {
+        "name": "Deepak Mangesh Gadhave",
+        "affiliation": "Indian Institute of Technology Gandhinagar (India)",
+        "lead": false
+      },
+      {
+        "name": "Hrriday Viraj Ruparel",
+        "affiliation": "Indian Institute of Technology Gandhinagar (India)",
+        "lead": false
+      }
+    ]
+  },
+  {
+    "id": "airlab",
+    "name": "AIRLab team",
+    "members": [
+      {
+        "name": "Ayoung Hong",
+        "affiliation": "Chonnam National University (South Korea)",
+        "lead": true
+      },
+      {
+        "name": "Phayuth Yonrith",
+        "affiliation": "Chonnam National University (South Korea)",
+        "lead": false
+      },
+      {
+        "name": "Jeongil Choi",
+        "affiliation": "Chonnam National University (South Korea)",
+        "lead": false
+      },
+      {
+        "name": "Gunhee Nam",
+        "affiliation": "Chonnam National University (South Korea)",
+        "lead": false
+      },
+      {
+        "name": "Seunghui Han",
+        "affiliation": "Chonnam National University (South Korea)",
+        "lead": false
+      }
+    ]
+  },
+  {
+    "id": "brd_lab",
+    "name": "BRD Lab",
+    "members": [
+      {
+        "name": "Varshith R V",
+        "affiliation": "Singapore University of Technology and Design (Singapore)",
+        "lead": true
+      },
+      {
+        "name": "Van Tien Truong",
+        "affiliation": "Singapore University of Technology and Design (Singapore)",
+        "lead": false
+      },
+      {
+        "name": "Aaditya Aurobindo",
+        "affiliation": "Singapore University of Technology and Design (Singapore)",
+        "lead": false
+      },
+      {
+        "name": "Zheng Zhang",
+        "affiliation": "Singapore University of Technology and Design (Singapore)",
+        "lead": false
+      },
+      {
+        "name": "John Marie Tan",
+        "affiliation": "Singapore University of Technology and Design (Singapore)",
+        "lead": false
+      }
+    ]
+  },
+  {
+    "id": "handy_bots",
+    "name": "Handy Bots",
+    "members": [
+      {
+        "name": "Vibhu Sharma",
+        "affiliation": "Defense Institute of advanced technology (India)",
+        "lead": true
+      },
+      {
+        "name": "Vaibhavi Dahake",
+        "affiliation": "Defense Institute of advanced technology (India)",
+        "lead": false
+      },
+      {
+        "name": "Samarth Bagale",
+        "affiliation": "Defense Institute of advanced technology (India)",
+        "lead": false
+      },
+      {
+        "name": "Harshvardhan Singh Thakur",
+        "affiliation": "Defense Institute of advanced technology (India)",
+        "lead": false
+      },
+      {
+        "name": "Aman Singh",
+        "affiliation": "Defense Institute of advanced technology (India)",
+        "lead": false
+      }
+    ]
+  },
+  {
+    "id": "shakeys_legacy",
+    "name": "Shakey's Legacy",
+    "members": [
+      {
+        "name": "Abhimanyu Bhowmik",
+        "affiliation": "Czech Technical University in Prague (Czech Republic)",
+        "lead": true
+      },
+      {
+        "name": "Petr Vanc",
+        "affiliation": "Czech Technical University in Prague (Czech Republic)",
+        "lead": false
+      },
+      {
+        "name": "Lukáš Rustler",
+        "affiliation": "Czech Technical University in Prague (Czech Republic)",
+        "lead": false
+      },
+      {
+        "name": "Shubhan Patni",
+        "affiliation": "Czech Technical University in Prague (Czech Republic)",
+        "lead": false
+      },
+      {
+        "name": "Jan Behrens",
+        "affiliation": "Czech Technical University in Prague (Czech Republic)",
+        "lead": false
+      }
+    ]
+  },
+  {
+    "id": "unist",
+    "name": "UNIST",
+    "members": [
+      {
+        "name": "Seungheon Jeong",
+        "affiliation": "Ulsan National Institute of Science & Technology (South Korea)",
+        "lead": true
+      },
+      {
+        "name": "Junsu Kim",
+        "affiliation": "Ulsan National Institute of Science & Technology (South Korea)",
+        "lead": false
+      },
+      {
+        "name": "Minji Kim",
+        "affiliation": "Ulsan National Institute of Science & Technology (South Korea)",
+        "lead": false
+      },
+      {
+        "name": "Sebin Lee",
+        "affiliation": "Ulsan National Institute of Science & Technology (South Korea)",
+        "lead": false
+      },
+      {
+        "name": "Kyungdon Joo",
+        "affiliation": "Ulsan National Institute of Science & Technology (South Korea)",
+        "lead": false
+      }
+    ]
+  },
+  {
+    "id": "larics_gripsters",
+    "name": "LARICS Gripsters",
+    "members": [
+      {
+        "name": "Marko Kozlik",
+        "affiliation": "University of Zagreb (Croatia)",
+        "lead": true
+      },
+      {
+        "name": "Elena Wachtler",
+        "affiliation": "University of Zagreb (Croatia)",
+        "lead": false
+      },
+      {
+        "name": "Pero Drobac",
+        "affiliation": "University of Zagreb (Croatia)",
+        "lead": false
+      },
+      {
+        "name": "Frano Petric",
+        "affiliation": "University of Zagreb (Croatia)",
+        "lead": false
+      },
+      {
+        "name": "Matko Orsag",
+        "affiliation": "University of Zagreb (Croatia)",
+        "lead": false
+      }
+    ]
+  },
+  {
+    "id": "sirsiit",
+    "name": "SIRSIIT",
+    "members": [
+      {
+        "name": "Enrico Turco",
+        "affiliation": "Istituto Italiano di Tecnologia (Italy)",
+        "lead": true
+      },
+      {
+        "name": "Chiara Castellani",
+        "affiliation": "Istituto Italiano di Tecnologia (Italy)",
+        "lead": false
+      },
+      {
+        "name": "Gionata Salvietti",
+        "affiliation": "University of Siena (Italy)",
+        "lead": false
+      },
+      {
+        "name": "Maria Pozzi",
+        "affiliation": "University of Siena (Italy)",
+        "lead": false
+      }
+    ]
+  }
+]

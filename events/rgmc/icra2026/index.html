@@ -22,25 +22,7 @@
 <script type="text/javascript" src="https://corsmal.github.io/js/jquery.tabs.setup.js"></script>
 
 
-<script> 
-	function AppearMetadata(metadata_id) {
-		var y = document.getElementsByClassName("metadata");
-		for (var i = 0; i < y.length; i++) {
-			y[i].style.display = 'none';
-		}
-
-		var x = document.getElementById(metadata_id);
-		if (x.style.display === "none") {
-			x.style.display = "block";
-		} else {
-			x.style.display = "none";
-		}
-	}
-
-	$('a[href="#dates"]').click(function(){
-		$("#dates").css("padding-top", "500px");
-	});
-</script>
+<script type="text/javascript" src="js/teams.js"></script>
 
 
 </head>
@@ -97,24 +79,17 @@
 				</p>
 				<p>
 					This is a unique opportunity to benchmark your work with the state-of-the-art and advance this robotic task in real-world conditions. 
-					You can either bring your own robots to the competition site or request a robot 
-					provided by the RGMC sponsors (UR5e or Franka Emika Panda) based on availability (see Application form for more details)
-					Moreover, Mathworks will provide free Matlab licenses to participants. 
-				</p>
-				<p>
-					You will also be invited to present your work at an IROS Workshop (TBC) and contribute a research article to the Topical Collection on "Advancing Robotic Grasping and Manipulation for the Real-World" within Autonomous Robots (see <a href="https://www.springer.com/journal/10514"><i>here</i></a>).
-				</p>
-				<p>
-					<!-- 
-					If you would like us to directly get in touch with you and share the details, please fill out the 
-					<a href="https://docs.google.com/forms/d/e/1FAIpQLSfzh0f0FCmCqpM3kDv4KAjnsQTWQVXxOKVv9-UByEC03z6gLg/viewform?usp=publish-editor" target="_BLANK"><u>form</u></a>.  
-					-->
-					Please fill out the application <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0ZXvTqP-bP9he-R2aoC4QZjUnlG_qPDJcfQWrcxvJGZ-sSw/viewform?usp=header" target="_BLANK"><u>form</u></a> 
-					to participate in RGMC 2026.
-					<b>Deadline</b>: February 9th, 2026 for full consideration.
-					We will continue receiving applications after that date and may consider them based on the availability of the participant spots and the readiness of the solution.
-					If you have any questions, please email Berk Calli at <a href="mailto:bcalli@wpi.edu"><u>bcalli@wpi.edu</u></a>.
-					
+					Beyond the chance of winning the competition track, you will also have the opportunity to
+					<ul>
+						<li>test your algorithms on your own robot, or UR5 and Franka Emika Panda robots (based on availability) at the competition site;</li>
+						<li>win cash prizes (top-performing team) and earn recognition at ICRA 2026;</li>
+						<li>contribute a research article on your solution, findings, and results to the Topical Collection on 
+					"Advancing Robotic Grasping and Manipulation for the Real-World" within Autonomous Robots 
+					(see <a href="https://link.springer.com/collections/ifcjfbbgji"><u>here</u></a>);</li>
+						<li>showcase a demo video on the RGMC YouTube channel, reaching the research community worldwide;</li>
+						<li>receive a free MATLAB license provided by Mathworks to support your solution development;</li>
+						<li>network and collaborate with other researchers and practitioners in the field.</li>
+					</ul>
 				</p>
 				<br>
 				<b><span style="font-size:14.0pt">Track description</span></b>
@@ -132,6 +107,34 @@
 					The track will involve a qualification phase in which teams can perform the handover configurations of the <a href="https://corsmal.github.io/benchmark.html"><u>CORSMAL Benchmark protocol</u></a> remotely in their laboratory. 
 					Please see also the <a href="qualification.html#starting-kit"><u>starting kit and documentation</u></a> for preparing your solution. 
 				</p>
+				<br>
+				<b><span style="font-size:14.0pt">Application</span></b>
+				<p>
+					Deadline to apply for the competition track and receive full consideration has already been passed,
+					but we will still consider applications based on the availability of the participant spots and the readiness of the solution.
+					<br><br>
+					Please fill out the application <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0ZXvTqP-bP9he-R2aoC4QZjUnlG_qPDJcfQWrcxvJGZ-sSw/viewform?usp=header" target="_BLANK"><u>form</u></a>.
+				</p>
+				<br>
+			</div>
+
+			<!-- Confirmed Teams -->
+			<div style="text-align:justify;">
+				<b><span style="font-size:14.0pt">Teams</span></b>
+				<br><br>
+				<div style="height:auto;width:100%;overflow:hidden;" id="teamsolutions">
+					Select a team to see the details. Team leader highlighted in bold.<br><br>
+					<div style="width:200px; float:left;">
+						<ul id="teams">
+							<!-- Teams list will be populated by renderTeams() -->
+						</ul>
+					</div>
+					<div id="team-blocks">
+						<!-- Team details will be populated by renderTeams() -->
+					</div>
+				</div>
+				<br>
+				<br>
 			</div>
 			
 			<div id="organisers">
