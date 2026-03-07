@@ -1,350 +1,272 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
-<head profile="http://gmpg.org/xfn/11"> 
-	<link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Qualification - Human-to-Robot Handovers track at ICRA 2026">
+    <meta name="keywords" content="CORSMAL, robotics, competition, ICRA, human-to-robot, handovers, qualification">
+    <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
+    
+    <title>CORSMAL | Qualification | Human-to-Robot Handovers | ICRA 2026</title>
+    <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
+    <link rel="stylesheet" href="css/rgmc_track.css" type="text/css">
+    <link href="https://unpkg.com/tabulator-tables@6.3.1/dist/css/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@6.3.1/dist/js/tabulator.min.js"></script>
+    <script type="text/javascript" src="js/leaderboards.js"></script>
+    <style>
+        .legend-toggle {
+            cursor: pointer;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--primary-color);
+            text-decoration: underline;
+            padding-bottom: 2px;
+        }
 
-<title>
-	CORSMAL | Human-to-Robot Handovers track | 11th Robotics Grasping and Manipulation Competition | ICRA 2026
-</title>
+        .legend-toggle:hover {
+            color: #000000;
+        }
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-<meta http-equiv="imagetoolbar" content="no" />
-<meta http-equiv="KeyWords" content="CORSMAL, robotics, vision, audio, signal processing, competition, challenge, ICRA, human-to-robot, handovers, 2026"/>
-<meta name="image" property="og:image" content="/images/CORSMAL_logo.png">
+        #legend_groups {
+            display: none;
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            line-height: 1.8;
+        }
 
-<link rel="stylesheet" href="https://corsmal.github.io/css/layout.css" type="text/css" /> 
-<link rel="stylesheet" href="https://corsmal.github.io/css/teams.css" type="text/css" /> 
-<link rel="stylesheet" href="https://corsmal.github.io/css/mystyle.css" type="text/css" /> 
-
-<style>
-	.tg  {border-collapse:collapse;border-spacing:0;}
-/*	.tg td{border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;}*/
-		.tg th{border-color:black;border-style:solid;border-width:1px;font-weight:normal;font-size:14.0pt;overflow:hidden;padding:10px 5px;word-break:normal;}
-			.tg .tg-km2t{border-color:#ffffff;font-weight:bold;font-size:14.0pt;text-align:left;vertical-align:top}
-			.tg .tg-zv4m{border-color:#ffffff;font-size:14.0pt;text-align:left;vertical-align:top}
-
-
-	
-	.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-	  overflow:hidden;padding:10px 5px;word-break:normal;}
-	.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-	  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-</style>
-
-
-<script type="text/javascript" src="https://corsmal.github.io/js/jquery-1.4.1.min.js"></script>  
-<script type="text/javascript" src="https://corsmal.github.io/js/jquery.slidepanel.setup.js"></script> 
-<script type="text/javascript" src="https://corsmal.github.io/js/jquery-ui-1.7.2.custom.min.js"></script>
-<script type="text/javascript" src="https://corsmal.github.io/js/jquery.tabs.setup.js"></script>
-
-<link href="https://unpkg.com/tabulator-tables@6.3.1/dist/css/tabulator.min.css" rel="stylesheet">
-<script type="text/javascript" src="https://unpkg.com/tabulator-tables@6.3.1/dist/js/tabulator.min.js"></script>
-
-<!-- <link href="https://unpkg.com/tabulator-tables@4.4.3/dist/css/tabulator.min.css" rel="stylesheet">
-<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.4.3/dist/js/tabulator.min.js"></script> -->
-<!-- <link href="css/tabulator.min.css" rel="stylesheet"> -->
-<script type="text/javascript" src="js/leaderboards.js"></script>
-
-
+        #legend_groups.visible {
+            display: block;
+        }
+    </style>
 </head>
 <body id="top">
-	<div class="wrapper row1">
-		<div id="header" class="clear">
-			<div class="fl_left" style="width:33%">
-				<ul>
-					<li>
-						<p>
-							<a href="https://corsmal.github.io"><img src="https://corsmal.github.io/images/CORSMAL_logo.png" style="padding:0px 0px 0px 0px;height:75px" alt="CORSMAL"/></a>
-						</p>
-					</li>
-				</ul>
-			</div>
-			<div style="float:left;width: 33%;margin-top: 12pt;text-align: center;">
-				<span><a href="https://2026.ieee-icra.org/" TARGET = "_BLANK"><img src="images/ICRA-VIE26-logo.webp" style="width:65%"></a></span>
-			</div>
-			<div class="fl_right" style="margin-top:12pt;width: 33%;text-align: right;">
-				<b><span style="font-size:12.0pt"><a href="https://sites.google.com/view/rgmc2026" TARGET = "_BLANK">11th Robotic Grasping and<br>Manipulation Competition</a></span></b>
-			</div>
-		</div>
-	</div>
-	<!--2###################################################################################################### --> 
-	<div class="wrapper row2"; style="margin-bottom: 7px;">
-		<div class="rnd"> <!-- ###### --> 
-			<!-- ###### --> 
-		</div>
-	</div>
-	<!-- 3####################################################################################################### --> 
-	<div class="wrapper row1"> 
-		<div id="container" class="clear">
-			<div id="latestnewspage" class="clear">
-				<div style="text-align:center;text-justify:inter-ideograph;margin-bottom:0px">
-					<span style="font-size:16.0pt;"><b>Human-to-Robot Handovers</b></span>
-				</div>
-				<div id="topnav" style="text-align:center;"> 
-				<ul>
-					<li><a href="index.html"><b>Overview</b></a></li> 
-					<li><a href="task.html"><b>Task</b></a></li>
-					<li><a href="competition.html"><b>Competition</b></a></li>
-					<li class="active"><a href="qualification.html"><b>Qualification</b></a>
-					<li><a href="rules.html"><b>Rules</b></a></li> 
-					<li><a href="evaluation.html"><b>Evaluation</b></a></li>
-				</ul>
-			</div>
-			<div>
-				<p>
-					The track involves a qualification phase in which teams need to perform the handover configurations of the <a href="https://corsmal.github.io/benchmark.html"><u>CORSMAL Benchmark protocol</u></a> remotely in their laboratory (see also the open access <a href="https://doi.org/10.1109/LRA.2020.2969200" target="_BLANK"><u>publication</u></a>). Results will be submitted to the track organisers and teams will be ranked on a leaderboard in this page based on the performance scores of the benchmarking protocol. 
-				</p>
-				<p>
-					The best-performing teams will qualify for competing in Vienna in June 2026. A maximum number of 6 teams will qualify to participate in the on-site competition. End date of the qualification phase will be announced in the following weeks.
-				</p>
-				<p>
-					Below we also provide details, <a href="#setting-up-instructions"><u>instructions</u></a>, and <a href="#starting-kit"><u>documentation</u></a> for preparing the solution, including reference software, publications, and data.
-				</p>
-				<p>
-					The <a href="https://doi.org/10.17636/101CORSMAL1" target="_BLANK"><u>CORSMAL Containers Manipulation dataset</u></a> can be used to design perception-based solutions for the approaching phase and prior to the handover of the object to a robot.
-				</p>
-				<br>
-			</div>
-			<div id="corsmal-leaderboard">
-				<b><span style="font-size:14.0pt">Leaderboards - CORSMAL Benchmark</span></b>
-				<p>
-					Teams are ranked by the benchmark score.
-				</p>
-				<br>
-				<b><span style="font-size:12.0pt">Benchmark scores</span></b>
-				<p>
-					We provide also the results grouped by vision subsystem, robotic subsystem, and completion of the overall task.
-				</p>
-				<p align="justify">
-					<div class="corsmal-overall" id="corsmal-overall"></div>
-					<script type="text/javascript">
-						var table = new Tabulator("#corsmal-overall",
-						{
-							
-							height:"150px",
-							reactiveData:true, //turn on data reactivity
-							data:corsmal_table, //load data into table
-							columns:[
-							{title:"Name", field:"name"},
-							{title:"Benchmark", field:"score", sorter:"number"},
-							{title:"Vision", field:"vision", sorter:"number"},
-							{title:"Robotics", field:"robotics", sorter:"number"},
-							{title:"Overall task", field:"global", sorter:"number"},
-							],
-							initialSort:[
-								{column:"score", dir:"desc"}, //sort by this first
-								]
-							});
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-							table.redraw();
-						</script>
-					</p>
-				<b><span style="font-size:12.0pt">Results by individual scores</span></b>
-				<br>
-					<a class="papercite_pdf" title="Click to make the legend appear/disappear" onclick="AppearLegend('legend_scores')"><u>Legend</u></a>
-					<div align="justify" id="legend_scores" style="display:none;">
-						<br>
-						<div style="float:left;width: 33%;">
-    				Vision subsystem:<br>
-	    			- s1: Width at the top<br>
-	    			- s2: Width at the bottom<br>
-	    			- s3: Height<br>
-	    			- s4: Mass (cup + filling)<br>
-	    			- s5: Fullness<br>	
-	    			<br>
-    			</div>
-    			<div style="float:left;width: 33%;">
-    				Robotic subsystem:<br>
-    				- s6: Mass (cup + filling)<br>
-    				- s7: Human-hand pose prediction<br>
-    				- s8: End-effector<br>
-    				<br>
-    			</div>
-    			<div style="float:left;width: 33%;">
-    				Overall task:<br>
-    				- s9: Delivery location<br>	
-    				- s10: Mass of the delivered filling<br>
-    				- s11: Human maneuvering time<br>
-    				- s12: Handover time<br>
-    				- s13: Robot maneuvering time<br>
-    				<br>
-    			</div>
+    <header>
+        <div class="header-top">
+            <div class="logo-section">
+                <a href="https://corsmal.github.io" aria-label="CORSMAL Home">
+                    <img src="https://corsmal.github.io/images/CORSMAL_logo.png" alt="CORSMAL Logo">
+                </a>
+            </div>
+            <div class="icra-section">
+                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer" aria-label="ICRA 2026 Conference (opens in new window)">
+                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna Logo">
+                </a>
+            </div>
+            <div class="competition-section">
+                <a href="https://sites.google.com/view/rgmcomp" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
+            </div>
+        </div>
+        <div class="header-content">
+            <h1 class="page-title-header">Human-to-Robot Handovers</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Overview</a></li>
+                    <li><a href="task.html">Task</a></li>
+                    <li><a href="competition.html">Competition</a></li>
+                    <li><a href="qualification.html" class="active">Qualification</a></li>
+                    <li><a href="rules.html">Rules</a></li>
+                    <li><a href="evaluation.html">Evaluation</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-				</div>
-				<p align="justify" style="clear:left">
-					<div class="corsmal-scores" id="corsmal-scores"></div>
-					<script type="text/javascript">
-						var table = new Tabulator("#corsmal-scores",
-						{
-							height:"150px",
-							reactiveData:true, //turn on data reactivity
-							data:corsmal_table, //load data into table
-							columns:[
-							{title:"Name", field:"name"},
-							// {title:"Benchmark", field:"score", sorter:"number"},
-							{title:"s1", field:"s1", sorter:"number"},
-							{title:"s2", field:"s2", sorter:"number"},
-							{title:"s3", field:"s3", sorter:"number"},
-							{title:"s4", field:"s4", sorter:"number"},
-							{title:"s5", field:"s5", sorter:"number"},
-							{title:"s6", field:"s6", sorter:"number"},
-							{title:"s7", field:"s7", sorter:"number"},
-							{title:"s8", field:"s8", sorter:"number"},
-							{title:"s9", field:"s9", sorter:"number"},
-							{title:"s10", field:"s10", sorter:"number"},
-							{title:"s11", field:"s11", sorter:"number"},
-							{title:"s12", field:"s12", sorter:"number"},
-							{title:"s13", field:"s13", sorter:"number"},
-							],
-							initialSort:[
-								{column:"score", dir:"desc"}, //sort by this first
-								]
-							});
+    <main id="main-content">
+        <div class="wrapper row1">
+            <div id="container" class="clear">
+                <div id="latestnewspage" class="clear">
+                    <div>
+                        <p>
+                            The track involves a qualification phase in which teams need to perform the handover configurations of the <a href="https://corsmal.github.io/benchmark.html">CORSMAL Benchmark protocol</a> remotely in their laboratory (see also the open access <a href="https://doi.org/10.1109/LRA.2020.2969200" target="_blank">publication</a>). Results will be submitted to the track organisers and teams will be ranked on a leaderboard in this page based on the performance scores of the benchmarking protocol.
+                        </p>
+                        <p>
+                            The best-performing teams will qualify for competing in Vienna in June 2026. A maximum number of 6 teams will qualify to participate in the on-site competition. End date of the qualification phase will be announced in the following weeks.
+                        </p>
+                        <p>
+                            Below we also provide details, <a href="#setting-up-instructions">instructions</a>, and <a href="#starting-kit">documentation</a> for preparing the solution, including reference software, publications, and data.
+                        </p>
+                        <p>
+                            The <a href="https://doi.org/10.17636/101CORSMAL1" target="_blank">CORSMAL Containers Manipulation dataset</a> can be used to design perception-based solutions for the approaching phase and prior to the handover of the object to a robot.
+                        </p>
+                    </div>
 
-							table.redraw();
-						</script>
-				</p>
-					<b><span style="font-size:12.0pt">Results by cups, filling amount, grasp types, and handover locations</span></b>
-					<br>
-					<a class="papercite_pdf" title="Click to make the legend appear/disappear" onclick="AppearLegend('legend_groups')"><u>Legend</u></a>
-    		<p align="justify" id="legend_groups" style="display:none;">
-    			- C1: Cup 1<br>
-    			- C2: Cup 2<br>
-    			- C3: Cup 3<br>
-    			- C4: Cup 4<br>
-    			- G1: Grasp 1<br>
-    			- G2: Grasp 2<br>
-    			- G3: Grasp 3<br>
-    			- HO-L: handover left location<br>
-    			- HO-C: handover centre location<br>
-    			- HO-R: handover right location
-    		</p>
-					<p align="justify">
-					<div class="corsmal-groups" id="corsmal-groups"></div>
-					<script type="text/javascript">
-						var table = new Tabulator("#corsmal-groups",
-						{
-							height:"150px",
-							reactiveData:true, //turn on data reactivity
-							data:corsmal_table, //load data into table
-							columns:[
-							{title:"Name", field:"name"},
-							{title:"C1", field:"cup1", sorter:"number"},
-							{title:"C2", field:"cup2", sorter:"number"},
-							{title:"C3", field:"cup3", sorter:"number"},
-							{title:"C4", field:"cup4", sorter:"number"},
-							{title:"Empty", field:"empty", sorter:"number"},
-							{title:"Filled", field:"filled", sorter:"number"},
-							{title:"G1", field:"grasp1", sorter:"number"},
-							{title:"G2", field:"grasp2", sorter:"number"},
-							{title:"G3", field:"grasp3", sorter:"number"},
-							{title:"HO-L", field:"left", sorter:"number"},
-							{title:"HO-C", field:"center", sorter:"number"},
-							{title:"HO-R", field:"right", sorter:"number"},
-							],
-							initialSort:[
-								{column:"score", dir:"desc"}, //sort by this first
-								]
-							});
+                    <div id="corsmal-leaderboard">
+                        <b><span>Leaderboards - CORSMAL Benchmark</span></b>
+                        <p>
+                            Teams are ranked by the benchmark score.
+                        </p>
 
-							table.redraw();
-						</script>
-					</p>
-			</div>
-			<br>
-			<div id="setting-up-instructions">
-				<b><span style="font-size:14.0pt">Setting up instructions</span></b>
-				<br>
-				<p>
-					The <i>setup</i> includes a robotic arm with at least 6 degrees of freedom (e.g., UR5, KUKA) and equipped with a 2-finger parallel gripper (e.g., Robotiq 2F-85); a table where the handover is happening as well as where the robot is placed; selected containers and contents; up to two cameras (e.g., Intel RealSense D435i); and a digital scale to weigh the container. The table is covered by a <a href="https://amzn.to/2X5qnaN" title="Purchase link"><u>white table-cloth</u></a>. The two cameras should be placed at 40 cm from the robotic arm, e.g. using tripods, and oriented in such a way that they both view the centre of the table. The illustration below represents the layout in 3D of the setup within a space of 4.5 x 4.5 meters.
-				</p>
-				<div style="text-align: center;">
-					<img src="images/rgmc10-icra25-handover-3Dmodel.webp"/ style="width: 75%">							
-				</div>
-				<br>
-				<ul>
-					<li>Teams must prepare the sensing setup such that the cameras are synchronised, calibrated and localised with respect to a calibration board. We recommend the cameras recording RGB sequences at 30 Hz with a resolution of 1280 × 720 pixels (based on the setup used in the CORSMAL Benchmark).</li>
-					<li>Teams should verify the behaviour of the robotic arm prior to the execution of the task (e.g., end-effector, speed, kinematics, etc.)</li>
-					<li>Teams will prepare all configurations with their corresponding container and filling before starting the task. </li>
-					<li>Teams must weigh the mass of the container and content, if any, for each configuration before and after executing the handover to the robot, using a weight scale.</li>
-					<li>A volunteer from the team will be the person who will hand the container over to the robot using a random/natural grasp for each configuration. </li>
-					<li>Any initial robot pose can be chosen with respect to the environment setup; however, the subject is expected to stand on the opposite side of the table with respect to the robot.</li>
-				</ul>
-			<p>
-				These instructions have been revised from the <a href="https://corsmal.github.io/benchmark/resources/RAL-SI-2020-B19-0835-V1.0.pdf" target="_BLANK"><u>CORSMAL Human-to-Robot Handover Benchmark document</u></a>.
-			</p>
-			<br>
-			</div>
-			<div id="starting-kit">
-				<b><span style="font-size:14.0pt">Starting kit and documentation</span></b>
-				<br>
-				<br>
-				<b><span style="font-size:12.0pt">Reference publications</span></b>
-				<p>
-					<i>Benchmark for human-to-robot handovers of unseen containers with unknown filling</i><br>
-					R. Sanchez-Matilla, K. Chatzilygeroudis, K., A. Modas, N.F. Duarte, A., Xompero, A., P. Frossard, A. Billard, A. Cavallaro<br>
-					IEEE Robotics and Automation Letters, 5(2), pp.1642-1649, 2020<br>
-					[<a href="https://doi.org/10.1109/LRA.2020.2969200" target="_BLANK"><u>Open Access</u></a>]
-				</p>
-				<p>
-					<i>The CORSMAL benchmark for the prediction of the properties of containers</i><br>
-					A. Xompero, S. Donaher, V. Iashin, F. Palermo, G. Solak, C. Coppola, R. Ishikawa, Y. Nagao, R. Hachiuma, Q. Liu, F. Feng, C. Lan, R. H. M. Chan, G. Christmann, J. Song, G. Neeharika, C. K. T. Reddy, D. Jain, B. U. Rehman, A. Cavallaro<br>
-					IEEE Access, vol. 10, 2022.
-					[<a href="https://doi.org/10.1109/ACCESS.2022.3166906" target="_BLANK"><u>Open Access</u></a>]
-				</p>
-				<p>
-					<i>Towards safe human-to-robot handovers of unknown containers</i><br>
-					Y. L. Pang, A. Xompero, C. Oh, A. Cavallaro<br>
-					IEEE International Conference on Robot and Human Interactive Communication (RO-MAN), Virtual, 8-12 Aug 2021<br>
-					[<a href="https://doi.org/10.1109/RO-MAN50785.2021.9515350" target="_BLANK"><u>Open Access</u></a>]
-					[<a href="https://github.com/CORSMAL/safe_handover/" target="_BLANK"><u>code</u></a>]
-					[<a href="https://corsmal.github.io/safe_handover.html" target="_BLANK"><u>webpage</u></a>]
-				</p>
-				<p>
-					<i>Stereo Hand-Object Reconstruction for Human-to-Robot Handover</i><br>
-					Y. L. Pang, A. Xompero, C. Oh, A. Cavallaro<br>
-					IEEE Robotics and Automation Letters, 2025<br>
-					[<a href="https://doi.org/10.48550/arXiv.2412.07487" target="_BLANK"><u>Open Access</u></a>]
-					[<a href="https://github.com/QM-IPAlab/StereoHO" target="_BLANK"><u>code</u></a>]
-					[<a href="https://qm-ipalab.github.io/StereoHO/" target="_BLANK"><u>webpage</u></a>]
-				</p>
-				<p>
-					<i>The CORSMAL Challenge contains perception solutions for the estimation of the physical properties of manipulated objects prior to a handover to a robot arm.</i><br>
-					[<a href="https://corsmal.github.io/challenge.html"><u>challenge</u></a>]
-					[<a href="https://doi.org/10.1109/ACCESS.2022.3166906" target="_BLANK"><u>paper 1</u></a>]
-					[<a href="https://doi.org/10.48550/arXiv.2203.01977" target="_BLANK"><u>paper 2</u></a>]
-				</p>
-				<p>
-					<i>Additional references</i><br>
-					[<a href="https://corsmal.github.io/resources/challenge/Additional_References.pdf" target="_BLANK"><u>document</u></a>]
-				</p>	
-				<br>
-				<b><span style="font-size:12.0pt">Reference software</span></b>
-				<p>
-					<i>Vision baseline</i><br>
-					A vision-based algorithm, part of a larger system, proposed for localising, tracking and estimating the dimensions of a container with a stereo camera.<br>
-					[<a href="https://ieeexplore.ieee.org/document/8968407/" target="_BLANK"><u>paper</u></a>]
-					[<a href="https://github.com/CORSMAL/Benchmark" target="_BLANK"><u>code</u></a>]
-					[<a href="https://corsmal.github.io/benchmark.html" target="_BLANK"><u>webpage</u></a>]
-				</p>
-				<p>
-					<i>LoDE</i><br>
-					A method that jointly localises container-like objects and estimates their dimensions with a generative 3D sampling model and a multi-view 3D-2D iterative shape fitting, using two wide-baseline, calibrated RGB cameras.<br>
-					[<a href="https://arxiv.org/abs/1911.12354" target="_BLANK"><u>paper</u></a>]
-					[<a href="https://github.com/CORSMAL/LoDE" target="_BLANK"><u>code</u></a>]
-					[<a href="https://corsmal.github.io/LoDE.html" target="_BLANK"><u>webpage</u></a>]
-				</p>
-				<br>
-				<b><span style="font-size:12.0pt">Reference data</span></b>
-				<p>
-				<i>CORSMAL Containers Manipulation (1.0) [Data set]</i><br>
-  				A. Xompero, R. Sanchez-Matilla, R. Mazzon, and A. Cavallaro<br>
-  				Queen Mary University of London. <a href="https://doi.org/10.17636/101CORSMAL1"><u>https://doi.org/10.17636/101CORSMAL1</u></a><br>
-  			</p>
-			</div>
-		</div>
-	</div>
-	<!-- footer --> </div>  <!--added to clear error with content element --> 
+                        <b><span>Benchmark scores</span></b>
+                        <p>
+                            We provide also the results grouped by vision subsystem, robotic subsystem, and completion of the overall task.
+                        </p>
+                        <div class="corsmal-overall" id="corsmal-overall"></div>
+                        <script type="text/javascript">
+                            var table = new Tabulator("#corsmal-overall",
+                            {
+                                height:"150px",
+                                reactiveData:true,
+                                data:corsmal_table,
+                                columns:[
+                                    {title:"Name", field:"name"},
+                                    {title:"Overall", field:"score", sorter:"number"},
+                                    {title:"Vision", field:"vision", sorter:"number"},
+                                    {title:"Robotic", field:"robotic", sorter:"number"},
+                                    {title:"Task completion", field:"completion", sorter:"number"}
+                                ],
+                                initialSort:[
+                                    {column:"score", dir:"desc"},
+                                ]
+                            });
+                            table.redraw();
+                        </script>
+
+                        <div style="margin-top: 1.5rem;">
+                            <span class="legend-toggle" onclick="toggleLegend()">Legend</span>
+                        </div>
+                        <div id="legend_groups">
+                            - C1: Cup 1<br>
+                            - C2: Cup 2<br>
+                            - C3: Cup 3<br>
+                            - C4: Cup 4<br>
+                            - G1: Grasp 1<br>
+                            - G2: Grasp 2<br>
+                            - G3: Grasp 3<br>
+                            - HO-L: handover left location<br>
+                            - HO-C: handover centre location<br>
+                            - HO-R: handover right location
+                        </div>
+                        <div class="corsmal-groups" id="corsmal-groups" style="margin-top: 1.5rem;"></div>
+                        <script type="text/javascript">
+                            var table = new Tabulator("#corsmal-groups",
+                            {
+                                height:"150px",
+                                reactiveData:true,
+                                data:corsmal_table,
+                                columns:[
+                                    {title:"Name", field:"name"},
+                                    {title:"C1", field:"cup1", sorter:"number"},
+                                    {title:"C2", field:"cup2", sorter:"number"},
+                                    {title:"C3", field:"cup3", sorter:"number"},
+                                    {title:"C4", field:"cup4", sorter:"number"},
+                                    {title:"Empty", field:"empty", sorter:"number"},
+                                    {title:"Filled", field:"filled", sorter:"number"},
+                                    {title:"G1", field:"grasp1", sorter:"number"},
+                                    {title:"G2", field:"grasp2", sorter:"number"},
+                                    {title:"G3", field:"grasp3", sorter:"number"},
+                                    {title:"HO-L", field:"left", sorter:"number"},
+                                    {title:"HO-C", field:"center", sorter:"number"},
+                                    {title:"HO-R", field:"right", sorter:"number"},
+                                ],
+                                initialSort:[
+                                    {column:"score", dir:"desc"},
+                                ]
+                            });
+                            table.redraw();
+                        </script>
+                    </div>
+
+                    <div id="setting-up-instructions">
+                        <b><span>Setting up instructions</span></b>
+                        <p>
+                            The <i>setup</i> includes a robotic arm with at least 6 degrees of freedom (e.g., UR5, KUKA) and equipped with a 2-finger parallel gripper (e.g., Robotiq 2F-85); a table where the handover is happening as well as where the robot is placed; selected containers and contents; up to two cameras (e.g., Intel RealSense D435i); and a digital scale to weigh the container. The table is covered by a <a href="https://amzn.to/2X5qnaN" title="Purchase link">white table-cloth</a>. The two cameras should be placed at 40 cm from the robotic arm, e.g. using tripods, and oriented in such a way that they both view the centre of the table. The illustration below represents the layout in 3D of the setup within a space of 4.5 x 4.5 meters.
+                        </p>
+                        <div>
+                            <img src="images/rgmc10-icra25-handover-3Dmodel.webp" alt="3D model of qualification setup" style="width: 75%;">
+                        </div>
+                        <ul>
+                            <li>Teams must prepare the sensing setup such that the cameras are synchronised, calibrated and localised with respect to a calibration board. We recommend the cameras recording RGB sequences at 30 Hz with a resolution of 1280 × 720 pixels (based on the setup used in the CORSMAL Benchmark).</li>
+                            <li>Teams should verify the behaviour of the robotic arm prior to the execution of the task (e.g., end-effector, speed, kinematics, etc.)</li>
+                            <li>Teams will prepare all configurations with their corresponding container and filling before starting the task.</li>
+                            <li>Teams must weigh the mass of the container and content, if any, for each configuration before and after executing the handover to the robot, using a weight scale.</li>
+                            <li>A volunteer from the team will be the person who will hand the container over to the robot using a random/natural grasp for each configuration.</li>
+                            <li>Any initial robot pose can be chosen with respect to the environment setup; however, the subject is expected to stand on the opposite side of the table with respect to the robot.</li>
+                        </ul>
+                        <p>
+                            These instructions have been revised from the <a href="https://corsmal.github.io/benchmark/resources/RAL-SI-2020-B19-0835-V1.0.pdf" target="_blank">CORSMAL Human-to-Robot Handover Benchmark document</a>.
+                        </p>
+                    </div>
+
+                    <div id="starting-kit">
+                        <b><span>Starting kit and documentation</span></b>
+
+                        <b><span>Reference publications</span></b>
+                        <p>
+                            <i>Benchmark for human-to-robot handovers of unseen containers with unknown filling</i><br>
+                            R. Sanchez-Matilla, K. Chatzilygeroudis, K., A. Modas, N.F. Duarte, A., Xompero, A., P. Frossard, A. Billard, A. Cavallaro<br>
+                            IEEE Robotics and Automation Letters, 5(2), pp.1642-1649, 2020<br>
+                            [<a href="https://doi.org/10.1109/LRA.2020.2969200" target="_blank">Open Access</a>]
+                        </p>
+                        <p>
+                            <i>The CORSMAL benchmark for the prediction of the properties of containers</i><br>
+                            A. Xompero, S. Donaher, V. Iashin, F. Palermo, G. Solak, C. Coppola, R. Ishikawa, Y. Nagao, R. Hachiuma, Q. Liu, F. Feng, C. Lan, R. H. M. Chan, G. Christmann, J. Song, G. Neeharika, C. K. T. Reddy, D. Jain, B. U. Rehman, A. Cavallaro<br>
+                            IEEE Access, vol. 10, 2022.
+                            [<a href="https://doi.org/10.1109/ACCESS.2022.3166906" target="_blank">Open Access</a>]
+                        </p>
+                        <p>
+                            <i>Towards safe human-to-robot handovers of unknown containers</i><br>
+                            Y. L. Pang, A. Xompero, C. Oh, A. Cavallaro<br>
+                            IEEE International Conference on Robot and Human Interactive Communication (RO-MAN), Virtual, 8-12 Aug 2021<br>
+                            [<a href="https://doi.org/10.1109/RO-MAN50785.2021.9515350" target="_blank">Open Access</a>]
+                            [<a href="https://github.com/CORSMAL/safe_handover/" target="_blank">code</a>]
+                            [<a href="https://corsmal.github.io/safe_handover.html" target="_blank">webpage</a>]
+                        </p>
+                        <p>
+                            <i>Stereo Hand-Object Reconstruction for Human-to-Robot Handover</i><br>
+                            Y. L. Pang, A. Xompero, C. Oh, A. Cavallaro<br>
+                            IEEE Robotics and Automation Letters, 2025<br>
+                            [<a href="https://doi.org/10.48550/arXiv.2412.07487" target="_blank">Open Access</a>]
+                            [<a href="https://github.com/QM-IPAlab/StereoHO" target="_blank">code</a>]
+                            [<a href="https://qm-ipalab.github.io/StereoHO/" target="_blank">webpage</a>]
+                        </p>
+                        <p>
+                            <i>The CORSMAL Challenge contains perception solutions for the estimation of the physical properties of manipulated objects prior to a handover to a robot arm.</i><br>
+                            [<a href="https://corsmal.github.io/challenge.html">challenge</a>]
+                            [<a href="https://doi.org/10.1109/ACCESS.2022.3166906" target="_blank">paper 1</a>]
+                            [<a href="https://doi.org/10.48550/arXiv.2203.01977" target="_blank">paper 2</a>]
+                        </p>
+                        <p>
+                            <i>Additional references</i><br>
+                            [<a href="https://corsmal.github.io/resources/challenge/Additional_References.pdf" target="_blank">document</a>]
+                        </p>
+
+                        <b><span>Reference software</span></b>
+                        <p>
+                            <i>Vision baseline</i><br>
+                            A vision-based algorithm, part of a larger system, proposed for localising, tracking and estimating the dimensions of a container with a stereo camera.<br>
+                            [<a href="https://ieeexplore.ieee.org/document/8968407/" target="_blank">paper</a>]
+                            [<a href="https://github.com/CORSMAL/Benchmark" target="_blank">code</a>]
+                            [<a href="https://corsmal.github.io/benchmark.html" target="_blank">webpage</a>]
+                        </p>
+                        <p>
+                            <i>LoDE</i><br>
+                            A method that jointly localises container-like objects and estimates their dimensions with a generative 3D sampling model and a multi-view 3D-2D iterative shape fitting, using two wide-baseline, calibrated RGB cameras.<br>
+                            [<a href="https://arxiv.org/abs/1911.12354" target="_blank">paper</a>]
+                            [<a href="https://github.com/CORSMAL/LoDE" target="_blank">code</a>]
+                            [<a href="https://corsmal.github.io/LoDE.html" target="_blank">webpage</a>]
+                        </p>
+
+                        <b><span>Reference data</span></b>
+                        <p>
+                            <i>CORSMAL Containers Manipulation (1.0) [Data set]</i><br>
+                            A. Xompero, R. Sanchez-Matilla, R. Mazzon, and A. Cavallaro<br>
+                            Queen Mary University of London. <a href="https://doi.org/10.17636/101CORSMAL1">https://doi.org/10.17636/101CORSMAL1</a><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleLegend() {
+            var legend = document.getElementById('legend_groups');
+            legend.classList.toggle('visible');
+        }
+    </script>
 </body>
 </html>
-

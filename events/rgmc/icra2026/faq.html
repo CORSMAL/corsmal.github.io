@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FAQs - Human-to-Robot Handovers track at ICRA 2026">
+    <meta name="keywords" content="CORSMAL, robotics, competition, ICRA, human-to-robot, handovers, FAQ, questions">
+    <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
+    
+    <title>CORSMAL | FAQs | Human-to-Robot Handovers | ICRA 2026</title>
+    <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
+    <link rel="stylesheet" href="css/rgmc_track.css" type="text/css">
+    <style>
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            user-select: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .faq-question::before {
+            content: "▶ ";
+            display: inline-block;
+            margin-right: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.open::before {
+            transform: rotate(90deg);
+        }
+        
+        .faq-answer {
+            color: #000000;
+            line-height: 1.8;
+            text-align: justify;
+            display: none;
+            padding: 0.5rem;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+
+        .faq-answer.visible {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .best-practices-note {
+            background-color: #f0f8ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+            font-style: italic;
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body id="top">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-section">
+                <a href="https://corsmal.github.io" aria-label="CORSMAL Home">
+                    <img src="https://corsmal.github.io/images/CORSMAL_logo.png" alt="CORSMAL Logo">
+                </a>
+            </div>
+            <div class="icra-section">
+                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer" aria-label="ICRA 2026 Conference (opens in new window)">
+                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna Logo">
+                </a>
+            </div>
+            <div class="competition-section">
+                <a href="https://sites.google.com/view/rgmcomp" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
+            </div>
+        </div>
+        <div class="header-content">
+            <h1 class="page-title-header">Human-to-Robot Handovers</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Overview</a></li>
+                    <li><a href="task.html">Task</a></li>
+                    <li><a href="competition.html">Competition</a></li>
+                    <li><a href="qualification.html">Qualification</a></li>
+                    <li><a href="rules.html">Rules</a></li>
+                    <li><a href="evaluation.html">Evaluation</a></li>
+                    <li><a href="faq.html" class="active">FAQs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="wrapper row1">
+            <div id="container" class="clear">
+                <div id="latestnewspage" class="clear">
+                    <div>
+                        <b><span>Frequently Asked Questions</span></b>
+                        <p>
+                            This page provides answers to common questions about the Human-to-Robot Handovers competition track. Click on any question to reveal the answer. If your question is not answered here, please contact the track organisers.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAnswer(this)">Can I participate if I don't have a robotic arm?</div>
+                            <div class="faq-answer">
+                                Yes. Teams can request to use one of the available robotic arms (UR5 or Franka Emika Panda) at the competition site in Vienna. However, availability is limited, and teams that bring their own setup will be prioritised. Please indicate your preference during registration.
+                            </div>
+                        </div>
+
+                        <!-- <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAnswer(this)">What are the maximum team size and team composition requirements?</div>
+                            <div class="faq-answer">
+                                Each team can have a maximum of 5 members, including the team leader. Teams can include individuals from one or more institutions, and members from both academia and industry are welcome. One person can only participate in one team.
+                            </div>
+                        </div> -->
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAnswer(this)">Is teleoperation allowed?</div>
+                            <div class="faq-answer">
+                                No. The task must be performed autonomously without any human input or teleoperation. Your solution should make all decisions and control the robot without manual intervention.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAnswer(this)">Can I use prior knowledge of the objects?</div>
+                            <div class="faq-answer">
+                                No. You cannot use prior knowledge of the objects (e.g., prior 3D object models or reconstructed container shapes). The only prior knowledge available is the high-level, unspecific set of container categories: cup, drinking glass, and food box.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAnswer(this)">Can I use Large Language Models (LLMs) in my solution?</div>
+                            <div class="faq-answer">
+                                Yes. You are allowed to use existing Large Language Models and APIs as part of your solution. However, you must ensure that your system can function without internet connectivity, as WiFi at the competition site may be unstable and unreliable.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAnswer(this)">What sensing modalities can I use?</div>
+                            <div class="faq-answer">
+                                You can use any combination of sensing modalities including RGB cameras, RGB-D cameras, microphones, and tactile sensors. Multimodal approaches are encouraged and allowed.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAnswer(this)">How do I qualify for the on-site competition in Vienna?</div>
+                            <div class="faq-answer">
+                                Teams must participate in the qualification phase by performing the CORSMAL Benchmark protocol handover configurations remotely in their laboratory. 
+                                Results are submitted to the organisers, and the top-performing teams are ranked on a leaderboard. 
+                                The best-performing teams qualify for the on-site competition. A maximum of 6 teams will qualify.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAnswer(this)">What is the deadline for the qualification phase?</div>
+                            <div class="faq-answer">
+                                The exact deadline for the qualification phase will be announced in the following weeks. 
+                                Please check this page regularly for updates.
+                            </div>
+                        </div>
+
+                        <!-- <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAnswer(this)">How long does the on-site competition take?</div>
+                            <div class="faq-answer">
+                                The preparation and execution of all configurations, along with measuring the mass of the delivered container, should take no longer than 15 minutes per team. Each individual configuration should be executed within 5 seconds.
+                            </div>
+                        </div> -->
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAnswer(this)">What happens if my robot fails during a configuration?</div>
+                            <div class="faq-answer">
+                                If a handover fails (e.g., the robot cannot grasp and/or hold the container during delivery, or the object falls after placement), that configuration receives 0 points. You can attempt other configurations, but you cannot retry a failed configuration.
+                            </div>
+                        </div>
+
+                        <!-- <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAnswer(this)">Can I submit a demo video of my solution?</div>
+                            <div class="faq-answer">
+                                Yes, demo videos are optional but encouraged. Qualified teams can submit a demo video by 26 May 2026. The videos will be showcased in Vienna during the competition and on the RGMC YouTube channel after the competition. The final deadline for submitting videos for the YouTube channel is 30 June 2026.
+                            </div>
+                        </div> -->
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAnswer(this)">Is there a possibility to publish my work?</div>
+                            <div class="faq-answer">
+                                Yes. Qualified teams are invited to contribute a research article on their solution, findings, and results to the Topical Collection on "Advancing Robotic Grasping and Manipulation for the Real-World" within Autonomous Robots. 
+                                <!-- This is an open access publication opportunity. -->
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAnswer(this)">What if I have questions not answered here?</div>
+                            <div class="faq-answer">
+                                Please contact the track organisers directly. 
+                                Dr. <a href="mailto:c.oh@qmul.ac.uk">Changjae Oh</a> 
+                                will be happy to answer your questions about the competition.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleAnswer(questionElement) {
+            const answer = questionElement.nextElementSibling;
+            const isOpen = questionElement.classList.contains('open');
+            
+            // Close all other answers
+            document.querySelectorAll('.faq-answer.visible').forEach(otherAnswer => {
+                otherAnswer.classList.remove('visible');
+                otherAnswer.previousElementSibling.classList.remove('open');
+            });
+            
+            // Toggle current answer
+            if (!isOpen) {
+                answer.classList.add('visible');
+                questionElement.classList.add('open');
+            }
+        }
+    </script>
+</body>
+</html>

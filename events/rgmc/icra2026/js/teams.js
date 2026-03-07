@@ -20,20 +20,27 @@ function renderTeams() {
     teamsList.innerHTML = '';
     teamBlockDiv.innerHTML = '';
 
-    teamsData.forEach(team => {
+    teamsData.forEach((team, index) => {
         // Create navigation item
         const li = document.createElement('li');
         const link = document.createElement('a');
-        link.className = '';
-        link.title = 'Show metadata';
-        link.onclick = () => toggleTeamMetadata(team.id);
+        link.className = index === 0 ? 'active' : '';
+        link.title = 'Show team details';
+        link.href = '#';
         link.textContent = team.name;
+        link.onclick = (e) => {
+            e.preventDefault();
+            toggleTeamMetadata(team.id);
+            // Update active state in navigation
+            document.querySelectorAll('#teams a').forEach(a => a.classList.remove('active'));
+            link.classList.add('active');
+        };
         li.appendChild(link);
         teamsList.appendChild(li);
 
         // Create team details table
         const table = document.createElement('table');
-        table.className = 'metadata';
+        table.className = 'metadata' + (index === 0 ? ' active' : '');
         table.id = team.id + '_metadata';
 
         const tbody = document.createElement('tbody');
@@ -48,7 +55,11 @@ function renderTeams() {
 
         // Team members row
         const membersRow = document.createElement('tr');
-        membersRow.innerHTML = '<td class="team-left-header">Team members:</td>';
+        const memberHeaderTd = document.createElement('td');
+        memberHeaderTd.className = 'team-left-header';
+        memberHeaderTd.textContent = 'Team members:';
+        membersRow.appendChild(memberHeaderTd);
+        
         team.members.forEach(member => {
             const td = document.createElement('td');
             td.className = 'team-member-name';
@@ -59,7 +70,11 @@ function renderTeams() {
 
         // Affiliations row
         const affiliationsRow = document.createElement('tr');
-        affiliationsRow.innerHTML = '<td class="team-left-header">Affiliation:</td>';
+        const affiliationHeaderTd = document.createElement('td');
+        affiliationHeaderTd.className = 'team-left-header';
+        affiliationHeaderTd.textContent = 'Affiliation:';
+        affiliationsRow.appendChild(affiliationHeaderTd);
+        
         team.members.forEach(member => {
             const td = document.createElement('td');
             td.className = 'team-member-affiliation';
@@ -78,17 +93,11 @@ function renderTeams() {
 
 // Toggle team metadata visibility
 function toggleTeamMetadata(teamId) {
-    const metadataElements = document.getElementsByClassName('metadata');
-    for (let i = 0; i < metadataElements.length; i++) {
-        metadataElements[i].style.display = 'none';
-    }
+    const metadataElements = document.querySelectorAll('.metadata');
+    metadataElements.forEach(el => el.classList.remove('active'));
 
     const element = document.getElementById(teamId + '_metadata');
     if (element) {
-        element.style.display = 'block';
+        element.classList.add('active');
     }
 }
-
-$('a[href="#dates"]').click(function(){
-    $("#dates").css("padding-top", "500px");
-});

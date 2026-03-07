@@ -1,164 +1,196 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
-<head profile="http://gmpg.org/xfn/11"> 
-	<link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico" /> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Human-to-Robot Handovers track - 11th Robotics Grasping and Manipulation Competition at ICRA 2026 Vienna">
+    <meta name="keywords" content="CORSMAL, robotics, vision, audio, competition, ICRA, human-to-robot, handovers, 2026">
+    <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
+    <meta property="og:title" content="CORSMAL | Human-to-Robot Handovers | ICRA 2026">
+    <meta property="og:description" content="Benchmark your robotic handover work at ICRA 2026 in Vienna">
 
-<title>
-	CORSMAL | Human-to-Robot Handovers track | 11th Robotics Grasping and Manipulation Competition | ICRA 2026
-</title>
+	<title>CORSMAL | Human-to-Robot Handovers | 11th RGMC | ICRA 2026</title>
+    <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-<meta http-equiv="imagetoolbar" content="no" />
-<meta http-equiv="KeyWords" content="CORSMAL, robotics, vision, audio, signal processing, competition, challenge, ICRA, human-to-robot, handovers, 2026"/>
-<meta name="image" property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
-
-<link rel="stylesheet" href="https://corsmal.github.io/css/layout.css" type="text/css" /> 
-<link rel="stylesheet" href="https://corsmal.github.io/css/teams.css" type="text/css" />
-<link rel="stylesheet" href="https://corsmal.github.io/css/mystyle.css" type="text/css" /> 
-
-<script type="text/javascript" src="https://corsmal.github.io/js/jquery-1.4.1.min.js"></script>  
-<script type="text/javascript" src="https://corsmal.github.io/js/jquery.slidepanel.setup.js"></script> 
-<script type="text/javascript" src="https://corsmal.github.io/js/jquery-ui-1.7.2.custom.min.js"></script>
-<script type="text/javascript" src="https://corsmal.github.io/js/jquery.tabs.setup.js"></script>
-
-
-<script type="text/javascript" src="js/teams.js"></script>
-
-
+	<link rel="stylesheet" href="css/rgmc_track.css" type="text/css" /> 
 </head>
 <body id="top">
-	<div class="wrapper row1">
-		<div id="header" class="clear">
-			<div class="fl_left" style="width:33%">
-				<ul>
-					<li>
-						<p>
-							<a href="https://corsmal.github.io"><img src="https://corsmal.github.io/images/CORSMAL_logo.png" style="padding:0px 0px 0px 0px;height:75px" alt="CORSMAL"/></a>
-						</p>
-					</li>
-				</ul>
-			</div>
-			<div style="float:left;width: 33%;margin-top: 12pt;text-align: center;">
-				<span><a href="https://2026.ieee-icra.org/" TARGET = "_BLANK"><img src="images/ICRA-VIE26-logo.webp" style="width:65%"></a></span>
-			</div>
-			<div class="fl_right" style="margin-top:12pt;width: 33%;text-align: right;">
-				<b><span style="font-size:12.0pt"><a href="https://sites.google.com/view/rgmcomp" TARGET = "_BLANK">11th Robotic Grasping and<br>Manipulation Competition</a></span></b>
-			</div>
-		</div>
-	</div>
-	<!--2###################################################################################################### --> 
-	<div class="wrapper row2"; style="margin-bottom: 7px;">
-		<div class="rnd"> <!-- ###### --> 
-			<!-- ###### --> 
-		</div>
-	</div>
-	<!-- 3####################################################################################################### --> 
-	<div class="wrapper row1"> 
-		<div id="container" class="clear">
-			<div id="latestnewspage" class="clear">
-				<div style="text-align:center;text-justify:inter-ideograph;margin-bottom:0px">
-					<span style="font-size:16.0pt;"><b>Human-to-Robot Handovers</b></span>
-				</div>
-				<div id="topnav" style="text-align:center;"> 
-				<ul>
-					<li class="active"><a href="index.html"><b>Overview</b></a></li> 
-					<li><a href="task.html"><b>Task</b></a></li>
-					<li><a href="competition.html"><b>Competition</b></a></li>
-					<li><a href="qualification.html"><b>Qualification</b></a></li>
-					<li><a href="rules.html"><b>Rules</b></a></li> 
-					<li><a href="evaluation.html"><b>Evaluation</b></a></li>
-				</ul>
-			</div>
-				
-			<div style="text-align:justify;">
-				<div style="text-align: center;">
-						<img src="images/handover_new.png"/ style="width: 80%">
-				</div>
-				<p>
-					Human-to-Robot Handovers is one of the four competition tracks within the 11th Robotic Grasping and Manipulation Competition (RGMC) that will be held during the IEEE/RAS International Conference on Robotics and Automation (ICRA) 2026 in Vienna, Austria.
-				</p>
-				<p>
-					This is a unique opportunity to benchmark your work with the state-of-the-art and advance this robotic task in real-world conditions. 
-					Beyond the chance of winning the competition track, you will also have the opportunity to
-					<ul>
-						<li>test your algorithms on your own robot, or UR5 and Franka Emika Panda robots (based on availability) at the competition site;</li>
-						<li>win cash prizes (top-performing team) and earn recognition at ICRA 2026;</li>
-						<li>contribute a research article on your solution, findings, and results to the Topical Collection on 
-					"Advancing Robotic Grasping and Manipulation for the Real-World" within Autonomous Robots 
-					(see <a href="https://link.springer.com/collections/ifcjfbbgji"><u>here</u></a>);</li>
-						<li>showcase a demo video on the RGMC YouTube channel, reaching the research community worldwide;</li>
-						<li>receive a free MATLAB license provided by Mathworks to support your solution development;</li>
-						<li>network and collaborate with other researchers and practitioners in the field.</li>
-					</ul>
-				</p>
-				<br>
-				<b><span style="font-size:14.0pt">Track description</span></b>
-				<p>
-					The real-time estimation through vision perception of the physical properties of objects manipulated by humans is important to inform the control of robots and perform accurate and safe grasps of objects handed over by humans. 
-					However, estimating the physical properties of previously unseen objects using only inexpensive cameras is challenging due to illumination variations, transparencies, reflective surfaces, and occlusions caused both by the human and the robot. 
-					Our dynamic human-to-robot handovers track is based on an affordable experimental setup that does not use a motion capture system, markers, or prior knowledge of specific object models. 
-					The track focuses on food containers and drinking glasses that vary in shape and size, and may be empty or filled with an unknown amount of unknown content. 
-					The goal is to assess the generalisation capabilities of the robotic control when handing over previously unseen objects filled (or not) with unknown content, hence with a different and unknown mass and stiffness. 
-					No object properties are initially known to the robot (or the team) that must infer these properties on-the-fly, during the execution of the dynamic handover, through perception of the scene.
-				</p>
-				<br>
-				<b><span style="font-size:14.0pt">Qualification and preparation</span></b>
-				<p>
-					The track will involve a qualification phase in which teams can perform the handover configurations of the <a href="https://corsmal.github.io/benchmark.html"><u>CORSMAL Benchmark protocol</u></a> remotely in their laboratory. 
-					Please see also the <a href="qualification.html#starting-kit"><u>starting kit and documentation</u></a> for preparing your solution. 
-				</p>
-				<br>
-				<b><span style="font-size:14.0pt">Application</span></b>
-				<p>
-					Deadline to apply for the competition track and receive full consideration has already been passed,
-					but we will still consider applications based on the availability of the participant spots and the readiness of the solution.
-					<br><br>
-					Please fill out the application <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0ZXvTqP-bP9he-R2aoC4QZjUnlG_qPDJcfQWrcxvJGZ-sSw/viewform?usp=header" target="_BLANK"><u>form</u></a>.
-				</p>
-				<br>
-			</div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-			<!-- Confirmed Teams -->
-			<div style="text-align:justify;">
-				<b><span style="font-size:14.0pt">Teams</span></b>
-				<div style="height:auto;width:100%;overflow:hidden;" id="teamsolutions">
-					<p>
-Teams accepted to the Human-to-Robot Handover track. 
-						Select a team to see the details. Team leader highlighted in bold.
-					</p>					
-					<div style="width:200px; float:left;">
-						<ul id="teams">
-							<!-- Teams list will be populated by renderTeams() -->
-						</ul>
-					</div>
-					<div id="team-blocks">
-						<!-- Team details will be populated by renderTeams() -->
-					</div>
-				</div>
-			</div>
-			
-			<div id="organisers">
-				<p>
-					<b><span style="font-size:14.0pt">Track organisers</span></b>
-				</p>
-				<p>
-					Changjae Oh, Queen Mary University of London (UK)<br> 
-					Andrea Cavallaro, École polytechnique fédérale de Lausanne (Switzerland)<br>
-					Alessio Xompero, Queen Mary University of London (UK)
-				</p>
-				<p>
-					<b><span style="font-size:14.0pt">Contacts</span></b>
-				</p>
-				<p>
-					If you have any questions or enquiries related to the competition track, please contact Dr. <a href="mailto:c.oh@qmul.ac.uk"><u>Changjae Oh</u></a> or Prof. <a href="mailto:andrea.cavallaro@epfl.ch"><u>Andrea Cavallaro</u></a>.
-				</p>
-				<p>
-					If you have any general questions or other enquiries related to the Robotic and Grasping Manipulation Competition,<br>please visit the <a href="https://sites.google.com/view/rgmcomp" target="_BLANK"><u>RGMC webpage</u></a>.
-				</p>
-			</div>	
-		</div>
-	</div>
-	<!-- footer --> </div>  <!--added to clear error with content element --> 
+    <header>
+        <div class="header-top">
+            <div class="logo-section">
+                <a href="https://corsmal.github.io" aria-label="CORSMAL Home">
+                    <img src="https://corsmal.github.io/images/CORSMAL_logo.png" alt="CORSMAL Logo">
+                </a>
+            </div>
+            <div class="icra-section">
+                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer" aria-label="ICRA 2026 Conference (opens in new window)">
+                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna Logo">
+                </a>
+            </div>
+            <div class="competition-section">
+                <a href="https://sites.google.com/view/rgmcomp" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
+            </div>
+        </div>
+        <div class="header-content">
+            <h1 class="page-title-header">Human-to-Robot Handovers</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Overview</a></li>
+                    <li><a href="task.html">Task</a></li>
+                    <li><a href="competition.html">Competition</a></li>
+                    <li><a href="qualification.html">Qualification</a></li>
+                    <li><a href="rules.html">Rules</a></li>
+                    <li><a href="evaluation.html">Evaluation</a></li>
+					<li><a href="faq.html">FAQs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="wrapper row1">
+            <div id="container" class="clear">
+                <div id="latestnewspage" class="clear">
+
+                    <!-- Overview Section -->
+                    <div style="text-align: justify;">
+                        <p>
+                            Human-to-Robot Handovers is one of the four competition tracks within the 11th Robotic Grasping and Manipulation Competition (RGMC) that will be held during the IEEE/RAS International Conference on Robotics and Automation (ICRA) 2026 in Vienna, Austria.
+                        </p>
+                        <div style="text-align: center; margin: 1.5rem 0;">
+                            <img src="images/handover_new.png" alt="Robot performing human-to-robot handover with vision-based object property estimation">
+                        </div>
+                    </div>
+
+                    <!-- Opportunities Section -->
+                    <div style="text-align: justify;">
+                        <b><span style="font-size: 14.0pt">Opportunities</span></b>
+						<p>
+                            This is a unique opportunity to benchmark your work with the state-of-the-art and advance this robotic task in real-world conditions.
+                        </p>
+                        <p>Beyond the chance of winning the competition track, you will also have the opportunity to:</p>
+                        <ul>
+                            <li>Test your algorithms on your own robot, or UR5 and Franka Emika Panda robots (based on availability) at the competition site</li>
+                            <li>Win cash prizes (top-performing team) and earn recognition at ICRA 2026</li>
+                            <li>Contribute a research article on your solution, findings, and results to the Topical Collection on "Advancing Robotic Grasping and Manipulation for the Real-World" within <a href="https://link.springer.com/collections/ifcjfbbgji">Autonomous Robots</a></li>
+                            <li>Showcase a demo video on the RGMC YouTube channel, reaching the research community worldwide</li>
+                            <li>Receive a free MATLAB license provided by Mathworks to support your solution development</li>
+                            <li>Network and collaborate with other researchers and practitioners in the field</li>
+                        </ul>
+                    </div>
+
+                    <!-- Track Description Section -->
+                    <div style="text-align: justify;">
+                        <b><span style="font-size: 14.0pt">Track description</span></b>
+                        <p>
+                            The real-time estimation through vision perception of the physical properties of objects manipulated by humans is important to inform the control of robots and perform accurate and safe grasps of objects handed over by humans. However, estimating the physical properties of previously unseen objects using only inexpensive cameras is challenging due to illumination variations, transparencies, reflective surfaces, and occlusions caused both by the human and the robot.
+                        </p>
+                        <p>
+                            Our dynamic human-to-robot handovers track is based on an affordable experimental setup that does not use a motion capture system, markers, or prior knowledge of specific object models. The track focuses on food containers and drinking glasses that vary in shape and size, and may be empty or filled with an unknown amount of unknown content.
+                        </p>
+                        <p>
+                            <strong>Goal:</strong> Assess the generalisation capabilities of the robotic control when handing over previously unseen objects filled (or not) with unknown content, hence with a different and unknown mass and stiffness. No object properties are initially known to the robot (or the team) that must infer these properties on-the-fly, during the execution of the dynamic handover, through perception of the scene.
+                        </p>
+                    </div>
+
+                    <!-- Qualification Section -->
+                    <div style="text-align: justify;">
+                        <b><span style="font-size: 14.0pt">Qualification and preparation</span></b>
+                        <p>
+                            The track will involve a qualification phase in which teams can perform the handover configurations of the <a href="https://corsmal.github.io/benchmark.html">CORSMAL Benchmark protocol</a> remotely in their laboratory. Please see also the <a href="qualification.html#starting-kit">starting kit and documentation</a> for preparing your solution.
+                        </p>
+                    </div>
+
+                    <!-- Application Section -->
+                    <div style="text-align: justify;">
+                        <b><span style="font-size: 14.0pt">Application</span></b>
+                        <p>
+                            The primary application deadline has passed, but we will still consider applications based on participant spot availability and solution readiness.
+                        </p>
+                        <p>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0ZXvTqP-bP9he-R2aoC4QZjUnlG_qPDJcfQWrcxvJGZ-sSw/viewform?usp=header" target="_blank" rel="noopener noreferrer">Submit your application</a>
+                        </p>
+                    </div>
+
+                    <!-- Important Dates Section -->
+                    <!-- <div style="text-align: justify;">
+                        <b><span style="font-size: 14.0pt">Important dates</span></b>
+                        <ul>
+                            <li>End of qualification phase: <strong>TBD</strong> (approximately mid- or end of April 2026)</li>
+                            <li>Announcement of qualified teams for competition in Vienna: <strong>TBD</strong></li>
+                            <li>Submission of demo video (optional): <strong>26 May 2026</strong></li>
+                            <li>Competition date: <strong>2-4 June 2026</strong> (exact date to be confirmed)</li>
+                            <li>Announcement of the winners and award ceremony: <strong>4 June 2026</strong></li>
+                            <li>Deadline for submitting demo video for RGMC YouTube channel: <strong>30 June 2026</strong></li>
+                        </ul>
+                        <p style="margin-top: 1rem;">
+                            Number of available robots at the competition site has not been confirmed yet. Tentative schedule for the handover track at the competition site will be shared with the teams in due course.
+                        </p>
+                        <p>
+                            Qualified teams will have the opportunity to share a demo video of their solution before the competition. Shared videos will be showcased in Vienna during the competition and on the RGMC YouTube channel after the competition. All teams are encouraged to share a demo video to show their solution and results on the <a href="https://www.youtube.com/channel/UC8F4S4EjTAo2JbwdzbyKnCA" target="_blank" rel="noopener noreferrer">RGMC YouTube channel</a> by the end of June.
+                        </p>
+                    </div> -->
+
+                    <!-- Teams Section -->
+                    <div style="text-align: justify;">
+                        <b><span style="font-size: 14.0pt">Teams</span></b>
+                        <div id="teamsolutions">
+                            <p>Teams accepted to the Human-to-Robot Handover track. Select a team to see the details. Team leader highlighted in bold.</p>
+                            <ul id="teams">
+                                <!-- Teams list will be populated by renderTeams() -->
+                            </ul>
+                            <div id="team-blocks">
+                                <!-- Team details will be populated by renderTeams() -->
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Registration Information Section -->
+                    <div style="text-align: justify;">
+                        <b><span style="font-size: 14.0pt">Registration information</span></b>
+                        <p>
+                            Dates, deadlines, fees, and other registration information for ICRA 2026 can be found on the <a href="https://2026.ieee-icra.org/attend/registration-information/" target="_blank" rel="noopener noreferrer">ICRA 2026 registration information page</a>.
+                        </p>
+                    </div>
+
+                    <!-- Organizers Section -->
+                    <div id="organisers">
+                        <b><span style="font-size: 14.0pt">Track organisers</span></b>
+                        <p>
+                            Changjae Oh, Queen Mary University of London (UK)<br>
+                            Andrea Cavallaro, École polytechnique fédérale de Lausanne (Switzerland)<br>
+                            Alessio Xompero, Queen Mary University of London (UK)
+                        </p>
+
+                        <b><span style="font-size: 14.0pt">Contacts</span></b>
+                        <p>
+                            If you have any questions or enquiries related to the competition track, please contact Dr. <a href="/cdn-cgi/l/email-protection#0b682564634b7a667e67256a68257e60">Changjae Oh</a> or Prof. <a href="/cdn-cgi/l/email-protection#52333c362037337c313324333e3e33203d123722343e7c313a">Andrea Cavallaro</a>.
+                        </p>
+                        <p>
+                            If you have any general questions or other enquiries related to the Robotic Grasping and Manipulation Competition, please visit the <a href="https://sites.google.com/view/rgmcomp" target="_blank" rel="noopener noreferrer">RGMC webpage</a>.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+	<script src="js/teams.js" defer></script>
+    <script>
+        // Toggle team metadata visibility
+        function toggleTeamMetadata(teamId) {
+            const metadataElements = document.querySelectorAll('.metadata');
+            metadataElements.forEach(el => el.classList.remove('active'));
+            const element = document.getElementById(teamId + '_metadata');
+            if (element) {
+                element.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
 
