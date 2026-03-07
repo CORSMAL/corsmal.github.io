@@ -283,5 +283,36 @@
         "lead": false
       }
     ]
+  },
+  {
+    "id": "robootto_codex",
+    "name": "Robootto Codex",
+    "members": [
+      {
+        "name": "N. Seenu",
+        "affiliation": "Hindustan Institute of Technology and Science (India)",
+        "lead": true
+      },
+      {
+        "name": "Sri Surya",
+        "affiliation": "Hindustan Institute of Technology and Science (India)",
+        "lead": false
+      },
+      {
+        "name": "Sanjay Manikandan",
+        "affiliation": "Hindustan Institute of Technology and Science (India)",
+        "lead": false
+      },
+      {
+        "name": "Triny Joshua I",
+        "affiliation": "Hindustan Institute of Technology and Science (India)",
+        "lead": false
+      },
+      {
+        "name": "Shyam Sundar",
+        "affiliation": "Hindustan Institute of Technology and Science (India)",
+        "lead": false
+      }
+    ]
   }
 ]
