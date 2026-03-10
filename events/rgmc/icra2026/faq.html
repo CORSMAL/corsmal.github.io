@@ -109,6 +109,11 @@
         .faq-section {
             margin-bottom: 2rem;
             scroll-margin-top: 100px;
+            display: none;
+        }
+
+        .faq-section.visible {
+            display: block;
         }
 
         .faq-section.hidden {
@@ -392,7 +397,7 @@
                                 </div>
                                 <div class="faq-item">
                                     <div class="faq-question" onclick="toggleAnswer(this)">We are located far from Vienna. What support is provided for teams with logistical constraints?</div>
-                                    <div class="faq-answer">Teams bringing their own equipment are responsible for logistics and transportation to Vienna. We recommend arranging early with ICRA 2026 organisers about venue access for equipment setup. The on-site robotic arms may be available for teams with significant logistical constraints—indicate this preference during registration.</div>
+                                    <div class="faq-answer">Teams bringing their own equipment are responsible for logistics and transportation to Vienna. We recommend arranging early with ICRA 2026 organisers about venue access for equipment setup. The on-site robotic arms may be available for teams with significant logistical constraints. Indicate this preference during registration.</div>
                                 </div>
                                 <div class="faq-item">
                                     <div class="faq-question" onclick="toggleAnswer(this)">What equipment do I need to bring for the competition?</div>
@@ -515,16 +520,12 @@
                                     <div class="faq-answer">Results must be submitted so that we can compute all the scores and update the CORSMAL leaderboards. Submitting partial results is possible but can lead to lower benchmark scores. The leaderboards are designed to enable fair comparisons and provide results for research labs worldwide to reuse for experiments and publications. Note that the evaluation protocol for the on-site competition is simplified and does not compute all the properties evaluated in the full CORSMAL Benchmark.</div>
                                 </div>
                                 <div class="faq-item">
-                                    <div class="faq-question" onclick="toggleAnswer(this)">My pipeline from last year does not compute physical container properties. Can I still participate?</div>
-                                    <div class="faq-answer">Yes. You are welcome to submit results from your current pipeline so we can compute scores and list you on the leaderboards based on your existing solution. You also have time to make updates and improvements before the deadline. If you enhance your solution to include computation of additional properties, we can compute all the scores for the leaderboards. Consider that your approach, any videos you produce, and results you obtain could be the foundation for a manuscript to submit to the Topical Collection on "Advancing Robotic Grasping and Manipulation for the Real-World" in Autonomous Robots: <a href="https://link.springer.com/collections/ifcjfbbgji" target="_blank">https://link.springer.com/collections/ifcjfbbgji</a></div>
-                                </div>
-                                <div class="faq-item">
                                     <div class="faq-question" onclick="toggleAnswer(this)">Do I need to purchase the exact containers from the commercial links provided?</div>
                                     <div class="faq-answer">No. You do not need to purchase exact containers from commercial links. You can prepare equivalent containers that closely match the specified physical properties (shape, size, weight, stiffness). Please provide a document describing your container specifications including dimensions, material, weight ranges, and filling options and content types. We will review and confirm if they meet the requirements for fair comparison.</div>
                                 </div>
                                 <div class="faq-item">
                                     <div class="faq-question" onclick="toggleAnswer(this)">I cannot download the CORSMAL Containers Manipulation dataset. Are there alternative ways to access the data?</div>
-                                    <div class="faq-answer">The DOI link (<a href="https://doi.org/10.17636/101CORSMAL1" target="_blank">https://doi.org/10.17636/101CORSMAL1</a>) should work correctly. If you experience issues, try these alternatives:<br><br>(1) Direct QMUL repository: <a href="https://qmro.qmul.ac.uk/xmlui/handle/123456789/103670" target="_blank">https://qmro.qmul.ac.uk/xmlui/handle/123456789/103670</a><br><br>(2) Detailed dataset information: <a href="https://corsmal.github.io/containers_manip.html" target="_blank">https://corsmal.github.io/containers_manip.html</a><br><br>(3) Benchmark webpage: <a href="https://corsmal.github.io/benchmark.html" target="_blank">https://corsmal.github.io/benchmark.html</a><br><br>If problems persist, contact Dr. Changjae Oh (c.oh@qmul.ac.uk) directly. Note: You do not need to complete the CORSMAL Benchmark before accessing the dataset.</div>
+                                    <div class="faq-answer">The DOI link (<a href="https://doi.org/10.17636/101CORSMAL1" target="_blank">https://doi.org/10.17636/101CORSMAL1</a>) should work correctly. If you experience issues, try these alternatives:<br><br>(1) Direct QMUL repository: <a href="https://qmro.qmul.ac.uk/xmlui/handle/123456789/103670" target="_blank">https://qmro.qmul.ac.uk/xmlui/handle/123456789/103670</a><br><br>(2) Detailed dataset information: <a href="https://corsmal.github.io/containers_manip.html" target="_blank">https://corsmal.github.io/containers_manip.html</a><br><br>(3) Benchmark webpage: <a href="https://corsmal.github.io/benchmark.html" target="_blank">https://corsmal.github.io/benchmark.html</a><br><br>If problems persist, contact Dr. Changjae Oh (<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c5a6ebaaad85b4a8b0a9eba4a6ebb0ae">[email&#160;protected]</a>) directly. Note: You do not need to complete the CORSMAL Benchmark before accessing the dataset.</div>
                                 </div>
                             </div>
 
@@ -567,7 +568,7 @@
                                 </div>
                                 <div class="faq-item">
                                     <div class="faq-question" onclick="toggleAnswer(this)">What is the deadline for demo video submission?</div>
-                                    <div class="faq-answer">Qualified teams can submit demo videos by 26 May 2026. The final deadline for submitting videos for the RGMC YouTube channel is 30 June 2026. Submit videos directly to Dr. Changjae Oh (c.oh@qmul.ac.uk).</div>
+                                    <div class="faq-answer">Qualified teams can submit demo videos by 26 May 2026. The final deadline for submitting videos for the RGMC YouTube channel is 30 June 2026. Submit videos directly to Dr. Changjae Oh (<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8deea3e2e5cdfce0f8e1a3eceea3f8e6">[email&#160;protected]</a>).</div>
                                 </div>
                             </div>
 
@@ -575,11 +576,11 @@
                                 <div class="faq-category-title">Contact & Support</div>
                                 <div class="faq-item">
                                     <div class="faq-question" onclick="toggleAnswer(this)">I need technical support during the qualification phase. Who can I contact?</div>
-                                    <div class="faq-answer">For technical questions during the qualification phase, contact:<br><br><strong>Dr. Changjae Oh</strong><br>Queen Mary University of London<br>Email: <a href="mailto:c.oh@qmul.ac.uk">c.oh@qmul.ac.uk</a><br><br>He can provide guidance on:<br>• Benchmark execution<br>• Data and dataset access issues<br>• Protocol clarifications<br>• Setup and calibration questions<br>• Submission procedures</div>
+                                    <div class="faq-answer">For technical questions during the qualification phase, contact:<br><br><strong>Dr. Changjae Oh</strong><br>Queen Mary University of London<br>Email: <a href="/cdn-cgi/l/email-protection#670449080f27160a120b49060449120c"><span class="__cf_email__" data-cfemail="9af9b4f5f2daebf7eff6b4fbf9b4eff1">[email&#160;protected]</span></a><br><br>He can provide guidance on:<br>• Benchmark execution<br>• Data and dataset access issues<br>• Protocol clarifications<br>• Setup and calibration questions<br>• Submission procedures</div>
                                 </div>
                                 <div class="faq-item">
                                     <div class="faq-question" onclick="toggleAnswer(this)">What if I have questions not answered here?</div>
-                                    <div class="faq-answer">Please contact the track organisers directly:<br><br><strong>Dr. Changjae Oh</strong><br>Queen Mary University of London<br><a href="mailto:c.oh@qmul.ac.uk">c.oh@qmul.ac.uk</a><br>He will be happy to answer your questions about the competition.</div>
+                                    <div class="faq-answer">Please contact the track organisers directly:<br><br><strong>Dr. Changjae Oh</strong><br>Queen Mary University of London<br><a href="/cdn-cgi/l/email-protection#c5a6ebaaad85b4a8b0a9eba4a6ebb0ae"><span class="__cf_email__" data-cfemail="385b1657507849554d5416595b164d53">[email&#160;protected]</span></a><br>He will be happy to answer your questions about the competition.</div>
                                 </div>
                                 <div class="faq-item">
                                     <div class="faq-question" onclick="toggleAnswer(this)">Where can I find more information about the competition track?</div>
@@ -597,7 +598,7 @@
         </div>
     </main>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         const searchBox = document.getElementById('searchBox');
         const faqSections = document.querySelectorAll('.faq-section');
         const categoryLinks = document.querySelectorAll('.category-link');
@@ -616,6 +617,7 @@
                 
                 if (activeFilter && sectionCategory !== activeFilter) {
                     section.classList.add('hidden');
+                    section.classList.remove('visible');
                     return;
                 }
 
@@ -634,11 +636,13 @@
                     }
                 });
 
-                if (hasVisibleItems) {
+                if (hasVisibleItems && searchTerm !== '') {
                     section.classList.remove('hidden');
+                    section.classList.add('visible');
                     visibleSections++;
                 } else {
                     section.classList.add('hidden');
+                    section.classList.remove('visible');
                 }
             });
 
@@ -675,27 +679,33 @@
                 faqSections.forEach(section => {
                     if (section.getAttribute('data-category') === category) {
                         section.classList.remove('hidden');
+                        section.classList.add('visible');
                     } else {
                         section.classList.add('hidden');
+                        section.classList.remove('visible');
                     }
                 });
 
                 const categoryTitle = this.textContent;
-                filterInfo.textContent = `Showing: ${categoryTitle}`;
+                filterInfo.textContent = `Showing Q&As for ${categoryTitle}`;
                 filterInfo.style.display = 'block';
-
-                noResults.style.display = 'none';
             });
         });
 
         showAllBtn.addEventListener('click', function(e) {
             e.preventDefault();
             activeFilter = null;
+
             categoryLinks.forEach(l => l.classList.remove('active'));
+
             searchBox.value = '';
-            faqSections.forEach(s => s.classList.remove('hidden'));
+
+            faqSections.forEach(section => {
+                section.classList.remove('hidden');
+                section.classList.add('visible');
+            });
+
             filterInfo.style.display = 'none';
-            noResults.style.display = 'none';
         });
     </script>
 </body>
