@@ -11,12 +11,136 @@
     <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
     <link rel="stylesheet" href="css/rgmc_track.css" type="text/css">
     <style>
-        .faq-item {
+        .faq-intro {
+            margin-bottom: 1rem;
+        }
+
+        .faq-search-section {
             margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
+            padding-bottom: 1.5rem;
             border-bottom: 1px solid var(--border-color);
         }
-        
+
+        .search-box {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: inherit;
+            background-color: white;
+            box-sizing: border-box;
+        }
+
+        .search-box::placeholder {
+            color: #999;
+        }
+
+        .faq-container {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .faq-sidebar {
+            flex: 0 0 180px;
+            padding: 1rem;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            min-width: 180px;
+        }
+
+        .faq-main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .category-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .category-nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        .category-nav a {
+            display: block;
+            padding: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .category-nav a:hover {
+            background-color: #ddd;
+            color: var(--primary-color);
+        }
+
+        .category-nav a.active {
+            background-color: var(--primary-color) !important;
+            color: white !important;
+        }
+
+        .category-nav a.active:hover {
+            background-color: var(--primary-color) !important;
+            color: white !important;
+        }
+
+        .category-nav a.show-all {
+            background-color: var(--primary-color) !important;
+            color: white !important;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+        }
+
+        .category-nav a.show-all:hover {
+            background-color: var(--primary-color) !important;
+            color: white !important;
+        }
+
+        .faq-section {
+            margin-bottom: 2rem;
+            scroll-margin-top: 100px;
+        }
+
+        .faq-section.hidden {
+            display: none;
+        }
+
+        .faq-category-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-item.hidden {
+            display: none;
+        }
+
         .faq-question {
             font-weight: 700;
             color: var(--primary-color);
@@ -26,8 +150,9 @@
             padding: 0.5rem;
             border-radius: 4px;
             transition: background-color 0.2s ease;
+            -webkit-user-select: none;
         }
-        
+
         .faq-question:hover {
             background-color: var(--secondary-color);
         }
@@ -42,13 +167,13 @@
         .faq-question.open::before {
             transform: rotate(90deg);
         }
-        
+
         .faq-answer {
             color: #000000;
             line-height: 1.8;
             text-align: justify;
             display: none;
-            padding: 0.5rem;
+            padding: 0.75rem;
             background-color: var(--secondary-color);
             border-radius: 4px;
             margin-top: 0.5rem;
@@ -57,6 +182,16 @@
         .faq-answer.visible {
             display: block;
             animation: slideDown 0.3s ease;
+        }
+
+        .faq-answer a {
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--primary-color);
+            text-decoration: none;
+        }
+
+        .faq-answer a:hover {
+            color: #000000;
         }
 
         @keyframes slideDown {
@@ -70,15 +205,117 @@
             }
         }
 
-        .best-practices-note {
-            background-color: #f0f8ff;
-            border-left: 4px solid var(--primary-color);
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            border-radius: 4px;
+        .no-results {
+            padding: 2rem 1rem;
+            text-align: center;
+            color: var(--text-secondary);
             font-style: italic;
-            color: var(--text-color);
-            line-height: 1.8;
+        }
+
+        .filter-info {
+            font-size: 12px;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 0.5rem;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+        }
+
+        @media (max-width: 1200px) {
+            .faq-sidebar {
+                flex: 0 0 150px;
+                min-width: 150px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .faq-sidebar {
+                flex: 0 0 140px;
+                min-width: 140px;
+                padding: 0.75rem;
+            }
+
+            .category-nav a {
+                padding: 0.4rem;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .faq-sidebar {
+                flex: 0 0 130px;
+                min-width: 130px;
+                padding: 0.5rem;
+            }
+
+            .category-nav a {
+                padding: 0.4rem 0.3rem;
+                font-size: 11px;
+            }
+
+            .category-nav li {
+                margin-bottom: 0.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .faq-sidebar {
+                flex: 0 0 120px;
+                min-width: 120px;
+                padding: 0.5rem;
+            }
+
+            .category-nav a {
+                padding: 0.4rem 0.3rem;
+                font-size: 11px;
+            }
+
+            .category-nav li {
+                margin-bottom: 0.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .faq-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .faq-sidebar {
+                flex: 0 0 auto;
+                min-width: auto;
+                max-width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                padding: 0.75rem;
+            }
+
+            .category-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                width: 100%;
+            }
+
+            .category-nav li {
+                flex: 1;
+                min-width: 90px;
+                margin-bottom: 0;
+            }
+
+            .category-nav a {
+                padding: 0.4rem;
+                text-align: center;
+                font-size: 11px;
+            }
+
+            .category-nav a.show-all {
+                flex: 0 0 100%;
+                margin-bottom: 0;
+            }
         }
     </style>
 </head>
@@ -121,108 +358,235 @@
         <div class="wrapper row1">
             <div id="container" class="clear">
                 <div id="latestnewspage" class="clear">
-                    <div>
+                    <div class="faq-intro">
                         <b><span>Frequently Asked Questions</span></b>
-                        <p>
-                            This page provides answers to common questions about the Human-to-Robot Handovers competition track. Click on any question to reveal the answer. If your question is not answered here, please contact the track organisers.
-                        </p>
+                        <p>Find answers to common questions about the Human-to-Robot Handovers competition track at ICRA 2026. Select a category on the left to filter questions, or use the search box to find specific topics.</p>
                     </div>
 
-                    <div>
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleAnswer(this)">Can I participate if I don't have a robotic arm?</div>
-                            <div class="faq-answer">
-                                Yes. Teams can request to use one of the available robotic arms (UR5 or Franka Emika Panda) at the competition site in Vienna. However, availability is limited, and teams that bring their own setup will be prioritised. Please indicate your preference during registration.
-                            </div>
-                        </div>
+                    <div class="faq-search-section">
+                        <input type="text" id="searchBox" class="search-box" placeholder="🔍 Search questions..." aria-label="Search FAQ questions">
+                    </div>
 
-                        <!-- <div class="faq-item">
-                            <div class="faq-question" onclick="toggleAnswer(this)">What are the maximum team size and team composition requirements?</div>
-                            <div class="faq-answer">
-                                Each team can have a maximum of 5 members, including the team leader. Teams can include individuals from one or more institutions, and members from both academia and industry are welcome. One person can only participate in one team.
-                            </div>
-                        </div> -->
+                    <div class="faq-container">
+                        <aside class="faq-sidebar">
+                            <a href="#" class="category-nav show-all" id="showAllBtn">Show All</a>
+                            <ul class="category-nav">
+                                <li><a href="#" class="category-link" data-category="equipment">Equipment & Logistics</a></li>
+                                <li><a href="#" class="category-link" data-category="technical">Technical Rules</a></li>
+                                <li><a href="#" class="category-link" data-category="setup">Setup & Configuration</a></li>
+                                <li><a href="#" class="category-link" data-category="competition">Competition</a></li>
+                                <li><a href="#" class="category-link" data-category="qualification">Qualification & Benchmark</a></li>
+                                <li><a href="#" class="category-link" data-category="registration">Registration & Travel</a></li>
+                                <li><a href="#" class="category-link" data-category="publication">Publication & Demo</a></li>
+                                <li><a href="#" class="category-link" data-category="contact">Contact & Support</a></li>
+                            </ul>
+                        </aside>
 
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleAnswer(this)">Is teleoperation allowed?</div>
-                            <div class="faq-answer">
-                                No. The task must be performed autonomously without any human input or teleoperation. Your solution should make all decisions and control the robot without manual intervention.
-                            </div>
-                        </div>
+                        <div class="faq-main">
+                            <div id="filterInfo" class="filter-info" style="display: none;"></div>
 
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleAnswer(this)">Can I use prior knowledge of the objects?</div>
-                            <div class="faq-answer">
-                                No. You cannot use prior knowledge of the objects (e.g., prior 3D object models or reconstructed container shapes). The only prior knowledge available is the high-level, unspecific set of container categories: cup, drinking glass, and food box.
+                            <div class="faq-section" data-category="equipment">
+                                <div class="faq-category-title">Equipment & Logistics</div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Can I participate if I don't have a robotic arm?</div>
+                                    <div class="faq-answer">Yes. Teams can request to use one of the available robotic arms (UR5 or Franka Emika Panda) at the competition site in Vienna. However, availability is limited, and teams that bring their own setup will be prioritised. Please indicate your preference during registration as early as possible to improve allocation chances.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">We are located far from Vienna. What support is provided for teams with logistical constraints?</div>
+                                    <div class="faq-answer">Teams bringing their own equipment are responsible for logistics and transportation to Vienna. We recommend arranging early with ICRA 2026 organisers about venue access for equipment setup. The on-site robotic arms may be available for teams with significant logistical constraints—indicate this preference during registration. For advance shipping and equipment storage, contact the ICRA 2026 organisers directly.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What equipment do I need to bring for the competition?</div>
+                                    <div class="faq-answer">The complete list of required equipment includes:<br><br>• Robotic arm (6+ degrees of freedom, e.g., UR5, KUKA) or request to use provided robot<br>• End effector (e.g., Robotiq 2F-85 parallel gripper, or equivalent)<br>• Laptop/workstation (tower PC with monitor)<br>• Cameras with tripods and USB-C cables (up to 2, e.g., Intel RealSense D435i)<br>• Digital scale (to weigh containers before and after)<br>• Calibration pattern/board (for camera calibration)<br>• Power extension leads and socket adapters<br>• Ethernet cable for PC and robotic arm connection<br>• White table cloth</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Can I ship equipment to Vienna in advance?</div>
+                                    <div class="faq-answer">Equipment shipping and advance storage must be coordinated with ICRA 2026 organisers. We recommend contacting them directly about logistics, venue access for setup, equipment delivery deadlines, and storage facilities. Visit <a href="https://2026.ieee-icra.org/" target="_blank">https://2026.ieee-icra.org/</a> for venue and logistics contact information. More details will be provided also by the competition organisers in the following weeks.</div>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleAnswer(this)">Can I use Large Language Models (LLMs) in my solution?</div>
-                            <div class="faq-answer">
-                                Yes. You are allowed to use existing Large Language Models and APIs as part of your solution. However, you must ensure that your system can function without internet connectivity, as WiFi at the competition site may be unstable and unreliable.
+                            <div class="faq-section" data-category="technical">
+                                <div class="faq-category-title">Technical Rules & Solutions</div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Is teleoperation allowed?</div>
+                                    <div class="faq-answer">No. The task must be performed autonomously without any human input or teleoperation. Your solution should make all decisions and control the robot without manual intervention.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Can I use prior knowledge of the objects?</div>
+                                    <div class="faq-answer">No. You cannot use prior knowledge of the objects (e.g., prior 3D object models or reconstructed container shapes from previous handovers). The only prior knowledge available is the high-level, unspecific set of container categories: cup, drinking glass, and food box.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Can I use Large Language Models (LLMs) in my solution?</div>
+                                    <div class="faq-answer">Yes. You are allowed to use existing Large Language Models and APIs as part of your solution. However, you must ensure that your system can function without internet connectivity, as WiFi at the competition site may be unstable and unreliable. We recommend designing your solution to work offline for robustness.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What sensing modalities can I use?</div>
+                                    <div class="faq-answer">You can use any combination of sensing modalities including:<br><br>• RGB cameras<br>• RGB-D cameras (depth sensors)<br>• Microphones (for sound-based detection)<br>• Tactile sensors<br>• Force/torque sensors<br><br>Multimodal approaches are encouraged and allowed. Just ensure all sensors are properly calibrated and synchronised.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Can I use a single RGBD camera mounted on the robot instead of two regular cameras?</div>
+                                    <div class="faq-answer">Yes, this is allowed. A system using one RGBD camera mounted on the robot is an acceptable alternative approach to using two regular cameras, provided it captures the necessary data for your solution and meets calibration requirements.</div>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleAnswer(this)">What sensing modalities can I use?</div>
-                            <div class="faq-answer">
-                                You can use any combination of sensing modalities including RGB cameras, RGB-D cameras, microphones, and tactile sensors. Multimodal approaches are encouraged and allowed.
+                            <div class="faq-section" data-category="setup">
+                                <div class="faq-category-title">Setup & System Configuration</div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What setup preparations must I complete before the competition?</div>
+                                    <div class="faq-answer">Before executing any configurations, teams must:<br><br>1. Synchronise all cameras and verify they record simultaneously<br>2. Calibrate cameras (both intrinsic and extrinsic parameters)<br>3. Test and verify the behaviour of the robotic arm (end-effector, speed, kinematics, etc.)<br>4. Have a digital scale ready and calibrated<br>5. Test communication between PC and robotic arm over ethernet<br>6. Conduct safety checks and have a safety procedure ready</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What are the minimum robotic arm requirements?</div>
+                                    <div class="faq-answer">The robotic arm must have:<br><br>• At least 6 degrees of freedom<br>• 2-finger parallel gripper (e.g., Robotiq 2F-85 or equivalent)<br>• Adequate reach to grasp containers from the centre of the table<br>• Repeatability and reliability for executing handover tasks<br>• Verified kinematics and speed behaviour</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Should I mount the camera on the robot or use fixed external cameras?</div>
+                                    <div class="faq-answer">You may use either approach:<br><br>• External fixed cameras (2 RGB cameras recommended): Provides wide field of view but requires careful positioning<br>• Robot-mounted camera (1 RGBD camera): More compact, moves with robot end-effector, but requires adequate cable management<br><br>Both are acceptable; choose based on your solution design.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What are the camera calibration requirements?</div>
+                                    <div class="faq-answer">Teams must prepare the sensing setup such that the cameras are:<br><br>• SYNCHRONISED: Cameras must record in synchronisation with each other<br>• CALIBRATED: Intrinsic and extrinsic parameters must be determined<br>• LOCALISED: Camera position and orientation must be known relative to a calibration board/pattern<br><br>This ensures accurate 3D reconstruction and localisation of containers during handover.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What camera resolution and frame rate should I use?</div>
+                                    <div class="faq-answer">We recommend the cameras record RGB sequences at:<br><br>• Frame rate: 30 Hz (frames per second)<br>• Resolution: 1280 × 720 pixels<br><br>These specifications are based on the setup used in the CORSMAL Benchmark protocol. However, you may use different specifications if they suit your solution—document any deviations in your submission.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">How should I position the cameras?</div>
+                                    <div class="faq-answer">The two cameras (or single RGBD camera) should be placed:<br><br>• Distance: 40 cm from the robotic arm (e.g., using tripods)<br>• Orientation: Both positioned to view the centre of the table<br>• Height: Adjust for optimal visibility of hand-object interactions<br>• Lighting: Position to minimise glare and shadows<br><br>The setup typically requires a space of approximately 4.5 × 4.5 meters.</div>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleAnswer(this)">How do I qualify for the on-site competition in Vienna?</div>
-                            <div class="faq-answer">
-                                Teams must participate in the qualification phase by performing the CORSMAL Benchmark protocol handover configurations remotely in their laboratory. 
-                                Results are submitted to the organisers, and the top-performing teams are ranked on a leaderboard. 
-                                The best-performing teams qualify for the on-site competition. A maximum of 6 teams will qualify.
+                            <div class="faq-section" data-category="competition">
+                                <div class="faq-category-title">Competition</div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Will I see the competition containers before the event?</div>
+                                    <div class="faq-answer">No. The set of objects for the on-site competition consists of 6 unknown containers that are revealed only on competition day. These containers test your system's generalisation capabilities by presenting novel and unseen objects. The containers may range between drinking cups and food containers, potentially filled with different content and amounts than used in the qualification phase.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Are there environmental conditions I should account for?</div>
+                                    <div class="faq-answer">Yes. Be aware of:<br><br>• Illumination: Lighting conditions at the competition venue may differ from your laboratory. Design your perception system to be robust to varying light conditions.<br>• WiFi: WiFi on the conference site might be unstable and unreliable. Do not rely on internet calls for critical functionalities.<br>• Table cloth: A white table cloth will cover the table, which may affect reflections and shadows.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What happens if my robot fails during a configuration?</div>
+                                    <div class="faq-answer">
+                                        If a handover fails (e.g., the robot cannot grasp and/or hold the container during delivery, or the object falls after placement), 
+                                        that configuration receives 0 points. You can attempt other configurations, but you cannot 
+                                        retry a failed configuration. Document failures carefully in your submission.
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Can I see previous CORSMAL competition results?</div>
+                                    <div class="faq-answer">
+                                        Yes. Previous competition results provide insights into typical performance 
+                                        levels and approaches: <br><br>
+                                        (1) RGMC 2024 ICRA track: 
+                                            <a href="https://corsmal.github.io/rgm24icra/index.html" target="_blank" rel="noopener noreferrer">https://corsmal.github.io/rgm24icra/index.html</a>
+                                        <br><br>
+                                        (2) RGMC 2025 Handover track: 
+                                            <a href="https://corsmal.github.io/rgmc2025-handover-track/" target="_blank" rel="noopener noreferrer">https://corsmal.github.io/rgmc2025-handover-track/</a>
+                                        <br><br>
+                                        These resources show winning teams' approaches and performance metrics.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleAnswer(this)">What is the deadline for the qualification phase?</div>
-                            <div class="faq-answer">
-                                The exact deadline for the qualification phase will be announced in the following weeks. 
-                                Please check this page regularly for updates.
+                            <div class="faq-section" data-category="qualification">
+                                <div class="faq-category-title">Qualification & Benchmark</div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">How do I qualify for the on-site competition in Vienna?</div>
+                                    <div class="faq-answer">Teams must participate in the qualification phase by performing the CORSMAL 
+                                        Benchmark protocol handover configurations remotely in their laboratory. 
+                                        Results are submitted to the organisers, and the top-performing teams are 
+                                        ranked on a leaderboard. Teams qualify for the on-site competition based on 
+                                        performance and resources available (robots). A maximum of 6 teams will 
+                                        qualify.
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What is the deadline for the qualification phase?</div>
+                                    <div class="faq-answer">The deadline for the qualification phase is 16 April 2026.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Which configurations do I need to perform for the qualification phase?</div>
+                                    <div class="faq-answer">The full CORSMAL protocol must be executed (i.e., all 244 handover configurations) and results must be submitted to us so that we can compute the scores and update the leaderboards. The full protocol ensures fair comparisons and comprehensive evaluation of your solution across all scenarios.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Do I need to compute all CORSMAL benchmark metrics (s1-s13)?</div>
+                                    <div class="faq-answer">Results must be submitted so that we can compute all the scores and update the CORSMAL leaderboards. Submitting partial results is possible but can lead to lower benchmark scores. The leaderboards are designed to enable fair comparisons and provide results for research labs worldwide to reuse for experiments and publications. Note that the evaluation protocol for the on-site competition is simplified and does not compute all the properties evaluated in the full CORSMAL Benchmark.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">My pipeline from last year does not compute physical container properties. Can I still participate?</div>
+                                    <div class="faq-answer">Yes. You are welcome to submit results from your current pipeline so we can compute scores and list you on the leaderboards based on your existing solution. You also have time to make updates and improvements before the deadline. If you enhance your solution to include computation of additional properties, we can compute all the scores for the leaderboards. Consider that your approach, any videos you produce, and results you obtain could be the foundation for a manuscript to submit to the Topical Collection on "Advancing Robotic Grasping and Manipulation for the Real-World" in Autonomous Robots: <a href="https://link.springer.com/collections/ifcjfbbgji" target="_blank">https://link.springer.com/collections/ifcjfbbgji</a></div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Do I need to purchase the exact containers from the commercial links provided?</div>
+                                    <div class="faq-answer">No. You do not need to purchase exact containers from commercial links. You can prepare equivalent containers that closely match the specified physical properties (shape, size, weight, stiffness). Please provide a document describing your container specifications including dimensions, material, weight ranges, and filling options and content types. We will review and confirm if they meet the requirements for fair comparison.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">I cannot download the CORSMAL Containers Manipulation dataset. Are there alternative ways to access the data?</div>
+                                    <div class="faq-answer">The DOI link (<a href="https://doi.org/10.17636/101CORSMAL1" target="_blank">https://doi.org/10.17636/101CORSMAL1</a>) should work correctly. If you experience issues, try these alternatives:<br><br>(1) Direct QMUL repository: <a href="https://qmro.qmul.ac.uk/xmlui/handle/123456789/103670" target="_blank">https://qmro.qmul.ac.uk/xmlui/handle/123456789/103670</a><br><br>(2) Detailed dataset information: <a href="https://corsmal.github.io/containers_manip.html" target="_blank">https://corsmal.github.io/containers_manip.html</a><br><br>(3) Benchmark webpage: <a href="https://corsmal.github.io/benchmark.html" target="_blank">https://corsmal.github.io/benchmark.html</a><br><br>If problems persist, contact Dr. Changjae Oh (c.oh@qmul.ac.uk) directly. Note: You do not need to complete the CORSMAL Benchmark before accessing the dataset.</div>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- <div class="faq-item">
-                            <div class="faq-question" onclick="toggleAnswer(this)">How long does the on-site competition take?</div>
-                            <div class="faq-answer">
-                                The preparation and execution of all configurations, along with measuring the mass of the delivered container, should take no longer than 15 minutes per team. Each individual configuration should be executed within 5 seconds.
+                            <div class="faq-section" data-category="registration">
+                                <div class="faq-category-title">Registration & Travel & Venue Information</div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What are the registration requirements and deadlines for the competition at ICRA 2026?</div>
+                                    <div class="faq-answer">Dates, deadlines, fees, and other registration information for ICRA 2026 can be found on the official ICRA 2026 registration information page: <a href="https://2026.ieee-icra.org/attend/registration-information/" target="_blank">https://2026.ieee-icra.org/attend/registration-information/</a><br><br>All teams competing on-site must have registered for the conference. We recommend registering for the conference early as it may be required for visa applications.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What is the location and date of the on-site competition?</div>
+                                    <div class="faq-answer">The Human-to-Robot Handovers competition will be held in Vienna, Austria during ICRA 2026:<br><br>• Conference Dates: 1-5 June 2026<br>• Venue: Vienna, Austria<br>• Venue Details: Messe Wien Exhibition & Congress Center<br><br>Detailed venue information and logistics: <a href="https://2026.ieee-icra.org/attend/venue-and-logistics/" target="_blank">https://2026.ieee-icra.org/attend/venue-and-logistics/</a></div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What travel support is provided?</div>
+                                    <div class="faq-answer">ICRA 2026 is held in Vienna, which offers excellent travel connections and accommodation options. For travel planning and accommodation:<br><br>• Visa Information: Register for ICRA 2026 early—a competition pass may be required for visa applications<br>• Travel: Vienna has excellent connections via Schwechat Airport and train stations<br>• Accommodation: Visit the ICRA 2026 venue page for official partner hotels and recommendations<br><br>Contact ICRA 2026 organisers for specific travel support queries: <a href="https://2026.ieee-icra.org/" target="_blank">https://2026.ieee-icra.org/</a></div>
+                                </div>
                             </div>
-                        </div> -->
 
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleAnswer(this)">What happens if my robot fails during a configuration?</div>
-                            <div class="faq-answer">
-                                If a handover fails (e.g., the robot cannot grasp and/or hold the container during delivery, or the object falls after placement), that configuration receives 0 points. You can attempt other configurations, but you cannot retry a failed configuration.
+                            <div class="faq-section" data-category="publication">
+                                <div class="faq-category-title">Publication & Demo Videos & Dissemination</div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Is there a possibility to publish my work?</div>
+                                    <div class="faq-answer">Yes. Teams are invited to contribute a research article on their solution, findings, and results to the Topical Collection on "Advancing Robotic Grasping and Manipulation for the Real-World" within Autonomous Robots: <a href="https://link.springer.com/collections/ifcjfbbgji" target="_blank">https://link.springer.com/collections/ifcjfbbgji</a><br><br>This is an excellent opportunity to disseminate your research to the academic community.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What other opportunities are available for showcasing my solution?</div>
+                                    <div class="faq-answer">Beyond publication, you have opportunities to:<br><br>• Submit a demo video to be showcased on the RGMC YouTube channel<br>• Present your work at the competition in Vienna<br>• Contribute to the CORSMAL leaderboards and benchmark database<br>• Network with other researchers and roboticists<br>• Receive recognition and prizes (top-performing teams)<br>• Obtain a free MATLAB license from Mathworks to support development</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Can I submit a demo video of my solution?</div>
+                                    <div class="faq-answer">Yes, demo videos are optional but strongly encouraged. Demo videos provide excellent visibility for your work and team. Videos will be showcased:<br><br>• During the competition in Vienna<br>• On the RGMC YouTube channel, reaching the research community worldwide<br>• In competition materials and documentation</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What are the requirements for demo videos?</div>
+                                    <div class="faq-answer">While specific technical requirements will be provided, we recommend:<br><br>• Duration: 2-5 minutes (concise and focused)<br>• Content: Show your approach, key components, and live demonstrations<br>• Quality: HD resolution (1080p or higher)<br>• Format: MP4 or similar widely compatible format<br>• Audio: Clear narration explaining your solution<br><br>Videos should demonstrate your system's capabilities and approach to the handover problem.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What is the deadline for demo video submission?</div>
+                                    <div class="faq-answer">Qualified teams can submit demo videos by 26 May 2026. The final deadline for submitting videos for the RGMC YouTube channel is 30 June 2026. Submit videos directly to Dr. Changjae Oh (c.oh@qmul.ac.uk).</div>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- <div class="faq-item">
-                            <div class="faq-question" onclick="toggleAnswer(this)">Can I submit a demo video of my solution?</div>
-                            <div class="faq-answer">
-                                Yes, demo videos are optional but encouraged. Qualified teams can submit a demo video by 26 May 2026. The videos will be showcased in Vienna during the competition and on the RGMC YouTube channel after the competition. The final deadline for submitting videos for the YouTube channel is 30 June 2026.
+                            <div class="faq-section" data-category="contact">
+                                <div class="faq-category-title">Contact & Support</div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">I need technical support during the qualification phase. Who can I contact?</div>
+                                    <div class="faq-answer">For technical questions during the qualification phase, contact:<br><br><strong>Dr. Changjae Oh</strong><br>Queen Mary University of London<br>Email: <a href="mailto:c.oh@qmul.ac.uk">c.oh@qmul.ac.uk</a><br><br>He can provide guidance on:<br>• Benchmark execution<br>• Data and dataset access issues<br>• Protocol clarifications<br>• Setup and calibration questions<br>• Submission procedures</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">What if I have questions not answered here?</div>
+                                    <div class="faq-answer">Please contact the track organisers directly:<br><br><strong>Dr. Changjae Oh</strong><br>Queen Mary University of London<br><a href="mailto:c.oh@qmul.ac.uk">c.oh@qmul.ac.uk</a><br><br><strong>Prof. Andrea Cavallaro</strong><br>École polytechnique fédérale de Lausanne (Switzerland)<br>(via Dr. Oh who can coordinate)<br><br>They will be happy to answer your questions about the competition.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">Where can I find more information about the competition track?</div>
+                                    <div class="faq-answer">Visit the official CORSMAL ICRA 2026 website: <a href="https://corsmal.github.io/events/rgmc/icra2026/" target="_blank">https://corsmal.github.io/events/rgmc/icra2026/</a><br><br>For general RGMC competition information: <a href="https://sites.google.com/view/rgmcomp" target="_blank">https://sites.google.com/view/rgmcomp</a></div>
+                                </div>
                             </div>
-                        </div> -->
 
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleAnswer(this)">Is there a possibility to publish my work?</div>
-                            <div class="faq-answer">
-                                Yes. Qualified teams are invited to contribute a research article on their solution, findings, and results to the Topical Collection on "Advancing Robotic Grasping and Manipulation for the Real-World" within Autonomous Robots. 
-                                <!-- This is an open access publication opportunity. -->
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleAnswer(this)">What if I have questions not answered here?</div>
-                            <div class="faq-answer">
-                                Please contact the track organisers directly. 
-                                Dr. <a href="mailto:c.oh@qmul.ac.uk">Changjae Oh</a> 
-                                will be happy to answer your questions about the competition.
+                            <div id="noResults" class="no-results" style="display: none;">
+                                No questions found matching your search. Please try different keywords.
                             </div>
                         </div>
                     </div>
@@ -232,22 +596,105 @@
     </main>
 
     <script>
+        const searchBox = document.getElementById('searchBox');
+        const faqSections = document.querySelectorAll('.faq-section');
+        const categoryLinks = document.querySelectorAll('.category-link');
+        const showAllBtn = document.getElementById('showAllBtn');
+        const filterInfo = document.getElementById('filterInfo');
+        const noResults = document.getElementById('noResults');
+
+        let activeFilter = null;
+
+        searchBox.addEventListener('keyup', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            let visibleSections = 0;
+
+            faqSections.forEach(section => {
+                const sectionCategory = section.getAttribute('data-category');
+                
+                if (activeFilter && sectionCategory !== activeFilter) {
+                    section.classList.add('hidden');
+                    return;
+                }
+
+                let hasVisibleItems = false;
+                const items = section.querySelectorAll('.faq-item');
+
+                items.forEach(item => {
+                    const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+                    if (searchTerm === '' || question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.classList.remove('hidden');
+                        hasVisibleItems = true;
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+
+                if (hasVisibleItems) {
+                    section.classList.remove('hidden');
+                    visibleSections++;
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+
+            noResults.style.display = visibleSections === 0 && searchTerm !== '' ? 'block' : 'none';
+        });
+
         function toggleAnswer(questionElement) {
             const answer = questionElement.nextElementSibling;
             const isOpen = questionElement.classList.contains('open');
-            
-            // Close all other answers
+
             document.querySelectorAll('.faq-answer.visible').forEach(otherAnswer => {
                 otherAnswer.classList.remove('visible');
                 otherAnswer.previousElementSibling.classList.remove('open');
             });
-            
-            // Toggle current answer
+
             if (!isOpen) {
                 answer.classList.add('visible');
                 questionElement.classList.add('open');
+                answer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
         }
+
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const category = this.getAttribute('data-category');
+                activeFilter = category;
+
+                categoryLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                searchBox.value = '';
+
+                faqSections.forEach(section => {
+                    if (section.getAttribute('data-category') === category) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                });
+
+                const categoryTitle = this.textContent;
+                filterInfo.textContent = `Showing: ${categoryTitle}`;
+                filterInfo.style.display = 'block';
+
+                noResults.style.display = 'none';
+            });
+        });
+
+        showAllBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            activeFilter = null;
+            categoryLinks.forEach(l => l.classList.remove('active'));
+            searchBox.value = '';
+            faqSections.forEach(s => s.classList.remove('hidden'));
+            filterInfo.style.display = 'none';
+            noResults.style.display = 'none';
+        });
     </script>
 </body>
 </html>
