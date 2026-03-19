@@ -314,5 +314,36 @@
         "lead": false
       }
     ]
+  },
+  {
+    "id": "youth2real",
+    "name": "Youth2Real",
+    "members": [
+      {
+        "name": "Huaidong Zhou",
+        "affiliation": "Tsinghua University (China)",
+        "lead": true
+      },
+      {
+        "name": "Haonan Zhang",
+        "affiliation": "Tsinghua University (China)",
+        "lead": false
+      },
+      {
+        "name": "Zefan Zhang",
+        "affiliation": "Tsinghua University (China)",
+        "lead": false
+      },
+      {
+        "name": "Lei Liu",
+        "affiliation": "Tsinghua University (China)",
+        "lead": false
+      },
+      {
+        "name": "Taohan Wang",
+        "affiliation": "Tsinghua University (China)",
+        "lead": false
+      }
+    ]
   }
 ]
