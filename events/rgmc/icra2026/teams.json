@@ -7,6 +7,26 @@
         "name": "Beiwen Tian",
         "affiliation": "Tsinghua University (China)",
         "lead": true
+      },
+      {
+        "name": "Zhenfeng Gao",
+        "affiliation": "Chongqing University of Posts and Telecommunications (China)",
+        "lead": false
+      },
+      {
+        "name": "Jiawei Du",
+        "affiliation": "Harbin Institute of Technology (China)",
+        "lead": false
+      },
+      {
+        "name": "Bangguo Zheng",
+        "affiliation": "Chongqing University of Posts and Telecommunications (China)",
+        "lead": false
+      },
+      {
+        "name": "Jingyi Yao",
+        "affiliation": "Chongqing University of Posts and Telecommunications (China)",
+        "lead": false
       }
     ]
   },
