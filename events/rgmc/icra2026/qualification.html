@@ -116,8 +116,8 @@
                                     {title:"Name", field:"name"},
                                     {title:"Overall", field:"score", sorter:"number"},
                                     {title:"Vision", field:"vision", sorter:"number"},
-                                    {title:"Robotic", field:"robotic", sorter:"number"},
-                                    {title:"Task completion", field:"completion", sorter:"number"}
+                                    {title:"Robotic", field:"robotics", sorter:"number"},
+                                    {title:"Task completion", field:"task", sorter:"number"}
                                 ],
                                 initialSort:[
                                     {column:"score", dir:"desc"},
@@ -192,9 +192,121 @@
                         </p>
                     </div>
 
+                    <div id="guidelines">
+                        <!-- <button class="toggle-btn" onclick="toggleSection('guidelines-content')"></button> -->
+                        <b><span style="font-size: 14.0pt">Guidelines</span></b>
+                        <!-- <div id="guidelines-content" class="toggle-section"> -->
+                        <b><span style="font-size: 12.0pt">1. Safe recording practices</span></b>
+                        <button class="toggle-btn collapsed" onclick="toggleSection('safe-recording-content')"></button>
+                        <div id="safe-recording-content" class="toggle-section collapsed">
+                        <ul>
+                            <li>Position cameras so that only the hands, arms, and the objects involved in the handover are visible.</li>
+                            <li>Avoid capturing faces, torsos, or identifiable body features.</li>
+                            <li>Use a fixed camera angle whenever possible.</li>
+                        </ul>
+ 
+                        <b><span style="font-size: 11.0pt">Background Requirements</span></b>
+                        <ul>
+                            <li>Use a neutral, non-identifying background (e.g., plain wall, table surface).</li>
+                            <li>Remove or cover:
+                                <ul>
+                                    <li>whiteboards</li>
+                                    <li>posters</li>
+                                    <li>screens</li>
+                                    <li>personal items</li>
+                                    <li>documents</li>
+                                    <li>lab identifiers</li>
+                                </ul>
+                            </li>
+                        </ul>
+ 
+                        <b><span style="font-size: 11.0pt">Audio</span></b>
+                        <ul>
+                            <li>Disable audio recording whenever possible.</li>
+                            <li>If audio is unavoidable, ensure no names, conversations, or identifying information are captured.</li>
+                        </ul>
+ 
+                        <b><span style="font-size: 11.0pt">Lighting</span></b>
+                        <ul>
+                            <li>Ensure adequate lighting to clearly see the handover, but avoid shadows that reveal facial features or silhouettes.</li>
+                        </ul>
+ 
+                        <b><span style="font-size: 11.0pt">Clothing and Accessories</span></b>
+                        <ul>
+                            <li>Volunteers should avoid:
+                                <ul>
+                                    <li>distinctive clothing</li>
+                                    <li>jewellery</li>
+                                    <li>watches</li>
+                                    <li>tattoos</li>
+                                    <li>badges</li>
+                                    <li>lab IDs</li>
+                                </ul>
+                            </li>
+                            <li>If unavoidable, blur these elements before submission.</li>
+                        </ul>
+ 
+                        <b><span style="font-size: 11.0pt">Anonymisation Requirements</span></b>
+                        <ul>
+                            <li>blur any accidental identifying features</li>
+                            <li>crop frames to exclude faces</li>
+                            <li>remove audio if it contains speech</li>
+                            <li>verify the final video before submission</li>
+                        </ul>
+ 
+                        <b><span style="font-size: 11.0pt">File Sharing</span></b>
+                        <ul>
+                            <li>Videos must be uploaded via a private link (e.g., unlisted YouTube, private cloud link).</li>
+                            <li>Public links are not allowed unless explicit consent is obtained.</li>
+                        </ul>
+                        </div>
+ 
+                        <b><span style="font-size: 12.0pt">2. Demographics</span></b>
+                        <button class="toggle-btn collapsed" onclick="toggleSection('demographics-content')"></button>
+                        <div id="demographics-content" class="toggle-section collapsed">
+                        <div style="text-align: justify;">
+                        <b><span style="font-size: 11.0pt">Allowed Demographic Fields (Coarse Categories Only)</span></b>
+                        <p>Teams may provide the following for each volunteer:</p>
+                        <ul>
+                            <li><strong>age_group:</strong> "18-25", "26-35", "36-45", "46+"</li>
+                            <li><strong>gender:</strong> "male", "female", "non-binary", "prefer_not_to_say"</li>
+                            <li><strong>dominant_hand:</strong> "left", "right", "ambidextrous"</li>
+                            <li><strong>experience_level</strong> (with robot systems): "novice", "intermediate", "expert"</li>
+                        </ul>
+ 
+                        <b><span style="font-size: 11.0pt">Prohibited Demographic Fields</span></b>
+                        <p>Teams must <strong>not</strong> provide:</p>
+                        <ul>
+                            <li>exact age</li>
+                            <li>ethnicity</li>
+                            <li>height or weight</li>
+                            <li>health or disability information</li>
+                            <li>biometric traits</li>
+                            <li>occupation or job title</li>
+                            <li>years of experience</li>
+                            <li>any free-text that could identify a person</li>
+                        </ul>
+ 
+                        <b><span style="font-size: 11.0pt">Optionality</span></b>
+                        <ul>
+                            <li>All demographic fields are optional.</li>
+                            <li>Volunteers may choose "prefer_not_to_say" for any field.</li>
+                        </ul>
+ 
+                        <b><span style="font-size: 11.0pt">Storage</span></b>
+                        <ul>
+                            <li>Demographic data is stored only in the submission metadata.</li>
+                            <li>It is not linked to identifiable video content.</li>
+                        </ul>
+                        </div>
+                        </div>
+                    </div>
+
                     <div id="starting-kit">
                         <b><span>Starting kit and documentation</span></b>
-
+                        <button class="toggle-btn collapsed" onclick="toggleSection('starting-kit-content')"></button>
+                        <div id="starting-kit-content" class="toggle-section collapsed">
+ 
                         <b><span>Reference publications</span></b>
                         <p>
                             <i>Benchmark for human-to-robot handovers of unseen containers with unknown filling</i><br>
@@ -234,7 +346,7 @@
                             <i>Additional references</i><br>
                             [<a href="https://corsmal.github.io/resources/challenge/Additional_References.pdf" target="_blank">document</a>]
                         </p>
-
+ 
                         <b><span>Reference software</span></b>
                         <p>
                             <i>Vision baseline</i><br>
@@ -251,7 +363,7 @@
                             [<a href="https://github.com/CORSMAL/LoDE" target="_blank">code</a>]
                             [<a href="https://corsmal.github.io/LoDE.html" target="_blank">webpage</a>]
                         </p>
-
+ 
                         <b><span>Reference data</span></b>
                         <p>
                             <i>CORSMAL Containers Manipulation (1.0) [Data set]</i><br>
@@ -261,15 +373,30 @@
                             [<a href="https://corsmal.github.io/containers_manip.html" target="_blank">webpage</a>]
                         </p>
                     </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
+        <footer id="footer">
+        <div class="footer-content">
+            <p>&copy; All rights reserved.</p>
+            <p><a href="data_retention_policy.html">Data Retention Policy</a></p>
+        </div>
+    </footer>
+
     <script>
         function toggleLegend() {
             var legend = document.getElementById('legend_groups');
             legend.classList.toggle('visible');
+        }
+
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            var button = event.target;
+            section.classList.toggle('collapsed');
+            button.classList.toggle('collapsed');
         }
     </script>
 </body>
