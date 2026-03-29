@@ -513,11 +513,20 @@
                                 </div>
                                 <div class="faq-item">
                                     <div class="faq-question" onclick="toggleAnswer(this)">Which configurations do I need to perform for the qualification phase?</div>
-                                    <div class="faq-answer">The full CORSMAL protocol must be executed (i.e., all 244 handover configurations) and results must be submitted to us so that we can compute the scores and update the leaderboards. The full protocol ensures fair comparisons and comprehensive evaluation of your solution across all scenarios.</div>
+                                    <div class="faq-answer">The full CORSMAL protocol must be executed (i.e., all 288 handover configurations) and results must be submitted to us so that we can compute the scores and update the leaderboards. The full protocol ensures fair comparisons and comprehensive evaluation of your solution across all scenarios.</div>
                                 </div>
                                 <div class="faq-item">
                                     <div class="faq-question" onclick="toggleAnswer(this)">Do I need to compute all CORSMAL benchmark metrics (s1-s13)?</div>
                                     <div class="faq-answer">Results must be submitted so that we can compute all the scores and update the CORSMAL leaderboards. Submitting partial results is possible but can lead to lower benchmark scores. The leaderboards are designed to enable fair comparisons and provide results for research labs worldwide to reuse for experiments and publications. Note that the evaluation protocol for the on-site competition is simplified and does not compute all the properties evaluated in the full CORSMAL Benchmark.</div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleAnswer(this)">How is the End-Effector Reachability Accuracy score (s8) computed?</div>
+                                    <div class="faq-answer">
+                                        The s8 score measures how accurately your robot reaches 6 standard target poses in its own workspace. 
+                                        You submit the reached end-effector poses (position + orientation) and your robot's workspace parameters, 
+                                        and the score is computed from the normalised position error using a 3 cm threshold.
+                                        Full instructions, scoring details, and submission templates are available in the s8 documentation.
+                                    </div>
                                 </div>
                                 <div class="faq-item">
                                     <div class="faq-question" onclick="toggleAnswer(this)">Do I need to purchase the exact containers from the commercial links provided?</div>
@@ -597,6 +606,13 @@
             </div>
         </div>
     </main>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <p>&copy; All rights reserved.</p>
+            <p><a href="data_retention_policy.html">Data Retention Policy</a></p>
+        </div>
+    </footer>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         const searchBox = document.getElementById('searchBox');
