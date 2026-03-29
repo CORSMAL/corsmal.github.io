@@ -100,7 +100,7 @@ var corsmal_table =
         s13:0.45.toFixed(2),
         vision:0.19.toFixed(2),
         robotics:0.31.toFixed(2),
-        global:0.46.toFixed(2),
+        task:0.46.toFixed(2),
         cup1:0.33.toFixed(2),
         cup2:0.31.toFixed(2),
         cup3:0.33.toFixed(2),

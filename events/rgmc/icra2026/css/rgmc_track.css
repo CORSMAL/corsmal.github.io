@@ -288,6 +288,31 @@ main {
     list-style-type: decimal;
 }
 
+/* Nested List Styles */
+#latestnewspage > div > ul > li > ul,
+#latestnewspage > div > ol > li > ul,
+#latestnewspage > div > ul > li > ol,
+#latestnewspage > div > ol > li > ol {
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+}
+
+#latestnewspage > div > ul > li > ul > li,
+#latestnewspage > div > ol > li > ul > li,
+#latestnewspage > div > ul > li > ol > li,
+#latestnewspage > div > ol > li > ol > li {
+    margin-bottom: 0.4rem;
+    color: #000000;
+    line-height: 1.6;
+    list-style-type: circle;
+    display: list-item;
+}
+
+#latestnewspage > div > ul > li > ol > li,
+#latestnewspage > div > ol > li > ol > li {
+    list-style-type: lower-alpha;
+}
+
 #latestnewspage a {
     color: var(--primary-color);
     border-bottom: 1px solid var(--primary-color);
@@ -670,4 +695,163 @@ button:focus,
 a:focus {
     outline: 2px solid var(--link-color);
     outline-offset: 2px;
+}
+
+/* Footer */
+footer {
+    background: white;
+    border-top: 2px solid var(--border-color);
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+}
+
+.footer-content a {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Toggle Sections */
+.toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 0.5rem;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.toggle-btn::before {
+    content: "▼ ";
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.toggle-btn.collapsed::before {
+    transform: rotate(-90deg);
+}
+
+.toggle-section {
+    max-height: 2000px;
+    overflow: visible;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.toggle-section.collapsed {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* Ensure styles apply within toggle sections */
+.toggle-section p,
+.toggle-section ul,
+.toggle-section ol {
+    margin-bottom: 0.8rem;
+    color: #000000;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.toggle-section ul,
+.toggle-section ol {
+    margin-left: 1.5rem;
+}
+
+.toggle-section ul > li,
+.toggle-section ol > li {
+    margin-bottom: 0.5rem;
+    color: #000000;
+    line-height: 1.8;
+    list-style-type: disc;
+    display: list-item;
+}
+
+.toggle-section ol > li {
+    list-style-type: decimal;
+}
+
+.toggle-section ul > li > ul,
+.toggle-section ol > li > ul,
+.toggle-section ul > li > ol,
+.toggle-section ol > li > ol {
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+}
+
+.toggle-section ul > li > ul > li,
+.toggle-section ol > li > ul > li,
+.toggle-section ul > li > ol > li,
+.toggle-section ol > li > ol > li {
+    margin-bottom: 0.4rem;
+    color: #000000;
+    line-height: 1.6;
+    list-style-type: circle;
+    display: list-item;
+}
+
+.toggle-section ul > li > ol > li,
+.toggle-section ol > li > ol > li {
+    list-style-type: lower-alpha;
+}
+
+.toggle-section a {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.toggle-section a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.toggle-section div img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+}
+
+.toggle-section i {
+    font-style: italic;
+    color: #000000;
+}
+
+.toggle-section strong {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.toggle-section b > span {
+    font-size: 11pt;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.3rem;
+    margin-top: 0.5rem;
+    color: var(--primary-color);
 }
