@@ -83,7 +83,7 @@ var corsmal_table =
 [
     {
         id:1,
-        name:"Baseline", 
+        name:"Baseline (S1)", 
         score:0.32.toFixed(2), 
         s1:0.59.toFixed(2),
         s2:0.55.toFixed(2),
@@ -113,6 +113,39 @@ var corsmal_table =
         left:0.34.toFixed(2),
         center:0.29.toFixed(2),
         right:0.33.toFixed(2)
+    },
+    {
+        id:2,
+        name:"Baseline (S2)", 
+        score:0.33.toFixed(2), 
+        s1:0.59.toFixed(2),
+        s2:0.61.toFixed(2),
+        s3:0.58.toFixed(2),
+        s4:0.0.toFixed(2),
+        s5:0.0.toFixed(2),
+        s6:0.0.toFixed(2),
+        s7:0.0.toFixed(2),
+        s8:0.94.toFixed(2),
+        s9:0.37.toFixed(2),
+        s10:0.58.toFixed(2),
+        s11:0.03.toFixed(2),
+        s12:0.44.toFixed(2),
+        s13:0.09.toFixed(2),
+        vision:0.20.toFixed(2),
+        robotics:0.31.toFixed(2),
+        task:0.40.toFixed(2),
+        cup1:0.19.toFixed(2),
+        cup2:0.22.toFixed(2),
+        cup3:0.26.toFixed(2),
+        cup4:0.13.toFixed(2),
+        empty:0.21.toFixed(2),
+        filled:0.17.toFixed(2),
+        grasp1:0.30.toFixed(2),
+        grasp2:0.19.toFixed(2),
+        grasp3:0.00.toFixed(2),
+        left:0.20.toFixed(2),
+        center:0.19.toFixed(2),
+        right:0.18.toFixed(2)
     },
 ];
 
