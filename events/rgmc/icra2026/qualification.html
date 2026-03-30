@@ -84,11 +84,10 @@
                             The track involves a qualification phase in which teams need to perform the handover configurations of the <a href="https://corsmal.github.io/benchmark.html">CORSMAL Benchmark protocol</a> remotely in their laboratory (see also the open access <a href="https://doi.org/10.1109/LRA.2020.2969200" target="_blank">publication</a>). Results will be submitted to the track organisers and teams will be ranked on a leaderboard in this page based on the performance scores of the benchmarking protocol.
                         </p>
                         <p>
-                            The teams will qualify for competing in Vienna in June 2026 depending on theri performance and robot availability and requests. A maximum number of 6 teams will qualify to participate in the on-site competition. 
-                            <!-- End date of the qualification phase will be announced in the following weeks. -->
+                            The teams will qualify for competing in Vienna in June 2026 depending on their performance and robot availability and requests. A maximum number of 6 teams will qualify to participate in the on-site competition. 
                         </p>
                         <p>
-                            Below we also provide details, <a href="#setting-up-instructions">instructions</a>, and <a href="#starting-kit">documentation</a> for preparing the solution, including reference software, publications, and data.
+                            Below we also provide details, <a href="#guidelines">guidelines and instructions</a>, and <a href="#starting-kit">documentation</a> for preparing the solution, including reference software, publications, and data.
                         </p>
                         <p>
                             The <a href="https://corsmal.github.io/containers_manip.html" target="_blank">CORSMAL Containers Manipulation dataset</a> can be used to design perception-based solutions for the approaching phase and prior to the handover of the object to a robot.
@@ -171,8 +170,78 @@
                         </script>
                     </div>
 
-                    <div id="setting-up-instructions">
-                        <b><span>Setting up instructions</span></b>
+                    <div id="alternative-cups">
+                        <b><span style="font-size: 14.0pt">Alternative cups</span></b>
+                        <p>
+                            The benchmark protocol includes 4 cups with different dimensions and materials. 
+                            If teams do not have access to the exact sames cups (e.g. due to geographical location or broken/outdated purchase links), 
+                            they can use alternative cups with similar physical properties (e.g. weights, dimensions, materials).
+                        </p>
+                        <p>
+                            Teams must provide the details of the alternative cups following the template provided below 
+                            (filled with the benchmark cups information as an example), 
+                            and submit them to the track organisers for <strong>approval before performing the handover configurations</strong>.
+                            Submitted alternative cups will be checked to asses their similarity within tolerable ranges of the physical properties.
+                        </p>
+                        <p>
+                            Images of the cups must also be provided. 
+                        </p>
+                        <b><span style="font-size: 12.0pt">Checklist</span></b>
+                        <ul>
+                            <li>Alternative cups details using the JSON template</li>
+                            <li>Images of the alternative cups (top, side, bottom, empty, filled) next to a coin and at a fixed distance from the camera</li>
+                        </ul>
+                        <b><span style="font-size: 12.0pt">Download</span></b>
+                        <a href="resources/cups_template.json" target="_blank"><u>Template for alternative cups (JSON)</u></a>
+                    </div>
+
+                    <div id="submissions">
+                        <b><span style="font-size: 14.0pt">Submission</span></b>
+                        <p>
+                            Teams will submit their results by email to the track organisers using the information below. 
+                            The package of files and links must be submitted by April 16. 
+                            Teams will be able to updated their submission after the deadline to further prepare for the competition in Vienna if qualified,
+                            or to update their results on the leaderboard to share their performance with the community and for future comparisons to use in publications.
+                        </p>
+                        <b><span style="font-size: 12.0pt">Checklist</span></b>
+                        <ul>
+                            <li><strong>Submission CSV form</strong> filled with all required information (measurements for each configuration)</li>
+                            <li>
+                                <strong>Metadata JSON form</strong> filled with all required information 
+                                (team information, assumptions, ethics compliance, optional demographics, video links)
+                            </li>
+                            <li><strong>Anonymised video links</strong> accessible to the organisers (no identifying people present; one or more videos can be shared grouping configurations)</li>
+                            <li>Optional logs and calibration files (highly recommended to save and store them for reproducibility, especially for every change occuring across configurations)</li> 
+                        </ul>
+                        Notes:
+                        <ul>
+                            <li>Offline scores (s7, s8): we will provide information and templates for the submission of these scores in the next days</li>
+                            <li>The targeted delivery location (same for all configurations) must be reported in the metadata JSON form</li>
+                            <li>The submission CSV form must use <strong>comma separators</strong>, must not containd additional columns or renamed headers, and must not contain any missing values (e.g. empty cells or 'NA'). Please follow the metadocumentation for the values to be reported.</li>
+                            <li>Check the <a href="ethics.html" target="_blank"><u>Ethics policy</u></a>, 
+                                <a href="#safe-recording-content" target="_blank"><u>Safe recording practices</u></a>,
+                                <a href="#demographics" target="_blank"><u>Demographics</u></a>, and
+                                <a href="data_retention_policy.html" target="_blank"><u>Data retention policy</u></a>
+                                before performing the configurations with participants, and for the preparation of the videos
+                                and metadata information to be reported.
+                            </li>
+                        </ul>
+                        <b><span style="font-size: 12.0pt">Downloads</span></b>
+                        <ul>
+                            <li><a href="resources/benchmark_configs.csv" target="_blank"><u>Benchmark Configurations (CSV)</u></a></li>
+                            <li><a href="resources/metadata_template.json" target="_blank"><u>Template of metadata (JSON)</u></a></li>
+                            <li><a href="resources/submission_form_template.csv" target="_blank"><u>Template of submission form (CSV)</u></a></li>
+                            <li><a href="resources/metadata_submission.md" target="_blank"><u>Metadocumentation of submission form (Markdown)</u></a></li>
+                        </ul>
+                        
+                    </div>
+
+                    <div id="guidelines">
+                        <!-- <button class="toggle-btn" onclick="toggleSection('guidelines-content')"></button> -->
+                        <b><span style="font-size: 14.0pt">Guidelines</span></b>
+                        <b><span style="font-size: 12.0pt">1. Setting up instructions</span></b>
+                        <button class="toggle-btn collapsed" onclick="toggleSection('setting-up-instructions')"></button>
+                        <div id="setting-up-instructions" class="toggle-section collapsed">
                         <p>
                             The <i>setup</i> includes a robotic arm with at least 6 degrees of freedom (e.g., UR5, KUKA) and equipped with a 2-finger parallel gripper (e.g., Robotiq 2F-85); a table where the handover is happening as well as where the robot is placed; selected containers and contents; up to two cameras (e.g., Intel RealSense D435i); and a digital scale to weigh the container. The table is covered by a <a href="https://amzn.to/2X5qnaN" title="Purchase link">white table-cloth</a>. The two cameras should be placed at 40 cm from the robotic arm, e.g. using tripods, and oriented in such a way that they both view the centre of the table. The illustration below represents the layout in 3D of the setup within a space of 4.5 x 4.5 meters.
                         </p>
@@ -190,13 +259,9 @@
                         <p>
                             These instructions have been revised from the <a href="https://corsmal.github.io/benchmark/resources/RAL-SI-2020-B19-0835-V1.0.pdf" target="_blank">CORSMAL Human-to-Robot Handover Benchmark document</a>.
                         </p>
-                    </div>
-
-                    <div id="guidelines">
-                        <!-- <button class="toggle-btn" onclick="toggleSection('guidelines-content')"></button> -->
-                        <b><span style="font-size: 14.0pt">Guidelines</span></b>
+                        </div>
                         <!-- <div id="guidelines-content" class="toggle-section"> -->
-                        <b><span style="font-size: 12.0pt">1. Safe recording practices</span></b>
+                        <b><span style="font-size: 12.0pt">2. Safe recording practices</span></b>
                         <button class="toggle-btn collapsed" onclick="toggleSection('safe-recording-content')"></button>
                         <div id="safe-recording-content" class="toggle-section collapsed">
                         <ul>
@@ -379,10 +444,13 @@
         </div>
     </main>
 
-        <footer id="footer">
+    <footer id="footer">
         <div class="footer-content">
             <p>&copy; All rights reserved.</p>
-            <p><a href="data_retention_policy.html">Data Retention Policy</a></p>
+            <p>
+                <a href="ethics.html">Ethics Policy</a>
+                <a href="data_retention_policy.html">Data Retention Policy</a>
+            </p>
         </div>
     </footer>
 
