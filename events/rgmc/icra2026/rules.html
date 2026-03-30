@@ -84,136 +84,6 @@
                             <li>Teleoperation</li>
                         </ul>
                     </div>
-
-                        <b><span style="font-size: 14.0pt">Ethics</span></b>
-                        <div style="text-align: justify;">
-                        <b><span style="font-size: 12.0pt">Overview</span></b>
-                        <p>
-                            The track involves human-to-robot handovers performed by volunteers recruited by participating teams 
-                            (qualification phase) and by volunteers from other teams (competition phase). 
-                            Although humans are involved in the execution of the benchmark, the organisers do 
-                            <strong>not</strong> conduct human-subject research and do  <strong>not</strong> 
-                            interact with participants directly.
-                        </p>
-                        <p>
-                            All human interaction occurs within the participating teams' own institutions or at the competition venue.
-                        </p>
-                        </div>
- 
-                        <div style="text-align: justify;">
-                        <b><span style="font-size: 12.0pt">Ethical responsibilities of participating Teams</span></b>
-                        <p>
-                            Each team is fully responsible for ensuring that their local execution of the benchmark complies with:
-                        </p>
-                        <ul>
-                            <li>their institution's ethics or IRB/HREC requirements</li>
-                            <li>their country's human-subject research regulations</li>
-                            <li>informed consent standards</li>
-                            <li>data protection laws (e.g., GDPR, UK GDPR, CCPA, PIPL, etc.)</li>
-                        </ul>
-                        <p>
-                            Teams must:
-                        </p>
-                        <ul>
-                            <li>obtain informed consent from all volunteers</li>
-                            <li>explain the purpose of the task and the nature of the recordings</li>
-                            <li>inform volunteers that participation is voluntary and can be withdrawn</li>
-                            <li>anonymise all recordings before submission</li>
-                            <li>retain consent documentation locally</li>
-                        </ul>
-                        <p>
-                            The organisers do <strong>not</strong> collect or store consent forms.
-                        </p>
-                        </div>
- 
-                        <div style="text-align: justify;">
-                        <b><span style="font-size: 12.0pt">Informed Consent requirements</span></b>
-                        <p>Teams must ensure that volunteers understand:</p>
-                        <ul>
-                            <li>the purpose of the handover task</li>
-                            <li>that their hands will be recorded on video</li>
-                            <li>that videos will be shared with organisers for verification</li>
-                            <li>that videos will not be published without explicit consent</li>
-                            <li>that they may withdraw at any time</li>
-                            <li>that no personal data will be collected or stored</li>
-                        </ul>
-                        <p>A lightweight consent template will be provided for teams to adapt to their local regulations.</p>
-                        </div>
- 
-                        <div style="text-align: justify;">
-                        <b><span style="font-size: 12.0pt">Anonymisation requirements</span></b>
-                        <p>To minimise ethical and legal risks, teams must ensure that:</p>
-                        <ul>
-                            <li>only hands are visible in the recordings</li>
-                            <li>no faces, voices, or identifying features appear</li>
-                            <li>backgrounds do not reveal personal or institutional information</li>
-                            <li>any accidental identifying content is blurred before submission</li>
-                        </ul>
-                        <!-- <p><strong>Failure to anonymise recordings may result in disqualification.</strong></p> -->
-                        </div>
- 
-                        <div style="text-align: justify;">
-                        <b><span style="font-size: 12.0pt">Demographic Information</span></b>
-                        <p>Teams may optionally provide <strong>coarse, non-identifying demographics</strong> for each volunteer:</p>
-                        <ul>
-                            <li>age group (e.g., 18-25, 26-35, 36-45, 46+)</li>
-                            <li>gender (male, female, non-binary, prefer_not_to_say)</li>
-                            <li>dominant hand (left, right, ambidextrous)</li>
-                            <li>experience level (novice, intermediate, expert)</li>
-                        </ul>
-                        <p>Teams must <strong>not</strong> provide:</p>
-                        <ul>
-                            <li>exact age</li>
-                            <li>ethnicity</li>
-                            <li>health information</li>
-                            <li>biometric data</li>
-                            <li>occupation</li>
-                            <li>any sensitive or identifying attributes</li>
-                        </ul>
-                        <p>Demographic data is used only for aggregate analysis and reproducibility.</p>
-                        </div>
- 
-                        <div style="text-align: justify;">
-                        <b><span style="font-size: 12.0pt">Ethics for the on-site competition phase</span></b>
-                        <p>During the on-site phase:</p>
-                        <ul>
-                            <li>volunteers are members of participating teams</li>
-                            <li>only hands will be recorded</li>
-                            <li>no personal data will be collected</li>
-                            <li>no demographic data will be requested</li>
-                            <li>a short verbal consent script will be used</li>
-                            <li>videos will be anonymised and deleted after verification</li>
-                        </ul>
-                        <p>This phase does not constitute human-subject research.</p>
-                        </div>
- 
-                        <div style="text-align: justify;">
-                        <b><span style="font-size: 12.0pt">Organisers' ethical position</span></b>
-                        <p>The organisers:</p>
-                        <ul>
-                            <li>do not conduct human-subject research</li>
-                            <li>do not collect personal data</li>
-                            <li>do not store identifiable information</li>
-                            <li>do not analyse human behaviour</li>
-                            <li>only verify robot performance and task execution</li>
-                        </ul>
-                        <p>All ethical responsibility for human participation lies with the participating teams.</p>
-                        </div>
- 
-                        <div style="text-align: justify;">
-                        <b><span style="font-size: 12.0pt">Compliance Confirmation</span></b>
-                        <p>Teams must confirm in their metadata JSON:</p>
-                        <ul>
-                            <li><code>local_ethics_compliance_confirmed</code></li>
-                            <li><code>informed_consent_obtained</code></li>
-                            <li><code>video_recording_consent</code></li>
-                            <li><code>video_sharing_consent</code></li>
-                            <li><code>video_publication_consent</code> (optional)</li>
-                            <li><code>demographics_provided</code></li>
-                        </ul>
-                        <!-- <p><strong>This confirmation is required for a valid submission.</strong></p> -->
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -222,7 +92,10 @@
     <footer id="footer">
         <div class="footer-content">
             <p>&copy; All rights reserved.</p>
-            <p><a href="data_retention_policy.html">Data Retention Policy</a></p>
+            <p>
+                <a href="ethics.html">Ethics Policy</a>
+                <a href="data_retention_policy.html">Data Retention Policy</a>
+            </p>
         </div>
     </footer>
 </body>
