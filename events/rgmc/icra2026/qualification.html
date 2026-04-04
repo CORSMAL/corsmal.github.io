@@ -208,17 +208,21 @@
                         </p>
                         <b><span style="font-size: 12.0pt">Checklist</span></b>
                         <ul>
-                            <li><strong>Submission CSV form</strong> filled with all required information (measurements for each configuration)</li>
                             <li>
                                 <strong>Metadata JSON form</strong> filled with all required information 
-                                (team information, assumptions, ethics compliance, optional demographics, video links)
+                                (team information, assumptions, ethics compliance, optional demographics, video links, robot reachability, target delivery location)
+                            </li>
+                            <li><strong>Submission CSV form</strong> filled with all required information (measurements for each configuration)</li>
+                            <li>
+                                <strong>CSV file for offline score s8</strong>, named s8_submission_TEAM_NAME.csv and containing
+                                    all 18 pose records (3 reps x 6 poses), positions in millimeters, and motion times in milliseconds
                             </li>
                             <li><strong>Anonymised video links</strong> accessible to the organisers (no identifying people present; one or more videos can be shared grouping configurations)</li>
                             <li>Optional logs and calibration files (highly recommended to save and store them for reproducibility, especially for every change occuring across configurations)</li> 
                         </ul>
                         Notes:
                         <ul>
-                            <li>Offline scores (s7, s8): we will provide information and templates for the submission of these scores in the next days</li>
+                            <li>The offline score s7 will not be computed (no need to submit anything).</li>
                             <li>The targeted delivery location (same for all configurations) must be reported in the metadata JSON form</li>
                             <li>The submission CSV form must use <strong>comma separators</strong>, must not containd additional columns or renamed headers, and must not contain any missing values (e.g. empty cells or 'NA'). Please follow the metadocumentation for the values to be reported.</li>
                             <li>Check the <a href="ethics.html" target="_blank"><u>Ethics policy</u></a>, 
@@ -228,6 +232,10 @@
                                 before performing the configurations with participants, and for the preparation of the videos
                                 and metadata information to be reported.
                             </li>
+                            <li>
+                                Detailed information about the offline score s8 are available 
+                                <a href="https://github.com/CORSMAL/Benchmark/tree/master/offlineScores/s8_end-effector" target="_blank"><u>here</u></a>.
+                            </li>
                         </ul>
                         <b><span style="font-size: 12.0pt">Downloads</span></b>
                         <ul>
@@ -235,6 +243,8 @@
                             <li><a href="resources/metadata_template.json" target="_blank"><u>Template of metadata (JSON)</u></a></li>
                             <li><a href="resources/submission_form_template.csv" target="_blank"><u>Template of submission form (CSV)</u></a></li>
                             <li><a href="resources/metadata_submission.md" target="_blank"><u>Metadocumentation of submission form (Markdown)</u></a></li>
+                            <li><a href="https://github.com/CORSMAL/Benchmark/tree/master/offlineScores/s8_end-effector" target="_blank"><u>Documentation of offline score s8 (end-effector reachability)</u></a></li>
+                            <li><a href="resources/s8_submission_template.csv" target="_blank"><u>Template of submission form for offline score s8 (CSV)</u></a></li>
                         </ul>
                         
                     </div>
