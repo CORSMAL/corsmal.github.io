@@ -202,7 +202,7 @@
                         <b><span style="font-size: 14.0pt">Submission</span></b>
                         <p>
                             Teams will submit their results by email to the track organisers using the information below. 
-                            The package of files and links must be submitted by April 16. 
+                            The package of files and links must be submitted by April 16. Qualification will be based on this submission.
                             Teams will be able to updated their submission after the deadline to further prepare for the competition in Vienna if qualified,
                             or to update their results on the leaderboard to share their performance with the community and for future comparisons to use in publications.
                         </p>
@@ -218,13 +218,16 @@
                                     all 18 pose records (3 reps x 6 poses), positions in millimeters, and motion times in milliseconds
                             </li>
                             <li><strong>Anonymised video links</strong> accessible to the organisers (no identifying people present; one or more videos can be shared grouping configurations)</li>
-                            <li>Optional logs and calibration files (highly recommended to save and store them for reproducibility, especially for every change occuring across configurations)</li> 
+                            <li>Optional logs (e.g. joint-state, intermediate measurements) and calibration files (highly recommended to save and store them for reproducibility, especially for every change occuring across configurations)</li> 
                         </ul>
                         Notes:
                         <ul>
                             <li>The offline score s7 will not be computed (no need to submit anything).</li>
                             <li>The targeted delivery location (same for all configurations) must be reported in the metadata JSON form</li>
                             <li>The submission CSV form must use <strong>comma separators</strong>, must not containd additional columns or renamed headers, and must not contain any missing values (e.g. empty cells or 'NA'). Please follow the metadocumentation for the values to be reported.</li>
+                            <li>Handover configurarions can be executed across multiple days. We would expect that configurations executed by a volunteer will be performed in the same session (same date and time slot). Detailed logs indicating the date and time of each recorded configuration can be provided but are optional.</li>
+                            <li>Repeating a configuration if the handover fails is allowed. Please report failed and repeated cases in a separate file and show also the recording.</li>
+                            <li>For the videos, providing a caption of the executed configuration and timing would be useful. Please include some short documentation for the video structure and continuity in case of multiple files.</li>
                             <li>Check the <a href="ethics.html" target="_blank"><u>Ethics policy</u></a>, 
                                 <a href="#safe-recording-content" target="_blank"><u>Safe recording practices</u></a>,
                                 <a href="#demographics-content" target="_blank"><u>Demographics</u></a>, and
@@ -235,6 +238,12 @@
                             <li>
                                 Detailed information about the offline score s8 are available 
                                 <a href="https://github.com/CORSMAL/Benchmark/tree/master/offlineScores/s8_end-effector" target="_blank"><u>here</u></a>.
+                            </li>
+                            <li>
+                                The protocol for s8 would require the gripper orientation to not be fixed, and to be adjusted smoothly 
+                                during the arm motion to point towards the central pose (0, r/2, 0) at each final pose. 
+                                Teams are not be penalized if the end effector orientation is ignored for the reporting. 
+                                We will use these measurements to ensure the score is fully computed for the future and we can observe differences in the score
                             </li>
                         </ul>
                         <b><span style="font-size: 12.0pt">Downloads</span></b>
