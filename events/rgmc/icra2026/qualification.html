@@ -26,7 +26,7 @@
             color: #000000;
         }
 
-        #legend_groups {
+        #legend_groups, #legend-granular-scores {
             display: none;
             background-color: var(--secondary-color);
             padding: 1rem;
@@ -35,7 +35,7 @@
             line-height: 1.8;
         }
 
-        #legend_groups.visible {
+        #legend_groups.visible, #legend-granular-scores.visible {
             display: block;
         }
     </style>
@@ -83,9 +83,10 @@
                         <p>
                             The track involves a qualification phase in which teams need to perform the handover configurations of the <a href="https://corsmal.github.io/benchmark.html">CORSMAL Benchmark protocol</a> remotely in their laboratory (see also the open access <a href="https://doi.org/10.1109/LRA.2020.2969200" target="_blank">publication</a>). Results will be submitted to the track organisers and teams will be ranked on a leaderboard in this page based on the performance scores of the benchmarking protocol.
                         </p>
-                        <p>
-                            The teams will qualify for competing in Vienna in June 2026 depending on their performance and robot availability and requests. A maximum number of 6 teams will qualify to participate in the on-site competition. 
-                        </p>
+                        <!-- <p>
+                            The teams will qualify for competing in Vienna in June 2026 depending on their performance and robot availability and requests. 
+                            A maximum number of 6 teams will qualify to participate in the on-site competition. 
+                        </p> -->
                         <p>
                             Below we also provide details, <a href="#guidelines">guidelines and instructions</a>, and <a href="#starting-kit">documentation</a> for preparing the solution, including reference software, publications, and data.
                         </p>
@@ -94,13 +95,39 @@
                         </p>
                     </div>
 
+                    <div>
+                        <b><span>Qualified teams</span></b>
+                        <p>
+                            The following teams have qualified for the on-site competition in Vienna in June 2026 
+                            based on their commitment, performance in the qualification phase, robot availability and requests, 
+                            space available in Vienna, and other factors.
+                            The list is in alphabetic order. 
+                        </p>
+                        <ul>
+                            <li>3D Vision & Robotics Lab (UR5 request)</li>
+                            <li>AIRLab (UR5 request)</li>
+                            <li>Broken Arm (own robot)</li>
+                            <li>IITGN Robotics Lab (Franka request)</li>
+                            <li>LARICS Grippers (own robot)</li>
+                            <li>Robot Booster (own robot)</li>
+                            <li>Shakey's Legacy (Franka request, or own robot)</li>
+                            <li>SIRSIIT (Franka request)</li>
+                            <li>Youth2Real (own robot)</li>
+                        </ul>
+                    </div>
+
                     <div id="corsmal-leaderboard">
                         <b><span>Leaderboards - CORSMAL Benchmark</span></b>
                         <p>
                             Teams are ranked by the benchmark score.
                         </p>
                         <p>
-                            For reference, we provide the scores obtained by the CORSMAL baseline (see <a href="https://doi.org/10.1109/LRA.2020.2969200" target="_blank"><u>article</u></a> in IEEE Robotics and Automation Letters, 2020). 
+                            The offline score s9 (human intention/hand pose prediction) has not been considered for the ranking as it is not a requirment for the qualification phase, but it is still computed and reported for reference and future comparisons.
+                            The maximum benchmark score is 88.89. The maximum score for the robotic subsystem is 66.67. 
+                        </p>
+                        <p>
+                            We provide the scores obtained by the CORSMAL baseline (see <a href="https://doi.org/10.1109/LRA.2020.2969200" target="_blank"><u>article</u></a> in IEEE Robotics and Automation Letters, 2020) only for references, 
+                            as the computation of various scores has been revised and updated for the qualification.  
                         </p>
 
                         <b><span>Benchmark scores</span></b>
@@ -111,7 +138,7 @@
                         <script type="text/javascript">
                             var table = new Tabulator("#corsmal-overall",
                             {
-                                height:"150px",
+                                height:(corsmal_table.length * 35) + 40 + "px",
                                 reactiveData:true,
                                 data:corsmal_table,
                                 columns:[
@@ -119,7 +146,7 @@
                                     {title:"Overall", field:"score", sorter:"number"},
                                     {title:"Vision", field:"vision", sorter:"number"},
                                     {title:"Robotic", field:"robotics", sorter:"number"},
-                                    {title:"Task completion", field:"task", sorter:"number"}
+                                    {title:"Task", field:"task", sorter:"number"}
                                 ],
                                 initialSort:[
                                     {column:"score", dir:"desc"},
@@ -127,27 +154,72 @@
                             });
                             table.redraw();
                         </script>
+                        <p>Notes on results and scoring:</p>
+                        <ul>
+                            <li>SIRSIIT and AIRLab (returning teams from previous years) submitted results only for the task scores (s10, s11, s12, s13).</li>
+                            <li>Robot Booster uses prior information of the content density to compute the mass of the containers and content.</li>
+                            <li>3D Vision & Robotics Lab use a rule-based approach for vision-based mass estimation based on prior knowledge of the physical properties of the cups (empty-container weight, and container height). We provide a second entry that does not account for the mass estiimation.</li>
+                            <li>IITGN Robotics Lab completed only 216 configurations: the target delivery location was set for each configuration, but the score is computed with respect to a fixed one due to missing reporting. Timings were not correctly reported.</li>
+                            <li>All teams but SIRSIIT use alternative cups and scores are relative to the measurements provided by the used cups.</li>
+                            <li>Broken Arm, LARICS Gripsters, Robot Booster, Shakey's Legacy, 3D Vision & Robotics Lab, IITGN Robotics Lab, and Youth2Real provided results for end-effector reachability (score s8)</li>
+                        </ul>
 
+                        <div class="corsmal-granular-scores" id="corsmal-granular-scores" style="margin-top: 1.5rem;"></div>
+                        <script type="text/javascript">
+                            var table = new Tabulator("#corsmal-granular-scores",
+                            {
+                                height:(corsmal_table.length * 35) + 40 + "px",
+                                reactiveData:true,
+                                data:corsmal_table,
+                                columns:[
+                                    {title:"Name", field:"name"},
+                                    {title:"s1", field:"s1", sorter:"number"},
+                                    {title:"s2", field:"s2", sorter:"number"},
+                                    {title:"s3", field:"s3", sorter:"number"},
+                                    {title:"s4", field:"s4", sorter:"number"},
+                                    {title:"s5", field:"s5", sorter:"number"},
+                                    {title:"s6", field:"s6", sorter:"number"},
+                                    {title:"s7", field:"s7", sorter:"number"},
+                                    {title:"s8", field:"s8", sorter:"number"},
+                                    {title:"s9", field:"s9", sorter:"number"},
+                                    {title:"s10", field:"s10", sorter:"number"},
+                                    {title:"s11", field:"s11", sorter:"number"},
+                                    {title:"s12", field:"s12", sorter:"number"},
+                                    {title:"s13", field:"s13", sorter:"number"}
+                                ],
+                                initialSort:[
+                                    {column:"s9", dir:"desc"},
+                                ]
+                            });
+                            table.redraw();
+                        </script>
                         <div style="margin-top: 1.5rem;">
-                            <span class="legend-toggle" onclick="toggleLegend()">Legend</span>
+                            <span class="legend-toggle" onclick="toggleLegend('legend-granular-scores')">Legend</span>
                         </div>
-                        <div id="legend_groups">
-                            - C1: Cup 1<br>
-                            - C2: Cup 2<br>
-                            - C3: Cup 3<br>
-                            - C4: Cup 4<br>
-                            - G1: Grasp 1<br>
-                            - G2: Grasp 2<br>
-                            - G3: Grasp 3<br>
-                            - HO-L: handover left location<br>
-                            - HO-C: handover centre location<br>
-                            - HO-R: handover right location
+                        <div id="legend-granular-scores">
+                            - s1: score for vision-based estimation of the container width at the top (mm)<br>
+                            - s2: score for vision-based estimation of the container width at the bottom (mm)<br>
+                            - s3: score for vision-based estimation of the container height (mm)<br>
+                            - s4: score for vision-based estimation of the container mass (container + filling)<br>
+                            - s5: score for vision-based estimation of the container fullness (%)<br>
+                            - s6: score for robot-based estimation of the container mass (container + filling)<br>
+                            - s7: offline score for robot-based estimation of the human intention or human hand pose trajectory (not computed)<br>
+                            - s8: offline score for robot-based estimation of end-effector reachability<br>
+                            - s9: score for delivery location accuracy<br>
+                            - s10: score for final mass estimation (container + filling) to assess spilling<br>
+                            - s11: score for the human maneuvring time<br> 
+                            <!-- (taken between the first contact of the human hand with the container and the first contact of the robot end-effector) -->
+                            - s12: score for the handover time<br>
+                            <!-- (time between the last contact of the human hand with the container and the first contact of the robot end-effector) -->
+                            - s13: score for the robot maneuvring time
+                            <!-- (taken between the last contact of the human hand with the container and the last contact of the robot end-effector) -->
                         </div>
+
                         <div class="corsmal-groups" id="corsmal-groups" style="margin-top: 1.5rem;"></div>
                         <script type="text/javascript">
                             var table = new Tabulator("#corsmal-groups",
                             {
-                                height:"150px",
+                                height:(corsmal_table.length * 35) + 40 + "px",
                                 reactiveData:true,
                                 data:corsmal_table,
                                 columns:[
@@ -171,6 +243,21 @@
                             });
                             table.redraw();
                         </script>
+                        <div style="margin-top: 1.5rem;">
+                            <span class="legend-toggle" onclick="toggleLegend('legend_groups')">Legend</span>
+                        </div>
+                        <div id="legend_groups">
+                            - C1: Cup 1<br>
+                            - C2: Cup 2<br>
+                            - C3: Cup 3<br>
+                            - C4: Cup 4<br>
+                            - G1: Grasp 1<br>
+                            - G2: Grasp 2<br>
+                            - G3: Grasp 3<br>
+                            - HO-L: handover left location<br>
+                            - HO-C: handover centre location<br>
+                            - HO-R: handover right location
+                        </div>
                     </div>
 
                     <div id="alternative-cups">
@@ -220,7 +307,7 @@
                             <li><strong>Anonymised video links</strong> accessible to the organisers (no identifying people present; one or more videos can be shared grouping configurations)</li>
                             <li>Optional logs (e.g. joint-state, intermediate measurements) and calibration files (highly recommended to save and store them for reproducibility, especially for every change occuring across configurations)</li> 
                         </ul>
-                        Notes:
+                        <p>Notes:</p>
                         <ul>
                             <li>The offline score s7 will not be computed (no need to submit anything).</li>
                             <li>The targeted delivery location (same for all configurations) must be reported in the metadata JSON form</li>
@@ -477,8 +564,8 @@
     </footer>
 
     <script>
-        function toggleLegend() {
-            var legend = document.getElementById('legend_groups');
+        function toggleLegend(legendId) {
+            var legend = document.getElementById(legendId);
             legend.classList.toggle('visible');
         }
 
