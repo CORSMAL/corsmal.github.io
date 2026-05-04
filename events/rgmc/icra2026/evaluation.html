@@ -54,13 +54,6 @@
             <div id="container" class="clear">
                 <div id="latestnewspage" class="clear">
                     <div>
-                        <b><span>Toolkit</span></b>
-                        <p>
-                            The evaluation toolkit is available at the following GitHub repository: <a href="https://github.com/CORSMAL/rgmc2025-handover-track">rgmc2025-handover-track</a>.
-                        </p>
-                    </div>
-
-                    <div>
                         <b><span>Scoring and ranking</span></b>
                         <ul>
                             <li>
@@ -73,7 +66,10 @@
                                 The overall ranking is based on the final score.
                             </li>
                             <li>
-                                A point-based score is assigned to each task configuration based on the level of difficulty. There are four levels of difficulty. An easy configuration has 10 points. A medium configuration has 15 points. A difficult configuration has 20 points. A hard configuration has 25 points. If the handover fails (i.e. the robot cannot grasp and/or hold the container during the delivery phase or the object falls after the robot places it on the table), the configuration receives 0 points.
+                                A point-based score is assigned to each task configuration based on the level of difficulty. There are four levels of difficulty. 
+                                An easy configuration has 10 points. A medium configuration has 15 points. A difficult configuration has 20 points. A hard configuration has 25 points. 
+                                If the handover fails (i.e. the robot cannot grasp and/or hold the container during the delivery phase or the object falls after the robot places it on the table), 
+                                the configuration receives 0 points.
                             </li>
                             <li>
                                 To assign score points, each configuration should be performed within 5 seconds and containers should be delivered within the predefined area.
@@ -82,7 +78,7 @@
                     </div>
 
                     <div>
-                        <b><span>Performance score</span></b>
+                        <b><span>Performance scores</span></b>
                         <p>
                             Note that the following score is a revisitation of the performance scores provided in the <a href="https://corsmal.github.io/benchmark.html">CORSMAL Benchmark</a>.
                         </p>
@@ -105,6 +101,15 @@
                             For the final mass of the delivered container, we compute a different normalisation function to account for the measured mass of the filled container - if not empty - before (\(\hat{m}_i\)) and after (\(m_i\)) the execution of the task:
                             $$ \mu(m_i, \hat{m}_i) = \begin{cases} \displaystyle 1 - \frac{|m_i - \hat{m}_i|}{\hat{m}_i} & \text{if} \quad |m_i - \hat{m}_i| < \hat{m}_i \\ \displaystyle 0 & \text{otherwise,} \end{cases} $$
                             to assess the amount of content that was spilled (in grams, or g) due to an inaccurate robot grasp or unstable delivery phase.
+                        </p>
+                    </div>
+
+                    <div>
+                        <b><span>Toolkit</span></b>
+                        <p>
+                            The evaluation toolkit is under revision based on the qualification phase.
+                            Previous version is available at the following GitHub repository: 
+                            <a href="https://github.com/CORSMAL/rgmc2025-handover-track">rgmc2025-handover-track</a>.
                         </p>
                     </div>
                 </div>
