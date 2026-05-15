@@ -53,7 +53,7 @@
                     <div>
                         <p>
                             The competition will be held in Vienna during the conference days. 
-                            Teams will execute the human-to-robot handover configurations with unknown objects 
+                            Teams will execute a set of human-to-robot handover configurations with unknown objects 
                             that organizers will provide on-site only once.
                         </p>
                     </div>
@@ -70,19 +70,39 @@
                     </div>
 
                     <div>
-                        <b><span>Logistics</span></b>
+                        <b><span>Logistics (updated 15 May 2026)</span></b>
                         <ul>
+                            <li>The event will be held in the Exhibition Hall B - COMP1 - Robotic Grasping and Manipulation Competition (RGMC).</li>
                             <li>
-                                Teams are expected to bring their own setup. This includes robotic arm, end effector (e.g. 2-finger gripper, such as Robotiq), laptop/workstation (tower PC with monitor), cameras (with tripods, USB-C cables), digital scale, calibration pattern, sockets extension lead, ethernet cable connecting PCs and robotic arm, socket adapter.
+                                Teams are expected to bring their own setup. 
+                                This includes robotic arm, end effector (e.g. 2-finger gripper, such as Robotiq), 
+                                laptop/workstation (tower PC with monitor), cameras (with tripods, USB-C cables), 
+                                digital scale, calibration pattern, sockets extension lead, ethernet cable connecting PCs and 
+                                robotic arm, socket adapter, and clamps.
                             </li>
                             <li>
-                                Teams are expected to mount their own setup configuration. On-site, there will be available standard white tabletop units with a chrome frame, measuring 120 x 70 x 72 cm (L x W x H), which are sturdy enough to support the robots.
+                                On-site there will be 3 Franka FR3 and 5 UR5-e robots available for the teams that requested a robot.
+                            </li>
+                            <li>
+                                Teams are expected to mount their own setup configuration. 
+                                On-site, there will be available standard white tabletop units with a chrome frame, 
+                                measuring 120 x 70 x 72 cm (L x W x H), which are sturdy enough to support the robots.
+                                Each team will have available one table to mount the robot. 
+                                Other tables will be available to place objects or for the team to operate with the laptop.
+                            </li>
+                            <li>
+                                Teams are expected to bring their own clamps and they can only clamp the robot to the table. 
+                                Teams are not allowed to drill and use bolts.
+                            </li>
+                            <li>
+                                Access to the Exhibition Hall B on Sunday 31 May and Monday 1 June requires authorisation. 
                             </li>
                             <li>
                                 For <i>safety</i>, a second person (e.g. from the team) must be ready to stop the robot in case of an anomalous behaviour.
                             </li>
                             <li>
-                                WiFi on the conference site might be unstable and unreliable. We encourage teams to take this aspect in account when designing their solution if calls to API via the Internet is needed.
+                                WiFi on the conference site might be unstable and unreliable. 
+                                We encourage teams to take this aspect in account when designing their solution if calls to API via the Internet is needed.
                             </li>
                             <li>
                                 We remind teams that illumination conditions can differ at the conference site and hence affecting the perception system.
@@ -105,13 +125,13 @@
                         </ol>
                         <p>After the handover configuration is executed:</p>
                         <ol>
-                            <li>Measure the distance between the initial and the delivery location of the container (if not failed)</li>
+                            <li>Measure the delivery location of the container (if not failed)</li>
                             <li>Weight the (filled) container after the execution of the task</li>
                             <li>Report the measures in the .csv file to submit for evaluation (including handover timing)</li>
                         </ol>
                         <p>During the handover execution:</p>
                         <ul>
-                            <li>Controls the start and end of the robotic control and perceptions</li>
+                            <li>Control the start and end of the robotic control and perceptions</li>
                             <li>Ready to stop the robot in case of an anomalous behaviour</li>
                         </ul>
                         
@@ -123,11 +143,12 @@
                             <li>The robot should track and predict the pose of the container to move the arm towards the handover area</li>
                             <li>The volunteer hands the container over to the robot</li>
                             <li>The robot closes the end effector and grasps the container</li>
-                            <li>The robot delivers the container upright within the predefined area.</li>
+                            <li>The robot delivers the container upright at the predefined delivery location.</li>
                         </ol>
                         
                         <p>
-                            Note that the volunteer should avoid assisting the robot (i.e. remaining still at a location until the robot can pick up the container) or assuming an adversarial behaviour (i.e. making it harder for the robot to reach the object).<br>
+                            Note that the volunteer should avoid assisting the robot (i.e. remaining still at a location until the robot can pick up the container) 
+                            or assuming an adversarial behaviour (i.e. making it harder for the robot to reach the object).<br>
                             The handover is supposed to be dynamic: robot starts moving and approaching as soon as the volunteer grasps the container.
                         </p>
                         <p>
