@@ -70,7 +70,7 @@
                     </div>
 
                     <div>
-                        <b><span>Logistics (updated 22 May 2026)</span></b>
+                        <b><span>Logistics (updated 28 May 2026)</span></b>
                         <ul>
                             <li>The event will be held in the Exhibition Hall B - COMP1 - Robotic Grasping and Manipulation Competition (RGMC).</li>
                             <li>
@@ -82,6 +82,7 @@
                             </li>
                             <li>
                                 On-site there will be 3 Franka FR3 and 5 UR5-e robots available for the teams that requested a robot.
+                                The firmware version of the Franka FR3 is 5.9.2.
                             </li>
                             <li>
                                 Teams are expected to mount their own setup configuration. 
@@ -91,9 +92,9 @@
                                 Other tables will be available to place objects or for the team to operate with the laptop.
                             </li>
                             <li>
-                                Teams are expected to bring their own clamps and they can only clamp the robot to the table. 
-                                Teams are not allowed to drill and use bolts. Clamps for Franka FR3 are provided by Vention. 
-                                Clamps for UR5-e are provided by Item24. 
+                                Teams are expected to bring their own clamps (4 clamps are recommended) and they can only clamp the robot to the table. 
+                                Teams are not allowed to drill and use bolts. Robot mounts for Franka FR3 are provided by Vention. 
+                                Robot mounts for UR5-e are provided by Item24. 
                             </li>
                             <li>
                                 Access to the Exhibition Hall B on Sunday 31 May and Monday 1 June requires authorisation. 
@@ -106,7 +107,7 @@
                                 We encourage teams to take this aspect in account when designing their solution if calls to API via the Internet is needed.
                             </li>
                             <li>
-                                We remind teams that illumination conditions can differ at the conference site and hence affecting the perception system.
+                                Illumination conditions can differ at the conference site and hence affecting the perception system.
                             </li>
                         </ul>
                     </div>
@@ -158,21 +159,70 @@
                     </div>
 
                     <div>
+                        <b><span style="font-size: 14.0pt">Rules (in progress and not finalised)</span></b>
+                        <ol>
+                            <li>All configurations executed by the same volunteer (same hand, natural grasp) from another team</li>
+                            <li>Each handover configuration can be executed only once except for hardware failures</li>
+                            <li>The initial location of the container is predefined on the table and 
+                                not reachable by the robotic arm to avoid the robot approaching the container 
+                                before the volunteer graps it.
+                            </li>
+                            <li>Failed handover configurations will get 0 points. Example of failed configurations:
+                                <ul>
+                                    <li>Robot cannot grasp the object during the handover phase</li>
+                                    <li>Robot cannot hold the container during the delivery phase</li>
+                                    <li>Object falls after the robot places it on the table</li>
+                                    <li>Volunteer retreats during the handover phase because of unsafe robot behaviour</li>
+                                    <li>Perception system fails to detect the object for 2 consecutive attempts</li>
+                                </ul>
+                            </li>
+                            <li>System crashes (e.g. hardware failures) or components fails to start (perception or robot) can be re-attempted.</li>
+                        </ol>
+                    </div>
+
+                    <div>
                         <b><span style="font-size: 14.0pt">Submission</span></b>
                         <p>
                             After completing the set of configurations, teams will send a .csv file with the results for each configuration
-                            by email to the track organisers using the information below.
+                            by email to the track organisers using the information below (in progress and not finalised).
                         </p>
-                        <p>
-                            The .csv file must be named according to the following format: <i>teamname.csv</i> 
-                            (replace teamname with the name of your team).
-                        </p>
+                        <ul>
+                            <li>The .csv file must be named according to the following format: <i>teamname.csv</i> 
+                            (replace teamname with the name of your team).</li>
+                            <li>The .csv file must be formatted according to the templated provided and all the fields must be filled, also for failed configurations.</li>
+                            <li>Results must be reported with respect to their configuration id, even if executed in a different order.</li>
+                            <li>The initial measured mass of the containers with its content must be reported for all configurations.</li>
+                            <li>The target delivery location must be reported for each configuration.</li>
+                            <li>If the delivery is successful, the delivery flag must be set to 1. 
+                                The provided template set the flag to the default value of 0 (corresponding to any failure). 
+                            </li>
+                            <li>
+                                If the delivery is not successfull, then final measured mass must be -1 and the estimated delivery location must be -1 (for x, y, z)
+                            </li>
+                            <li>
+                                If there is no contact between the volunteer and the container, then both the human contact time and robot last contact must be set to -1.
+                            </li>
+                            <li>
+                                The robot last contact time must be greater than the human contact time with the container.
+                                We recommend to report the automatic measures of when the robot releases the gripper for the delivery. 
+                                We also recommend to log the timings of the joint-states for any verification of the handover timing.
+                            </li>
+                            <li>
+                                Teams must capture a picture of the initial measures mass and final measured mass on the digital scale for each configuration, 
+                                and of the delivery location if the delivery is successful.
+                            </li>
+                            <li>
+                                For reporting in future documents (technical report, website, blog post, manuscript for publication),
+                                we recommend to save videos of the handover executions, log calibration data, and 
+                                any other relevant data for the analysis and discussion of the results, and reproducibility requests.
+                            </li>
+                        </ul>
                         <p>
                             Organizers will provide the set of handovers configurations to fill the submission file on the competition day.
                         </p>
                         <b><span style="font-size: 12.0pt">Downloads</span></b>
                         <ul>
-                            <li><a href="resources/rgmc-icra2026_handovers_teamname_v1.csv" target="_blank"><u>Template of submission form (CSV, to be updated)</u></a></li>
+                            <li><a href="resources/template_submission_competition.csv" target="_blank"><u>Template of submission form (CSV)</u></a></li>
                             <li><a href="resources/metadata_submission_competition.md" target="_blank"><u>Metadocumentation of submission form (Markdown)</u></a></li>
                         </ul>
                     </div>
