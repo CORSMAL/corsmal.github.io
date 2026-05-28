@@ -78,28 +78,58 @@
                     </div>
 
                     <div>
-                        <b><span>Performance scores</span></b>
+                        <b><span>Performance scores (Updated 28 May 2026)</span></b>
                         <p>
                             Note that the following score is a revisitation of the performance scores provided in the <a href="https://corsmal.github.io/benchmark.html">CORSMAL Benchmark</a>.
                         </p>
                         <p>
-                            Teams are ranked based on a 100-points score \(S\) that results from the aggregation (weighted average) across all task configurations. Each task configuration \(i\) has a pre-assigned score \(\omega_i\) and accounts for the delivery location \(d_i\), the total execution time \(t_i\), and the final mass of the delivered container \(m_i\). The task score is computed as follows:<br>
+                            Teams are ranked based on a 100-points score \(S\) that results from the aggregation (weighted average) across all task configurations. 
+                            Each task configuration \(i\) has a pre-assigned score \(\omega_i\) and accounts for the delivery location \(d_i\), 
+                            the total execution time \(t_i\), and the final mass of the delivered container \(m_i\). 
+                            The task score is computed as follows:<br>
                             $$ S = \frac{1}{3} \sum_i \left[ \omega_i \Psi_i \frac{\delta(d_i, \rho)  + \gamma(t_i, \tau, \eta)  + \mu(m_i, \hat{m}_i)}{3}\right],$$
-                            where \( [ \cdot ]\) is the rounding operation to the nearest integer. The score of a configuration is set 0 (not computed) if the container is not delivered within the area or within the maximum allowed time (indicator function \( \Psi_i \in {0,1} \). The score of all configurations sums up to 300 points and hence we divide by 3 to obtain the 100-point score \(S\).
+                            where \( [ \cdot ]\) is the rounding operation to the nearest integer, \( \Psi_i \in {0,1} \) is an indicator function
+                            that is 1 if the container is delivered within the area and within the maximum allowed time, and 0 otherwise, and 
+                            \( \omega_i \) is the pre-assigned score of the configuration \(i\) based on its level of difficulty 
+                            (5 for easy, 10 for medium, 15 for difficult, and 20 for hard).
+                            The score of a configuration is set to 0 (not computed) if the container is not delivered within the area 
+                            or within the maximum allowed time. 
+                            The score of all configurations sums up to 300 points and hence we divide by 3 to obtain the 100-point score \(S\).
                         </p>
                         <p>
-                            For the delivery location, we define \(d_i\) as the distance between the position of the centre of the base of the container at the end of the task with respect to the target position (in millimetres or mm). We therefore compute a score based on the following normalisation function:
+                            For the delivery location, we define \(d_i\) as the distance between the position of the centre of the base of the container 
+                            at the end of the task with respect to the target position (in millimetres or mm). 
+                            We therefore compute a score based on the following normalisation function:
                             $$ \delta(d_i, \rho) = \begin{cases} \displaystyle 1 - \frac{d_i}{\rho} & \text{if} \quad d_i < \rho \\ \displaystyle 0 & \text{otherwise,} \end{cases} $$
-                            where \( \rho \) is a threshold that defines when an algorithm is unsuccessful for that measure and here represents the radius of the concentric delivery area where the object must be delivered. Specifically, we use as value \( \rho=500 \) mm.
+                            where \( \rho \) is a threshold that defines when an algorithm is unsuccessful for that measure and 
+                            here represents the radius of the concentric delivery area where the object must be delivered. 
+                            Specifically, we set the threshold value to \( \rho=500 \) mm.
                         </p>
                         <p>
-                            For the total execution time, we define \(t_i\) (in milliseconds or ms) as the time from the moment the subject is instructed to grasp the container to the moment the robot releases the gripper at the delivery location to place the container after the handover (unless the handover failed). We therefore compute a score based on the same normalisation function as before:
-                            $$ \gamma(t_i, \tau, \eta) = \begin{cases} \displaystyle 1 - \frac{\max(t_i, \eta) - \eta}{\tau - \eta} & \text{if} \quad t_i < \tau \\ \displaystyle 0 & \text{otherwise,} \end{cases} $$
-                            where \( \tau \) is a threshold that defines when an algorithm is unsuccessful for that measure and here represents the maximum allowed execution time, and \( \eta \) is the minimum expected time to perform a handover. Specifically, we use as values \(\tau=5000\) ms and \(\eta=1000\) ms.
+                            For the total execution time, we define \(t_i\) (in milliseconds or ms) as the time from the moment the subject is instructed to 
+                            grasp the container to the moment the robot releases the gripper at the delivery location to place the container after the handover (unless the handover failed). 
+                            We therefore compute a score based on the following exponential decay function with clamp and plateau:
+                            $$ \gamma(t_i, \tau, \eta) = 
+                            \begin{cases} 
+                                \displaystyle 1  & \text{if} \quad t_i \leq \eta \\
+                                \displaystyle exp\left( - \frac{\left( t_i - \eta \right) }{\tau} \right)& \text{if} \quad \eta < t_i < \alpha \\ 
+                                \displaystyle 0 & \text{otherwise,} 
+                            \end{cases} $$
+                            where \( \alpha = \eta - \tau * ln(\epsilon) \) defines when an algorithm is unsuccessful for that measure and 
+                            here represents the maximum allowed execution time (since \(0 < epsilon < 1 \), \(alpha > \eta \)), 
+                            \( \tau \) is a positive decay time constant,  and \( \eta \) is the minimum expected time to perform a handover. 
+                            Specifically, we use as values \(\tau=5000\) ms, \(\eta=1000\) ms, and \(\epsilon=0.05\).
                         </p>
                         <p>
-                            For the final mass of the delivered container, we compute a different normalisation function to account for the measured mass of the filled container - if not empty - before (\(\hat{m}_i\)) and after (\(m_i\)) the execution of the task:
-                            $$ \mu(m_i, \hat{m}_i) = \begin{cases} \displaystyle 1 - \frac{|m_i - \hat{m}_i|}{\hat{m}_i} & \text{if} \quad |m_i - \hat{m}_i| < \hat{m}_i \\ \displaystyle 0 & \text{otherwise,} \end{cases} $$
+                            For the final mass of the delivered container, we compute a different normalisation function 
+                            to account for the measured mass of the filled container - if not empty - before (\(\hat{m}_i\)) and after (\(m_i\)) 
+                            the execution of the task:
+                            $$ \mu(m_i, \hat{m}_i) = 
+                            \begin{cases} 
+                                \displaystyle 1 - \frac{|m_i - \hat{m}_i|}{\hat{m}_i} & \text{if} \quad |m_i - \hat{m}_i| < \hat{m}_i \\ 
+                                \displaystyle 0 & \text{otherwise,} 
+                            \end{cases} 
+                            $$
                             to assess the amount of content that was spilled (in grams, or g) due to an inaccurate robot grasp or unstable delivery phase.
                         </p>
                     </div>
