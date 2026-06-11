@@ -10,6 +10,10 @@
     <title>CORSMAL | Competition | Human-to-Robot Handovers | ICRA 2026</title>
     <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
     <link rel="stylesheet" href="css/rgmc_track.css" type="text/css">
+
+    <link href="https://unpkg.com/tabulator-tables@6.3.1/dist/css/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@6.3.1/dist/js/tabulator.min.js"></script>
+    <script type="text/javascript" src="js/leaderboards.js"></script>
 </head>
 <body id="top">
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -51,16 +55,12 @@
             <div id="container" class="clear">
                 <div id="latestnewspage" class="clear">
                     <div>
-                        <b><span>Page updated on 29 May 2026</span></b>
+                        <b><span>Page updated on 11 June 2026</span></b>
                         <p>
-                            The competition will be held in Vienna during the conference days. 
-                            Teams will execute a set of human-to-robot handover configurations with unknown objects 
-                            that organizers will provide on-site only once.
+                            The competition was held in Vienna during the conference days. 
+                            Teams executed a set of human-to-robot handover configurations with unknown objects 
+                            that organizers provided on-site only once. 
                         </p>
-                    </div>
-
-                    <div>
-                        <b><span>Objects</span></b>
                         <p>
                             The set of objects for the competition consists of containers for food and liquids, such as 
                             drinking cups, drinking glasses, food boxes, etc. 
@@ -71,7 +71,46 @@
                         </p>
                     </div>
 
-                    <div>
+                    <div id="corsmal-leaderboard">
+                        <b><span>Leaderboard</span></b>
+                        <div class="corsmal-overall" id="corsmal-overall"></div>
+                        <script type="text/javascript">
+                            var table = new Tabulator("#corsmal-overall",
+                            {
+                                height:(competition_table.length * 35) + 5 + "px",
+                                reactiveData:true,
+                                data:competition_table,
+                                columns:[
+                                    {title:"Team", field:"team"},
+                                    {title:"Overall", field:"score", sorter:"number"}
+                                ],
+                                initialSort:[
+                                    {column:"score", dir:"desc"},
+                                ]
+                            });
+                            table.redraw();
+                        </script>
+                        <p>Notes on results and scoring:</p>
+                        <ul>
+                            <li>Teams AIRLab and Shakey’s Legacy had technical issues and could complete only a few configurations. Not listed in this leaderboard.</li>
+                            <li>Team Youth2Real successfully completed 21 out of 24 handover configurations; Robot Booster and LARICS Gripsters: 20 out of 24;
+                                Broken Arm: 18 out of 24; 3D Vision & Robotics Lab: 19 out of 14; and SIRSIIT: 15 out of 24.
+                            </li>
+                        </ul>
+                        <b><span>Results per configuration</span></b>
+                        <p>Filled black circle denotes the configuration weight.</p>
+                        <img src="images/config_res_1.png" alt="Results per configuration (1/2)" style="width:100%;">
+                        <img src="images/config_res_2.png" alt="Results per configuration (2/2)" style="width:100%;">
+                    </div>
+
+                    <!-- <div>
+                        <b><span>Objects</span></b>
+                        <p>
+                            
+                        </p>
+                    </div> -->
+
+                    <!-- <div>
                         <b><span>Logistics</span></b>
                         <ul>
                             <li>
@@ -114,7 +153,7 @@
                                 Illumination conditions can differ at the conference site and hence affecting the perception system.
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
 
                     <div>
                         <b><span>Procedure</span></b>

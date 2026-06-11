@@ -72,11 +72,14 @@ var preparation_table =
 
 var competition_table =
 [
-    {id:1,team:"SirsIIT",score:0.00.toFixed(2)},
-    {id:2,team:"TCS",score:0.00.toFixed(2)},
-    {id:3,team:"ETH SRL",score:0.00.toFixed(2)},
-    {id:4,team:"Air-jnu",score:0.00.toFixed(2)},
-    {id:5,team:"XJTU_Colab",score:0.00.toFixed(2)}
+    {id:1,team:"Youth2Real",score:71.43.toFixed(2)},
+    {id:2,team:"Robot Booster",score:63.11.toFixed(2)},
+    {id:3,team:"LARICS Gripster",score:55.57.toFixed(2)},
+    {id:4,team:"Broken Arm",score:55.26.toFixed(2)},
+    {id:5,team:"3D Vision & Robotics Lab",score:52.86.toFixed(2)},
+    {id:6,team:"SIRSIIT",score:41.16.toFixed(2)}
+    // {id:7,team:"AIRLab",score:6.82.toFixed(2)},
+    // {id:8,team:"Shakey's Legacy",score:3.52.toFixed(2)},
 ];
 
 var corsmal_table =
