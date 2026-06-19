@@ -1,32 +1,109 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
-<head profile="http://gmpg.org/xfn/11">
-	<link rel="shortcut icon" href="favicon.ico" />
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="CORSMAL research team - Collaborative object recognition, shared manipulation and learning project team members and researchers.">
+	<meta name="keywords" content="CORSMAL, robotics, touch, vision, audio, signal processing, human behaviour, research team">
+	<meta property="og:image" content="images/CORSMAL_logo.png">
+	<meta property="og:title" content="CORSMAL: Collaborative object recognition, shared manipulation and learning | Team">
+	<meta property="og:description" content="Meet the CORSMAL research team dedicated to collaborative robotics and object manipulation.">
+ 
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/layout.css" type="text/css">
+ 
+	<title>CORSMAL Team</title>
 
-	<title>CORSMAL: Collaborative object recognition, shared manipulation and learning | Team </title>
+	<style>
+		/* Section heading */
+		#people h1 {
+			font-size: 18px;
+			font-weight: bold;
+			text-align: justify;
+			margin-bottom: 20px;
+		}
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="imagetoolbar" content="no" />
-	<meta http-equiv="KeyWords" content="blog, CORSMAL, robotics, touch, vision, audio, signal processing, human behaviour"/>
-	<meta name="image" property="og:image" content="images/CORSMAL_logo.png">
+		/* Header logo image */
+		#header img {
+			height: 75px;
+			padding: 0;
+		}
 
-	<link rel="stylesheet" href="css/layout.css" type="text/css" />
+		/* Navigation spacing */
+		#topnav ul {
+			margin-top: 5px;
+		}
 
-	<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.slidepanel.setup.js"></script>
-	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
-	<script type="text/javascript" src="js/jquery.tabs.setup.js"></script>
+		/* Wrapper spacing */
+		.wrapper.row2 {
+			margin-bottom: 7px;
+		}
 
+		/* Copyright text */
+		#copyright #fl_left {
+			font-size: 12px;
+		}
 
-	<style type="text/css">
-	/*tr:hover {background-color: #f5f5f5;}*/
-	.tg  {border-collapse:collapse;border-spacing:0;}
-	.tg td{border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;}
-	.tg th{border-color:black;border-style:solid;border-width:1px;font-weight:normal;font-size:14.0pt;overflow:hidden;padding:10px 5px;word-break:normal;}
-	.tg .tg-km2t{border-color:#ffffff;font-weight:bold;font-size:14.0pt;text-align:left;vertical-align:top}
-	.tg .tg-zv4m{border-color:#ffffff;font-size:13.0pt;text-align:left;vertical-align:top}
-</style>
+		/* Team grid layout */
+		.team-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+			gap: 30px;
+			padding: 20px;
+			text-align: center;
+		}
+ 
+		.team-member {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+ 
+		.team-member img {
+			width: 140px;
+			height: 149px;
+			object-fit: cover;
+			border-radius: 4px;
+			margin-bottom: 10px;
+		}
+ 
+		.team-member a {
+			text-decoration: none;
+			color: inherit;
+		}
+ 
+		.team-member a:hover img {
+			opacity: 0.8;
+			transition: opacity 0.3s ease;
+		}
+ 
+		.team-member-name {
+			font-weight: bold;
+			font-size: 14px;
+			margin-top: 10px;
+		}
+ 
+		@media (max-width: 768px) {
+			#people h1 {
+				font-size: 16px;
+			}
 
+			.team-grid {
+				grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+				gap: 20px;
+				padding: 15px;
+			}
+ 
+			.team-member img {
+				width: 100px;
+				height: 107px;
+			}
+ 
+			.team-member-name {
+				font-size: 12px;
+			}
+		}
+	</style>
 </head>
 <body id="top">
 	<div class="wrapper row1">
@@ -34,171 +111,179 @@
 			<div class="fl_left">
 				<ul>
 					<li>
-						<p>
-							<a href="index.html"><img src="images/CORSMAL_logo.png" style="padding:0px 0px 0px 0px;height:75px" alt="CORSMAL"/></a>
-						</p>
+						<a href="index.html"><img src="images/CORSMAL_logo.png" alt="CORSMAL Logo"></a>
 					</li>
 				</ul>
 			</div>
-</div>
-</div>
-<!-- 2###################################################################################################### -->
-<div class="wrapper row2"; style="margin-bottom: 7px;">
-	<div class="rnd">
-		<!-- ###### -->
-		<div id="topnav">
-			<ul style="margin-top: 5px;">
-				<li><a href="index.html"><b>Home</b></a></li>
-				<li><a href="objectives.html"><b>Objectives</b></a></li>				
-				<li><a href="publications.html"><b>Publications</b></a></li>
-				<li><a href="blog.html"><b>Blog</b></a></li>
-				<li ><a href="events.html"><b>Events</b></a></li>
-				<li ><a href="code.html"><b>Code</b></a></li>
-				<li><a href="data.html"><b>Data</b></a></li>
-				<li><a href="benchmark.html"><b>Benchmark</b></a></li>
-				<li><a href="challenge.html"><b>Challenge</b></a></li>
-				<li class="active"><a href="team.html"><b>Team</b></a></li>
-			</ul>
 		</div>
-		<!-- ###### -->
 	</div>
-</div>
+ 
+	<div class="wrapper row2">
+		<div class="rnd">
+			<nav id="topnav">
+				<ul>
+					<li><a href="index.html"><strong>Home</strong></a></li>
+					<li><a href="objectives.html"><strong>Objectives</strong></a></li>
+					<li><a href="publications.html"><strong>Publications</strong></a></li>
+					<li><a href="blog.html"><strong>Blog</strong></a></li>
+					<li><a href="events.html"><strong>Events</strong></a></li>
+					<li><a href="code.html"><strong>Code</strong></a></li>
+					<li><a href="data.html"><strong>Data</strong></a></li>
+					<li><a href="benchmark.html"><strong>Benchmark</strong></a></li>
+					<li><a href="challenge.html"><strong>Challenge</strong></a></li>
+					<li class="active"><a href="team.html"><strong>Team</strong></a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
 
-<!-- 3####################################################################################################### -->
 <div class="wrapper row4">
-	<div id="container" class="clear">
-		<!-- ####################################################################################################### -->
-		<div id="people" class="clear">
-			<h2><p class=xmsonormal style='text-align:justify;text-justify:inter-ideograph'><b><span style='font-size:16.0pt'>Team</span></b><o:p></o:p></p></h2>
-		
-			<div id="column" style='text-align:center'>
-				<table class="tg" width="100%" style="text-align: center;">
-					<tbody style="text-align: center;">
-						<tr>
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="https://www.linkedin.com/in/kaspar-althoefer-92368b/" target="_blank">
-									<img src="images/team/KasparAlthoefer.jpg" alt="Kaspar Althoefer" width="140" height="149"/>
-								</a>
-								<br><b>Kaspar Althoefer</b>
-							</td>
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="https://www.linkedin.com/in/aude-g-billard-81aa59/" target="_blank">
-									<img src="images/team/AudeBillard.jpg" alt="Aude Billard" width="140" height="149"/>
-								</a>
-								<br><b>Aude Billard</b>
-							</td>
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="https://www.linkedin.com/in/andrea-cavallaro-b631141/" target="_blank">
-									<img src="images/team/AndreaCavallaro.jpg" alt="Andrea Cavallaro" width="140" height="149"/>
-								</a>
-								<br><b>Andrea Cavallaro</b>
-							</td>
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="https://www.linkedin.com/in/pascal-frossard-b96602/" target="_blank">
-									<img src="images/team/PascalFrossard.jpg" alt="Pascal Frossard" width="140" height="149"/>
-								</a>
-								<br><b>Pascal Frossard</b>							
-							</td>
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="http://www.isir.upmc.fr/index.php?op=view_profil&lang=en&id=185" target="_blank">
-									<img src="images/team/VeroniquePerdereau.jpg" alt="Veronique Perdereau" width="140" height="149"/>
-									</a>
-									<br><b>Veronique Perdereau</b>								
-							</td>
-							</tr>
-							<tr>
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="http://costashatz.github.io/" target="_blank">
-									<img src="images/team/KonstantinosChatzilygeroudis.jpg" alt="Konstantinos Chatzilygeroudis" width="140" height="149"/>
-								</a>
-								<br><b>Konstantinos Chatzilygeroudis</b>
-							</td>
-							
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="http://eecs.qmul.ac.uk/profiles/sanchezmatillaricardo.html" target="_blank">
-									<img src="images/team/RicardoSanchezMatilla.jpg" alt="Ricardo Sanchez Matilla" width="140" height="149"/>
-								</a>
-								<br><b>Ricardo Sanchez-Matilla</b>													
-							</td>
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="https://www.linkedin.com/in/amodas/" target="_blank">
-									<img src="images/team/ApostolosModas.jpg" alt="Apostolos Modas" width="140" height="149"/>
-								</a>
-								<br><b>Apostolos Modas</b>													
-							</td>
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="http://www.eecs.qmul.ac.uk/~ax300/" target="_blank">
-									<img src="images/team/AlessioXompero.jpg" alt="Alessio Xompero" width="140" height="149"/>
-									</a>
-									<br><b>Alessio Xompero</b>								
-							</td>
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="https://nunoduarte.github.io/" target="_blank">
-									<img src="images/team/NunoFerreiraDuarte.png" alt="Nuno Ferreira Duarte" width="140" height="149"/>
-								</a>
-								<br><b>Nuno Ferreira Duarte</b>
-							</td>
-						</tr>
-						<tr>
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="https://people.epfl.ch/ahalya.prabhakar/?lang=en" target="_blank">
-									<img src="images/team/AhalyaPrabhakar.png" alt="Ahalya Prabhakar" width="140" height="149"/>
-									</a>
-									<br><b>Ahalya Prabhakar</b>
-							</td>
-							
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="https://www.linkedin.com/in/dounia-kitouni/" target="_blank">
-									<img src="images/team/dounia.JPG" alt="Dounia Kitouni" width="140" height="149"/>
-								</a>
-								<br><b>Dounia Kitouni</b>													
-							</td>
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="http://www.isir.upmc.fr/?op=view_profil&lang=fr&id=489" target="_blank">
-									<img src="images/team/ghani.JPG" alt="Kissoum Ghani" width="140" height="149"/>
-								</a>
-								<br><b>Kissoum Ghani</b>													
-							</td>
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="https://www.linkedin.com/in/changjae-oh-42a36685/" target="_blank">
-									<img src="images/team/ChangjaeOh.jpg" alt="Changjae Oh" width="140" height="149"/>
-								</a>
-									<br><b>Changjae Oh</b>							
-							</td>
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="https://www.linkedin.com/in/yik-lung-pang-16363088/" target="_blank"></a>
-									<img src="images/team/YikLungPang.jpeg" alt="Yik Lung Pang" width="140" height="149"/>
-								</a>
-								<br><b>Yik Lung Pang</b>												
-							</td>
-							<td class="tg-zv4m" style="text-align:center">
-								<a href="https://www.linkedin.com/in/riccardo-mazzon/" target="_blank">
-									<img src="images/team/RiccardoMazzon.png" alt="Riccardo Mazzon" width="140" height="149"/>
-								</a>
-								<br><b>Riccardo Mazzon</b>
-							</td>
-						</tr>
-						<tr>
-							
-						</tr>
-					</tbody>
-				</table>	
+		<div id="container" class="clear">
+			<div id="people" class="clear">
+				<h1>Team</h1>
+ 
+				<div class="team-grid">
+					<!-- Row 1 -->
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://www.linkedin.com/in/kaspar-althoefer-92368b/" target="_blank" rel="noopener">
+							<img src="images/team/KasparAlthoefer.jpg" alt="Kaspar Althoefer">
+						</a>
+						<div class="team-member-name" itemprop="name">Kaspar Althoefer</div>
+						<meta itemprop="url" content="https://www.linkedin.com/in/kaspar-althoefer-92368b/">
+					</div>
+ 
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://www.linkedin.com/in/aude-g-billard-81aa59/" target="_blank" rel="noopener">
+							<img src="images/team/AudeBillard.jpg" alt="Aude Billard">
+						</a>
+						<div class="team-member-name" itemprop="name">Aude Billard</div>
+						<meta itemprop="url" content="https://www.linkedin.com/in/aude-g-billard-81aa59/">
+					</div>
+ 
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://www.linkedin.com/in/andrea-cavallaro-b631141/" target="_blank" rel="noopener">
+							<img src="images/team/AndreaCavallaro.jpg" alt="Andrea Cavallaro">
+						</a>
+						<div class="team-member-name" itemprop="name">Andrea Cavallaro</div>
+						<meta itemprop="url" content="https://www.linkedin.com/in/andrea-cavallaro-b631141/">
+					</div>
+ 
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://www.linkedin.com/in/pascal-frossard-b96602/" target="_blank" rel="noopener">
+							<img src="images/team/PascalFrossard.jpg" alt="Pascal Frossard">
+						</a>
+						<div class="team-member-name" itemprop="name">Pascal Frossard</div>
+						<meta itemprop="url" content="https://www.linkedin.com/in/pascal-frossard-b96602/">
+					</div>
+ 
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://www.linkedin.com/in/véronique-perdereau-50710b210/" target="_blank" rel="noopener">
+							<img src="images/team/VeroniquePerdereau.jpg" alt="Veronique Perdereau">
+						</a>
+						<div class="team-member-name" itemprop="name">Veronique Perdereau</div>
+						<meta itemprop="url" content="https://www.linkedin.com/in/véronique-perdereau-50710b210/">
+					</div>
+ 
+					<!-- Row 2 -->
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://www.linkedin.com/in/konstantinoschatzilygeroudis/" target="_blank" rel="noopener">
+							<img src="images/team/KonstantinosChatzilygeroudis.jpg" alt="Konstantinos Chatzilygeroudis">
+						</a>
+						<div class="team-member-name" itemprop="name">Konstantinos Chatzilygeroudis</div>
+						<meta itemprop="url" content="https://www.linkedin.com/in/konstantinoschatzilygeroudis/">
+					</div>
+ 
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://www.linkedin.com/in/ricardo-sánchez-matilla-phd-20223694/" target="_blank" rel="noopener">
+							<img src="images/team/RicardoSanchezMatilla.jpg" alt="Ricardo Sanchez-Matilla, CORSMAL team member">
+						</a>
+						<div class="team-member-name" itemprop="name">Ricardo Sanchez-Matilla</div>
+						<meta itemprop="url" content="https://www.linkedin.com/in/ricardo-sánchez-matilla-phd-20223694/">
+					</div>
+ 
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://www.linkedin.com/in/amodas/" target="_blank" rel="noopener">
+							<img src="images/team/ApostolosModas.jpg" alt="Apostolos Modas, CORSMAL team member">
+						</a>
+						<div class="team-member-name" itemprop="name">Apostolos Modas</div>
+						<meta itemprop="url" content="https://www.linkedin.com/in/amodas/">
+					</div>
+ 
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://www.linkedin.com/in/alessioxompero/" target="_blank" rel="noopener">
+							<img src="images/team/AlessioXompero.jpg" alt="Alessio Xompero">
+						</a>
+						<div class="team-member-name" itemprop="name">Alessio Xompero</div>
+						<meta itemprop="url" content="https://www.linkedin.com/in/alessioxompero/">
+					</div>
+ 
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://nunoduarte.github.io/" target="_blank" rel="noopener">
+							<img src="images/team/NunoFerreiraDuarte.png" alt="Nuno Ferreira Duarte">
+						</a>
+						<div class="team-member-name" itemprop="name">Nuno Ferreira Duarte</div>
+						<meta itemprop="url" content="https://nunoduarte.github.io/">
+					</div>
+ 
+					<!-- Row 3 -->
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://www.linkedin.com/in/ahalyaprabhakar/" target="_blank" rel="noopener">
+							<img src="images/team/AhalyaPrabhakar.png" alt="Ahalya Prabhakar">
+						</a>
+						<div class="team-member-name" itemprop="name">Ahalya Prabhakar</div>
+						<meta itemprop="url" content="https://www.linkedin.com/in/ahalyaprabhakar/">
+					</div>
+ 
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://www.linkedin.com/in/dounia-kitouni/" target="_blank" rel="noopener">
+							<img src="images/team/dounia.JPG" alt="Dounia Kitouni">
+						</a>
+						<div class="team-member-name" itemprop="name">Dounia Kitouni</div>
+						<meta itemprop="url" content="https://www.linkedin.com/in/dounia-kitouni/">
+					</div>
+ 
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="http://www.isir.upmc.fr/?op=view_profil&lang=fr&id=489" target="_blank" rel="noopener">
+							<img src="images/team/ghani.JPG" alt="Kissoum Ghani">
+						</a>
+						<div class="team-member-name" itemprop="name">Kissoum Ghani</div>
+						<meta itemprop="url" content="http://www.isir.upmc.fr/?op=view_profil&lang=fr&id=489">
+					</div>
+ 
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://www.linkedin.com/in/changjae-oh-42a36685/" target="_blank" rel="noopener">
+							<img src="images/team/ChangjaeOh.jpg" alt="Changjae Oh, CORSMAL team member">
+						</a>
+						<div class="team-member-name" itemprop="name">Changjae Oh</div>
+						<meta itemprop="url" content="https://www.linkedin.com/in/changjae-oh-42a36685/">
+					</div>
+ 
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://www.linkedin.com/in/yik-lung-pang-16363088/" target="_blank" rel="noopener">
+							<img src="images/team/YikLungPang.jpeg" alt="Yik Lung Pang, CORSMAL team member">
+						</a>
+						<div class="team-member-name" itemprop="name">Yik Lung Pang</div>
+						<meta itemprop="url" content="https://www.linkedin.com/in/yik-lung-pang-16363088/">
+					</div>
+ 
+					<div class="team-member" itemscope itemtype="https://schema.org/Person">
+						<a href="https://www.linkedin.com/in/riccardo-mazzon/" target="_blank" rel="noopener">
+							<img src="images/team/RiccardoMazzon.png" alt="Riccardo Mazzon, CORSMAL team member">
+						</a>
+						<div class="team-member-name" itemprop="name">Riccardo Mazzon</div>
+						<meta itemprop="url" content="https://www.linkedin.com/in/riccardo-mazzon/">
+					</div>
+				</div>
 			</div>
-</div>
-</div>
-</div>
-
-
-<!-- ####################################################################################################### -->
-<!-- <div class="clearing">&nbsp;</div>-->
-<div class="wrapper bottomPg">
-	<div id="copyright">
-		<div id="fl_left" style="font-size:12px">
-			© Copyright CORSMAL 2019-2022
-		</div>	  
+		</div>
 	</div>
-</div>
-<!-- footer -->
-<!--added to clear error with content element -->
+ 
+	<div class="wrapper bottomPg">
+		<div id="copyright">
+			<div id="fl_left">
+				© Copyright CORSMAL 2019-2022
+			</div>
+		</div>
+	</div>
 </body>
 </html>
