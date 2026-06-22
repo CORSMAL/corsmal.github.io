@@ -1,149 +1,237 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
-<head profile="http://gmpg.org/xfn/11">
-	<link rel="shortcut icon" href="favicon.ico" />	
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="CORSMAL: Collaborative object recognition, shared manipulation and learning. A research project on robotics, object manipulation, and AI.">
+	<meta name="keywords" content="CORSMAL, robotics, touch, vision, audio, signal processing, human behaviour">
+	<meta property="og:image" content="images/CORSMAL_logo.png">
+	<meta property="og:title" content="CORSMAL: Collaborative object recognition, shared manipulation and learning">
+	<meta property="og:description" content="A collaborative research project on robot object recognition and shared manipulation learning.">
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/layout.css" type="text/css">
 
 	<title>CORSMAL: Collaborative object recognition, shared manipulation and learning | Home</title>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="imagetoolbar" content="no" />
-	<meta http-equiv="KeyWords" content="CORSMAL, robotics, touch, vision, audio, signal processing, human behaviour"/>
-	<meta name="image" property="og:image" content="images/CORSMAL_logo.png">
+	<style>
+		/* Header and logo */
+		#header img {
+			padding: 0;
+			height: 75px;
+		}
 
-	<link rel="stylesheet" href="css/layout.css" type="text/css" />
-	
-	<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.slidepanel.setup.js"></script>
-	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
-	<script type="text/javascript" src="js/jquery.tabs.setup.js"></script>
+		/* Navigation */
+		#topnav ul {
+			margin-top: 5px;
+		}
 
+		#topnav b {
+			font-weight: bold;
+		}
+
+		/* Wrapper spacing */
+		.wrapper.row2 {
+			margin-bottom: 7px;
+		}
+
+		/* Featured section */
+		#featured_slide {
+			margin-bottom: 30px;
+		}
+
+		#featured_content {
+			border: 1px solid #999999;
+		}
+
+		.featured_box img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		.featured_box img.opacity-90 {
+			opacity: 0.9;
+		}
+
+		.featured_box img.opacity-85 {
+			opacity: 0.85;
+		}
+
+		.floater {
+			font-size: 12px;
+		}
+
+		/* Main content */
+		#container {
+			padding-top: 1px;
+			padding-bottom: 20px;
+		}
+
+		#homepage {
+			margin-bottom: 0;
+		}
+
+		#left_column {
+			display: inline-block;
+		}
+
+		#left_column:last-of-type {
+			margin-left: 20px;
+		}
+
+		#latestnews {
+			display: inline-block;
+		}
+
+		/* Latest news styling */
+		#latestnews img {
+			width: 85%;
+			display: block;
+			margin: 0 auto;
+		}
+
+		#latestnews br:last-of-type {
+			margin-bottom: 20px;
+		}
+
+		/* Copyright text */
+		#copyright #fl_left {
+			font-size: 12px;
+		}
+
+		/* Link styling */
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		/* News center alignment */
+		.news-center {
+			text-align: center;
+		}
+	</style>
 </head>
 
 <body id="top">
-	<div class="wrapper row1"> 
+	<div class="wrapper row1">
 		<div id="header" class="clear">
 			<div class="fl_left">
 				<ul>
 					<li>
-						<p>
-							<a href="index.html"><img src="images/CORSMAL_logo.png" style="padding:0px 0px 0px 0px;height:75px" alt="CORSMAL"/></a>
-						</p>
+						<a href="index.html"><img src="images/CORSMAL_logo.png" alt="CORSMAL Logo"></a>
 					</li>
 				</ul>
 			</div>
-</div>
-</div>
-<!-- 2###################################################################################################### -->
-<div class="wrapper row2"; style="margin-bottom: 7px;">
-	<div class="rnd">
-		<!-- ###### -->
-		<div id="topnav">
-			<ul style="margin-top: 5px;">
-				<li class="active"><a href="index.html"><b>Home</b></a></li>
-				<li><a href="objectives.html"><b>Objectives</b></a></li>
-				<li><a href="publications.html"><b>Publications</b></a></li>
-				<li><a href="blog.html"><b>Blog</b></a></li>
-				<li><a href="events.html"><b>Events</b></a></li>
-				<li><a href="code.html"><b>Code</b></a></li>
-				<li><a href="data.html"><b>Data</b></a></li>
-				<li><a href="benchmark.html"><b>Benchmark</b></a></li>
-				<li><a href="challenge.html"><b>Challenge</b></a></li>
-				<li class="last"><a href="team.html"><b>Team</b></a></li>
-			</ul>
 		</div>
-		<!-- ###### -->
 	</div>
-</div>
-<!-- 3####################################################################################################### -->
-<div class="wrapper">
-	<div id="featured_slide" style="margin-bottom:30px">
-		<div id="featured_wrap">
-			<ul id="featured_tabs">        
-				<li><a href="#fc1">The project<br />
-					<span>aim and objectives</span></a></li>
-					<li><a href="#fc2">Research<br />
-						<span>check out our publications</span></a></li>
-						<li><a href="#fc3">Resources<br />
-							<span>explore the software</span></a></li>
-							<li><a href="#fc4">News<br />
-								<span>read the latest articles</span></a></li>
-							</ul>
-							<div id="featured_content" style="border:1px solid #999999;">
-								<a href="objectives.html">
-									<div class="featured_box" id="fc1"><img src="images/handover.png" style="opacity:0.9;" alt="Robot handover" />
-										<div class="floater" style="font-size:12px">Continue Reading &raquo;</a></div>
-									</div>
-									<a href="publications.html">
-										
-										<div class="featured_box" id="fc2"><img src="images/robot_touching.jpg" alt="Robot touching" />
-											<!--<div class="featured_box" id="fc1"><img src="images/diagram.png" alt="Diagram" />-->
-												<div class="floater" style="font-size:12px">Continue Reading &raquo;</a></div>
-											</div>
-											<a href="code.html">
-												<div class="featured_box" id="fc3"><img src="images/coding.jpg" style="opacity:0.85;" alt="Coding" border="5" />
-													<div class="floater" style="font-size:12px;">Continue Reading &raquo;</a></div>
-												</div>
-												<a href="blog.html">
-													<!--<div class="featured_box" id="fc4"><img src="images/gaussian_fabio.png" alt="Gaussian" />-->
-														<div class="featured_box" id="fc4"><img src="images/prize.png" style="opacity:0.9;" alt="Robot blog" />
-															<div class="floater" style="font-size:12px">Continue Reading &raquo;</a></div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!-- ###################################################################################################### -->
-										<div class="wrapper row4">
-											<div id="container" class="clear" style="padding-top:1px;padding-bottom:20px">
-	<!-- ####################################################################################################### -->
-	<div id="homepage" class="clear" style="margin-bottom:0px">
-		
-		
-		<!-- ###### -->
-		<div id="left_column">
-			<h2>Datasets</h2>
-			<div class="imgholder"><a href="data.html"><img src="images/datasets.jpg" alt="Datasets" width="220" height="150" /></a></div>
-			<h2>Software</h2>
-			<div class="imgholder"><a href="code.html"><img src="images/benchmark_code.png" alt="Coding" width="220"  /></a></div>
-		</div>		
-		
-		<div id="latestnews">
-			<h2>Latest news</h2>
-			<b>Workshop on Reproducible Benchmarking of Robotic Grasping and Manipulation</b><br>
-			2026 IEEE/RJS Int. Conf. Intell. Robots and Systems (IROS)<br>
-			1 October 2026, Pittsburgh, PA, USA<br><br>
-			<div style="text-align: center;">
-			<img src="images/rgmcw_iros26.png" style="width:85%"/><br>
-			<!-- <img src="images/handover_new.png" style="width:75%"/><br>
-			<img src="images/ICRA-VIE26-logo.webp" alt=""style="width:75%"/> -->
-			<br><br>
-			</div>			
-			[<a href="https://sites.google.com/view/rgmcw2026"><u>details</u></a>]
-			<!-- [<a href="https://corsmal.github.io/events/rgmc/icra2026/"><u>track details</u></a>] -->
+
+	<div class="wrapper row2">
+		<div class="rnd">
+			<nav id="topnav">
+				<ul>
+					<li class="active"><a href="index.html"><strong>Home</strong></a></li>
+					<li><a href="objectives.html"><strong>Objectives</strong></a></li>
+					<li><a href="publications.html"><strong>Publications</strong></a></li>
+					<li><a href="blog.html"><strong>Blog</strong></a></li>
+					<li><a href="events.html"><strong>Events</strong></a></li>
+					<li><a href="code.html"><strong>Code</strong></a></li>
+					<li><a href="data.html"><strong>Data</strong></a></li>
+					<li><a href="benchmark.html"><strong>Benchmark</strong></a></li>
+					<li><a href="challenge.html"><strong>Challenge</strong></a></li>
+					<li class="last"><a href="team.html"><strong>Team</strong></a></li>
+				</ul>
+			</nav>
 		</div>
-		
-		<!-- ###### -->
-		<div id="left_column" style="margin-left:20px">
-			<h2>Recent blog posts</h2>
-			<div class="imgholder"><a href="blog.html"><img src="images/OpenScience_slide.png" alt="Blog" width="220" /></a></div>
-			<h2>Recent publications</h2>
-			<div class="imgholder"><a href="publications.html"><img src="images/publications_2.jpg" alt="Publications" width="220" height="150" /></a></div>
+	</div>
+
+	<div class="wrapper">
+		<div id="featured_slide">
+			<div id="featured_wrap">
+				<ul id="featured_tabs">
+					<li><a href="#fc1">The project<br><span>aim and objectives</span></a></li>
+					<li><a href="#fc2">Research<br><span>check out our publications</span></a></li>
+					<li><a href="#fc3">Resources<br><span>explore the software</span></a></li>
+					<li><a href="#fc4">News<br><span>read the latest articles</span></a></li>
+				</ul>
+
+				<div id="featured_content">
+					<div class="featured_box" id="fc1">
+						<a href="objectives.html">
+							<img src="images/handover.png" class="opacity-90" alt="Robot handover">
+							<div class="floater">Continue Reading &raquo;</div>
+						</a>
+					</div>
+
+					<div class="featured_box" id="fc2">
+						<a href="publications.html">
+							<img src="images/robot_touching.jpg" alt="Robot touching">
+							<div class="floater">Continue Reading &raquo;</div>
+						</a>
+					</div>
+
+					<div class="featured_box" id="fc3">
+						<a href="code.html">
+							<img src="images/coding.jpg" class="opacity-85" alt="Coding">
+							<div class="floater">Continue Reading &raquo;</div>
+						</a>
+					</div>
+
+					<div class="featured_box" id="fc4">
+						<a href="blog.html">
+							<img src="images/prize.png" class="opacity-90" alt="Robot blog">
+							<div class="floater">Continue Reading &raquo;</div>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
-		
-		<!-- ####################################################################################################### -->
 	</div>
-</div>
-</div>
-<!-- ####################################################################################################### -->
-<!-- <div class="clearing">&nbsp;</div>-->
-<div class="wrapper bottomPg">
-	<div id="copyright">
-		<div id="fl_left" style="font-size:12px">
-			© Copyright CORSMAL 2019-2026
-		</div>	  
+
+	<div class="wrapper row4">
+		<div id="container" class="clear">
+			<div id="homepage" class="clear">
+				<div id="left_column">
+					<h2>Datasets</h2>
+					<div class="imgholder"><a href="data.html"><img src="images/datasets.jpg" alt="Datasets" width="220" height="150"></a></div>
+
+					<h2>Software</h2>
+					<div class="imgholder"><a href="code.html"><img src="images/benchmark_code.png" alt="Coding" width="220"></a></div>
+				</div>
+
+				<div id="latestnews">
+					<h2>Latest news</h2>
+					<p><strong>Workshop on Reproducible Benchmarking of Robotic Grasping and Manipulation</strong><br>
+					2026 IEEE/RJS Int. Conf. Intell. Robots and Systems (IROS)<br>
+					1 October 2026, Pittsburgh, PA, USA</p>
+
+					<div class="news-center">
+						<img src="images/rgmcw_iros26.png" alt="IROS 2026 Workshop">
+						<p>[<a href="https://sites.google.com/view/rgmcw2026"><u>details</u></a>]</p>
+					</div>
+				</div>
+
+				<div id="left_column">
+					<h2>Recent blog posts</h2>
+					<div class="imgholder"><a href="blog.html"><img src="images/OpenScience_slide.png" alt="Blog" width="220"></a></div>
+
+					<h2>Recent publications</h2>
+					<div class="imgholder"><a href="publications.html"><img src="images/publications_2.jpg" alt="Publications" width="220" height="150"></a></div>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
-<!-- footer -->
-<!--added to clear error with content element -->
+
+	<div class="wrapper bottomPg">
+		<div id="copyright">
+			<div id="fl_left">
+				© Copyright CORSMAL 2019-2026
+			</div>
+		</div>
+	</div>
 </body>
 </html>
