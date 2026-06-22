@@ -10,146 +10,60 @@
 	<meta property="og:description" content="A collaborative research project on robot object recognition and shared manipulation learning.">
 
 	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
+	<link rel="stylesheet" href="css/academicons.css">
 
-	<title>CORSMAL: Collaborative object recognition, shared manipulation and learning | Home</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 
-	<style>
-		/* Header and logo */
-		#header img {
-			padding: 0;
-			height: 75px;
-		}
+	<title>CORSMAL | Home</title>
 
-		/* Navigation */
-		#topnav ul {
-			margin-top: 5px;
-		}
-
-		#topnav b {
-			font-weight: bold;
-		}
-
-		/* Wrapper spacing */
-		.wrapper.row2 {
-			margin-bottom: 7px;
-		}
-
-		/* Featured section */
-		#featured_slide {
-			margin-bottom: 30px;
-		}
-
-		#featured_content {
-			border: 1px solid #999999;
-		}
-
-		.featured_box img {
-			max-width: 100%;
-			height: auto;
-			display: block;
-		}
-
-		.featured_box img.opacity-90 {
-			opacity: 0.9;
-		}
-
-		.featured_box img.opacity-85 {
-			opacity: 0.85;
-		}
-
-		.floater {
-			font-size: 12px;
-		}
-
-		/* Main content */
-		#container {
-			padding-top: 1px;
-			padding-bottom: 20px;
-		}
-
-		#homepage {
-			margin-bottom: 0;
-		}
-
-		#left_column {
-			display: inline-block;
-		}
-
-		#left_column:last-of-type {
-			margin-left: 20px;
-		}
-
-		#latestnews {
-			display: inline-block;
-		}
-
-		/* Latest news styling */
-		#latestnews img {
-			width: 85%;
-			display: block;
-			margin: 0 auto;
-		}
-
-		#latestnews br:last-of-type {
-			margin-bottom: 20px;
-		}
-
-		/* Copyright text */
-		#copyright #fl_left {
-			font-size: 12px;
-		}
-
-		/* Link styling */
-		a {
-			text-decoration: none;
-			color: inherit;
-		}
-
-		a:hover {
-			text-decoration: underline;
-		}
-
-		/* News center alignment */
-		.news-center {
-			text-align: center;
-		}
-	</style>
+	<script src="js/menu.js" defer></script>
 </head>
 
 <body id="top">
-	<div class="wrapper row1">
-		<div id="header" class="clear">
-			<div class="fl_left">
-				<ul>
-					<li>
-						<a href="index.html"><img src="images/CORSMAL_logo.png" alt="CORSMAL Logo"></a>
-					</li>
-				</ul>
+<div id="menu">
+<div class="logo">
+	<a href="index.html" class="active"><img src="images/CORSMAL_logo.png" alt="CORSMAL Logo"></a>
+</div>
+
+<nav aria-label="Breadcrumb" class="breadcrumb">
+	<div class="menu-toggle"><span></span></div>
+	<ul>
+		<li class="subnav">
+			<a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
+			<div class="subnav-content">
+				<a href="objectives.html">Objectives</a>
+				<a href="team.html">Team</a>
 			</div>
-		</div>
-	</div>
+		</li>
+		<li class="subnav">
+			<a href="publications.html" role="button" aria-expanded="false" aria-haspopup="true">Publications</a>
+		</li>
+		<li class="subnav">
+			<a href="data.html" role="button" aria-expanded="false" aria-haspopup="true">Data</a>
+		</li>
+		<li class="subnav">
+			<a href="code.html" role="button" aria-expanded="false" aria-haspopup="true">Software</a>
+		</li>
+		<li class="subnav">
+			<a href="" role="button" aria-expanded="false" aria-haspopup="true">Benchmarking</a>
+			<div class="subnav-content">
+				<a href="benchmark.html">Protocol</a>
+				<a href="challenge.html">Challenge</a>
+			</div>
+		</li>
+		<li class="subnav">
+			<a href="blog.html" role="button" aria-expanded="false" aria-haspopup="true">Blog</a>
+		</li>
+		<li class="subnav">
+			<a href="events.html" role="button" aria-expanded="false" aria-haspopup="true">Events</a>
+		</li>
+	</ul>
+</nav>
+</div>
 
-	<div class="wrapper row2">
-		<div class="rnd">
-			<nav id="topnav">
-				<ul>
-					<li class="active"><a href="index.html"><strong>Home</strong></a></li>
-					<li><a href="objectives.html"><strong>Objectives</strong></a></li>
-					<li><a href="publications.html"><strong>Publications</strong></a></li>
-					<li><a href="blog.html"><strong>Blog</strong></a></li>
-					<li><a href="events.html"><strong>Events</strong></a></li>
-					<li><a href="code.html"><strong>Code</strong></a></li>
-					<li><a href="data.html"><strong>Data</strong></a></li>
-					<li><a href="benchmark.html"><strong>Benchmark</strong></a></li>
-					<li><a href="challenge.html"><strong>Challenge</strong></a></li>
-					<li class="last"><a href="team.html"><strong>Team</strong></a></li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-
-	<div class="wrapper">
+	<div class="wrapper row4">
 		<div id="featured_slide">
 			<div id="featured_wrap">
 				<ul id="featured_tabs">
@@ -211,7 +125,7 @@
 
 					<div class="news-center">
 						<img src="images/rgmcw_iros26.png" alt="IROS 2026 Workshop">
-						<p>[<a href="https://sites.google.com/view/rgmcw2026"><u>details</u></a>]</p>
+						<p><a href="https://sites.google.com/view/rgmcw2026"><u>details</u></a></p>
 					</div>
 				</div>
 
@@ -226,12 +140,45 @@
 		</div>
 	</div>
 
-	<div class="wrapper bottomPg">
-		<div id="copyright">
-			<div id="fl_left">
-				© Copyright CORSMAL 2019-2026
-			</div>
-		</div>
+	<footer class="site-footer">
+	<div class="footer-col social-col" aria-label="Social media" style="text-align:center;">
+		<a href="" aria-label="GitHub" rel="noopener noreferrer" target="_blank" ><i class="fab fa-fw fa-github" aria-hidden="true"></i></a>				
 	</div>
+	<p>
+		Copyright &copy; 2019-<span id="currentYear"></span> - CORSMAL
+	</p>
+	</footer>
+	<script>
+		document.getElementById('currentYear').textContent = new Date().getFullYear();
+	</script>
+
+	<script>
+		// Hamburger menu toggle functionality
+		document.addEventListener('DOMContentLoaded', function() {
+			const menuToggle = document.querySelector('.menu-toggle');
+			const topnav = document.querySelector('#topnav');
+
+			if (menuToggle) {
+				menuToggle.addEventListener('click', function() {
+					menuToggle.classList.toggle('active');
+					topnav.classList.toggle('hidden');
+					topnav.classList.toggle('visible');
+					const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+					menuToggle.setAttribute('aria-expanded', !isExpanded);
+				});
+
+				// Close menu when a link is clicked
+				const navLinks = topnav.querySelectorAll('a');
+				navLinks.forEach(link => {
+					link.addEventListener('click', function() {
+						menuToggle.classList.remove('active');
+						topnav.classList.add('hidden');
+						topnav.classList.remove('visible');
+						menuToggle.setAttribute('aria-expanded', 'false');
+					});
+				});
+			}
+		});
+	</script>
 </body>
 </html>

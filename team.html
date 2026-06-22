@@ -10,7 +10,11 @@
 	<meta property="og:description" content="Meet the CORSMAL research team dedicated to collaborative robotics and object manipulation.">
  
 	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
+	<link rel="stylesheet" href="css/academicons.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
  
 	<title>CORSMAL Team</title>
 
@@ -104,38 +108,50 @@
 			}
 		}
 	</style>
+
+	<script src="js/menu.js" defer></script>
 </head>
 <body id="top">
-	<div class="wrapper row1">
-		<div id="header" class="clear">
-			<div class="fl_left">
-				<ul>
-					<li>
-						<a href="index.html"><img src="images/CORSMAL_logo.png" alt="CORSMAL Logo"></a>
-					</li>
-				</ul>
+<div id="menu">
+<div class="logo">
+	<a href="index.html" class="active"><img src="images/CORSMAL_logo.png" alt="CORSMAL Logo"></a>
+</div>
+
+<nav aria-label="Breadcrumb" class="breadcrumb">
+	<div class="menu-toggle"><span></span></div>
+	<ul>
+		<li class="subnav">
+			<a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
+			<div class="subnav-content">
+				<a href="objectives.html">Objectives</a>
+				<a href="team.html">Team</a>
 			</div>
-		</div>
-	</div>
- 
-	<div class="wrapper row2">
-		<div class="rnd">
-			<nav id="topnav">
-				<ul>
-					<li><a href="index.html"><strong>Home</strong></a></li>
-					<li><a href="objectives.html"><strong>Objectives</strong></a></li>
-					<li><a href="publications.html"><strong>Publications</strong></a></li>
-					<li><a href="blog.html"><strong>Blog</strong></a></li>
-					<li><a href="events.html"><strong>Events</strong></a></li>
-					<li><a href="code.html"><strong>Code</strong></a></li>
-					<li><a href="data.html"><strong>Data</strong></a></li>
-					<li><a href="benchmark.html"><strong>Benchmark</strong></a></li>
-					<li><a href="challenge.html"><strong>Challenge</strong></a></li>
-					<li class="active"><a href="team.html"><strong>Team</strong></a></li>
-				</ul>
-			</nav>
-		</div>
-	</div>
+		</li>
+		<li class="subnav">
+			<a href="publications.html" role="button" aria-expanded="false" aria-haspopup="true">Publications</a>
+		</li>
+		<li class="subnav">
+			<a href="data.html" role="button" aria-expanded="false" aria-haspopup="true">Data</a>
+		</li>
+		<li class="subnav">
+			<a href="code.html" role="button" aria-expanded="false" aria-haspopup="true">Software</a>
+		</li>
+		<li class="subnav">
+			<a href="" role="button" aria-expanded="false" aria-haspopup="true">Benchmarking</a>
+			<div class="subnav-content">
+				<a href="benchmark.html">Protocol</a>
+				<a href="challenge.html">Challenge</a>
+			</div>
+		</li>
+		<li class="subnav">
+			<a href="blog.html" role="button" aria-expanded="false" aria-haspopup="true">Blog</a>
+		</li>
+		<li class="subnav">
+			<a href="events.html" role="button" aria-expanded="false" aria-haspopup="true">Events</a>
+		</li>
+	</ul>
+</nav>
+</div>
 
 <div class="wrapper row4">
 		<div id="container" class="clear">
@@ -277,13 +293,16 @@
 			</div>
 		</div>
 	</div>
- 
-	<div class="wrapper bottomPg">
-		<div id="copyright">
-			<div id="fl_left">
-				© Copyright CORSMAL 2019-2022
-			</div>
-		</div>
-	</div>
+<footer class="site-footer">
+<div class="footer-col social-col" aria-label="Social media" style="text-align:center;">
+	<a href="https://github.com/corsmal" aria-label="GitHub" rel="noopener noreferrer" target="_blank" ><i class="fab fa-fw fa-github" aria-hidden="true"></i></a>				
+</div>
+<p>
+	Copyright &copy; 2019-<span id="currentYear"></span> - CORSMAL
+</p>
+</footer>
+<script>
+	document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

@@ -1,163 +1,371 @@
 /*
 Template Name: Academic Education
-File: Navigation CSS
+File: Navigation CSS - Updated for Responsive Design
 Author: OS Templates
 Author URI: http://www.os-templates.com/
 Licence: <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>
 */
 
-#topnav{
-	display:block;
-	width:955px;
-	margin:0;
-	padding:5px 5px 5px 0;
-	/*background:url("../images/round_bot.gif") bottom left no-repeat;*/
-	text-align:right;
+/* ========================================
+   HEADER AND NAVIGATION STRUCTURE
+   ======================================== */
+
+#header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 10px 20px;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+#header .fl_left {
+	display: flex;
+	align-items: center;
+	order: 0;
+}
+
+#header .fl_left ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+
+#header .fl_left li {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+}
+
+#header .fl_left img {
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	width: auto;
+	display: block;
+}
+
+/* ========================================
+   HAMBURGER MENU TOGGLE
+   ======================================== */
+
+.menu-toggle {
+	display: none;
+	flex-direction: column;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	gap: 5px;
+	margin-right: 20px;
+	order: 1;
+}
+
+.menu-toggle span {
+	width: 25px;
+	height: 3px;
+	background-color: #333;
+	transition: all 0.3s ease;
+	display: block;
+}
+
+.menu-toggle.active span:nth-child(1) {
+	transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+	opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+	transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ========================================
+   TOP NAVIGATION
+   ======================================== */
+
+#topnav {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	order: 2;
+	flex: 0 0 100%;
+}
+
+#topnav, #topnav a {
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+#topnav a:hover, #topnav li.active a {
+	color: RGB(144, 141, 103);
+	text-decoration: underline;
+}
+
+#topnav ul, #topnav li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#topnav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+#topnav li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+#topnav a {
+	display: inline-block;
+	padding: 12px 15px;
+	min-height: 44px;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+#topnav li.last {
+	margin: 0;
+}
+
+#topnav.hidden {
+	display: none;
+}
+
+#topnav.visible {
+	display: block;
+}
+
+/* ========================================
+   COLUMN NAVIGATION (SIDEBAR)
+   ======================================== */
+
+#column .subnav {
+	display: block;
+	width: 100%;
+	padding: 25px;
+	background-color: #F7F7F7;
+	margin-bottom: 30px;
+	line-height: normal;
+	box-sizing: border-box;
+}
+
+#column .subnav h2 {
+	margin: 0 0 20px 0;
+	padding: 0 0 14px 0;
+	background-color: #F7F7F7;
+	border-bottom: 1px dotted #666666;
+}
+
+#column .subnav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#column .subnav li {
+	margin: 0 0 3px 0;
+	padding: 0;
+}
+
+#column .subnav ul ul, #column .subnav ul ul ul, #column .subnav ul ul ul ul, #column .subnav ul ul ul ul ul {
+	border-top: none;
+	padding-top: 0;
+}
+
+#column .subnav a {
+	display: block;
+	margin: 0;
+	padding: 5px 10px 5px 20px;
+	color: #666666;
+	background: url("../images/blue_file.gif") no-repeat 10px center #F7F7F7;
+	text-decoration: none;
+	border-bottom: 1px dotted #666666;
+}
+
+#column .subnav a:hover {
+	color: #55ABDA;
+	background-color: #F7F7F7;
+}
+
+#column .subnav ul ul a, #column .subnav ul ul ul a, #column .subnav ul ul ul ul a, #column .subnav ul ul ul ul ul a {
+	background: url("../images/black_file.gif") no-repeat #F7F7F7;
+}
+
+#column .subnav ul ul a {
+	padding-left: 40px;
+	background-position: 30px center;
+}
+
+#column .subnav ul ul ul a {
+	padding-left: 50px;
+	background-position: 40px center;
+}
+
+#column .subnav ul ul ul ul a {
+	padding-left: 60px;
+	background-position: 50px center;
+}
+
+#column .subnav ul ul ul ul ul a {
+	padding-left: 70px;
+	background-position: 60px center;
+}
+
+/* ========================================
+   PAGINATION
+   ======================================== */
+
+.pagination {
+	display: block;
+	width: 100%;
+	clear: both;
+	text-align: center;
+}
+
+.pagination ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.pagination li {
+	display: inline;
+}
+
+.pagination .next {
+	margin: 0;
+}
+
+.pagination a {
+	display: inline-block;
+	margin: 0 2px 0 0;
+	padding: 2px 5px 3px 5px;
+	border: 1px solid #D8D9DE;
+	min-height: 44px;
+	min-width: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pagination .current, .pagination .splitter {
+	margin: 0 2px 0 0;
+	padding: 6px;
+	min-height: 44px;
+	display: inline-flex;
+	align-items: center;
+}
+
+#container .pagination a:hover, .pagination .current, .pagination .splitter {
+	color: #979797;
+	background-color: #FFFFFF;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (641px - 1024px)
+   ======================================== */
+
+@media (max-width: 1024px) {
+	#header {
+		padding: 10px 15px;
 	}
 
-#topnav, #topnav a{
-	/*text-transform:uppercase;
-	color:#06213F;
-	background-color:#E5E2C9;RGB(51,51,51);*/	
-	/*color:#CCCCCC;
-	background-color:RGB(74,77,82);*/
-	color:#000000;
-	background-color:RGB(255,255,255);
+	#topnav a {
+		padding: 10px 12px;
+		font-size: 14px;
 	}
 
-#topnav a:hover, #topnav li.active a{		
-	color:RGB(144,141,103);
-	/*color:RGB(214,211,173);*/
-	/*color:RGB(118,112,56);
-	color:#55ABDA;
-	background-color:#E5E2C9;*/
+	#column .subnav {
+		width: 100%;
+		padding: 15px;
+	}
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (max 640px)
+   ======================================== */
+
+@media (max-width: 640px) {
+	#header {
+		flex-direction: row;
+		padding: 10px;
+		gap: 5px;
 	}
 
-#topnav ul, #topnav li{
-	margin:22px 7px 7px 7px;
-	padding:0;
-	list-style:none;
+	#header .fl_left {
+		order: 0;
+		flex: 1;
 	}
 
-#topnav li{
-	display:inline;
-	/*margin-right:25px;*/
-	margin-right:1.8%;
+	#header .fl_left img {
+		height: 40px;
 	}
 
-#topnav li.last{
-	margin:7px;
+	.menu-toggle {
+		display: flex;
+		order: 1;
 	}
 
-/* ----------------------------------------------Column Navigation-------------------------------------*/
-
-#column .subnav{
-	display:block;
-	width:250px;
-	padding:25px;
-	background-color:#F7F7F7;
-	margin-bottom:30px;
-	line-height:normal;
+	#topnav {
+		order: 2;
+		width: 100%;
+		border-top: 1px solid #ddd;
+		background-color: #f5f5f5;
 	}
 
-#column .subnav h2{
-	margin:0 0 20px 0;
-	padding:0 0 14px 0;
-	background-color:#F7F7F7;
-	border-bottom:1px dotted #666666;
+	#topnav.hidden {
+		display: none;
 	}
 
-#column .subnav ul{
-	margin:0;
-	padding:0;
-	list-style:none;
+	#topnav.visible {
+		display: block;
 	}
 
-#column .subnav li{
-	margin:0 0 3px 0;
-	padding:0;
+	#topnav ul {
+		flex-direction: column;
 	}
 
-#column .subnav ul ul, #column .subnav ul ul ul, #column .subnav ul ul ul ul, #column .subnav ul ul ul ul ul{
-	border-top:none;
-	padding-top:0;
+	#topnav li {
+		width: 100%;
+		border-bottom: 1px solid #eee;
 	}
 
-#column .subnav a{
-	display:block;
-	margin:0;
-	padding:5px 10px 5px 20px;
-	color:#666666;
-	background:url("../images/blue_file.gif") no-repeat 10px center #F7F7F7;
-	text-decoration:none;
-	border-bottom:1px dotted #666666;
+	#topnav a {
+		padding: 15px 20px;
+		min-height: 48px;
+		width: 100%;
+		justify-content: flex-start;
+		font-size: 14px;
 	}
 
-#column .subnav a:hover{
-	color:#55ABDA;
-	background-color:#F7F7F7;
+	#column .subnav {
+		width: 100%;
+		padding: 15px;
+		margin-bottom: 15px;
 	}
 
-#column .subnav ul ul a, #column .subnav ul ul ul a, #column .subnav ul ul ul ul a, #column .subnav ul ul ul ul ul a{
-	background:url("../images/black_file.gif") no-repeat #F7F7F7;
+	#column .subnav h2 {
+		font-size: 14px;
+		margin: 0 0 10px 0;
 	}
 
-#column .subnav ul ul a{
-	padding-left:40px;
-	background-position:30px center;
+	#column .subnav a {
+		padding: 8px 10px 8px 15px;
+		font-size: 13px;
 	}
-
-#column .subnav ul ul ul a{
-	padding-left:50px;
-	background-position:40px center;
-	}
-
-#column .subnav ul ul ul ul a{
-	padding-left:60px;
-	background-position:50px center;
-	}
-
-#column .subnav ul ul ul ul ul a{
-	padding-left:70px;
-	background-position:60px center;
-	}
-
-/* ----------------------------------------------Pagination-------------------------------------*/
-
-.pagination{
-	display:block;
-	width:100%;
-	clear:both;
-	text-align:center;
-	}
-
-.pagination ul{
-	margin:0;
-	padding:0;
-	list-style:none;
-	}
-
-.pagination li{
-	display:inline;
-	}
-
-.pagination .next{
-	margin:0;
-	}
-
-.pagination a{
-	display:inline-block;
-	margin:0 2px 0 0;
-	padding:2px 5px 3px 5px;
-	border:1px solid #D8D9DE;
-	}
-
-.pagination .current, .pagination .splitter{
-	margin:0 2px 0 0;
-	padding:6px;
-	}
-
-#container .pagination a:hover, .pagination .current, .pagination .splitter{
-	color:#979797;
-	background-color:#FFFFFF;
-	}
+}

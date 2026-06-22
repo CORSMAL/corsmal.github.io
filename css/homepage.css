@@ -1,204 +1,343 @@
 /*
 Template Name: Academic Education
-File: Homepage CSS
+File: Homepage CSS - Updated for Responsive Design
 Author: OS Templates
 Author URI: http://www.os-templates.com/
 Licence: <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>
 */
 
-#homepage{
-	position:relative;
-	margin:0 auto 30px;
-	display:block;
-	width:100%;
-	}
-
-/* ----------------------------------------------Left Column-------------------------------------*/
-
-#homepage #left_column{
-	display:block;
-	float:left;
-	width:230px;
-	}
-
-#homepage #left_column .imgholder{
-	margin-bottom:20px;
-	}
-
-/* ----------------------------------------------Latest News-------------------------------------*/
-
-#homepage #latestnews{
-	display:block;
-	float:left;
-	width:420px;
-	margin:0 0 0 20px;	
-	}
-
-/*#homepage #latestnews a{
-	color:#000000;	
-	}*/
-
-#homepage #latestnews ul{
-	margin:0;
-	padding:0;
-	list-style:none;	
-	}
-
-#homepage #latestnews li{
-	display:block;
-	width:100%;
-	margin:0 0 20px 0;
-	padding:0 0 20px 0;
-	list-style:none;
-	border-bottom:1px none #06213F;	
-	}
-
-#latestnews .latestnews{
-	display:block;
-	float:left;
-	/*width:350px;*/
-	margin:0;
-	padding:0;
-	}
-
-#latestnews .latestnews p{
-	margin:0 0 8px 0;
-	padding:0;	
-	}
-
-#latestnews .imgl{
-	margin:0;
-	width:130px;
-	height:100px;	
-	}
-#latestnews .imgl{
-	margin:0;
-	width:130px;
-	height:100px;	
+#homepage {
+	position: relative;
+	margin: 0 auto 30px;
+	display: block;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
 }
 
-#latestnews p.readmore{
-	display:block;
-	width:100%;
-	clear:both;
-	margin:0;
-	padding:0;
-	text-align:right;
+/* ========================================
+   LEFT COLUMN
+   ======================================== */
+
+#homepage #left_column {
+	display: block;
+	flex: 1;
+	min-width: 200px;
+}
+
+#homepage #left_column .imgholder {
+	margin-bottom: 20px;
+}
+
+#homepage #left_column img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* ========================================
+   LATEST NEWS
+   ======================================== */
+
+#homepage #latestnews {
+	display: block;
+	flex: 1.5;
+	min-width: 250px;
+}
+
+#homepage #latestnews ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#homepage #latestnews li {
+	display: block;
+	width: 100%;
+	margin: 0 0 20px 0;
+	padding: 0 0 20px 0;
+	list-style: none;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+#homepage #latestnews li:last-child {
+	border-bottom: none;
+}
+
+#latestnews .latestnews {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+#latestnews .latestnews p {
+	margin: 0 0 8px 0;
+	padding: 0;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+#latestnews .imgl {
+	float: left;
+	margin: 0 15px 15px 0;
+	width: 130px;
+	height: 100px;
+	object-fit: cover;
+	clear: left;
+}
+
+#latestnews p.readmore {
+	display: block;
+	width: 100%;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	text-align: right;
+}
+
+/* ========================================
+   RIGHT COLUMN
+   ======================================== */
+
+#homepage #right_column {
+	display: block;
+	flex: 1;
+	min-width: 200px;
+}
+
+#homepage #right_column .holder {
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#homepage #right_column .apply a {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 100px;
+	margin-bottom: 20px;
+	color: #666666;
+	background-color: #DEDACB;
+	font-size: 14px;
+	text-transform: uppercase;
+	overflow: hidden;
+	text-decoration: none;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+#homepage #right_column .apply a:hover {
+	background-color: #d5d1c2;
+	text-decoration: underline;
+}
+
+#homepage #right_column .apply a strong {
+	display: block;
+	padding: 10px;
+	text-align: center;
+	cursor: pointer;
+	flex: 1;
+}
+
+#homepage #right_column .apply img {
+	display: block;
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	margin-right: 10px;
+	flex-shrink: 0;
+}
+
+/* ========================================
+   ACADEMIC LINKS
+   ======================================== */
+
+#academiclinks {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	gap: 20px;
+}
+
+#academiclinks .linkbox {
+	display: block;
+	flex: 1;
+	min-width: 200px;
+	font-size: 12px;
+}
+
+#academiclinks a {
+	text-decoration: none;
+}
+
+#academiclinks a:hover {
+	text-decoration: underline;
+}
+
+#academiclinks ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#academiclinks li {
+	margin: 0 0 3px 0;
+	padding: 0;
+}
+
+#academiclinks .last {
+	margin: 0;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (641px - 1024px)
+   ======================================== */
+
+@media (max-width: 1024px) {
+	#homepage {
+		flex-direction: column;
+		gap: 15px;
 	}
 
-/* ----------------------------------------------Right Column-------------------------------------*/
-
-#homepage #right_column{
-	display:block;
-	float:left;
-	width:230px;
-	margin:0 0 0 20px;
+	#homepage #left_column,
+	#homepage #latestnews,
+	#homepage #right_column {
+		flex: none;
+		width: 100%;
+		min-width: auto;
 	}
 
-#homepage #right_column .holder{
-	display:block;
-	width:100%;
-	margin-bottom:20px;
+	#homepage #latestnews {
+		flex: none;
+		width: 100%;
 	}
 
-#homepage #right_column .apply a{
-	display:block;
-	width:230px;
-	height:100px;
-	margin-bottom:20px;
-	color:#666666;
-	background-color:#DEDACB;
-	font-size:14px;
-	text-transform:uppercase;
-	overflow:hidden;
+	#twitter {
+		flex-direction: column;
+		text-align: center;
+		min-height: auto;
 	}
 
-#homepage #right_column .apply a strong{
-	display:block;
-	float:right;
-	width:130px;
-	height:72px;
-	padding-top:28px;
-	text-align:center;
-	cursor:pointer; /* IE7 Doesnt render the cursor properly so this is needed */
+	#twitter .fl_left {
+		border-right: none;
+		border-bottom: 2px solid #FFFFFF;
 	}
 
-#homepage #right_column .apply img{
-	display:block;
-	float:left;
-	width:100px;
-	height:100px;
+	#twitter .fl_right {
+		width: 100%;
+		justify-content: center;
 	}
 
-/* ---------------------------------------------Twitter-------------------------------------*/
-
-#twitter{
-	display:block;
-	width:900px;
-	height:86px;
-	margin:0 0 30px 0;
-	padding:10px;
-	clear:both;
-	background:url("../images/twitter_bg.gif") top left no-repeat;
+	#academiclinks {
+		flex-direction: column;
 	}
 
-#container #twitter a{
-	color:#2DCDFF;
-	background-color:#00112B;
+	#academiclinks .linkbox {
+		width: 100%;
+	}
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (max 640px)
+   ======================================== */
+
+@media (max-width: 640px) {
+	#homepage {
+		flex-direction: column;
+		gap: 15px;
+		width: 100%;
 	}
 
-#twitter .fl_left{
-	display:block;
-	float:left;
-	width:94px;
-	height:61px;
-	margin:0;
-	padding:25px 10px 0 44px;
-	background:url("../images/twitter_logo.gif") 0 14px no-repeat;
-	border-right:2px solid #FFFFFF;
-	text-align:center;
+	#homepage #left_column,
+	#homepage #latestnews,
+	#homepage #right_column {
+		flex: none;
+		width: 100%;
+		min-width: auto;
+		margin: 0;
 	}
 
-#twitter .fl_left a{text-transform:uppercase;}
-
-#twitter .fl_right{
-	display:block;
-	float:right;
-	width:730px;
-	height:60px;
-	margin:0;
-	padding:26px 0 0 0;
-	font-size:14px;
-	font-weight:bold;
-	line-height:1.4em;
-	color:#FFFFFF;
-	background-color:#00112B;
+	#homepage #latestnews li {
+		margin: 0 0 15px 0;
+		padding: 0 0 15px 0;
 	}
 
-/* ----------------------------------------------Academic link Block-------------------------------------*/
-
-#academiclinks{
-	display:block;
-	width:920px;
+	#latestnews .imgl {
+		float: left;
+		margin: 0 10px 10px 0;
+		width: 100px;
+		height: 80px;
+		object-fit: cover;
 	}
 
-#academiclinks .linkbox{
-	display:block;
-	float:left;
-	width:215px;
-	margin:0 20px 0 0;
-	font-size:12px;
+	#latestnews .latestnews p {
+		font-size: 13px;
+		margin: 0 0 5px 0;
 	}
 
-#academiclinks a{
+	#latestnews p.readmore {
+		clear: both;
+		text-align: right;
+		font-size: 12px;
+		margin-top: 5px;
 	}
 
-#academiclinks ul{
-	margin:0;
-	padding:0;
-	list-style:none;
+	#homepage #right_column .apply a {
+		flex-direction: column;
+		text-align: center;
+		min-height: auto;
+		padding: 15px;
+		gap: 10px;
 	}
 
-#academiclinks .last{
-	margin:0;
+	#homepage #right_column .apply img {
+		width: 60px;
+		height: 60px;
+		margin: 0;
 	}
+
+	#homepage #right_column .apply a strong {
+		padding: 0;
+		font-size: 12px;
+	}
+
+	#twitter {
+		flex-direction: column;
+		gap: 0;
+		padding: 0;
+		min-height: auto;
+	}
+
+	#twitter .fl_left {
+		width: 100%;
+		height: auto;
+		padding: 15px;
+		border-right: none;
+		border-bottom: 1px solid #FFFFFF;
+	}
+
+	#twitter .fl_left a {
+		font-size: 11px;
+	}
+
+	#twitter .fl_right {
+		width: 100%;
+		padding: 15px;
+		font-size: 12px;
+		text-align: center;
+		justify-content: center;
+	}
+
+	#academiclinks {
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	#academiclinks .linkbox {
+		width: 100%;
+		font-size: 11px;
+	}
+}
