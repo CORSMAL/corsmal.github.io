@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector("nav ul");
   const subnavs = document.querySelectorAll('.subnav');
+  const toggleButtons = document.querySelectorAll('nav a[role="button"]');
 
   // Hamburger shows/hides main menu
   if (menuToggle && navMenu) {
@@ -17,24 +18,37 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Subnav toggle for mobile (tap to open)
-  subnavs.forEach(function (subnav) {
-    const link = subnav.querySelector('a');
-    if (link) {
-      link.addEventListener("click", function (e) {
+  toggleButtons.forEach(function (btn) {
+    const parent = btn.closest(".subnav");
+
+    // const link = subnav.querySelector('a');
+    
+    // if (link) {
+      // link.addEventListener("click", function (e) {
+       btn.addEventListener("click", function (e) {
+
         // Only on mobile
         if (window.innerWidth <= 900) {
           e.preventDefault();
+          
           // Close other subnavs
           subnavs.forEach(function (el) {
-            if (el !== subnav) {
+            if (el !== parent) {
               el.classList.remove("open");
             }
           });
-          subnav.classList.toggle("open");
+          parent.classList.toggle("open");
+
+          // ARIA
+        btn.setAttribute(
+          "aria-expanded",
+          parent.classList.contains("open") ? "true" : "false"
+        );
         }
       });
     }
-  });
+  // }
+);
 
   // Close menu/subnav if clicking outside (mobile)
   document.addEventListener("click", function (e) {
@@ -51,7 +65,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Optional: Automatically update year
 document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-
-
-
