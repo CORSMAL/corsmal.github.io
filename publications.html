@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="CORSMAL: Collaborative object recognition, shared manipulation and learning. A research project on robotics, object manipulation, and AI.">
+	<meta name="description"
+		content="CORSMAL: Collaborative object recognition, shared manipulation and learning. A research project on robotics, object manipulation, and AI.">
 	<meta name="keywords" content="CORSMAL, robotics, touch, vision, audio, signal processing, human behaviour">
 	<meta property="og:image" content="images/CORSMAL_logo.png">
 	<meta property="og:title" content="CORSMAL: Collaborative object recognition, shared manipulation and learning">
-	<meta property="og:description" content="A collaborative research project on robot object recognition and shared manipulation learning.">
+	<meta property="og:description"
+		content="A collaborative research project on robot object recognition and shared manipulation learning.">
 
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
@@ -15,790 +18,755 @@
 	<title>Publications | CORSMAL </title>
 
 	<script src="js/menu.js" defer></script>
-
-	<style>
-		/* Datasets Container - Grid Layout */
-
-.datasets-container {
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 10rem;
-    margin: 2rem 0;
-    max-width: 1400px;              /* ← NEW */
-    margin-left: auto;              /* ← NEW */
-    margin-right: auto;             /* ← NEW */
-}
-
-
-/* Dataset Card */
-.dataset-card {
-    display: grid;
-    grid-template-columns: 350px 1fr;  /* Image | Content */
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-left: 4px solid #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-.dataset-card:hover {
-    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.12);
-    transform: translateY(-2px);
-    border-left-color: #ffffff;
-}
-
-/* Dataset Media (Video/Image) */
-.dataset-media {
-    position: relative;
-    overflow: hidden;
-    background: #f3f4f6;
-    aspect-ratio: 16 / 9;
-}
-
-.dataset-media img,
-.dataset-media video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    background-color: #f3f4f6;
-    padding: 10px;
-    /* object-fit: cover; */
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.dataset-card:hover .dataset-media img,
-.dataset-card:hover .dataset-media video {
-    transform: scale(1.05);
-}
-
-/* Dataset Content */
-.dataset-content {
-    padding: 1.5rem;
-}
-
-.dataset-title {
-    font-family: 'Merriweather', serif;
-    font-size: 1.2rem;
-    color: #000000;
-    margin: 0 0 0.5rem 0;
-    font-weight: 700;
-    line-height: 1.3;
-	text-align:left;
-}
-
-.dataset-description {
-    color: #4b5563;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin: 0 0 1rem 0;
-}
-
-/* Dataset Links Container */
-.dataset-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
-}
-
-.dataset-link {
-    color: #000000;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 0.5rem 0;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-}
-
-.dataset-link:hover {
-    border-bottom-color: #d97706;
-    color: #1a365d;
-}
-
-.dataset-link:focus {
-    outline: 2px solid rgba(217, 119, 6, 0.3);
-    outline-offset: 2px;
-    border-radius: 2px;
-}
-
-
-.dataset-card .dataset-title {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-.dataset-card .dataset-title a {
-  color: #1a365d;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.dataset-card .dataset-title a:hover {
-  color: #d97706;
-}
-
-.dataset-description {
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.dataset-links {
-  margin-top: 1rem;
-}
-
-.dataset-links strong {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #1f2937;
-}
-
-@media (max-width: 768px) {
-  .dataset-card {
-    grid-template-columns: 1fr;
-  }
-
-  /* .dataset-media {
-    aspect-ratio: 16 / 9;
-  } */
-
-  .datasets-container {
-	grid-template-columns: 1fr;
-	gap: 2rem;
-}
-}
-
-	</style>
 </head>
+
 <body id="top">
-<div id="menu">
-<div class="logo">
-	<a href="index.html" class="active"><img src="images/CORSMAL_logo.png" alt="CORSMAL Logo"></a>
-</div>
+	<div id="menu">
+		<div class="logo">
+			<a href="index.html" class="active"><img src="images/CORSMAL_logo.png" alt="CORSMAL Logo"></a>
+		</div>
 
-<nav aria-label="Breadcrumb" class="breadcrumb">
-	<div class="menu-toggle"><span></span></div>
-	<ul>
-		<li class="subnav">
-			<a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
-			<div class="subnav-content">
-				<a href="objectives.html">Objectives</a>
-				<a href="team.html">Team</a>
-			</div>
-		</li>
-		<li>
-			<a href="publications.html">Publications</a>
-		</li>
-		<li> 
-			<a href="data.html">Data</a>
-		</li>
-		<li>
-			<a href="code.html">Software</a>
-		</li>
-		<li class="subnav">
-			<a href="#" role="button" aria-expanded="false" aria-haspopup="true">Benchmarking</a>
-			<div class="subnav-content">
-				<a href="benchmark.html">Protocol</a>
-				<a href="challenge.html">Challenge</a>
-			</div>
-		</li>
-		<li>
-			<a href="blog.html">Blog</a>
-		</li>
-		<li>
-			<a href="events.html">Events</a>
-		</li>
-	</ul>
-</nav>
-</div>
-<!-- 3####################################################################################################### -->
+		<nav aria-label="Breadcrumb" class="breadcrumb">
+			<div class="menu-toggle"><span></span></div>
+			<ul>
+				<li class="subnav">
+					<a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
+					<div class="subnav-content">
+						<a href="objectives.html">Objectives</a>
+						<a href="team.html">Team</a>
+					</div>
+				</li>
+				<li>
+					<a href="publications.html">Publications</a>
+				</li>
+				<li>
+					<a href="data.html">Data</a>
+				</li>
+				<li>
+					<a href="code.html">Software</a>
+				</li>
+				<li class="subnav">
+					<a href="#" role="button" aria-expanded="false" aria-haspopup="true">Benchmarking</a>
+					<div class="subnav-content">
+						<a href="benchmark.html">Protocol</a>
+						<a href="challenge.html">Challenge</a>
+					</div>
+				</li>
+				<li>
+					<a href="blog.html">Blog</a>
+				</li>
+				<li>
+					<a href="events.html">Events</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<!-- 3####################################################################################################### -->
 
-<div id="container" class="clear">
+	<div id="container" class="clear">
 		<h2>Publications</h2>
 		<main id="main-content">
-		<section id="data-section">
-		
-			<!-- Datasets Container -->
-			<div class="datasets-container">
+			<section id="data-section">
 
-				<!-- Stereo HO -->
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="https://doi.org/10.1109/LRA.2025.3562790" TARGET = "_blank">
-							<img src="https://kerolex.github.io/images/pang24stereoho.jpg" alt=""/><br>
+				<!-- Datasets Container -->
+				<div class="datasets-container">
+
+					<!-- Stereo HO -->
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://doi.org/10.1109/LRA.2025.3562790" TARGET="_blank">
+								<img src="https://kerolex.github.io/images/pang24stereoho.jpg" alt="" /><br>
 							</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Stereo Hand-Object Reconstruction for Human-to-Robot Handover</h3>
-						<p class="dataset-description">
-							Y. L. Pang, A. Xompero, C. Oh, A. Cavallaro<br>
-							IEEE Robotics and Automation Letters, Vol.10, n.6, June 2025.<br>
-							IEEE/RSJ Int. Conf. Intell. Robots and Systems (IROS), Hangzhou, China, 19-25 October 2025.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/LRA.2025.3562790" TARGET = "_blank" rel="noopener noreferrer" class="dataset-link"><u>paper</u></a>
-              				<a href="https://doi.org/10.48550/arXiv.2412.07487" TARGET = "_blank" rel="noopener noreferrer" class="dataset-link"><u>arxiv</u></a>
-              				<a href="https://github.com/QM-IPAlab/StereoHO" TARGET = "_blank" rel="noopener noreferrer" class="dataset-link"><u>code</u></a>
-            				<a href="https://qm-ipalab.github.io/StereoHO/" TARGET = "_blank" rel="noopener noreferrer" class="dataset-link"><u>webpage</u></a>
-            				<a href="https://qm-ipalab.github.io/StereoHO/static/videos/iros_final_720_compress.mp4" TARGET = "_blank" rel="noopener noreferrer" class="dataset-link"><u>video</u></a>
-							
 						</div>
-					</div>
-				</article>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Stereo Hand-Object Reconstruction for Human-to-Robot Handover</h3>
+							<p class="dataset-description">
+								Y. L. Pang, A. Xompero, C. Oh, A. Cavallaro<br>
+								IEEE Robotics and Automation Letters, Vol.10, n.6, June 2025.<br>
+								IEEE/RSJ Int. Conf. Intell. Robots and Systems (IROS), Hangzhou, China, 19-25 October
+								2025.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/LRA.2025.3562790" TARGET="_blank"
+									rel="noopener noreferrer" class="dataset-link"><u>paper</u></a>
+								<a href="https://doi.org/10.48550/arXiv.2412.07487" TARGET="_blank"
+									rel="noopener noreferrer" class="dataset-link"><u>arxiv</u></a>
+								<a href="https://github.com/QM-IPAlab/StereoHO" TARGET="_blank"
+									rel="noopener noreferrer" class="dataset-link"><u>code</u></a>
+								<a href="https://qm-ipalab.github.io/StereoHO/" TARGET="_blank"
+									rel="noopener noreferrer" class="dataset-link"><u>webpage</u></a>
+								<a href="https://qm-ipalab.github.io/StereoHO/static/videos/iros_final_720_compress.mp4"
+									TARGET="_blank" rel="noopener noreferrer" class="dataset-link"><u>video</u></a>
 
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="https://doi.org/10.1109/TCDS.2022.3222088" target="_blank">
-							<img src="images/Nuno2022TCDS.png" alt=""/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">The Role of Object Physical Properties in Human Handover Actions: Applications in Robotics</h3>
-						<p class="dataset-description">
-							N. F. Duarte, A. Billard and J. Santos-Victor<br>
-							IEEE Transactions on Cognitive and Developmental Systems, November 2022.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/TCDS.2022.3222088" target="_blank" class="dataset-link"><u>paper</u></a>
+							</div>
 						</div>
-					</div>
-				</article>
+					</article>
 
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="https://doi.org/10.48550/arXiv.2107.12719" target="_blank">
-							<img src="images/challenge/setup.png" alt=""/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">The CORSMAL benchmark for the prediction of the properties of containers</h3>
-						<p class="dataset-description">
-							A. Xompero, S. Donaher, V. Iashin, F. Palermo, G. Solak, C. Coppola, R. Ishikawa, Y. Nagao, R. Hachiuma, Q. Liu, F. Feng, C. Lan, R. H. M. Chan, G. Christmann, J. Song, G. Neeharika, C. K. T. Reddy, D. Jain, B. U. Rehman, A. Cavallaro<br>
-							IEEE Access, vol. 10, 2022.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/ACCESS.2022.3166906" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="https://doi.org/10.48550/arXiv.2107.12719" target="_blank" class="dataset-link"><u>arxiv</u></a>
-							<a href="challenge2020.html" class="dataset-link"><u>details</u></a>
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://doi.org/10.1109/TCDS.2022.3222088" target="_blank">
+								<img src="images/Nuno2022TCDS.png" alt="" />
+							</a>
 						</div>
-					</div>
-				</article>
-
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="https://doi.org/10.48550/arXiv.2112.13547" target="_blank">
-							<img src="images/prime_eccv22.png" alt=""/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">PRIME: A few primitives can boost robustness to common corruptions</h3>
-						<p class="dataset-description">
-							A. Modas, R. Rade, G. Ortiz-Jiménez, S. Moosavi-Dezfooli, P. Frossard<br>
-							European Conference on Computer Vision (ECCV), Tel-Aviv, Israel, 23-27 October 2022<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.48550/arXiv.2112.13547" target="_blank" class="dataset-link"><u>arxiv</u></a>
-							<a href="https://github.com/amodas/PRIME-augmentations" target="_blank" class="dataset-link"><u>code</u></a>
+						<div class="dataset-content">
+							<h3 class="dataset-title">The Role of Object Physical Properties in Human Handover Actions:
+								Applications in Robotics</h3>
+							<p class="dataset-description">
+								N. F. Duarte, A. Billard and J. Santos-Victor<br>
+								IEEE Transactions on Cognitive and Developmental Systems, November 2022.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/TCDS.2022.3222088" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+							</div>
 						</div>
-					</div>
-				</article>
+					</article>
 
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="https://doi.org/10.48550/arXiv.2203.04027" target="_blank">
-							<img src="images/da_filling_eusipco22.png" alt=""/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Data augmentation with mixtures of max-entropy transformations for filling-level classification</h3>
-						<p class="dataset-description">
-							A. Modas, A. Cavallaro, P. Frossard<br>
-							European Signal Processing Conference (EUSIPCO), Belgrade, Serbia, 29 August - 2 September 2022<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.48550/arXiv.2203.04027" target="_blank" class="dataset-link"><u>arxiv</u></a>
-							<a href="https://youtu.be/qNKUk_G2tec" target="_blank" class="dataset-link"><u>video</u></a>
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://doi.org/10.48550/arXiv.2107.12719" target="_blank">
+								<img src="images/challenge/setup.png" alt="" />
+							</a>
 						</div>
-					</div>
-				</article>
-
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="challenge.html" target="_blank">
-							<img src="images/challenge/overviewpaper_main.png" alt=""/>
-							<img src="images/challenge/diagram_tasks.png" alt=""/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Audio-Visual Object Classification for Human-Robot Collaboration</h3>
-						<p class="dataset-description">
-							A. Xompero, Y. L. Pang, T. Patten, A. Prabhakar, B. Calli, A. Cavallaro<br>
-							IEEE International Conference on Acoustic, Speech and Signal Processing (ICASSP), Singapore and Virtual, 22-27 May 2022.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/ICASSP43922.2022.9746336" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="https://doi.org/10.48550/arXiv.2203.01977" target="_blank" class="dataset-link"><u>arxiv</u></a>
-							<a href="challenge.html" class="dataset-link"><u>details</u></a>
-							<a href="https://youtu.be/zs_M8sU1Kzs" target="_blank" class="dataset-link"><u>video</u></a>
-							<a href="resources/challenge/CORSMAL__ICASSP2022_poster.pdf" class="dataset-link"><u>poster</u></a>
+						<div class="dataset-content">
+							<h3 class="dataset-title">The CORSMAL benchmark for the prediction of the properties of
+								containers</h3>
+							<p class="dataset-description">
+								A. Xompero, S. Donaher, V. Iashin, F. Palermo, G. Solak, C. Coppola, R. Ishikawa, Y.
+								Nagao, R. Hachiuma, Q. Liu, F. Feng, C. Lan, R. H. M. Chan, G. Christmann, J. Song, G.
+								Neeharika, C. K. T. Reddy, D. Jain, B. U. Rehman, A. Cavallaro<br>
+								IEEE Access, vol. 10, 2022.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/ACCESS.2022.3166906" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+								<a href="https://doi.org/10.48550/arXiv.2107.12719" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+								<a href="challenge2020.html" class="dataset-link"><u>details</u></a>
+							</div>
 						</div>
-					</div>
-				</article>
+					</article>
 
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="https://doi.org/10.1109/ICAR53236.2021.9659354" target="_blank">
-							<img src="images/Kissoum2021ICAR_crop.png" alt=""/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Simultaneous Tactile Localization and Reconstruction of an Object during Robotic Manipulation</h3>
-						<p class="dataset-description">
-							G. Kissoum, V. Perdereau<br>
-							International Conference on Advanced Robotic (ICAR), 6-10 December 2021.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/ICAR53236.2021.9659354" target="_blank" class="dataset-link"><u>paper</u></a>
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://doi.org/10.48550/arXiv.2112.13547" target="_blank">
+								<img src="images/prime_eccv22.png" alt="" />
+							</a>
 						</div>
-					</div>
-				</article>
-
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="" target="_blank">
-							<img src="images/AIHRI21.png" alt="AI-HRI21"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Multimodal Sensory Learning for Real-time, Adaptive Manipulation</h3>
-						<p class="dataset-description">
-							A. Prabhakar, S. Furrer, L. Panchetti, M. Perret, and A. Billard<br>
-							Artificial Intelligence for Human-Robot Interaction (AI-HRI), AAAI Fall Symposium Series, Virtual, 4-6 Nov 2021.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://arxiv.org/abs/2110.04634" target="_blank" class="dataset-link"><u>arxiv</u></a>
-							<a href="https://youtu.be/yJ51a4e3v-Q" target="_blank" class="dataset-link"><u>video</u></a>
-							<a href="https://doi.org/10.5281/zenodo.6372437" target="_blank" class="dataset-link"><u>dataset</u></a>
+						<div class="dataset-content">
+							<h3 class="dataset-title">PRIME: A few primitives can boost robustness to common corruptions
+							</h3>
+							<p class="dataset-description">
+								A. Modas, R. Rade, G. Ortiz-Jiménez, S. Moosavi-Dezfooli, P. Frossard<br>
+								European Conference on Computer Vision (ECCV), Tel-Aviv, Israel, 23-27 October 2022<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.48550/arXiv.2112.13547" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+								<a href="https://github.com/amodas/PRIME-augmentations" target="_blank"
+									class="dataset-link"><u>code</u></a>
+							</div>
 						</div>
-					</div>
-				</article>
+					</article>
 
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="https://arxiv.org/abs/2108.03318" target="_blank">
-							<img src="images/ohpl.png" alt="IROS21"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">OHPL: One-shot Hand-eye Policy Learner</h3>
-						<p class="dataset-description">
-							C. Oh, Y. L. Pang, and A. Cavallaro<br>
-							IEEE International Conference on Intelligent Robots and Systems (IROS), Virtual, 27 Sep - 1 Oct 2021.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/IROS51168.2021.9636835" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="hhttps://doi.org/10.48550/arXiv.2108.03318" target="_blank" class="dataset-link"><u>arxiv</u></a>
-							<a href="OHPL.html" class="dataset-link"><u>details</u></a>
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://doi.org/10.48550/arXiv.2203.04027" target="_blank">
+								<img src="images/da_filling_eusipco22.png" alt="" />
+							</a>
 						</div>
-					</div>
-				</article>
-
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="https://arxiv.org/abs/2107.01309" target="_blank">
-							<img src="images/real2sim_setup.png" alt="RO-MAN21"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Towards safe human-to-robot handovers of unknown containers</h3>
-						<p class="dataset-description">
-							Y. L. Pang, A. Xompero, C. Oh, and A. Cavallaro<br>
-							IEEE International Conference on Robot and Human Interactive Communication (RO-MAN), Virtual, 8-12 Aug 2021.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/RO-MAN50785.2021.9515350" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="https://doi.org/10.48550/arXiv.2107.01309" target="_blank" class="dataset-link"><u>arxiv</u></a>
-							<a href="safe_handover.html" class="dataset-link"><u>details</u></a>
-							<a href="resources/safe_ho/2021.07.01_ROMAN_Video_Pang_Xompero_Oh_Cavallaro_slides.pdf" class="dataset-link"><u>slides</u></a>
-							<a href="https://youtu.be/QzdaSSgzlcM" target="_blank" class="dataset-link"><u>video</u></a>
-							<a href="https://github.com/CORSMAL/safe_handover/" target="_blank" class="dataset-link"><u>code</u></a>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Data augmentation with mixtures of max-entropy transformations for
+								filling-level classification</h3>
+							<p class="dataset-description">
+								A. Modas, A. Cavallaro, P. Frossard<br>
+								European Signal Processing Conference (EUSIPCO), Belgrade, Serbia, 29 August - 2
+								September 2022<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.48550/arXiv.2203.04027" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+								<a href="https://youtu.be/qNKUk_G2tec" target="_blank"
+									class="dataset-link"><u>video</u></a>
+							</div>
 						</div>
-					</div>
-				</article>
+					</article>
 
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="https://arxiv.org/pdf/2102.04057.pdf" target="_blank">
-							<img src="images/RTL/abstract.png" alt="ICIP21"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Improving filling level classification with adversarial training</h3>
-						<p class="dataset-description">
-							A. Modas, A. Xompero, R. Sanchez-Matilla, P. Frossard, and A. Cavallaro<br>
-							IEEE International Conference on Image Processing (ICIP), Anchorage, Alaska, USA, 19-22 Sep 2021.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/ICIP42928.2021.9506112" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="https://doi.org/10.48550/arXiv.2102.04057" target="_blank" class="dataset-link"><u>arxiv</u></a>
-							<a href="filling.html" class="dataset-link"><u>details</u></a>
-							<a href="https://sigport.org/sites/default/files/docs/AModas_poster_ICIP.pdf" target="_blank" class="dataset-link"><u>poster</u></a>
-							<a href="https://sigport.org/sites/default/files/docs/AModas_presentation_ICIP.pdf" target="_blank" class="dataset-link"><u>slides</u></a>
-							<a href="https://youtu.be/naVkHtwtLTY" target="_blank" class="dataset-link"><u>video</u></a>
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="challenge.html" target="_blank">
+								<img src="images/challenge/overviewpaper_main.png" alt="" />
+								<img src="images/challenge/diagram_tasks.png" alt="" />
+							</a>
 						</div>
-					</div>
-				</article>
-
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="https://arxiv.org/pdf/2103.15999.pdf" target="_blank">
-							<img src="images/acc_image.png" alt="EUSIPCO21"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Audio classification of the content of food containers and drinking glasses</h3>
-						<p class="dataset-description">
-							S. Donaher, A. Xompero, and A. Cavallaro<br>
-							European Signal Processing Conference (EUSIPCO), Virtual, 23-27 August 2021.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.23919/EUSIPCO54536.2021.9616206" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="https://doi.org/10.48550/arXiv.2103.15999" target="_blank" class="dataset-link"><u>arxiv</u></a>
-							<a href="audio_classification.html" class="dataset-link"><u>details</u></a>
-							<a href="resources/presentations/20210827_EUSIPCO_Donaher_Xompero_Cavallaro_slides.pdf" target="_blank" class="dataset-link"><u>slides</u></a>
-							<a href="https://youtu.be/8vNTZqb8NSg" target="_blank" class="dataset-link"><u>video</u></a>
-							<a href="https://github.com/CORSMAL/ACC/" target="_blank" class="dataset-link"><u>code</u></a>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Audio-Visual Object Classification for Human-Robot Collaboration
+							</h3>
+							<p class="dataset-description">
+								A. Xompero, Y. L. Pang, T. Patten, A. Prabhakar, B. Calli, A. Cavallaro<br>
+								IEEE International Conference on Acoustic, Speech and Signal Processing (ICASSP),
+								Singapore and Virtual, 22-27 May 2022.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/ICASSP43922.2022.9746336" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+								<a href="https://doi.org/10.48550/arXiv.2203.01977" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+								<a href="challenge.html" class="dataset-link"><u>details</u></a>
+								<a href="https://youtu.be/zs_M8sU1Kzs" target="_blank"
+									class="dataset-link"><u>video</u></a>
+								<a href="resources/challenge/CORSMAL__ICASSP2022_poster.pdf"
+									class="dataset-link"><u>poster</u></a>
+							</div>
 						</div>
-					</div>
-				</article>
+					</article>
 
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="https://ieeexplore.ieee.org/document/9348948" target="_blank">
-							<img src="images/boundary_sketch.png" alt="Optimism in the Face of Adversity"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Optimism in the Face of Adversity: Understanding and Improving Deep Learning Through Adversarial Robustness</h3>
-						<p class="dataset-description">
-							G. Ortiz-Jimenez, A. Modas, S.-M. Moosavi-Dezfooli, and P. Frossard<br>
-							Proceedings of the IEEE, vol. 109, no. 5, pp. 635-659, May 2021.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/JPROC.2021.3050042" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="https://doi.org/10.48550/arXiv.2010.09624" target="_blank" class="dataset-link"><u>arxiv</u></a>
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://doi.org/10.1109/ICAR53236.2021.9659354" target="_blank">
+								<img src="images/Kissoum2021ICAR_crop.png" alt="" />
+							</a>
 						</div>
-					</div>
-				</article>
-
-				
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="resources/2020.10.29_CORSMAL_ICDL-EpiRob_paper.pdf" target="_blank">
-							<img src="images/carefulness.png" alt="ICDL-EpiRob"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">From human action understanding to robot action execution: how the physical properties of handled objects modulate non-verbal cues</h3>
-						<p class="dataset-description">
-							N. Ferreira Duarte, K. Chatzilygeroudis, J. Santos-Victor, and A. Billard<br>
-							Joint IEEE International Conference on Development and Learning and Epigenetic Robotics (ICDL-EpiRob), 26-30 October 2020.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/ICDL-EpiRob48136.2020.9278084" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="resources/2020.10.29_CORSMAL_ICDL-EpiRob_paper.pdf" target="_blank" class="dataset-link"><u>open access</u></a>
-							<a href="https://www.youtube.com/watch?v=4Et36pMfkAo" target="_blank" class="dataset-link"><u>video</u></a>
-							<a href="https://github.com/NunoDuarte/carefull-detection" target="_blank" class="dataset-link"><u>code</u></a>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Simultaneous Tactile Localization and Reconstruction of an Object
+								during Robotic Manipulation</h3>
+							<p class="dataset-description">
+								G. Kissoum, V. Perdereau<br>
+								International Conference on Advanced Robotic (ICAR), 6-10 December 2021.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/ICAR53236.2021.9659354" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+							</div>
 						</div>
-					</div>
-				</article>
+					</article>
 
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="https://proceedings.neurips.cc/paper/2020/file/1ea97de85eb634d580161c603422437f-Paper.pdf" target="_blank">
-							<img src="images/HoldMeTight.png" alt="Hold Me Tight"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Hold me tight! Influence of discriminative features on deep network boundaries</h3>
-						<p class="dataset-description">
-							G. Ortiz-Jimenez, A. Modas, S.-M. Moosavi-Dezfooli, and P. Frossard<br>
-							Advances in Neural Information and Processing Systems (NeurIPS) 34, 6-12 December 2020.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://proceedings.neurips.cc/paper/2020/file/1ea97de85eb634d580161c603422437f-Paper.pdf" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="https://doi.org/10.48550/arXiv.2002.06349" target="_blank" class="dataset-link"><u>arxiv</u></a>
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="" target="_blank">
+								<img src="images/AIHRI21.png" alt="AI-HRI21" />
+							</a>
 						</div>
-					</div>
-				</article>
-
-				<article class="dataset-card">
-    				<div class="dataset-media">
-						<a href="https://arxiv.org/abs/2006.09717" target="_blank">
-							<img src="images/NeuralAnisotropy.png" alt="Neural anisotropy"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Neural anisotropy directions</h3>
-						<p class="dataset-description">
-							G. Ortiz-Jimenez*, A. Modas*, S.-M. Moosavi-Dezfooli, and P. Frossard<br>
-							Advances in Neural Information and Processing Systems (NeurIPS) 34, 6-12 December 2020.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://proceedings.neurips.cc/paper/2020/file/cff02a74da64d145a4aed3a577a106ab-Paper.pdf" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="https://doi.org/10.48550/arXiv.2006.09717" target="_blank" class="dataset-link"><u>arxiv</u></a>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Multimodal Sensory Learning for Real-time, Adaptive Manipulation
+							</h3>
+							<p class="dataset-description">
+								A. Prabhakar, S. Furrer, L. Panchetti, M. Perret, and A. Billard<br>
+								Artificial Intelligence for Human-Robot Interaction (AI-HRI), AAAI Fall Symposium
+								Series, Virtual, 4-6 Nov 2021.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://arxiv.org/abs/2110.04634" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+								<a href="https://youtu.be/yJ51a4e3v-Q" target="_blank"
+									class="dataset-link"><u>video</u></a>
+								<a href="https://doi.org/10.5281/zenodo.6372437" target="_blank"
+									class="dataset-link"><u>dataset</u></a>
+							</div>
 						</div>
-					</div>
-				</article>
+					</article>
 
-
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="resources/2020.07.17_CORSMAL_ICML_UDL_paper.pdf" target="_blank">
-							<img src="images/cifar.png" alt="CIFAR"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Redundant Features can Hurt Robustness to Distribution Shift</h3>
-						<p class="dataset-description">
-							G. Ortiz-Jimenez, A. Modas, S. Moosavi-Dezfooli, and P. Frossard<br>
-							International Conference on Machine Learning, Workshop on Uncertainty & Robustness in Deep Learning (ICML-UDL), July 17, 2020.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="resources/2020.07.17_CORSMAL_ICML_UDL_paper.pdf" target="_blank" class="dataset-link"><u>open access</u></a>
-							<a href="https://doi.org/10.48550/arXiv.2002.06349" target="_blank" class="dataset-link"><u>arxiv</u></a>
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://arxiv.org/abs/2108.03318" target="_blank">
+								<img src="images/ohpl.png" alt="IROS21" />
+							</a>
 						</div>
-					</div>
-				</article>
-
-
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="https://ieeexplore.ieee.org/abstract/document/9127857" target="_blank">
-							<img src="images/spm.png" alt="SPM"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Towards Robust Sensing for Autonomous Vehicles: An Adversarial Perspective</h3>
-						<p class="dataset-description">
-							A. Modas, R. Sanchez-Matilla, P. Frossard, and A. Cavallaro<br>
-							IEEE Signal Processing and Magazine (SPM), vol. 37, no. 4, July 2020.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/MSP.2020.2985363" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="https://doi.org/10.48550/arXiv.2007.10115" target="_blank" class="dataset-link"><u>arxiv</u></a>
+						<div class="dataset-content">
+							<h3 class="dataset-title">OHPL: One-shot Hand-eye Policy Learner</h3>
+							<p class="dataset-description">
+								C. Oh, Y. L. Pang, and A. Cavallaro<br>
+								IEEE International Conference on Intelligent Robots and Systems (IROS), Virtual, 27 Sep
+								- 1 Oct 2021.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/IROS51168.2021.9636835" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+								<a href="hhttps://doi.org/10.48550/arXiv.2108.03318" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+								<a href="OHPL.html" class="dataset-link"><u>details</u></a>
+							</div>
 						</div>
-					</div>
-				</article>
+					</article>
 
-
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="ColorFool.html" target="_blank">
-							<img src="images/colorfool_preview2.png" alt="ColorFool"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">ColorFool: Semantic Adversarial Colorization</h3>
-						<p class="dataset-description">
-							A. S. Shamsabadi, R. Sanchez-Matilla, and A. Cavallaro<br>
-							IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Seattle, Washington, 16-18 June, 2020.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/CVPR42600.2020.00123" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="https://openaccess.thecvf.com/content_CVPR_2020/html/Shamsabadi_ColorFool_Semantic_Adversarial_Colorization_CVPR_2020_paper.html" target="_blank" class="dataset-link"><u>open access</u></a>
-							<a href="https://doi.org/10.48550/arXiv.1911.10891" target="_blank" class="dataset-link"><u>arxiv</u></a>
-							<a href="ColorFool.html" class="dataset-link"><u>details</u></a>
-							<a href="https://github.com/smartcameras/ColorFool" target="_blank" class="dataset-link"><u>code</u></a>
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://arxiv.org/abs/2107.01309" target="_blank">
+								<img src="images/real2sim_setup.png" alt="RO-MAN21" />
+							</a>
 						</div>
-					</div>
-				</article>
-
-
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="LoDE.html" target="_blank">
-							<img src="images/lode_img.png" alt="LoDE"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Multi-view Shape Estimation of Transparent Containers</h3>
-						<p class="dataset-description">
-							A. Xompero, R. Sanchez-Matilla, A. Modas, P. Frossard, and A. Cavallaro<br>
-							IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Barcelona, Spain, 4-8 May 2020.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/ICASSP40776.2020.9054112" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="https://doi.org/10.48550/arXiv.1911.12354" target="_blank" class="dataset-link"><u>arxiv</u></a>
-							<a href="LoDE.html" class="dataset-link"><u>details</u></a>
-							<a href="https://www.youtube.com/watch?v=3UquyP2QXI4" target="_blank" class="dataset-link"><u>video</u></a>
-							<a href="https://doi.org/10.17636/corsmal2" class="dataset-link"><u>data</u></a>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Towards safe human-to-robot handovers of unknown containers</h3>
+							<p class="dataset-description">
+								Y. L. Pang, A. Xompero, C. Oh, and A. Cavallaro<br>
+								IEEE International Conference on Robot and Human Interactive Communication (RO-MAN),
+								Virtual, 8-12 Aug 2021.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/RO-MAN50785.2021.9515350" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+								<a href="https://doi.org/10.48550/arXiv.2107.01309" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+								<a href="safe_handover.html" class="dataset-link"><u>details</u></a>
+								<a href="resources/safe_ho/2021.07.01_ROMAN_Video_Pang_Xompero_Oh_Cavallaro_slides.pdf"
+									class="dataset-link"><u>slides</u></a>
+								<a href="https://youtu.be/QzdaSSgzlcM" target="_blank"
+									class="dataset-link"><u>video</u></a>
+								<a href="https://github.com/CORSMAL/safe_handover/" target="_blank"
+									class="dataset-link"><u>code</u></a>
+							</div>
 						</div>
-					</div>
-				</article>
+					</article>
 
-
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="benchmark.html" target="_blank">
-							<img src="benchmark/resources/handover.gif" alt="Benchmark"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">Benchmark for Human-to-Robot Handovers of Unseen Containers with Unknown Filling</h3>
-						<p class="dataset-description">
-							R. Sanchez-Matilla, K. Chatzilygeroudis, A. Modas, N. Ferreira Duarte, A. Xompero, P. Frossard, A. Billard, and A. Cavallaro<br>
-							IEEE Robotics and Automation Letters (RA-L), vol.5, no. 2, Apr. 2020.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/LRA.2020.2969200" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="benchmark.html" class="dataset-link"><u>details</u></a>
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://arxiv.org/pdf/2102.04057.pdf" target="_blank">
+								<img src="images/RTL/abstract.png" alt="ICIP21" />
+							</a>
 						</div>
-					</div>
-				</article>
-
-
-				<article class="dataset-card">
-					<div class="dataset-media">
-						<a href="https://h2t.anthropomatik.kit.edu/pdf/Starke2019.pdf" target="_blank">
-							<img src="images/graspforces.png" alt="Grasp Forces"/>
-						</a>
-					</div>
-					<div class="dataset-content">
-						<h3 class="dataset-title">On Force Synergies in Human Grasping Behavior</h3>
-						<p class="dataset-description">
-							J. Starke, K. Chatzilygeroudis, A. Billard, and T. Asfour<br>
-							IEEE-RAS International Conference on Humanoid Robots, Toronto, Canada, 15-17 October, 2019.<br>
-						</p>
-						<div class="dataset-links">
-							<a href="https://doi.org/10.1109/Humanoids43949.2019.9035047" target="_blank" class="dataset-link"><u>paper</u></a>
-							<a href="https://www.epfl.ch/labs/lasa/wp-content/uploads/2019/11/ICHR19_0047_FI.pdf" target="_blank" class="dataset-link"><u>open access</u></a>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Improving filling level classification with adversarial training
+							</h3>
+							<p class="dataset-description">
+								A. Modas, A. Xompero, R. Sanchez-Matilla, P. Frossard, and A. Cavallaro<br>
+								IEEE International Conference on Image Processing (ICIP), Anchorage, Alaska, USA, 19-22
+								Sep 2021.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/ICIP42928.2021.9506112" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+								<a href="https://doi.org/10.48550/arXiv.2102.04057" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+								<a href="filling.html" class="dataset-link"><u>details</u></a>
+								<a href="https://sigport.org/sites/default/files/docs/AModas_poster_ICIP.pdf"
+									target="_blank" class="dataset-link"><u>poster</u></a>
+								<a href="https://sigport.org/sites/default/files/docs/AModas_presentation_ICIP.pdf"
+									target="_blank" class="dataset-link"><u>slides</u></a>
+								<a href="https://youtu.be/naVkHtwtLTY" target="_blank"
+									class="dataset-link"><u>video</u></a>
+							</div>
 						</div>
-					</div>
-				</article>
+					</article>
 
-</div>
-</section>
-</main>
-</div>
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://arxiv.org/pdf/2103.15999.pdf" target="_blank">
+								<img src="images/acc_image.png" alt="EUSIPCO21" />
+							</a>
+						</div>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Audio classification of the content of food containers and
+								drinking glasses</h3>
+							<p class="dataset-description">
+								S. Donaher, A. Xompero, and A. Cavallaro<br>
+								European Signal Processing Conference (EUSIPCO), Virtual, 23-27 August 2021.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.23919/EUSIPCO54536.2021.9616206" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+								<a href="https://doi.org/10.48550/arXiv.2103.15999" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+								<a href="audio_classification.html" class="dataset-link"><u>details</u></a>
+								<a href="resources/presentations/20210827_EUSIPCO_Donaher_Xompero_Cavallaro_slides.pdf"
+									target="_blank" class="dataset-link"><u>slides</u></a>
+								<a href="https://youtu.be/8vNTZqb8NSg" target="_blank"
+									class="dataset-link"><u>video</u></a>
+								<a href="https://github.com/CORSMAL/ACC/" target="_blank"
+									class="dataset-link"><u>code</u></a>
+							</div>
+						</div>
+					</article>
+
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://ieeexplore.ieee.org/document/9348948" target="_blank">
+								<img src="images/boundary_sketch.png" alt="Optimism in the Face of Adversity" />
+							</a>
+						</div>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Optimism in the Face of Adversity: Understanding and Improving
+								Deep Learning Through Adversarial Robustness</h3>
+							<p class="dataset-description">
+								G. Ortiz-Jimenez, A. Modas, S.-M. Moosavi-Dezfooli, and P. Frossard<br>
+								Proceedings of the IEEE, vol. 109, no. 5, pp. 635-659, May 2021.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/JPROC.2021.3050042" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+								<a href="https://doi.org/10.48550/arXiv.2010.09624" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+							</div>
+						</div>
+					</article>
+
+
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="resources/2020.10.29_CORSMAL_ICDL-EpiRob_paper.pdf" target="_blank">
+								<img src="images/carefulness.png" alt="ICDL-EpiRob" />
+							</a>
+						</div>
+						<div class="dataset-content">
+							<h3 class="dataset-title">From human action understanding to robot action execution: how the
+								physical properties of handled objects modulate non-verbal cues</h3>
+							<p class="dataset-description">
+								N. Ferreira Duarte, K. Chatzilygeroudis, J. Santos-Victor, and A. Billard<br>
+								Joint IEEE International Conference on Development and Learning and Epigenetic Robotics
+								(ICDL-EpiRob), 26-30 October 2020.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/ICDL-EpiRob48136.2020.9278084" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+								<a href="resources/2020.10.29_CORSMAL_ICDL-EpiRob_paper.pdf" target="_blank"
+									class="dataset-link"><u>open access</u></a>
+								<a href="https://www.youtube.com/watch?v=4Et36pMfkAo" target="_blank"
+									class="dataset-link"><u>video</u></a>
+								<a href="https://github.com/NunoDuarte/carefull-detection" target="_blank"
+									class="dataset-link"><u>code</u></a>
+							</div>
+						</div>
+					</article>
+
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://proceedings.neurips.cc/paper/2020/file/1ea97de85eb634d580161c603422437f-Paper.pdf"
+								target="_blank">
+								<img src="images/HoldMeTight.png" alt="Hold Me Tight" />
+							</a>
+						</div>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Hold me tight! Influence of discriminative features on deep
+								network boundaries</h3>
+							<p class="dataset-description">
+								G. Ortiz-Jimenez, A. Modas, S.-M. Moosavi-Dezfooli, and P. Frossard<br>
+								Advances in Neural Information and Processing Systems (NeurIPS) 34, 6-12 December
+								2020.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://proceedings.neurips.cc/paper/2020/file/1ea97de85eb634d580161c603422437f-Paper.pdf"
+									target="_blank" class="dataset-link"><u>paper</u></a>
+								<a href="https://doi.org/10.48550/arXiv.2002.06349" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+							</div>
+						</div>
+					</article>
+
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://arxiv.org/abs/2006.09717" target="_blank">
+								<img src="images/NeuralAnisotropy.png" alt="Neural anisotropy" />
+							</a>
+						</div>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Neural anisotropy directions</h3>
+							<p class="dataset-description">
+								G. Ortiz-Jimenez*, A. Modas*, S.-M. Moosavi-Dezfooli, and P. Frossard<br>
+								Advances in Neural Information and Processing Systems (NeurIPS) 34, 6-12 December
+								2020.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://proceedings.neurips.cc/paper/2020/file/cff02a74da64d145a4aed3a577a106ab-Paper.pdf"
+									target="_blank" class="dataset-link"><u>paper</u></a>
+								<a href="https://doi.org/10.48550/arXiv.2006.09717" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+							</div>
+						</div>
+					</article>
+
+
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="resources/2020.07.17_CORSMAL_ICML_UDL_paper.pdf" target="_blank">
+								<img src="images/cifar.png" alt="CIFAR" />
+							</a>
+						</div>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Redundant Features can Hurt Robustness to Distribution Shift</h3>
+							<p class="dataset-description">
+								G. Ortiz-Jimenez, A. Modas, S. Moosavi-Dezfooli, and P. Frossard<br>
+								International Conference on Machine Learning, Workshop on Uncertainty & Robustness in
+								Deep Learning (ICML-UDL), July 17, 2020.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="resources/2020.07.17_CORSMAL_ICML_UDL_paper.pdf" target="_blank"
+									class="dataset-link"><u>open access</u></a>
+								<a href="https://doi.org/10.48550/arXiv.2002.06349" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+							</div>
+						</div>
+					</article>
+
+
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://ieeexplore.ieee.org/abstract/document/9127857" target="_blank">
+								<img src="images/spm.png" alt="SPM" />
+							</a>
+						</div>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Towards Robust Sensing for Autonomous Vehicles: An Adversarial
+								Perspective</h3>
+							<p class="dataset-description">
+								A. Modas, R. Sanchez-Matilla, P. Frossard, and A. Cavallaro<br>
+								IEEE Signal Processing and Magazine (SPM), vol. 37, no. 4, July 2020.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/MSP.2020.2985363" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+								<a href="https://doi.org/10.48550/arXiv.2007.10115" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+							</div>
+						</div>
+					</article>
+
+
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="ColorFool.html" target="_blank">
+								<img src="images/colorfool_preview2.png" alt="ColorFool" />
+							</a>
+						</div>
+						<div class="dataset-content">
+							<h3 class="dataset-title">ColorFool: Semantic Adversarial Colorization</h3>
+							<p class="dataset-description">
+								A. S. Shamsabadi, R. Sanchez-Matilla, and A. Cavallaro<br>
+								IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Seattle,
+								Washington, 16-18 June, 2020.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/CVPR42600.2020.00123" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+								<a href="https://openaccess.thecvf.com/content_CVPR_2020/html/Shamsabadi_ColorFool_Semantic_Adversarial_Colorization_CVPR_2020_paper.html"
+									target="_blank" class="dataset-link"><u>open access</u></a>
+								<a href="https://doi.org/10.48550/arXiv.1911.10891" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+								<a href="ColorFool.html" class="dataset-link"><u>details</u></a>
+								<a href="https://github.com/smartcameras/ColorFool" target="_blank"
+									class="dataset-link"><u>code</u></a>
+							</div>
+						</div>
+					</article>
+
+
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="LoDE.html" target="_blank">
+								<img src="images/lode_img.png" alt="LoDE" />
+							</a>
+						</div>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Multi-view Shape Estimation of Transparent Containers</h3>
+							<p class="dataset-description">
+								A. Xompero, R. Sanchez-Matilla, A. Modas, P. Frossard, and A. Cavallaro<br>
+								IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),
+								Barcelona, Spain, 4-8 May 2020.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/ICASSP40776.2020.9054112" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+								<a href="https://doi.org/10.48550/arXiv.1911.12354" target="_blank"
+									class="dataset-link"><u>arxiv</u></a>
+								<a href="LoDE.html" class="dataset-link"><u>details</u></a>
+								<a href="https://www.youtube.com/watch?v=3UquyP2QXI4" target="_blank"
+									class="dataset-link"><u>video</u></a>
+								<a href="https://doi.org/10.17636/corsmal2" class="dataset-link"><u>data</u></a>
+							</div>
+						</div>
+					</article>
+
+
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="benchmark.html" target="_blank">
+								<img src="benchmark/resources/handover.gif" alt="Benchmark" />
+							</a>
+						</div>
+						<div class="dataset-content">
+							<h3 class="dataset-title">Benchmark for Human-to-Robot Handovers of Unseen Containers with
+								Unknown Filling</h3>
+							<p class="dataset-description">
+								R. Sanchez-Matilla, K. Chatzilygeroudis, A. Modas, N. Ferreira Duarte, A. Xompero, P.
+								Frossard, A. Billard, and A. Cavallaro<br>
+								IEEE Robotics and Automation Letters (RA-L), vol.5, no. 2, Apr. 2020.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/LRA.2020.2969200" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+								<a href="benchmark.html" class="dataset-link"><u>details</u></a>
+							</div>
+						</div>
+					</article>
+
+
+					<article class="dataset-card">
+						<div class="dataset-media">
+							<a href="https://h2t.anthropomatik.kit.edu/pdf/Starke2019.pdf" target="_blank">
+								<img src="images/graspforces.png" alt="Grasp Forces" />
+							</a>
+						</div>
+						<div class="dataset-content">
+							<h3 class="dataset-title">On Force Synergies in Human Grasping Behavior</h3>
+							<p class="dataset-description">
+								J. Starke, K. Chatzilygeroudis, A. Billard, and T. Asfour<br>
+								IEEE-RAS International Conference on Humanoid Robots, Toronto, Canada, 15-17 October,
+								2019.<br>
+							</p>
+							<div class="dataset-links">
+								<a href="https://doi.org/10.1109/Humanoids43949.2019.9035047" target="_blank"
+									class="dataset-link"><u>paper</u></a>
+								<a href="https://www.epfl.ch/labs/lasa/wp-content/uploads/2019/11/ICHR19_0047_FI.pdf"
+									target="_blank" class="dataset-link"><u>open access</u></a>
+							</div>
+						</div>
+					</article>
+
+				</div>
+			</section>
+		</main>
+	</div>
 
 
 
-<div class="wrapper row1">
-	<div id="container" class="clear">
-		<div id="latestnewspage" class="clear">
-		  <!--<h2>About us</h2>-->
-		  <!-- <h2><p class=xmsonormal style='text-align:justify;text-justify:inter-ideograph'><b><span -->
-			<!-- style='font-size:16.0pt'>Publications</span></b><o:p></o:p></p></h2> -->
-			<!-- <br> -->
-			<p>
-				<b>Publications that used datasets and models produced by CORSMAL</b>
-			</p>
-			<table class="tg" width="100%">
-				<tr>
-					<td class="tg-zv4m" style="vertical-align: top;" align="center">
-						<a href="https://doi.org/10.48550/arXiv.2203.01192" TARGET = "_blank">
-							<img src="https://github.com/Noone65536/CORSMAL-Challenge-2022-Squids/raw/main/Images/Task345.png" alt="Squids" width="200"/><br>
-							<img src="https://github.com/Noone65536/CORSMAL-Challenge-2022-Squids/raw/main/Images/Task12.png" alt="Squids" width="200"/>
-						</a>				
-					</td>
-					<td class="tg-zv4m" style="vertical-align: top;">
-							<b>Improving Generalization of Deep Networks for Estimating Physical Properties of Containers and Fillings</b><br>
+	<div class="wrapper row1">
+		<div id="container" class="clear">
+			<div id="latestnewspage" class="clear">
+				<!--<h2>About us</h2>-->
+				<!-- <h2><p class=xmsonormal style='text-align:justify;text-justify:inter-ideograph'><b><span -->
+				<!-- style='font-size:16.0pt'>Publications</span></b><o:p></o:p></p></h2> -->
+				<!-- <br> -->
+				<p>
+					<b>Publications that used datasets and models produced by CORSMAL</b>
+				</p>
+				<table class="tg" width="100%">
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;" align="center">
+							<a href="https://doi.org/10.48550/arXiv.2203.01192" TARGET="_blank">
+								<img src="https://github.com/Noone65536/CORSMAL-Challenge-2022-Squids/raw/main/Images/Task345.png"
+									alt="Squids" width="200" /><br>
+								<img src="https://github.com/Noone65536/CORSMAL-Challenge-2022-Squids/raw/main/Images/Task12.png"
+									alt="Squids" width="200" />
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Improving Generalization of Deep Networks for Estimating Physical Properties of
+								Containers and Fillings</b><br>
 							H. Wang, C. Zhu, Z. Ma, C. Oh<br>
-							IEEE International Conference on Acoustic, Speech and Signal Processing (ICASSP), Singapore and Virtual, 22-27 May 2022.<br>
-							[<a href="https://doi.org/10.1109/ICASSP43922.2022.9747349" TARGET = "_blank"><u>paper</u></a>]
-							[<a href="https://doi.org/10.48550/arXiv.2203.01192" TARGET = "_blank"><u>arxiv</u></a>]
-							[<a href="https://github.com/Noone65536/CORSMAL-Challenge-2022-Squids" target="_blank"><u>code</u></a>]
-					</td>
-				</tr>
-				<tr>
-					<td class="tg-zv4m" style="vertical-align: top;text-align: center;" align="center">
-						<a href="https://github.com/YuigaWada/CORSMAL2021" TARGET = "_blank">
-							<img src="images/challenge/keio22.png" alt="KEIO-ICS" width="160"/>
-						</a>				
-					</td>
-					<td class="tg-zv4m" style="vertical-align: top;">
-							<b>Shared Transformer Encoder with Mask-based 3D Model Estimation for Container Mass Estimation</b><br>
+							IEEE International Conference on Acoustic, Speech and Signal Processing (ICASSP), Singapore
+							and Virtual, 22-27 May 2022.<br>
+							[<a href="https://doi.org/10.1109/ICASSP43922.2022.9747349"
+								TARGET="_blank"><u>paper</u></a>]
+							[<a href="https://doi.org/10.48550/arXiv.2203.01192" TARGET="_blank"><u>arxiv</u></a>]
+							[<a href="https://github.com/Noone65536/CORSMAL-Challenge-2022-Squids"
+								target="_blank"><u>code</u></a>]
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;text-align: center;" align="center">
+							<a href="https://github.com/YuigaWada/CORSMAL2021" TARGET="_blank">
+								<img src="images/challenge/keio22.png" alt="KEIO-ICS" width="160" />
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Shared Transformer Encoder with Mask-based 3D Model Estimation for Container Mass
+								Estimation</b><br>
 							T. Matsubara, S. Otsuki, Y. Wada, H. Matsuo, T. Komatsu, Y. Iioka, K. Sugiura, H. Saito<br>
-							IEEE International Conference on Acoustic, Speech and Signal Processing (ICASSP), Singapore and Virtual, 22-27 May 2022.<br>
-							[<a href="https://doi.org/10.1109/ICASSP43922.2022.9747110" TARGET = "_blank"><u>paper</u></a>]
+							IEEE International Conference on Acoustic, Speech and Signal Processing (ICASSP), Singapore
+							and Virtual, 22-27 May 2022.<br>
+							[<a href="https://doi.org/10.1109/ICASSP43922.2022.9747110"
+								TARGET="_blank"><u>paper</u></a>]
 							<!-- [<a class="papercite_pdf" title="YouTube" href="" target="_blank"><u>video</u></a>] -->
 							<!-- [<a class="papercite_pdf" title="Download" href="resources/challenge/icpr20/2021.01.15_BecauseItsTactile_slides.pdf" target="_blank"><u>slides</u></a>]  -->
 							[<a href="https://github.com/YuigaWada/CORSMAL2021" target="_blank"><u>code</u></a>]
-					</td>
-				</tr>
-				<tr>
-					<td class="tg-zv4m" style="vertical-align: top;">
-						<a href="https://doi.org/10.48550/arXiv.2203.01207" TARGET = "_blank">
-							<img src="images/challenge/visual22c.png" alt="Visual" width="200"/>
-						</a>				
-					</td>
-					<td class="tg-zv4m" style="vertical-align: top;">
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://doi.org/10.48550/arXiv.2203.01207" TARGET="_blank">
+								<img src="images/challenge/visual22c.png" alt="Visual" width="200" />
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
 							<b>Container localisation and mass estimation with an RGB-D camera</b><br>
 							T. Apicella, G. Slavic, E. Ragusa, P. Gastaldo, L. Marcenaro<br>
-							IEEE International Conference on Acoustic, Speech and Signal Processing (ICASSP), Singapore and Virtual, 22-27 May 2022.<br>
-							[<a href="https://doi.org/10.1109/ICASSP43922.2022.9747134" TARGET = "_blank"><u>paper</u></a>]
-							[<a href="https://doi.org/10.48550/arXiv.2203.01207" TARGET = "_blank"><u>arxiv</u></a>]
+							IEEE International Conference on Acoustic, Speech and Signal Processing (ICASSP), Singapore
+							and Virtual, 22-27 May 2022.<br>
+							[<a href="https://doi.org/10.1109/ICASSP43922.2022.9747134"
+								TARGET="_blank"><u>paper</u></a>]
+							[<a href="https://doi.org/10.48550/arXiv.2203.01207" TARGET="_blank"><u>arxiv</u></a>]
 							[<a href="https://github.com/CORSMAL/Visual" target="_blank"><u>code</u></a>]
-					</td>
-				</tr>
-				<tr>
-					<td class="tg-zv4m" style="vertical-align: top;">
-						<a href="https://doi.org/10.48550/arXiv.2012.01311" TARGET = "_blank">
-							<img src="images/ICPR2020/bit_paper.PNG" alt="Because It's Tactile" width="200"/>
-						</a>				
-					</td>
-					<td class="tg-zv4m" style="vertical-align: top;">
-							<b>Top-1 CORSMAL Challenge 2020 submission:<br>Filling mass estimation using multi-modal observations of human-robot handovers</b><br>
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://doi.org/10.48550/arXiv.2012.01311" TARGET="_blank">
+								<img src="images/ICPR2020/bit_paper.PNG" alt="Because It's Tactile" width="200" />
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Top-1 CORSMAL Challenge 2020 submission:<br>Filling mass estimation using multi-modal
+								observations of human-robot handovers</b><br>
 							V. Iashin, F. Palermo, G. Solak, and C. Coppola<br>
-							International Conference on Pattern Recognition (ICPR) 2020 Workshops and Challenges, 10-15 Jan. 2021<br>
-							[<a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_31" TARGET = "_blank"><u>paper</u></a>]
-							[<a href="https://doi.org/10.48550/arXiv.2012.01311" TARGET = "_blank"><u>arxiv</u></a>]
-							[<a class="papercite_pdf" title="YouTube" href="https://youtu.be/lvPMcDaXL0A" target="_blank"><u>video</u></a>]
-							[<a class="papercite_pdf" title="Download" href="resources/challenge/icpr20/2021.01.15_BecauseItsTactile_slides.pdf" target="_blank"><u>slides</u></a>] 
-					</td>
-				</tr>
-				<tr>
-					<td class="tg-zv4m" style="vertical-align: top;">
-						<a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_32" TARGET = "_blank">
-							<img src="images/ICPR2020/hvrl_paper.PNG" alt="HVLR" width="200"/>
-						</a>
-					</td>
-					<td class="tg-zv4m" style="vertical-align: top;">
+							International Conference on Pattern Recognition (ICPR) 2020 Workshops and Challenges, 10-15
+							Jan. 2021<br>
+							[<a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_31"
+								TARGET="_blank"><u>paper</u></a>]
+							[<a href="https://doi.org/10.48550/arXiv.2012.01311" TARGET="_blank"><u>arxiv</u></a>]
+							[<a class="papercite_pdf" title="YouTube" href="https://youtu.be/lvPMcDaXL0A"
+								target="_blank"><u>video</u></a>]
+							[<a class="papercite_pdf" title="Download"
+								href="resources/challenge/icpr20/2021.01.15_BecauseItsTactile_slides.pdf"
+								target="_blank"><u>slides</u></a>]
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_32" TARGET="_blank">
+								<img src="images/ICPR2020/hvrl_paper.PNG" alt="HVLR" width="200" />
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
 							<b>Audio-Visual Hybrid Approach for Filling Mass Estimation</b><br>
 							R. Ishikawa, Y. Nagao, R. Hachiuma, and H. Saito<br>
-							International Conference on Pattern Recognition (ICPR) 2020 Workshops and Challenges, 10-15 Jan. 2021<br>
-							[<a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_32" TARGET = "_blank"><u>paper</u></a>]
-							[<a class="papercite_pdf" title="YouTube" href="https://youtu.be/R9O4JTkmabk" target="_blank"><u>video</u></a>]
-							[<a class="papercite_pdf" title="Download" href="resources/challenge/icpr20/2021.01.15_HVRL_slides.pdf" target="_blank"><u>slides</u></a>]
-					</td>
-				</tr>
-				<tr>
-					<td class="tg-zv4m" style="vertical-align: top;">
-						<a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_33" TARGET = "_blank">
-							<img src="images/ICPR2020/va2mass_paper.PNG" alt="Concatenation" width="200"/>
-						</a>			
-					</td>
-					<td class="tg-zv4m" style="vertical-align: top;">
-						<b>VA2Mass: Towards the Fluid Filling Mass Estimation via Integration of Vision & Audio Learning</b><br>
-						Q. Liu, F. Feng, C. Lan, and R.H.M. Chan<br>
-						International Conference on Pattern Recognition (ICPR) 2020 Workshops and Challenges, 10-15 Jan. 2021<br>
-						[<a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_33" TARGET = "_blank"><u>paper</u></a>]
-						[<a class="papercite_pdf" title="YouTube" href="https://youtu.be/p0mTowy1Opc" target="_blank"><u>video</u></a>]
-						[<a class="papercite_pdf" title="Download" href="resources/challenge/icpr20/2021.01.15_Concatenation_slides.pdf" target="_blank"><u>slides</u></a>]
-				</td>
-			</tr>
-		</table>
-		<br>
-		<br>
-	</div>				
-</div>
-</div>
+							International Conference on Pattern Recognition (ICPR) 2020 Workshops and Challenges, 10-15
+							Jan. 2021<br>
+							[<a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_32"
+								TARGET="_blank"><u>paper</u></a>]
+							[<a class="papercite_pdf" title="YouTube" href="https://youtu.be/R9O4JTkmabk"
+								target="_blank"><u>video</u></a>]
+							[<a class="papercite_pdf" title="Download"
+								href="resources/challenge/icpr20/2021.01.15_HVRL_slides.pdf"
+								target="_blank"><u>slides</u></a>]
+						</td>
+					</tr>
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_33" TARGET="_blank">
+								<img src="images/ICPR2020/va2mass_paper.PNG" alt="Concatenation" width="200" />
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>VA2Mass: Towards the Fluid Filling Mass Estimation via Integration of Vision & Audio
+								Learning</b><br>
+							Q. Liu, F. Feng, C. Lan, and R.H.M. Chan<br>
+							International Conference on Pattern Recognition (ICPR) 2020 Workshops and Challenges, 10-15
+							Jan. 2021<br>
+							[<a href="https://link.springer.com/chapter/10.1007/978-3-030-68793-9_33"
+								TARGET="_blank"><u>paper</u></a>]
+							[<a class="papercite_pdf" title="YouTube" href="https://youtu.be/p0mTowy1Opc"
+								target="_blank"><u>video</u></a>]
+							[<a class="papercite_pdf" title="Download"
+								href="resources/challenge/icpr20/2021.01.15_Concatenation_slides.pdf"
+								target="_blank"><u>slides</u></a>]
+						</td>
+					</tr>
+				</table>
+				<br>
+				<br>
+			</div>
+		</div>
+	</div>
 
-<!-- 
+	<!-- 
 <div class="wrapper row1">
 	<div id="header" class="clear" style="padding: 0px 0px 0px 20px;width:920px">
 		<div class="fl_left" style="margin-top: 0px;">
@@ -841,20 +809,22 @@
 	</div>
 </div> -->
 
-<br><br>
+	<br><br>
 
-<!-- footer -->
- <footer class="site-footer">
-<div class="footer-col social-col" aria-label="Social media" style="text-align:center;">
-	<a href="https://github.com/corsmal" aria-label="GitHub" rel="noopener noreferrer" target="_blank" ><i class="fab fa-fw fa-github" aria-hidden="true"></i></a>				
-</div>
-<p>
-	Copyright &copy; 2019-<span id="currentYear"></span> - CORSMAL
-</p>
-</footer>
-<script>
-	document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-<!--added to clear error with content element -->
+	<!-- footer -->
+	<footer class="site-footer">
+		<div class="footer-col social-col" aria-label="Social media" style="text-align:center;">
+			<a href="https://github.com/corsmal" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><i
+					class="fab fa-fw fa-github" aria-hidden="true"></i></a>
+		</div>
+		<p>
+			Copyright &copy; 2019-<span id="currentYear"></span> - CORSMAL
+		</p>
+	</footer>
+	<script>
+		document.getElementById('currentYear').textContent = new Date().getFullYear();
+	</script>
+	<!--added to clear error with content element -->
 </body>
+
 </html>
