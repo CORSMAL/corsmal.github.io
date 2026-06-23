@@ -19,136 +19,6 @@
 	<title>CORSMAL | Events</title>
 
 	<script src="js/menu.js" defer></script>
-
-	<style>
-		/* Events Container - Grid Layout */
-		.events-container {
-			/* display: grid; */
-			grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-			gap: 10rem;
-			margin: 2rem 0;
-			max-width: 1400px;
-			margin-left: auto;
-			margin-right: auto;
-		}
-
-		/* Event Card */
-		.event-card {
-			display: grid;
-			grid-template-columns: 350px 1fr;  /* Image | Content */
-			background: white;
-			border: 1px solid #e5e7eb;
-			border-left: 4px solid #ffffff;
-			border-radius: 8px;
-			overflow: hidden;
-			transition: all 0.3s ease;
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-		}
-
-		.event-card:hover {
-			box-shadow: 0 4px 12px rgba(217, 119, 6, 0.12);
-			transform: translateY(-2px);
-			border-left-color: #ffffff;
-		}
-
-		/* Event Media (Image) */
-		.event-media {
-			position: relative;
-			overflow: hidden;
-			background: #f3f4f6;
-			aspect-ratio: 16 / 9;
-		}
-
-		.event-media img,
-		.event-media video {
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-			object-position: center;
-			background-color: #f3f4f6;
-			padding: 10px;
-			display: block;
-			transition: transform 0.3s ease;
-		}
-
-		.event-card:hover .event-media img,
-		.event-card:hover .event-media video {
-			transform: scale(1.05);
-		}
-
-		/* Event Content */
-		.event-content {
-			padding: 1.5rem;
-		}
-
-		.event-title {
-			font-family: 'Merriweather', serif;
-			font-size: 1.2rem;
-			color: #000000;
-			margin: 0 0 0.5rem 0;
-			font-weight: bold;
-			line-height: 1.3;
-			text-align: left;
-		}
-
-		.event-title a {
-			color: #1a365d;
-			text-decoration: none;
-			transition: color 0.3s ease;
-		}
-
-		.event-title a:hover {
-			color: #d97706;
-		}
-
-		.event-description {
-			color: #4b5563;
-			font-size: 0.95rem;
-			line-height: 1.7;
-			margin: 0 0 1rem 0;
-		}
-
-		/* Event Links Container */
-		.event-links {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 1rem;
-			align-items: center;
-			margin-top: 1rem;
-		}
-
-		.event-link {
-			color: #000000;
-			text-decoration: none;
-			font-weight: 600;
-			padding: 0.5rem 0;
-			border-bottom: 2px solid transparent;
-			transition: all 0.3s ease;
-			font-size: 0.9rem;
-		}
-
-		.event-link:hover {
-			border-bottom-color: #d97706;
-			color: #1a365d;
-		}
-
-		.event-link:focus {
-			outline: 2px solid rgba(217, 119, 6, 0.3);
-			outline-offset: 2px;
-			border-radius: 2px;
-		}
-
-		@media (max-width: 768px) {
-			.event-card {
-				grid-template-columns: 1fr;
-			}
-
-			.events-container {
-				grid-template-columns: 1fr;
-				gap: 2rem;
-			}
-		}
-	</style>
 </head>
 <body id="top">
 <div id="menu">
@@ -178,6 +48,7 @@
 		<li class="subnav">
 			<a href="#" role="button" aria-expanded="false" aria-haspopup="true">Benchmarking</a>
 			<div class="subnav-content">
+				<a href="benchmark/competitions.html">Competitions</a>
 				<a href="benchmark.html">Protocol</a>
 				<a href="challenge.html">Challenge</a>
 			</div>
@@ -316,7 +187,7 @@
 
 					<article class="event-card">
 						<div class="event-media">
-							<a href="https://corsmal.eecs.qmul.ac.uk/rgm24icra/index.html">
+							<a href="https://corsmal.github.io/rgm24icra/index.html">
 								<img src="images/icra24/handover.png" width="200"/><br><br>
 								<img src="images/icra24/icra24_logo.svg" alt="" width="200"/>
 							</a>
@@ -328,7 +199,7 @@
 								Andrea Cavallaro and Alessio Xompero are co-organisers of the competition and leading the CORSMAL Human-to-Robot Handovers sub-track. Competition held during the 2024 IEEE/RAS International Conference on Robotics and Automation.
 							</p>
 							<div class="event-links">
-								<a href="https://corsmal.eecs.qmul.ac.uk/rgm24icra/index.html" class="event-link"><u>details</u></a>
+								<a href="hhttps://corsmal.github.io/rgm24icra/index.html" class="event-link"><u>details</u></a>
 							</div>
 						</div>
 					</article>

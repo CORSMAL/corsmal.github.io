@@ -1,269 +1,363 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+
 <head profile="http://gmpg.org/xfn/11">
 
 	<title>CORSMAL: Collaborative object recognition, shared manipulation and learning | data</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="imagetoolbar" content="no" />
-	<meta http-equiv="KeyWords" content="data, datasets, dataset, CORSMAL, robotics, touch, vision, audio, signal processing, human behaviour"/>
+	<meta http-equiv="KeyWords"
+		content="data, datasets, dataset, CORSMAL, robotics, touch, vision, audio, signal processing, human behaviour" />
 	<meta name="image" property="og:image" content="images/CORSMAL_logo.png">
-	
+
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
 	<link rel="stylesheet" href="css/academicons.css">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-	
 
-<style type="text/css">
-	tr:hover {background-color: #f5f5f5;}
-	.tg  {border-collapse:collapse;border-spacing:0;}
-	.tg td{border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;}
-		.tg th{border-color:black;border-style:solid;border-width:1px;font-weight:normal;font-size:12.0pt;overflow:hidden;padding:10px 5px;word-break:normal;}
-			.tg .tg-km2t{border-color:#ffffff;font-weight:bold;font-size:12.0pt;text-align:left;vertical-align:top}
-			.tg .tg-zv4m{border-color:#ffffff;font-size:13.0pt;text-align:left;vertical-align:top}
-</style>
 
-<script src="js/menu.js" defer></script>
-	
+	<style type="text/css">
+		tr:hover {
+			background-color: #f5f5f5;
+		}
+
+		.tg {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		.tg td {
+			border-color: black;
+			border-style: solid;
+			border-width: 1px;
+			overflow: hidden;
+			padding: 10px 5px;
+			word-break: normal;
+		}
+
+		.tg th {
+			border-color: black;
+			border-style: solid;
+			border-width: 1px;
+			font-weight: normal;
+			font-size: 12.0pt;
+			overflow: hidden;
+			padding: 10px 5px;
+			word-break: normal;
+		}
+
+		.tg .tg-km2t {
+			border-color: #ffffff;
+			font-weight: bold;
+			font-size: 12.0pt;
+			text-align: left;
+			vertical-align: top
+		}
+
+		.tg .tg-zv4m {
+			border-color: #ffffff;
+			font-size: 13.0pt;
+			text-align: left;
+			vertical-align: top
+		}
+	</style>
+
+	<script src="js/menu.js" defer></script>
+
 </head>
-<body id="top">
-<div id="menu">
-<div class="logo">
-	<a href="index.html" class="active"><img src="images/CORSMAL_logo.png" alt="CORSMAL Logo"></a>
-</div>
 
-<nav aria-label="Breadcrumb" class="breadcrumb">
-	<div class="menu-toggle"><span></span></div>
-	<ul>
-		<li class="subnav">
-			<a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
-			<div class="subnav-content">
-				<a href="objectives.html">Objectives</a>
-				<a href="team.html">Team</a>
-			</div>
-		</li>
-		<li>
-			<a href="publications.html">Publications</a>
-		</li>
-		<li> 
-			<a href="data.html">Data</a>
-		</li>
-		<li>
-			<a href="code.html">Software</a>
-		</li>
-		<li class="subnav">
-			<a href="#" role="button" aria-expanded="false" aria-haspopup="true">Benchmarking</a>
-			<div class="subnav-content">
-				<a href="benchmark.html">Protocol</a>
-				<a href="challenge.html">Challenge</a>
-			</div>
-		</li>
-		<li>
-			<a href="blog.html">Blog</a>
-		</li>
-		<li>
-			<a href="events.html">Events</a>
-		</li>
-	</ul>
-</nav>
-</div>
-<!-- 3####################################################################################################### -->
-<div class="wrapper row1">
-	<div id="container" class="clear">
-		<div id="latestnewspage">
-			<h2><p class=xmsonormal style='text-align:justify;text-justify:inter-ideograph'><b><span
-				style='font-size:16.0pt'>Data</span></b><o:p></o:p></p></h2>
+<body id="top">
+	<div id="menu">
+		<div class="logo">
+			<a href="index.html" class="active"><img src="images/CORSMAL_logo.png" alt="CORSMAL Logo"></a>
+		</div>
+
+		<nav aria-label="Breadcrumb" class="breadcrumb">
+			<div class="menu-toggle"><span></span></div>
+			<ul>
+				<li class="subnav">
+					<a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
+					<div class="subnav-content">
+						<a href="objectives.html">Objectives</a>
+						<a href="team.html">Team</a>
+					</div>
+				</li>
+				<li>
+					<a href="publications.html">Publications</a>
+				</li>
+				<li>
+					<a href="data.html">Data</a>
+				</li>
+				<li>
+					<a href="code.html">Software</a>
+				</li>
+				<li class="subnav">
+					<a href="#" role="button" aria-expanded="false" aria-haspopup="true">Benchmarking</a>
+					<div class="subnav-content">
+						<a href="benchmark/competitions.html">Competitions</a>
+						<a href="benchmark.html">Protocol</a>
+						<a href="challenge.html">Challenge</a>
+					</div>
+				</li>
+				<li>
+					<a href="blog.html">Blog</a>
+				</li>
+				<li>
+					<a href="events.html">Events</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<!-- 3####################################################################################################### -->
+	<div class="wrapper row1">
+		<div id="container" class="clear">
+			<div id="latestnewspage">
+				<h2>
+					<p class=xmsonormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+								style='font-size:16.0pt'>Data</span></b>
+						<o:p></o:p>
+					</p>
+				</h2>
 
 				<table class="tg" width="100%">
 					<tr>
 						<td class="tg-zv4m" style="vertical-align: top;">
 							<a href="https://doi.org/10.17636/101CORSMAL1">
-								<video width="200" autoplay loop><source  src="resources/output_4.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
-								</a>
-							</td>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<b>CORSMAL Containers Manipulation</b><br>
-								1,140 audio-visual-inertial recordings of people interacting with containers (e.g. pouring a liquid in a cup; shaking a food box). 15 containers;  3 filling levels; 3 types of filling. RGB, depth, and infrared images from 4 views; multi-channel audio from an  8-element circular microphone array.
-								<br>
-								[<a href="containers_manip.html"><u>details</u></a>]
-								[<a href="https://doi.org/10.17636/101CORSMAL1"><u>data</u></a>]
-							</td>
-						</tr>
-						<!--  -->
-						<tr>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<a href="https://doi.org/10.5281/zenodo.6372437" TARGET = "_blank">
-									<img src="images/epfl_audio-tactile_dataset.png" alt="EPFL Audio-Tactile"  width="200" style="vertical-align: middle;"/>
-								</a>
-							</td>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<b>Audio and Tactile dataset of robot object manipulation with different material contents</b><br>
-								Auditory and tactile signals of a Kuka IIWA robot with an Allegro hand holding a plastic container containing different materials. The robot manipulates the container with vertical shaking and rotation motions. The data consists of force/pressure measurements on the Allegro hand using a Tekscan tactile skin sensor, auditory signals from a microphone, and the joints data of the IIWA robot and the Allegro hand joints.
-								<br>
-								[<a href="https://doi.org/10.5281/zenodo.6372437" TARGET = "_blank"><u>details</u></a>]
-							</td>
-						</tr>
-						<!--  -->
-						<tr>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<a href="https://doi.org/10.17636/corsmal2 ">
-									<img src="images/ICASSP20_dataset/000003.png" alt="Containers"  width="200" style="vertical-align: middle;"/>
-								</a>
-							</td>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<b>CORSMAL Containers</b><br>
-								1,656 images of 23 containers (cups, drinking glasses, bottles) seen by two cameras (RGB, depth, and narrow-baseline stereo infrared) under different lighting and background conditions.
-								<br>
-								[<a href="containers.html"><u>details</u></a>]
-								[<a href="https://doi.org/10.17636/corsmal2"><u>data</u></a>]
-							</td>
-						</tr>
-						<!--  -->
-						<tr>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<a href="https://doi.org/10.5281/zenodo.4642577">
-									<img src="images/RTL/ccm_dataset.png" alt="Containers"  width="200" style="vertical-align: middle;"/>
-								</a>
-							</td>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<b>Crop - CORSMAL Containers Manipulation (C-CCM)</b><br>
-								10,216 RGB images  automatically sampled from the three fixed views of the public videos recordings of the CORSMAL Container Manipulation dataset, and capturing cups (4) and drinking glasses (4) as containers under different lighting and background conditions. Containers are completely visible or occluded by the person's hand.
-								<br>
-								[<a href="https://doi.org/10.5281/zenodo.4642577"><u>details</u></a>]
-							</td>
-						</tr>
-						<!--  -->
-						<tr>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<a href="https://doi.org/10.5281/zenodo.4770439" TARGET = "_blank">
-									<img src="images/acc_image.png" alt="EUSIPCO21" width="200"/>
-								</a>
-							</td>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<b>Audio-based Containers Manipulation Setup 2 (ACM-S2)</b><br>
-								21 audio recordings  acquired  in  a different setup for  the  validation  of  audio-based  models  for  the  task  of  filling  type  and  filling  level classification.
-								<br>
-								[<a href="https://doi.org/10.5281/zenodo.4770439"><u>details</u></a>]
-							</td>
-						</tr>
-						<!--  -->
-						<tr>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<a href="" TARGET = "_blank">
-									<img src="https://www.epfl.ch/labs/lasa/wp-content/uploads/2021/02/Capture-dcran-2021-02-03-13.46.20.jpg" alt="Containers"  width="200" style="vertical-align: middle;"/>
-								</a>
-							</td>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<b>Human-to-human handovers of objects with unknown content</b><br>
-								219 configurations with synchronised video, poses (joints) and force sensors of 6 people manipulating and handing over 16 objects (4 drinking cups, 1 drinking glass, 1 mug, 1 food box, 1 pitcher and 8 common household objects) between each other in pairs. 
-								<!-- Containers are empty, or filled at 50% or 90% with respect to their total capacity. -->
-								<!-- A dataset that captures two subjects and 16 objects (eight container types and eight common household objects) 219 configurations executed by 6 participants, paired. Subject 1 grasps a container (or a common household object) and hands it over to Subject 2 (in the case of containers) or manipulates it and then hands it over (in the case of household objects) to Subject 2, who receives the object and places it back on the table to complete the task. -->
-								<!-- Containers (four drinking cups, one drinking glass, one drinking mug, one food box, one pitcher) are made of different materials (plastic, glass, cardboard).  -->
-								<!-- Containers are empty, or filled at 50% or 90% with respect to their total capacity. When filled, the food box contains pasta, whereas other containers are filled with water.  -->
-								<!-- The dataset includes video data, pose (joints) and force sensors. All data are synchronised.  -->
-								Dataset collected jointly with the SECONDHANDS EU H2020 project and in collaboration with Karlsruhe Institute of Technology (team of Prof. Tamim Asfour).
-								<br>
-								<!-- [<a href="https://www.epfl.ch/labs/lasa/datasets/" TARGET = "_blank"><u>details</u></a>] -->
-							</td>
-						</tr>
-						<!--  -->
-						<tr>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<a href="https://doi.org/10.5281/zenodo.5085800">
-									<img src="images/pose/final_v4.png" alt="CHOC"  width="200" style="vertical-align: middle;"/>
-								</a>
-							</td>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<b>CORSMAL Hand-Occluded Containers (CHOC)</b><br>
-								An image-based dataset for category-level 6D object pose and size estimation with 138,240 pseudo-realistic composite RGB-D images of hand-held containers on top of 30 real backgrounds (mixed-reality set) and 3,951 RGB-D images selected from the CORSMAL Container Manipulation dataset. 
-								<br>
-								[<a href="https://doi.org/10.5281/zenodo.5085800" TARGET = "_blank"><u>details</u></a>]
-								<!-- [<a href="https://github.com/CORSMAL/CHOC-dataset-toolkit" TARGET = "_blank"><u>toolkit</u></a>] -->
-							</td>
-						</tr>
-						<!--  -->
-					</table>
+								<video width="200" autoplay loop>
+									<source src="resources/output_4.mp4" type="video/mp4"> Your browser does not support
+									HTML5 video.
+								</video>
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>CORSMAL Containers Manipulation</b><br>
+							1,140 audio-visual-inertial recordings of people interacting with containers (e.g. pouring a
+							liquid in a cup; shaking a food box). 15 containers; 3 filling levels; 3 types of filling.
+							RGB, depth, and infrared images from 4 views; multi-channel audio from an 8-element circular
+							microphone array.
+							<br>
+							[<a href="containers_manip.html"><u>details</u></a>]
+							[<a href="https://doi.org/10.17636/101CORSMAL1"><u>data</u></a>]
+						</td>
+					</tr>
+					<!--  -->
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://doi.org/10.5281/zenodo.6372437" TARGET="_blank">
+								<img src="images/epfl_audio-tactile_dataset.png" alt="EPFL Audio-Tactile" width="200"
+									style="vertical-align: middle;" />
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Audio and Tactile dataset of robot object manipulation with different material
+								contents</b><br>
+							Auditory and tactile signals of a Kuka IIWA robot with an Allegro hand holding a plastic
+							container containing different materials. The robot manipulates the container with vertical
+							shaking and rotation motions. The data consists of force/pressure measurements on the
+							Allegro hand using a Tekscan tactile skin sensor, auditory signals from a microphone, and
+							the joints data of the IIWA robot and the Allegro hand joints.
+							<br>
+							[<a href="https://doi.org/10.5281/zenodo.6372437" TARGET="_blank"><u>details</u></a>]
+						</td>
+					</tr>
+					<!--  -->
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://doi.org/10.17636/corsmal2 ">
+								<img src="images/ICASSP20_dataset/000003.png" alt="Containers" width="200"
+									style="vertical-align: middle;" />
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>CORSMAL Containers</b><br>
+							1,656 images of 23 containers (cups, drinking glasses, bottles) seen by two cameras (RGB,
+							depth, and narrow-baseline stereo infrared) under different lighting and background
+							conditions.
+							<br>
+							[<a href="containers.html"><u>details</u></a>]
+							[<a href="https://doi.org/10.17636/corsmal2"><u>data</u></a>]
+						</td>
+					</tr>
+					<!--  -->
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://doi.org/10.5281/zenodo.4642577">
+								<img src="images/RTL/ccm_dataset.png" alt="Containers" width="200"
+									style="vertical-align: middle;" />
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Crop - CORSMAL Containers Manipulation (C-CCM)</b><br>
+							10,216 RGB images automatically sampled from the three fixed views of the public videos
+							recordings of the CORSMAL Container Manipulation dataset, and capturing cups (4) and
+							drinking glasses (4) as containers under different lighting and background conditions.
+							Containers are completely visible or occluded by the person's hand.
+							<br>
+							[<a href="https://doi.org/10.5281/zenodo.4642577"><u>details</u></a>]
+						</td>
+					</tr>
+					<!--  -->
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://doi.org/10.5281/zenodo.4770439" TARGET="_blank">
+								<img src="images/acc_image.png" alt="EUSIPCO21" width="200" />
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Audio-based Containers Manipulation Setup 2 (ACM-S2)</b><br>
+							21 audio recordings acquired in a different setup for the validation of audio-based models
+							for the task of filling type and filling level classification.
+							<br>
+							[<a href="https://doi.org/10.5281/zenodo.4770439"><u>details</u></a>]
+						</td>
+					</tr>
+					<!--  -->
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="" TARGET="_blank">
+								<img src="https://www.epfl.ch/labs/lasa/wp-content/uploads/2021/02/Capture-dcran-2021-02-03-13.46.20.jpg"
+									alt="Containers" width="200" style="vertical-align: middle;" />
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>Human-to-human handovers of objects with unknown content</b><br>
+							219 configurations with synchronised video, poses (joints) and force sensors of 6 people
+							manipulating and handing over 16 objects (4 drinking cups, 1 drinking glass, 1 mug, 1 food
+							box, 1 pitcher and 8 common household objects) between each other in pairs.
+							<!-- Containers are empty, or filled at 50% or 90% with respect to their total capacity. -->
+							<!-- A dataset that captures two subjects and 16 objects (eight container types and eight common household objects) 219 configurations executed by 6 participants, paired. Subject 1 grasps a container (or a common household object) and hands it over to Subject 2 (in the case of containers) or manipulates it and then hands it over (in the case of household objects) to Subject 2, who receives the object and places it back on the table to complete the task. -->
+							<!-- Containers (four drinking cups, one drinking glass, one drinking mug, one food box, one pitcher) are made of different materials (plastic, glass, cardboard).  -->
+							<!-- Containers are empty, or filled at 50% or 90% with respect to their total capacity. When filled, the food box contains pasta, whereas other containers are filled with water.  -->
+							<!-- The dataset includes video data, pose (joints) and force sensors. All data are synchronised.  -->
+							Dataset collected jointly with the SECONDHANDS EU H2020 project and in collaboration with
+							Karlsruhe Institute of Technology (team of Prof. Tamim Asfour).
+							<br>
+							<!-- [<a href="https://www.epfl.ch/labs/lasa/datasets/" TARGET = "_blank"><u>details</u></a>] -->
+						</td>
+					</tr>
+					<!--  -->
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<a href="https://doi.org/10.5281/zenodo.5085800">
+								<img src="images/pose/final_v4.png" alt="CHOC" width="200"
+									style="vertical-align: middle;" />
+							</a>
+						</td>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<b>CORSMAL Hand-Occluded Containers (CHOC)</b><br>
+							An image-based dataset for category-level 6D object pose and size estimation with 138,240
+							pseudo-realistic composite RGB-D images of hand-held containers on top of 30 real
+							backgrounds (mixed-reality set) and 3,951 RGB-D images selected from the CORSMAL Container
+							Manipulation dataset.
+							<br>
+							[<a href="https://doi.org/10.5281/zenodo.5085800" TARGET="_blank"><u>details</u></a>]
+							<!-- [<a href="https://github.com/CORSMAL/CHOC-dataset-toolkit" TARGET = "_blank"><u>toolkit</u></a>] -->
+						</td>
+					</tr>
+					<!--  -->
+				</table>
 
-					<br>
+				<br>
 
-					<p>
-						<b>Models</b>
-					</p>
+				<p>
+					<b>Models</b>
+				</p>
 
-					<table class="tg" width="100%">
+				<table class="tg" width="100%">
 					<tr>
 						<td class="tg-zv4m" style="vertical-align: top;" width="200">
-						<!-- 	<a href="https://doi.org/10.5281/zenodo.4518951">
+							<!-- 	<a href="https://doi.org/10.5281/zenodo.4518951">
 								<video width="200" autoplay loop><source  src="resources/output_4.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
 								</a> -->
-							</td>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<b>Filling level classification (image based)</b><br>
-								Pre-trained models in PyTorch of the neural networks used in the paper <a href="filling.html"><u>Improving filling level classification with adversarial training</u></a>.
-								<br>
-								<a href="https://doi.org/10.5281/zenodo.4518951"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4518951.svg" alt="DOI"></a>
-							</td>
-						</tr>
-						<!--  -->
-						<td class="tg-zv4m" style="vertical-align: top;" width="200">
-						<!-- 	<a href="https://doi.org/10.5281/zenodo.4518951">
-								<video width="200" autoplay loop><source  src="resources/output_4.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
-								</a> -->
-							</td>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<b>Real-to-simulation handovers</b><br>
-								Pre-trained  models  and  3D  hand keypoints  annotations  to  be  used  with  the  implementation  of  the  real-to-simulation  framework  of  the paper <a href="safe_handover.html"><u>Towards safe human-to-robot handovers of unknown containers</u></a>.
-								<br>
-								<a href="https://doi.org/10.5281/zenodo.5525333"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5525333.svg" alt="DOI"></a>
-							</td>
-						</tr>
-						<!--  -->
-						<td class="tg-zv4m" style="vertical-align: top;" width="200">
-						<!-- 	<a href="https://doi.org/10.5281/zenodo.4518951">
-								<video width="200" autoplay loop><source  src="resources/output_4.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
-								</a> -->
-							</td>
-							<td class="tg-zv4m" style="vertical-align: top;">
-								<b>Audio classification</b><br>
-								Neural  network's  architecture and  pre-trained  weights  used  in  the  paper <a href="https://arxiv.org/pdf/2103.15999.pdf"><u>Audio  Classification  of  the  Content  of  Food  Containers  and Drinking Glasses</u></a>, and the pre-trained models of the methods under comparison.
-								<br>
-								<a href="https://doi.org/10.5281/zenodo.4770061"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4770061.svg" alt="DOI"></a>
-								<!-- [<a href="audio_classification.html"><u>paper</u></a>] -->
-							</td>
-						</tr>
-					<!--  -->
-						<tr>
+						</td>
 						<td class="tg-zv4m" style="vertical-align: top;">
-<!-- 							<a href="https://github.com/amodas/PRIME-augmentations" TARGET = "_blank">
+							<b>Filling level classification (image based)</b><br>
+							Pre-trained models in PyTorch of the neural networks used in the paper <a
+								href="filling.html"><u>Improving filling level classification with adversarial
+									training</u></a>.
+							<br>
+							<a href="https://doi.org/10.5281/zenodo.4518951"><img
+									src="https://zenodo.org/badge/DOI/10.5281/zenodo.4518951.svg" alt="DOI"></a>
+						</td>
+					</tr>
+					<!--  -->
+					<td class="tg-zv4m" style="vertical-align: top;" width="200">
+						<!-- 	<a href="https://doi.org/10.5281/zenodo.4518951">
+								<video width="200" autoplay loop><source  src="resources/output_4.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+								</a> -->
+					</td>
+					<td class="tg-zv4m" style="vertical-align: top;">
+						<b>Real-to-simulation handovers</b><br>
+						Pre-trained models and 3D hand keypoints annotations to be used with the implementation of the
+						real-to-simulation framework of the paper <a href="safe_handover.html"><u>Towards safe
+								human-to-robot handovers of unknown containers</u></a>.
+						<br>
+						<a href="https://doi.org/10.5281/zenodo.5525333"><img
+								src="https://zenodo.org/badge/DOI/10.5281/zenodo.5525333.svg" alt="DOI"></a>
+					</td>
+					</tr>
+					<!--  -->
+					<td class="tg-zv4m" style="vertical-align: top;" width="200">
+						<!-- 	<a href="https://doi.org/10.5281/zenodo.4518951">
+								<video width="200" autoplay loop><source  src="resources/output_4.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video>
+								</a> -->
+					</td>
+					<td class="tg-zv4m" style="vertical-align: top;">
+						<b>Audio classification</b><br>
+						Neural network's architecture and pre-trained weights used in the paper <a
+							href="https://arxiv.org/pdf/2103.15999.pdf"><u>Audio Classification of the Content of Food
+								Containers and Drinking Glasses</u></a>, and the pre-trained models of the methods under
+						comparison.
+						<br>
+						<a href="https://doi.org/10.5281/zenodo.4770061"><img
+								src="https://zenodo.org/badge/DOI/10.5281/zenodo.4770061.svg" alt="DOI"></a>
+						<!-- [<a href="audio_classification.html"><u>paper</u></a>] -->
+					</td>
+					</tr>
+					<!--  -->
+					<tr>
+						<td class="tg-zv4m" style="vertical-align: top;">
+							<!-- 							<a href="https://github.com/amodas/PRIME-augmentations" TARGET = "_blank">
 								<img src="images/prime_eccv22.png" alt="PRIME" width="200"/>
 							</a> -->
 						</td>
 						<td class="tg-zv4m" style="vertical-align: top;">
 							<b>PRIME: A few primitives can boost robustness to common corruptions</b><br>
-							Models of the neural networks used in the paper <a href="https://doi.org/10.48550/arXiv.2112.13547"><u>PRIME: A few primitives can boost robustness to common corruptions</u></a> and pre-trained on CIFAR-10, CIFAR-100, ImageNet-100 and ImageNet using PRIME. Included also a model pre-trained on ImageNet-100 by combining DeepAugment + PRIME. The networks are implemented in PyTorch. <br>
-							<a href="https://doi.org/10.5281/zenodo.5801871"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5801871.svg" alt="DOI"></a>
+							Models of the neural networks used in the paper <a
+								href="https://doi.org/10.48550/arXiv.2112.13547"><u>PRIME: A few primitives can boost
+									robustness to common corruptions</u></a> and pre-trained on CIFAR-10, CIFAR-100,
+							ImageNet-100 and ImageNet using PRIME. Included also a model pre-trained on ImageNet-100 by
+							combining DeepAugment + PRIME. The networks are implemented in PyTorch. <br>
+							<a href="https://doi.org/10.5281/zenodo.5801871"><img
+									src="https://zenodo.org/badge/DOI/10.5281/zenodo.5801871.svg" alt="DOI"></a>
 						</td>
 					</tr>
 					<!--  -->
-						<tr>
+					<tr>
 						<td class="tg-zv4m" style="vertical-align: top;">
-<!-- 							<a href="https://github.com/amodas/PRIME-augmentations" TARGET = "_blank">
+							<!-- 							<a href="https://github.com/amodas/PRIME-augmentations" TARGET = "_blank">
 								<img src="images/prime_eccv22.png" alt="PRIME" width="200"/>
 							</a> -->
 						</td>
 						<td class="tg-zv4m" style="vertical-align: top;">
 							<b>CHOC-NOCS</b><br>
-							Vision model based on a multi-branch convolutional neural network re-trained in QMUL for the task of category-level 6D pose estimation on real hand-occluded containers, and used in the pre-print <a href="http://arxiv.org/abs/2211.10470"><u>A mixed-reality dataset for category-level 6D pose and size estimation of hand-occluded containers</u></a>. The model is implemented in TensorFlow.<br>
-							<a href="https://doi.org/10.5281/zenodo.7438645"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7438645.svg" alt="DOI"></a>
+							Vision model based on a multi-branch convolutional neural network re-trained in QMUL for the
+							task of category-level 6D pose estimation on real hand-occluded containers, and used in the
+							pre-print <a href="http://arxiv.org/abs/2211.10470"><u>A mixed-reality dataset for
+									category-level 6D pose and size estimation of hand-occluded containers</u></a>. The
+							model is implemented in TensorFlow.<br>
+							<a href="https://doi.org/10.5281/zenodo.7438645"><img
+									src="https://zenodo.org/badge/DOI/10.5281/zenodo.7438645.svg" alt="DOI"></a>
 						</td>
 					</tr>
-					</table>
+				</table>
 
- 						<br>
+				<br>
 
-					<!-- <p>
+				<!-- <p>
 						<b>Other datasets of interest</b>	
 					</p>	
 
@@ -369,15 +463,15 @@
 </div>
 </li> -->
 
-<br><br>
+				<br><br>
 
-</div>				
-</div>
-</div>
+			</div>
+		</div>
+	</div>
 
 
 
-<!-- <div class="wrapper row1">
+	<!-- <div class="wrapper row1">
 	<div id="header" class="clear" style="padding: 0px 0px 0px 20px;width:920px">
 		<div class="fl_left" style="margin-top: 0px;">
 			<ul>
@@ -419,30 +513,32 @@
 	</div>
 </div> -->
 
-<br><br>
+	<br><br>
 
 
-<!-- ####################################################################################################### -->
-<!-- <div class="clearing">&nbsp;</div>-->
-<!-- <div class="wrapper bottomPg">
+	<!-- ####################################################################################################### -->
+	<!-- <div class="clearing">&nbsp;</div>-->
+	<!-- <div class="wrapper bottomPg">
 	<div id="copyright">
 		<div id="fl_left" style="font-size:12px">
 			© Copyright CORSMAL 2019-2022
 		</div>	  
 	</div>
 </div> -->
-<!-- footer -->
- <footer class="site-footer">
-<div class="footer-col social-col" aria-label="Social media" style="text-align:center;">
-	<a href="https://github.com/corsmal" aria-label="GitHub" rel="noopener noreferrer" target="_blank" ><i class="fab fa-fw fa-github" aria-hidden="true"></i></a>				
-</div>
-<p>
-	Copyright &copy; 2019-<span id="currentYear"></span> - CORSMAL
-</p>
-</footer>
-<script>
-	document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-<!--added to clear error with content element -->
+	<!-- footer -->
+	<footer class="site-footer">
+		<div class="footer-col social-col" aria-label="Social media" style="text-align:center;">
+			<a href="https://github.com/corsmal" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><i
+					class="fab fa-fw fa-github" aria-hidden="true"></i></a>
+		</div>
+		<p>
+			Copyright &copy; 2019-<span id="currentYear"></span> - CORSMAL
+		</p>
+	</footer>
+	<script>
+		document.getElementById('currentYear').textContent = new Date().getFullYear();
+	</script>
+	<!--added to clear error with content element -->
 </body>
+
 </html>
