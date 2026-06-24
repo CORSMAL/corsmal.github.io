@@ -15,9 +15,163 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
+	<link rel="stylesheet" href="css/homepage.css" type="text/css">
 	<link rel="stylesheet" href="css/academicons.css">
-
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+	<style>
+		/* Objectives Page Specific Styles */
+		#latestnewspage {
+			margin-bottom: var(--spacing-2xl);
+		}
+
+		#latestnewspage h2 {
+			font-size: 2rem;
+			margin-bottom: var(--spacing-lg);
+			color: var(--color-dark-navy);
+		}
+
+		#latestnewspage p {
+			font-size: 1rem;
+			line-height: 1.8;
+			margin-bottom: var(--spacing-md);
+			color: var(--color-text);
+		}
+
+		/* Funding Section */
+		.funding-section {
+			margin-top: var(--spacing-2xl);
+			padding: var(--spacing-lg);
+			background: var(--color-bg-light);
+			border-left: 4px solid var(--color-accent);
+			border-radius: var(--border-radius-md);
+		}
+
+		.funding-section h2 {
+			font-size: 1.5rem;
+			margin-bottom: var(--spacing-md);
+			color: var(--color-dark-navy);
+		}
+
+		.funding-section p {
+			margin-bottom: var(--spacing-md);
+		}
+
+		.funding-section a {
+			color: var(--color-accent);
+			text-decoration: none;
+			transition: var(--transition-fast);
+		}
+
+		.funding-section a:hover {
+			text-decoration: underline;
+			color: var(--color-accent-dark);
+		}
+
+		/* Sponsors & Partners Container */
+		.sponsors-partners-container {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: var(--spacing-2xl);
+			margin-top: var(--spacing-2xl);
+		}
+
+		.sponsors-section,
+		.partners-section {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.sponsors-section h3,
+		.partners-section h3 {
+			font-size: 1.2rem;
+			margin-bottom: var(--spacing-lg);
+			color: var(--color-dark-navy);
+			border-bottom: 2px solid var(--color-accent);
+			padding-bottom: var(--spacing-md);
+		}
+
+		/* Logo Grid */
+		.logo-grid {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--spacing-lg);
+			align-items: center;
+		}
+
+		.logo-item {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex: 1;
+			min-width: 120px;
+		}
+
+		.logo-item img {
+			max-height: 60px;
+			width: auto;
+			object-fit: contain;
+			transition: var(--transition-standard);
+		}
+
+		.logo-item a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+		}
+
+		.logo-item img:hover {
+			transform: scale(1.05);
+			opacity: 0.8;
+		}
+
+		/* Responsive Design */
+		@media (max-width: 1024px) {
+			.sponsors-partners-container {
+				grid-template-columns: 1fr;
+				gap: var(--spacing-xl);
+			}
+
+			.logo-grid {
+				gap: var(--spacing-md);
+			}
+
+			.logo-item {
+				flex: 0 1 calc(50% - var(--spacing-md) / 2);
+			}
+		}
+
+		@media (max-width: 768px) {
+			#latestnewspage h2 {
+				font-size: 1.5rem;
+			}
+
+			.funding-section {
+				padding: var(--spacing-md);
+			}
+
+			.sponsors-section h3,
+			.partners-section h3 {
+				font-size: 1rem;
+				margin-bottom: var(--spacing-md);
+			}
+
+			.logo-grid {
+				gap: var(--spacing-md);
+				flex-direction: column;
+			}
+
+			.logo-item {
+				flex: 1 1 100%;
+				min-width: 100%;
+			}
+
+			.logo-item img {
+				max-height: 50px;
+			}
+		}
+	</style>
 
 	<title>Objectives | CORSMAL</title>
 
@@ -66,93 +220,183 @@
 			</ul>
 		</nav>
 	</div>
-	<!-- 3####################################################################################################### -->
+
 	<div id="container" class="clear">
 		<div id="latestnewspage" class="clear">
 			<h2>Objectives</h2>
 			<p>
 				CORSMAL explored the fusion of multiple sensing modalities (touch, sound, and first and third person
-				vision)
-				to accurately and robustly estimate the physical properties of objects in noisy and potentially
-				ambiguous environments.
-				The project aimed to develop a framework for recognition and manipulation of objects via cooperation
-				with humans
-				by mimicking human capability of learning and adapting across a set of different manipulators, tasks,
-				sensing configurations and environments. The project focus was to define learning architectures
-				for multimodal sensory data and for aggregated data from different environments.
-				The goal was to continually improve the adaptability and robustness of the learned models,
+				vision) to accurately and robustly estimate the physical properties of objects in noisy and potentially
+				ambiguous environments. The project aimed to develop a framework for recognition and manipulation of
+				objects via cooperation with humans by mimicking human capability of learning and adapting across a set
+				of different manipulators, tasks, sensing configurations and environments. The project focus was to
+				define learning architectures for multimodal sensory data and for aggregated data from different
+				environments. The goal was to continually improve the adaptability and robustness of the learned models,
 				and to generalise capabilities across tasks and sites.
 			</p>
 
-			<!-- <p>
-		CORSMAL is exploring the fusion of multiple sensing modalities (touch, sound, and first and third person vision) to accurately and robustly estimate the physical properties of objects in noisy and potentially ambiguous environments. 
-		</p>
-		<p>
-		We aim to develop a framework for recognition and manipulation of objects via cooperation with humans by mimicking human capability of learning and adapting across a set of different manipulators, tasks, sensing configurations and environments. 
-		</p>
-		<p>
-		Our focus is to define learning architectures for multimodal sensory data and for aggregated data from different environments. The goal is to continually improve the adaptability and robustness of the learned models, and to generalise capabilities across tasks and sites.
-		</p> -->
-		</div>
+			<!-- Funding Section -->
+			<!-- <div class="funding-section"> -->
+				<h2>Funding</h2>
+				<p>
+					A CHIST-ERA project for the Call 2017 on the topic Object recognition and manipulation by robots:
+					Data sharing and experiment reproducibility (ORMR). The project was funded by UK EPSRC grant
+					EP/S031715/1, France ANR grant ANR-18-CHR3-0006, and Swiss NSF grant 20CH21_180444. The project
+					run between February 2019 and December 2022.
+				</p>
+				<p>
+					More information: <a href="https://www.chistera.eu/projects/corsmal" target="_blank"
+						rel="noopener noreferrer">https://www.chistera.eu/projects/corsmal</a>
+				</p>
+			<!-- </div> -->
 
-		<div class="fl_left" style="margin-top: 0px;">
-			<h2>Funding</h2>
-			<p>
-				A CHIST-ERA project for the Call 2017 on the topic Object recognition and manipulation by robots:
-				Data sharing and experiment reproducibility (ORMR).
-				The project was funded by UK EPSRC grant EP/S031715/1, France ANR grant ANR-18-CHR3-0006, and Swiss NSF
-				grant 20CH21_180444.
-				The project run between February 2019 and December 2022.
-			</p>
-			<p>
-				More information: <a href="https://www.chistera.eu/projects/corsmal"
-					target="_blank"><u>https://www.chistera.eu/projects/corsmal</u></a>
-			</p>
-			<div style="float:left;width:50%;">
-				<h3>Sponsors</h3>
-				<a href="http://www.chistera.eu" TARGET="_blank"><img src="images/chist-era_logo_crop.png"
-						style="height:35px;" alt="Chistera logo" /></a></li>
-				<a href="https://epsrc.ukri.org/" target="_blank"><img src="images/EPSRC_logo.png"
-						style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="EPSRC logo"></a>
-				<a href="http://www.agence-nationale-recherche.fr/en/" target="_blank"><img src="images/ANR_logo.png"
-						style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="ANR logo"></a>
-				<a href="http://www.snf.ch/en/Pages/default.aspx" target="_blank"><img src="images/FNS_logo.jpg"
-						style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="FNS logo"></a>
-			</div>
+			<!-- Sponsors and Partners Section -->
+			<div class="sponsors-partners-container">
+				<!-- Sponsors -->
+				<div class="sponsors-section">
+					<h3>Funding Agencies</h3>
+					<div class="logo-grid">
+						<div class="logo-item">
+							<a href="http://www.chistera.eu" target="_blank" rel="noopener noreferrer"
+								aria-label="CHIST-ERA">
+								<img src="images/chist-era_logo_crop.png" alt="CHIST-ERA logo">
+							</a>
+						</div>
+						<div class="logo-item">
+							<a href="https://epsrc.ukri.org/" target="_blank" rel="noopener noreferrer"
+								aria-label="EPSRC">
+								<img src="images/EPSRC_logo.png" alt="EPSRC logo">
+							</a>
+						</div>
+						<div class="logo-item">
+							<a href="http://www.agence-nationale-recherche.fr/en/" target="_blank"
+								rel="noopener noreferrer" aria-label="ANR">
+								<img src="images/ANR_logo.png" alt="ANR logo">
+							</a>
+						</div>
+						<div class="logo-item">
+							<a href="http://www.snf.ch/en/Pages/default.aspx" target="_blank" rel="noopener noreferrer"
+								aria-label="SNF">
+								<img src="images/FNS_logo.jpg" alt="SNF logo">
+							</a>
+						</div>
+					</div>
+				</div>
 
-			<div style="float:left;width:50%;">
-				<h3>Consortium Partners</h3>
-				<a href="https://www.qmul.ac.uk/" target="_blank">
-					<img src="images/QMUL_logo.jpg" alt="Queen Mary University of London"
-						style="padding:5px 10px 0px 0px;height:45px;">
-				</a>
-				<a href="http://www.sorbonne-universite.fr/en" target="_blank">
-					<img src="images/Sorbonne_University_logo.png" alt="Sorbonne University"
-						style="padding:5px 10px 0px 0px;height:45px;">
-				</a>
-				<a href="https://www.epfl.ch/en/home/" target="_blank">
-					<img src="images/EPFL_logo.png" alt="EPFL" style="padding:5px 0px 0px 0px;height:45px;">
-				</a>
+				<!-- Partners -->
+				<div class="partners-section">
+					<h3>Consortium Partners</h3>
+					<div class="logo-grid">
+						<div class="logo-item">
+							<a href="https://www.qmul.ac.uk/" target="_blank" rel="noopener noreferrer"
+								aria-label="Queen Mary University of London">
+								<img src="images/QMUL_logo.jpg" alt="Queen Mary University of London">
+							</a>
+						</div>
+						<div class="logo-item">
+							<a href="http://www.sorbonne-universite.fr/en" target="_blank" rel="noopener noreferrer"
+								aria-label="Sorbonne University">
+								<img src="images/Sorbonne_University_logo.png" alt="Sorbonne University">
+							</a>
+						</div>
+						<div class="logo-item">
+							<a href="https://www.epfl.ch/en/home/" target="_blank" rel="noopener noreferrer"
+								aria-label="EPFL">
+								<img src="images/EPFL_logo.png" alt="EPFL">
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<br><br>
 
-	<!-- ####################################################################################################### -->
-	<!-- footer -->
-	<footer class="site-footer">
-		<div class="footer-col social-col" aria-label="Social media" style="text-align:center;">
-			<a href="https://github.com/corsmal" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><i
-					class="fab fa-fw fa-github" aria-hidden="true"></i></a>
+	<!-- Back to Top Button -->
+	<button id="backToTop" class="back-to-top" aria-label="Back to top">
+		<i class="fas fa-chevron-up"></i>
+	</button>
+
+	<!-- Modern Footer with Sitemap -->
+	<footer class="modern-footer">
+		<div class="footer-container">
+			<!-- Project Information & Social Media -->
+			<div class="footer-section project-info">
+				<img src="images/CORSMAL_logo.png" alt="CORSMAL Logo" width="75%">
+				<p>Collaborative object recognition, shared manipulation and learning through multimodal sensing and AI.
+				</p>
+				<div class="social-links" style="margin-top: var(--spacing-lg);">
+					<a href="https://github.com/corsmal" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+						<i class="fab fa-github"></i>
+					</a>
+				</div>
+			</div>
+
+			<!-- Sitemap: About -->
+			<div class="footer-section sitemap-column">
+				<h3>About</h3>
+				<ul>
+					<li><a href="objectives.html">Objectives</a></li>
+					<li><a href="team.html">Team</a></li>
+					<li><a href="events.html">Events</a></li>
+				</ul>
+			</div>
+
+			<!-- Sitemap: Resources -->
+			<div class="footer-section sitemap-column">
+				<h3>Resources</h3>
+				<ul>
+					<li><a href="publications.html">Publications</a></li>
+					<li><a href="data.html">Data</a></li>
+					<li><a href="code.html">Software</a></li>
+					<li><a href="blog.html">Blog</a></li>
+				</ul>
+			</div>
+
+			<!-- Sitemap: Benchmarking & Contact -->
+			<div class="footer-section sitemap-column">
+				<h3>Benchmarking</h3>
+				<ul>
+					<li><a href="benchmark/competitions.html">Competitions</a></li>
+					<li><a href="benchmark.html">Protocol</a></li>
+					<li><a href="challenge.html">Challenge</a></li>
+				</ul>
+			</div>
+
+			<!-- Contact Information -->
+			<!-- <div class="footer-section contact">
+				<h3>Contact</h3>
+				<div class="contact-item">
+					<i class="fas fa-globe"></i>
+					<span><a href="https://www.chistera.eu/projects/corsmal" target="_blank"
+							rel="noopener noreferrer">Project Page</a></span>
+				</div>
+			</div> -->
 		</div>
-		<p>
-			Copyright &copy; 2019-<span id="currentYear"></span> - CORSMAL
-		</p>
+
+		<!-- Footer Bottom / Copyright -->
+		<div class="footer-bottom">
+			<p>&copy; <span id="currentYear"></span> CORSMAL. All rights reserved.</p>
+		</div>
 	</footer>
+
 	<script>
 		document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+		// Back to Top Button Functionality
+		const backToTopBtn = document.getElementById('backToTop');
+
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 300) {
+				backToTopBtn.classList.add('show');
+			} else {
+				backToTopBtn.classList.remove('show');
+			}
+		});
+
+		backToTopBtn.addEventListener('click', () => {
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		});
 	</script>
-	<!--added to clear error with content element -->
 </body>
 
 </html>

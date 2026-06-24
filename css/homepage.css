@@ -8,12 +8,11 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 
 #homepage {
 	position: relative;
-	margin: 0 auto 30px;
-	display: block;
-	width: 100%;
+	margin: 0 auto var(--spacing-xl);
 	display: flex;
 	flex-wrap: wrap;
-	gap: 20px;
+	gap: var(--spacing-lg);
+	width: 100%;
 }
 
 /* ========================================
@@ -27,7 +26,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 }
 
 #homepage #left_column .imgholder {
-	margin-bottom: 20px;
+	margin-bottom: var(--spacing-lg);
 }
 
 #homepage #left_column img {
@@ -55,10 +54,10 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 #homepage #latestnews li {
 	display: block;
 	width: 100%;
-	margin: 0 0 20px 0;
-	padding: 0 0 20px 0;
+	margin: 0 0 var(--spacing-lg) 0;
+	padding: 0 0 var(--spacing-lg) 0;
 	list-style: none;
-	border-bottom: 1px solid #e0e0e0;
+	border-bottom: 1px solid rgb(224, 224, 224);
 }
 
 #homepage #latestnews li:last-child {
@@ -72,7 +71,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 }
 
 #latestnews .latestnews p {
-	margin: 0 0 8px 0;
+	margin: 0 0 var(--spacing-xs) 0;
 	padding: 0;
 	font-size: 14px;
 	line-height: 1.5;
@@ -80,7 +79,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 
 #latestnews .imgl {
 	float: left;
-	margin: 0 15px 15px 0;
+	margin: 0 var(--spacing-md) var(--spacing-md) 0;
 	width: 130px;
 	height: 100px;
 	object-fit: cover;
@@ -109,7 +108,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 #homepage #right_column .holder {
 	display: block;
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: var(--spacing-lg);
 }
 
 #homepage #right_column .apply a {
@@ -118,25 +117,26 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 	justify-content: space-between;
 	width: 100%;
 	min-height: 100px;
-	margin-bottom: 20px;
-	color: #666666;
-	background-color: #DEDACB;
+	margin-bottom: var(--spacing-lg);
+	color: rgb(102, 102, 102);
+	background-color: rgb(222, 218, 203);
 	font-size: 14px;
 	text-transform: uppercase;
 	overflow: hidden;
 	text-decoration: none;
-	padding: 10px;
+	padding: var(--spacing-md);
 	box-sizing: border-box;
+	transition: var(--transition-standard);
 }
 
 #homepage #right_column .apply a:hover {
-	background-color: #d5d1c2;
+	background-color: rgb(213, 209, 194);
 	text-decoration: underline;
 }
 
 #homepage #right_column .apply a strong {
 	display: block;
-	padding: 10px;
+	padding: var(--spacing-md);
 	text-align: center;
 	cursor: pointer;
 	flex: 1;
@@ -147,7 +147,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 	width: 80px;
 	height: 80px;
 	object-fit: cover;
-	margin-right: 10px;
+	margin-right: var(--spacing-md);
 	flex-shrink: 0;
 }
 
@@ -159,7 +159,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
-	gap: 20px;
+	gap: var(--spacing-lg);
 }
 
 #academiclinks .linkbox {
@@ -184,7 +184,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 }
 
 #academiclinks li {
-	margin: 0 0 3px 0;
+	margin: 0 0 var(--spacing-xs) 0;
 	padding: 0;
 }
 
@@ -193,13 +193,13 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 }
 
 /* ========================================
-   RESPONSIVE - TABLET (641px - 1024px)
+   RESPONSIVE - TABLET (1024px)
    ======================================== */
 
 @media (max-width: 1024px) {
 	#homepage {
 		flex-direction: column;
-		gap: 15px;
+		gap: var(--spacing-md);
 	}
 
 	#homepage #left_column,
@@ -210,11 +210,6 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 		min-width: auto;
 	}
 
-	#homepage #latestnews {
-		flex: none;
-		width: 100%;
-	}
-
 	#twitter {
 		flex-direction: column;
 		text-align: center;
@@ -223,7 +218,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 
 	#twitter .fl_left {
 		border-right: none;
-		border-bottom: 2px solid #FFFFFF;
+		border-bottom: 2px solid var(--color-white);
 	}
 
 	#twitter .fl_right {
@@ -241,13 +236,13 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 }
 
 /* ========================================
-   RESPONSIVE - MOBILE (max 640px)
+   RESPONSIVE - MOBILE (768px)
    ======================================== */
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
 	#homepage {
 		flex-direction: column;
-		gap: 15px;
+		gap: var(--spacing-md);
 		width: 100%;
 	}
 
@@ -261,13 +256,13 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 	}
 
 	#homepage #latestnews li {
-		margin: 0 0 15px 0;
-		padding: 0 0 15px 0;
+		margin: 0 0 var(--spacing-md) 0;
+		padding: 0 0 var(--spacing-md) 0;
 	}
 
 	#latestnews .imgl {
 		float: left;
-		margin: 0 10px 10px 0;
+		margin: 0 var(--spacing-md) var(--spacing-md) 0;
 		width: 100px;
 		height: 80px;
 		object-fit: cover;
@@ -275,22 +270,22 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 
 	#latestnews .latestnews p {
 		font-size: 13px;
-		margin: 0 0 5px 0;
+		margin: 0 0 var(--spacing-xs) 0;
 	}
 
 	#latestnews p.readmore {
 		clear: both;
 		text-align: right;
 		font-size: 12px;
-		margin-top: 5px;
+		margin-top: var(--spacing-xs);
 	}
 
 	#homepage #right_column .apply a {
 		flex-direction: column;
 		text-align: center;
 		min-height: auto;
-		padding: 15px;
-		gap: 10px;
+		padding: var(--spacing-md);
+		gap: var(--spacing-md);
 	}
 
 	#homepage #right_column .apply img {
@@ -314,9 +309,9 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 	#twitter .fl_left {
 		width: 100%;
 		height: auto;
-		padding: 15px;
+		padding: var(--spacing-md);
 		border-right: none;
-		border-bottom: 1px solid #FFFFFF;
+		border-bottom: 1px solid var(--color-white);
 	}
 
 	#twitter .fl_left a {
@@ -325,7 +320,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 
 	#twitter .fl_right {
 		width: 100%;
-		padding: 15px;
+		padding: var(--spacing-md);
 		font-size: 12px;
 		text-align: center;
 		justify-content: center;
@@ -333,7 +328,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 
 	#academiclinks {
 		flex-direction: column;
-		gap: 15px;
+		gap: var(--spacing-md);
 	}
 
 	#academiclinks .linkbox {

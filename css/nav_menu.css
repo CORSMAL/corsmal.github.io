@@ -201,8 +201,9 @@ nav ul li a.active {
 }
 
 /****************************************************************************/
-/* RESPONSIVE: MOBILE FRIENDLY MENU */
-@media (max-width: 900px) {
+/* RESPONSIVE: TABLET & MOBILE (1024px and below) */
+
+@media (max-width: 1024px) {
   #menu {
     flex-direction: row;
     align-items: center;
@@ -232,12 +233,12 @@ nav ul li a.active {
     display: block;
   }
 
-    /* FIX: Change hamburger icon color to white on mobile */
+  /* Change hamburger icon color to white on tablet/mobile */
   .menu-toggle span,
   .menu-toggle span::before,
   .menu-toggle span::after {
     display: block;
-    background: var(--bg-white);  /* Changed from var(--primary-blue) to white */
+    background: var(--bg-white);
     height: 4px;
     width: 2em;
     border-radius: 2px;
@@ -298,7 +299,7 @@ nav ul li a.active {
     color: var(--bg-white);
   }
 
-  /* Subnav dropdown: mobile (tap-to-open) */
+  /* Subnav dropdown: tablet/mobile (tap-to-open) */
   .subnav .subnav-content {
     position: static;
     width: 100%;
