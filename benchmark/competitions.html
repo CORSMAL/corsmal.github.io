@@ -260,15 +260,63 @@
 
     </main>
 
-    <footer class="site-footer">
-        <div class="footer-col social-col" aria-label="Social media" style="text-align:center;">
-            <a href="https://github.com/corsmal" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><i
-                    class="fab fa-fw fa-github" aria-hidden="true"></i></a>
-        </div>
-        <p>
-            Copyright &copy; 2019-<span id="currentYear"></span> - CORSMAL
-        </p>
-    </footer>
+    <!-- Back to Top Button -->
+	<button id="backToTop" class="back-to-top" aria-label="Back to top">
+		<i class="fas fa-chevron-up"></i>
+	</button>
+
+	<!-- Modern Footer -->
+	<footer class="modern-footer">
+		<div class="footer-container">
+			<!-- Project Information & Social Media -->
+			<div class="footer-section project-info">
+				<img src="../images/CORSMAL_logo.png" alt="CORSMAL Logo" width="75%">
+				<p>Collaborative object recognition, shared manipulation and learning through multimodal sensing and AI.
+				</p>
+				<div class="social-links" style="margin-top: var(--spacing-lg);">
+					<a href="https://github.com/corsmal" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+						<i class="fab fa-github"></i>
+					</a>
+				</div>
+			</div>
+
+			<!-- Sitemap: About -->
+			<div class="footer-section sitemap-column">
+				<h3>About and News</h3>
+				<ul>
+					<li><a href="../objectives.html">Objectives</a></li>
+					<li><a href="../team.html">Team</a></li>
+					<li><a href="../events.html">Events</a></li>
+					<li><a href="../blog.html">Blog</a></li>
+				</ul>
+			</div>
+
+			<!-- Sitemap: Resources -->
+			<div class="footer-section sitemap-column">
+				<h3>Resources</h3>
+				<ul>
+					<li><a href="../publications.html">Publications</a></li>
+					<li><a href="../data.html">Data</a></li>
+					<li><a href="../code.html">Software</a></li>
+				</ul>
+			</div>
+
+			<!-- Sitemap: Benchmarking & Contact -->
+			<div class="footer-section sitemap-column">
+				<h3>Benchmarking</h3>
+				<ul>
+					<li><a href="competitions.html">Competitions</a></li>
+					<li><a href="../benchmark.html">Protocol</a></li>
+					<li><a href="../challenge.html">Challenge</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Footer Bottom / Copyright -->
+		<div class="footer-bottom">
+			<p>&copy; 2019-<span id="currentYear"></span> CORSMAL. All rights reserved.</p>
+		</div>
+	</footer>
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
