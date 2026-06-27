@@ -19,7 +19,7 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 
-	<title>CORSMAL | Home</title>
+	<title>CORSMAL</title>
 
 	<script src="js/menu.js" defer></script>
 </head>
@@ -67,7 +67,8 @@
 		</nav>
 	</div>
 
-	<div class="wrapper row4">
+
+	<!-- <div class="wrapper row4">
 		<div id="featured_slide">
 			<div id="featured_wrap">
 				<ul id="featured_tabs">
@@ -108,9 +109,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
-	<div class="wrapper row4">
+	<!-- <div class="wrapper row4">
 		<div id="container" class="clear">
 			<div id="homepage" class="clear">
 				<div id="left_column">
@@ -146,7 +147,100 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
+
+	<main>
+		<section class="lp-section" aria-labelledby="resources-heading">
+			<img src="images/handover.png" class="opacity-90" alt="Robot handover">
+		</section>
+
+		<!-- ===== VALUE PROPS ===== -->
+		<section class="lp-section lp-section--alt" aria-labelledby="value-props-heading">
+			<!-- <span class="lp-eyebrow">Why CORSMAL</span>
+			<h2 class="lp-h2" id="value-props-heading">Three things CORSMAL gives the field</h2> -->
+
+			<div class="lp-cards">
+				<article class="lp-card">
+					<!-- <div class="lp-card-icon" aria-hidden="true"><i class="fa-solid fa-eye"></i></div> -->
+					<h3><b>Multimodal sensing and AI</b></h3>
+					<img src="images/challenge/setup.png" alt="" />
+					<p style="text-align: justify;">
+						Fusing multiple sensing modalities (touch, sound, vision) 
+						to estimate the physical properties of objects  (no prior knowledge)
+						<!-- Fuses vision, audio and force-torque signals so robots can reason about objects without prior geometry or material knowledge. -->
+					</p>
+				</article>
+				<article class="lp-card">
+					<!-- <div class="lp-card-icon" aria-hidden="true"><i class="fa-solid fa-hands"></i></div> -->
+					<h3><b>Human-to-robot object handover</b></h3>
+					<img src="images/handover_demo.gif" alt="" />
+					<p>
+						Handling dynamic, safety-critical transfers of unknown objects and the unpredictability of human movement
+					</p>
+				</article>
+				<article class="lp-card">
+					<!-- <div class="lp-card-icon" aria-hidden="true"><i class="fa-solid fa-cubes"></i></div> -->
+					<h3><b>Open benchmark ecosystem</b></h3>
+					<img src="images/open_science.png" alt="" />
+					<p>Building a community tha improves, shares, reproduces protocols, ML models, and data, and compares on our leaderboards
+						the </p>
+				</article>
+			</div>
+		</section>
+
+		<!-- ===== RESOURCES ===== -->
+		<section class="lp-section" aria-labelledby="resources-heading">
+			<span class="lp-eyebrow">Resources</span>
+			<!-- <h2 class="lp-h2" id="resources-heading">Start building with CORSMAL</h2> -->
+
+			<div class="lp-resources">
+				<article class="lp-resource-card">
+					<h3><b>Datasets</b></h3>
+					<p>Multimodal recordings of people (or a robot) manipulating objects, and real and mixed-reality images of handheld containers.</p>
+					<a href="data.html" class="lp-btn lp-btn--outline">Browse datasets</a>
+				</article>
+				<article class="lp-resource-card">
+					<h3><b>Software</b></h3>
+					<p>Handover pipelines, real-to-simulation framework, robotic control algorithms, and perception models for object recognition. </p>
+					<a href="code.html" class="lp-btn lp-btn--outline">Explore software</a>
+				</article>
+				<article class="lp-resource-card">
+					<h3><b>Benchmark &amp; protocol</b></h3>
+					<p>Evaluation toolkit and leaderboards to compare methods on a standard benchmarking protocol designed for the task.
+					</p>
+					<a href="benchmark.html" class="lp-btn lp-btn--outline">View protocol</a>
+				</article>
+			</div>
+		</section>
+
+		<!-- ===== LATEST UPDATE ===== -->
+		<section class="lp-section lp-section--alt" aria-labelledby="news-heading">
+			<span class="lp-eyebrow">Latest update</span>
+			<!-- <h2 class="lp-h2" id="news-heading">From the CORSMAL community</h2> -->
+
+			<article class="lp-news-card">
+				<img src="images/rgmcw_iros26.png"
+					alt="IROS 2026 Workshop on Reproducible Benchmarking of Robotic Grasping and Manipulation">
+				<div>
+					<span class="lp-news-date">1 October 2026 &middot; Pittsburgh, PA, USA</span>
+					<h3>Workshop on Reproducible Benchmarking of Robotic Grasping and Manipulation</h3>
+					<p>Part of the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS).</p>
+					<a href="https://sites.google.com/view/rgmcw2026" class="lp-btn lp-btn--outline">Workshop
+						details</a>
+				</div>
+			</article>
+
+			<!-- <p class="lp-view-all">
+				<a href="events.html" class="lp-btn lp-btn--outline">View events</a>
+				<a href="blog.html" class="lp-btn lp-btn--outline">View blog</a>
+				<a href="publications.html" class="lp-btn lp-btn--outline">View publications</a>
+			</p> -->
+			
+
+			<!-- <p class="lp-view-all"><a href="events.html">View all updates &raquo;</a></p> -->
+			<!-- <p class="lp-view-all"><a href="events.html">View all updates &raquo;</a></p> -->
+		</section>
+	</main>
 
 	<!-- Back to Top Button -->
 	<button id="backToTop" class="back-to-top" aria-label="Back to top">
@@ -158,7 +252,7 @@
 		<div class="footer-container">
 			<!-- Project Information & Social Media -->
 			<div class="footer-section project-info">
-				<img src="images/CORSMAL_logo.png" alt="CORSMAL Logo" width="75%">
+				<img src="images/logos/CORSMAL_logo.png" alt="CORSMAL Logo" width="100%" style="color: white;">
 				<p>Collaborative object recognition, shared manipulation and learning through multimodal sensing and AI.
 				</p>
 				<div class="social-links" style="margin-top: var(--spacing-lg);">
@@ -170,11 +264,12 @@
 
 			<!-- Sitemap: About -->
 			<div class="footer-section sitemap-column">
-				<h3>About</h3>
+				<h3>About and News</h3>
 				<ul>
 					<li><a href="objectives.html">Objectives</a></li>
 					<li><a href="team.html">Team</a></li>
 					<li><a href="events.html">Events</a></li>
+					<li><a href="blog.html">Blog</a></li>
 				</ul>
 			</div>
 
@@ -185,7 +280,6 @@
 					<li><a href="publications.html">Publications</a></li>
 					<li><a href="data.html">Data</a></li>
 					<li><a href="code.html">Software</a></li>
-					<li><a href="blog.html">Blog</a></li>
 				</ul>
 			</div>
 
@@ -212,7 +306,7 @@
 
 		<!-- Footer Bottom / Copyright -->
 		<div class="footer-bottom">
-			<p>&copy; <span id="currentYear"></span> CORSMAL. All rights reserved.</p>
+			<p>&copy; 2019-<span id="currentYear"></span> CORSMAL. All rights reserved.</p>
 		</div>
 	</footer>
 

@@ -1,0 +1,397 @@
+/* ===== LANDING PAGE SECTIONS ===== */
+/* Scoped additions, reusing existing tokens (#1a365d navy, #d97706 amber,
+		   #fbbf24 tag yellow, Merriweather titles) from layout.css card patterns. */
+
+.lp-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.lp-section--alt {
+    background-color: #f7f8fa;
+}
+
+.lp-eyebrow {
+    display: inline-block;
+    color: #d97706;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.lp-h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2rem;
+    color: #1a365d;
+    margin: 0 0 1rem 0;
+    line-height: 1.25;
+}
+
+.lp-lead {
+    font-size: 1.1rem;
+    color: #4b5563;
+    max-width: 760px;
+    line-height: 1.7;
+    margin: 0 0 2rem 0;
+}
+
+/* --- HERO --- */
+.lp-hero {
+    background: linear-gradient(135deg, #1a365d 0%, #06213F 100%);
+    color: #fff;
+    padding: 4.5rem 1.5rem;
+    text-align: center;
+}
+
+.lp-hero-inner {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.lp-hero h1 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    line-height: 1.25;
+    margin: 0 0 1rem 0;
+    color: #fff;
+}
+
+.lp-hero .lp-value-prop {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: #cbd5e1;
+    max-width: 680px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+}
+
+.lp-cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.lp-btn {
+    display: inline-block;
+    padding: 0.85rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.lp-btn:hover {
+    text-decoration: none;
+}
+
+.lp-btn--primary {
+    background-color: #d97706;
+    color: #ffffff;
+}
+
+.lp-btn--primary:hover {
+    background-color: #b8630a;
+    transform: translateY(-1px);
+}
+
+.lp-btn--secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.lp-btn--secondary:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: #ffffff;
+}
+
+.lp-btn--outline {
+    background-color: transparent;
+    color: #1a365d;
+    border-color: #1a365d;
+}
+
+.lp-btn--outline:hover {
+    background-color: #1a365d;
+    color: #ffffff;
+}
+
+/* --- WHAT IS CORSMAL (narrative arc) --- */
+.lp-narrative {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.lp-narrative-text p {
+    color: #374151;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    margin: 0 0 1.1rem 0;
+}
+
+.lp-narrative-text strong {
+    color: #1a365d;
+}
+
+/* Arc diagram: research -> benchmark -> community */
+.lp-arc {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.lp-arc-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+    padding-bottom: 2.25rem;
+}
+
+.lp-arc-step:last-child {
+    padding-bottom: 0;
+}
+
+.lp-arc-step::before {
+    content: "";
+    position: absolute;
+    left: 23px;
+    top: 48px;
+    bottom: 0;
+    width: 2px;
+    background: #d1d5db;
+}
+
+.lp-arc-step:last-child::before {
+    display: none;
+}
+
+.lp-arc-icon {
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #1a365d;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 1;
+}
+
+.lp-arc-step:nth-child(2) .lp-arc-icon {
+    background: #d97706;
+}
+
+.lp-arc-step:nth-child(3) .lp-arc-icon {
+    background: #15803d;
+}
+
+.lp-arc-body h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.05rem;
+    color: #1a365d;
+    margin: 0.4rem 0 0.35rem 0;
+}
+
+.lp-arc-body p {
+    color: #4b5563;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* --- VALUE PROP CARDS --- */
+.lp-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+.lp-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-top: 4px solid #1a365d;
+    border-radius: 8px;
+    padding: 1.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.lp-card:hover {
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.12);
+    transform: translateY(-2px);
+}
+
+.lp-card:nth-child(2) {
+    border-top-color: #d97706;
+}
+
+.lp-card:nth-child(3) {
+    border-top-color: #15803d;
+}
+
+.lp-card-icon {
+    font-size: 1.6rem;
+    color: #1a365d;
+    margin-bottom: 0.85rem;
+}
+
+.lp-card h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    color: #1a365d;
+    margin: 0 0 0.6rem 0;
+}
+
+.lp-card img {
+    width: 100%;
+	height: 65%;
+	object-fit: contain;
+	object-position: center;
+	/* background-color: rgb(243, 244, 246); */
+	/* padding: var(--spacing-md); */
+	/* display: block; */
+	transition: var(--transition-standard);
+}
+
+.lp-card p {
+    color: #4b5563;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+}
+
+/* --- RESOURCES --- */
+.lp-resources {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+.lp-resource-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+.lp-resource-card h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    color: #1a365d;
+    margin: 0 0 0.6rem 0;
+}
+
+.lp-resource-card p {
+    color: #4b5563;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 0 0 1.25rem 0;
+    flex-grow: 1;
+}
+
+/* --- NEWS --- */
+.lp-news-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.lp-news-card img {
+    border-radius: 6px;
+    width: 100%;
+}
+
+.lp-news-date {
+    color: #d97706;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.lp-news-card h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.25rem;
+    color: #1a365d;
+    margin: 0 0 0.6rem 0;
+}
+
+.lp-news-card p {
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+}
+
+.lp-view-all {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* --- FINAL CTA --- */
+.lp-final-cta {
+    background: #1a365d;
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1.5rem;
+}
+
+.lp-final-cta .lp-h2 {
+    color: #fff;
+}
+
+.lp-final-cta .lp-lead {
+    color: #cbd5e1;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .lp-narrative {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .lp-cards,
+    .lp-resources {
+        grid-template-columns: 1fr;
+    }
+
+    .lp-news-card {
+        grid-template-columns: 1fr;
+    }
+
+    .lp-section {
+        padding: 3rem 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lp-cta-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
