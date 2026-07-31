@@ -83,6 +83,44 @@ function renderTeams() {
         });
         tbody.appendChild(affiliationsRow);
 
+        // Technical report row (only rendered if the team has one)
+        if (team.report) {
+            const reportRow = document.createElement('tr');
+            const reportHeaderTd = document.createElement('td');
+            reportHeaderTd.style.textAlign = 'left';
+            reportHeaderTd.style.border = 'none';
+            reportHeaderTd.textContent = 'Technical report:';
+            reportRow.appendChild(reportHeaderTd);
+ 
+            const reportValueTd = document.createElement('td');
+            reportValueTd.colSpan = 4;
+            reportValueTd.style.textAlign = 'left';
+            reportValueTd.style.border = 'none';
+            reportValueTd.innerHTML = `<a href="${team.report.file}" target="_blank"><u>${team.report.title}</u></a>`;
+            reportRow.appendChild(reportValueTd);
+ 
+            tbody.appendChild(reportRow);
+        }
+ 
+        // Code row (only rendered if the team has one)
+        if (team.code) {
+            const codeRow = document.createElement('tr');
+            const codeHeaderTd = document.createElement('td');
+            codeHeaderTd.style.textAlign = 'left';
+            codeHeaderTd.style.border = 'none';
+            codeHeaderTd.textContent = 'Code:';
+            codeRow.appendChild(codeHeaderTd);
+ 
+            const codeValueTd = document.createElement('td');
+            codeValueTd.colSpan = 4;
+            codeValueTd.style.textAlign = 'left';
+            codeValueTd.style.border = 'none';
+            codeValueTd.innerHTML = `<a href="${team.code.url}" target="_blank"><u>${team.code.label || team.code.url}</u></a>`;
+            codeRow.appendChild(codeValueTd);
+ 
+            tbody.appendChild(codeRow);
+        }
+
         table.appendChild(tbody);
         const divWrapper = document.createElement('div');
         divWrapper.className = 'team-block-div';

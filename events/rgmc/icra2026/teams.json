@@ -28,7 +28,11 @@
         "affiliation": "Suqian University (China)",
         "lead": false
       }
-    ]
+    ],
+    "report": {
+      "title": "Robot Booster Technical Report",
+      "file": "resources/RobotBooster-TR.pdf"
+    }
   },
   {
     "id": "broken_arm",
@@ -59,7 +63,11 @@
         "affiliation": "University of Klagenfurt (Austria)",
         "lead": false
       }
-    ]
+    ],
+    "report": {
+      "title": "Technical Report",
+      "file": "resources/BrokenArm-TR.pdf"
+    }
   },
   {
     "id": "iitgn_robotics",
@@ -121,7 +129,11 @@
         "affiliation": "Chonnam National University (South Korea)",
         "lead": false
       }
-    ]
+    ],
+    "report": {
+      "title": "AIRLAB Technical Report",
+      "file": "resources/JNU_AIRLAB-TR.pdf"
+    }
   },
   {
     "id": "brd_lab",
@@ -245,7 +257,11 @@
         "affiliation": "Ulsan National Institute of Science & Technology (South Korea)",
         "lead": false
       }
-    ]
+    ],
+    "report": {
+      "title": "3D Vision & Robotics Lab Technical Report",
+      "file": "resources/3DVRL-TR.pdf"
+    }
   },
   {
     "id": "larics_gripsters",
@@ -302,7 +318,15 @@
         "affiliation": "University of Siena (Italy)",
         "lead": false
       }
-    ]
+    ],
+    "report": {
+      "title": "SIRSIIT Technical Report",
+      "file": "resources/SIRSIIT-TR.pdf"
+    },
+    "code": {
+      "url": "https://github.com/SIRSIIT/fast-handover/",
+      "label": "Fast Human-Robot Handover"
+    }
   },
   {
     "id": "robootto_codex",
@@ -364,6 +388,10 @@
         "affiliation": "Tsinghua University; Tsing ChunZhiFu (China)",
         "lead": false
       }
-    ]
+    ],
+    "report": {
+      "title": "Youth2Real Technical Report",
+      "file": "resources/Youth2Real-TR.pdf"
+    }
   }
 ]
