@@ -96,7 +96,22 @@ function renderTeams() {
             reportValueTd.colSpan = 4;
             reportValueTd.style.textAlign = 'left';
             reportValueTd.style.border = 'none';
-            reportValueTd.innerHTML = `<a href="${team.report.file}" target="_blank"><u>${team.report.title}</u></a>`;
+ 
+            const reportTitle = document.createElement('div');
+            reportTitle.className = 'report-title';
+            reportTitle.textContent = team.report.title;
+            reportValueTd.appendChild(reportTitle);
+ 
+            // Embed the PDF inline.
+            const reportFrame = document.createElement('iframe');
+            reportFrame.className = 'report-embed';
+            reportFrame.src = `${team.report.file}#toolbar=0&navpanes=0&scrollbar=1`;
+            reportFrame.title = team.report.title;
+            reportFrame.width = '100%';
+            reportFrame.height = '500';
+            reportFrame.setAttribute('oncontextmenu', 'return false;');
+            reportValueTd.appendChild(reportFrame);
+ 
             reportRow.appendChild(reportValueTd);
  
             tbody.appendChild(reportRow);
