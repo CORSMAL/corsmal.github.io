@@ -86,23 +86,12 @@ function renderTeams() {
         // Technical report row (only rendered if the team has one)
         if (team.report) {
             const reportRow = document.createElement('tr');
-            const reportHeaderTd = document.createElement('td');
-            reportHeaderTd.style.textAlign = 'left';
-            reportHeaderTd.style.border = 'none';
-            reportHeaderTd.textContent = 'Technical report:';
-            reportRow.appendChild(reportHeaderTd);
  
             const reportValueTd = document.createElement('td');
-            reportValueTd.colSpan = 4;
+            reportValueTd.colSpan = 6;
             reportValueTd.style.textAlign = 'left';
             reportValueTd.style.border = 'none';
  
-            const reportTitle = document.createElement('div');
-            reportTitle.className = 'report-title';
-            reportTitle.textContent = team.report.title;
-            reportValueTd.appendChild(reportTitle);
- 
-            // Embed the PDF inline.
             const reportFrame = document.createElement('iframe');
             reportFrame.className = 'report-embed';
             reportFrame.src = `${team.report.file}#toolbar=0&navpanes=0&scrollbar=1`;

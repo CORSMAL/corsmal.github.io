@@ -452,6 +452,58 @@ main {
     font-size: 14pt;
 }
 
+/* Winners Section */
+.winners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    justify-content: flex-start;
+}
+
+.winner-item {
+    flex: 1 1 250px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.winner-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0.5rem auto;
+}
+
+/* Demo Videos Section */
+.videos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.team-video {
+    flex: 1 1 320px;
+    max-width: 480px;
+}
+
+.team-video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: none;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .winner-item,
+    .team-video {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
 /* Organizers Section */
 #organisers {
     display: block;

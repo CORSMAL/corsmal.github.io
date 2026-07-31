@@ -146,7 +146,10 @@
                     <div style="text-align: justify;">
                         <b><span style="font-size: 14.0pt">Teams</span></b>
                         <div id="teamsolutions">
-                            <p>Teams accepted to the Human-to-Robot Handover track. Select a team to see the details. Team leader highlighted in bold.</p>
+                            <p>
+                                Teams accepted to the Human-to-Robot Handover track. Select a team to see the details. Team leader highlighted in bold.
+                                For some teams, technnical report and code are also provided. 
+                            </p>
                             <ul id="teams">
                                 <!-- Teams list will be populated by renderTeams() -->
                             </ul>
@@ -164,27 +167,22 @@
 
                     <div id="winners">
                         <b><span style="font-size:14.0pt">Winners</span></b>
-                        <!-- <ul>
-                            <li><strong>1st Place:</strong>Youth2Real ($2500 + NVIDIA Jetson Orin Nano Developer Kit)</li>
-                            <li><strong>2nd Place:</strong>Robot Booster ($1000)</li>
-                            <li><strong>3rd Place:</strong>LARICS Gripsters ($500 + Robot mount)</li>
-                        </ul> -->
-                        <div style="float:left; width:33%; text-align:center;">
-                            <strong>Youth2Real</strong>
-                            <img src="images/winners_1.png" alt="Youth2Real">
-                            <strong>1st Place</strong><br>$2500 +<br>NVIDIA Jetson Orin Nano Developer Kit
-                        </div>
-                        <div style="float:left; width:33%; text-align:center;">
-                            <strong>Robot Booster</strong>
-                            <img src="images/winners_2.png" alt="Robot Booster">
-                            <strong>2nd Place</strong><br>$1000 +<br> Robot mount
-                        </div>
-                        <div style="float:left; width:33%; text-align:center;">
-                            <strong>LARICS Gripsters</strong>
-                            <img src="images/winners_3.png" alt="LARICS Gripsters">
-                            <strong>3rd Place</strong><br>$500 +<br> Robot mount
-                        </div>
-                        <div style="clear: both;">
+                        <div class="winners-grid">
+                            <div class="winner-item">
+                                <strong>Youth2Real</strong>
+                                <img src="images/winners_1.png" alt="Youth2Real">
+                                <strong>1st Place</strong><br>$2500 +<br>NVIDIA Jetson Orin Nano Developer Kit
+                            </div>
+                            <div class="winner-item">
+                                <strong>Robot Booster</strong>
+                                <img src="images/winners_2.png" alt="Robot Booster">
+                                <strong>2nd Place</strong><br>$1000 +<br> Robot mount
+                            </div>
+                            <div class="winner-item">
+                                <strong>LARICS Gripsters</strong>
+                                <img src="images/winners_3.png" alt="LARICS Gripsters">
+                                <strong>3rd Place</strong><br>$500 +<br> Robot mount
+                            </div>
                         </div>
                         <div style="margin-top: 2rem;">
                             <p>
@@ -193,24 +191,19 @@
                             </p>
                         </div>
                     </div>
-
+ 
                     <!-- -->
                     <div id="demovideo">
                         <b><span style="font-size:14.0pt">Demo videos (in progress)</span></b>
-                        <!-- <div id="team-video">
-                            <b>BrokenArm team</b><br>
-                            <iframe src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            <br><br>
-                        </div> -->
-                        <div id="team-video">
-                            <b>SirsIIT team</b><br>
-                            <iframe src="https://www.youtube.com/embed/FGFlR_2N6G4?si=6wAD6vPSwJJkyPZ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            <br><br>
-                        </div>
-                        <div id="team-video">
-                            <span><b>AIRLAB team</b></span><br>
-                            <iframe src="https://www.youtube.com/embed/wsmRqJzTCZc?si=x8Q9Dqye9d1f-Pxm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            <br><br>
+                        <div class="videos-grid">
+                            <div class="team-video">
+                                <b>SirsIIT team</b><br>
+                                <iframe src="https://www.youtube.com/embed/FGFlR_2N6G4?si=6wAD6vPSwJJkyPZ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="team-video">
+                                <span><b>AIRLAB team</b></span><br>
+                                <iframe src="https://www.youtube.com/embed/wsmRqJzTCZc?si=x8Q9Dqye9d1f-Pxm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
                     <!-- -->
