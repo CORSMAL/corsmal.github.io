@@ -1,19 +1,32 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr" class="gr__corsmal_eecs_qmul_ac_uk">
 <head profile="http://gmpg.org/xfn/11">
-	<link rel="shortcut icon" href="favicon.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-	<title>CORSMAL: Improving filling level classification with adversarial training</title>
+	<title>Filling Level Classification with Adversarial Training | CORSMAL</title>
+	<meta name="description"
+      content="Research on classifying container filling levels from images using adversarial training and transfer learning.">
 
 	<meta http-equiv="imagetoolbar" content="no">
 	<meta http-equiv="KeyWords" content="code, software, CORSMAL, robotics, touch, vision, audio, signal processing, human behaviour, challenge, ICME">
 	<meta name="image" property="og:image" content="images/CORSMAL_logo.png">
-	<link rel="stylesheet" href="css/layout.css" type="text/css">
-	<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+	<link rel="stylesheet" href="css/academicons.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+	
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/audio_classification.css">
+	<link rel="stylesheet" href="css/filling.css">
+
+	<!-- <script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.slidepanel.setup.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
-	<script type="text/javascript" src="js/jquery.tabs.setup.js"></script>
+	<script type="text/javascript" src="js/jquery.tabs.setup.js"></script> -->
 
 	<script type="text/javascript">
 		window.TableLoader = {
@@ -102,57 +115,98 @@
 		.tg .tg-zv4m{border-color:#ffffff;font-size:14.0pt;text-align:left;vertical-align:top}
 	</style>
 
+	<script src="js/menu.js" defer></script>
+
 </head>
-<body id="top" data-gr-c-s-loaded="true">
-	<div class="wrapper row1">
-		<div id="header" class="clear">
-			<div class="fl_left">
-				<ul>
-					<li>
-						<p>
-							<a href="index.html"><img src="images/CORSMAL_logo.png" style="padding:0px 0px 0px 0px;height:75px" alt="CORSMAL"></a>
-						</p>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- 2###################################################################################################### -->
-	<div class="wrapper row2" ;="" style="margin-bottom: 7px;">
-		<div class="rnd">
-			<!-- ###### -->
-			<div id="topnav">
-				<ul style="margin-top: 5px;">
-					<li><a href="index.html"><b>Home</b></a></li>
-					<li><a href="objectives.html"><b>Objectives</b></a></li>
-					<li><a href="publications.html"><b>Publications</b></a></li>
-					<li><a href="blog.html"><b>Blog</b></a></li>
-					<li><a href="events.html"><b>Events</b></a></li>
-					<li><a href="code.html"><b>Code</b></a></li>
-					<li><a href="data.html"><b>Data</b></a></li>
-					<li><a href="benchmark.html"><b>Benchmark</b></a></li>
-					<li><a href="challenge.html"><b>Challenge</b></a></li>
-					<li class="last"><a href="team.html"><b>Team</b></a></li>
-				</ul>
-			</div>
-			<!-- ###### -->
-		</div>
-	</div>
-	<!-- 3####################################################################################################### -->
-	<div class="wrapper row1">
-		<div id="container" class="clear">
-			<div id="latestnewspage" class="clear">
 
+<body id="top">
+	<div id="menu">
+		<div class="logo">
+			<a href="index.html" class="active"><img src="images/CORSMAL_logo.png" alt="CORSMAL Logo"></a>
+		</div>
 
-				<h1><p class="xmsonormal" style="text-align:center;text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:16.0pt">Improving filling level classification with adversarial training</span></b></p></h1>
-				<p align="justify"> 
-					We investigate the problem of classifying -- from a single image -- the level of content in a cup or a drinking glass. This problem is  made challenging by several ambiguities caused by transparencies, shape variations and partial occlusions, and by the availability of only small training datasets. In this paper, we tackle this problem with an appropriate strategy for transfer learning. Specifically, we use adversarial training in a generic source dataset and then refine the training with a  task-specific dataset.<br><br>
-					We also discuss and experimentally evaluate several training strategies and their combination on a range of container types of the CORSMAL Containers Manipulation dataset. We show that transfer learning with adversarial training in the source domain consistently improves the classification accuracy on the test set and limits the overfitting of the classifier to specific features of the training data.
-				</p>
-				<div align="middle" ,="" style="margin-bottom:15px;margin-top:15px">
-					<img src="images/RTL/abstract.png" style="padding:0px 0px 0px 0px;width:500px" alt="RTL diagram">
-				</div>
-				<br>
+		<nav aria-label="Breadcrumb" class="breadcrumb">
+			<div class="menu-toggle"><span></span></div>
+			<ul>
+				<li class="subnav">
+					<a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
+					<div class="subnav-content">
+						<a href="objectives.html">Objectives</a>
+						<a href="team.html">Team</a>
+					</div>
+				</li>
+				<li>
+					<a href="publications.html">Publications</a>
+				</li>
+				<li>
+					<a href="data.html">Data</a>
+				</li>
+				<li>
+					<a href="code.html">Software</a>
+				</li>
+				<li class="subnav">
+					<a href="#" role="button" aria-expanded="false" aria-haspopup="true">Benchmarking</a>
+					<div class="subnav-content">
+						<a href="benchmark/competitions.html">Competitions</a>
+						<a href="benchmark.html">Protocol</a>
+						<a href="challenge.html">Challenge</a>
+					</div>
+				</li>
+				<li>
+					<a href="blog.html">Blog</a>
+				</li>
+				<li>
+					<a href="events.html">Events</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<div id="container" class="clear">
+		<h2>Improving filling level classification with adversarial training</h2>
+		<p align="justify"> 
+			We investigate the problem of classifying - from a single image - the level of content in a cup or a drinking glass. 
+			This problem is challenging by several ambiguities caused by transparencies, shape variations and 
+			partial occlusions, and by the availability of only small training datasets. 
+			We tackle this problem with an appropriate strategy for transfer learning. 
+			Specifically, we use adversarial training in a generic source dataset and then refine the training with a task-specific dataset.
+		</p>
+		<div align="middle" ,="" style="margin-bottom:15px;margin-top:15px">
+			<img src="images/RTL/abstract.png" style="padding:0px 0px 0px 0px;width:500px" alt="RTL diagram">
+		</div>
+		<div>
+			<p>
+				We also discuss and experimentally evaluate several training strategies and their combination on a range of container types of the CORSMAL Containers Manipulation dataset. We show that transfer learning with adversarial training in the source domain consistently improves the classification accuracy on the test set and limits the overfitting of the classifier to specific features of the training data.
+			</p>
+		</div>
+
+		<div class="resources-container">
+		<div class="resource-item">
+			<h3>Pre-print</h3>
+			<a href="https://arxiv.org/abs/2102.04057">
+			<img src="https://img.shields.io/badge/cs.CV-%09arXiv%3A2102.04057-%23B31B1B.svg" alt="ArXiv">
+			</a>
+		</div>
+		<div class="resource-item">
+			<h3>Crop-CCM Dataset</h3>
+			<a href="https://zenodo.org/record/4642577#.YGJnnxLTU5k">
+			<img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4642577.svg" alt="Zenodo dataset DOI">
+			</a>
+		</div>
+		<div class="resource-item">
+			<h3>Trained models (PyTorch)</h3>
+			<a href="https://doi.org/10.5281/zenodo.4518951">
+			<img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4518951.svg" alt="DOI">
+			</a>
+		</div>
+		</div>
+		<div>
+			<p>
+				We provide the pre-trained models for all the six different training strategies on the 3 splits of the C-CCM dataset.
+			</p>
+		</div>
+
+			
 				<p class="xmsonormal" style="text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:14.0pt">Training strategies</span></b>
 				<div align="middle" ,="" style="margin-bottom:15px;margin-top:15px">
 					<img src="images/RTL/state_diagram.png" style="padding:0px 0px 0px 0px;width:400px" alt="Strategies">
@@ -169,12 +223,12 @@
 							<td style="vertical-align: middle;">common strategy for training a classifier on a train set.</td>
 						</tr>
 							<tr>
-							<td style="vertical-align: middle;width:45%">AT<br>(Aversarial Training)</td>
+							<td style="vertical-align: middle;width:45%">AT<br>(Adversarial Training)</td>
 							<td style="vertical-align: middle;">standard training but with images modified with carefully crafted noise, known as adversarial perturbation.</td>
 						</tr>
 							<tr>
 							<td style="vertical-align: middle;width:45%">ST->FT<br>(Standard Training + Fine-Tuning)</td>
-							<td style="vertical-align: middle;">standard transfer learning strategy that pre-trains the parameters of a classfier on a source domain and then re-fines them on a target domain via fine-tuning.</td>
+							<td style="vertical-align: middle;">standard transfer learning strategy that pre-trains the parameters of a classifier on a source domain and then re-fines them on a target domain via fine-tuning.</td>
 						</tr>
 							<tr>
 							<td style="vertical-align: middle;width:45%">ST->AFT<br>(Standard Training + Adversarial Fine-Tuning)</td>
@@ -191,7 +245,7 @@
 						</table>
 						<!-- ST (Standard Training): common strategy for training a classifier on a train set.<br>
 						AT (Aversarial Training): standard training but with images modified with carefully crafted noise, known as adversarial perturbation.<br>
-						ST->FT (Standard Training + Fine-Tuning): standard transfer learning strategy that pre-trains the parameters of a classfier on a source domain and then re-fines them on a target domain via fine-tuning.<br>
+						ST->FT (Standard Training + Fine-Tuning): standard transfer learning strategy that pre-trains the parameters of a classifier on a source domain and then re-fines them on a target domain via fine-tuning.<br>
 						ST->AFT (Standard Training + Adversarial Fine-Tuning): transfer learning via fine-tuning using adversarially modified images on the target domain.<br>
 						AT->FT (Adversarial Training + Fine-Tuning): transfer learning with adversarial training on the source domain.<br>
 						AT->AFT (Adversarial Training + Adversarial Fine-Tuning): transfer learning with adversarial training on the source domain and fine-tuning with adversarially modified images on the target domain..<br> -->
@@ -202,20 +256,18 @@
 				</div>
 				<p class="xmsonormal" style="text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:14.0pt">Dataset</span></b>
 				</p>
-				<div align="middle" ,="" style="margin-bottom:15px;margin-top:15px">
-					<table class="tg" width="100%">
-				<tbody>
-					<tr>
-						<td class="tg-zv4m" style="vertical-align: middle;"> 
-							<img src="images/RTL/ccm_dataset.png" style="padding:0px 0px 0px 0px;width:400px" alt="dataset">	
-						</td>
-						<td class="tg-zv4m" style="vertical-align: middle;text-align: center;"> 
-							<img src="images/RTL/statistics.png" style="padding:0px 0px 0px 0px;width:500px" alt="dataset">	<br>
-								Statistics
-						</td>
-					</tr>	
-				</table>					
-				</div>		
+				<div class="filling-image-gallery">
+				<figure>
+					<img src="images/RTL/ccm_dataset.png"
+						alt="Examples from the container dataset">
+					<figcaption>Container dataset examples</figcaption>
+				</figure>
+				<figure>
+					<img src="images/RTL/statistics.png"
+						alt="Statistics for the container dataset">
+					<figcaption>Dataset statistics</figcaption>
+				</figure>
+				</div>
 				<p  align="justify">
 					From the <a href="containers_manip.html" target="_blank"><u>CORSMAL Container Manipulation</u></a> dataset, we consider the public videos recordings from the three fixed views and capturing cups (4) and drinking glasses (4) as containers. The containers can be transparent, translucent or opaque, while they can be empty or being filled by a person (pouring) up to 50% or 90% of the capacity of the container with transparent (water) or opaque (pasta, rice) content. As the problem is to classify the filling level from a single RGB image, we automatically sampled, followed by manual verification, 10,269 frames of containers for which the pouring process has been finalized (we exclude all frames where a person is still pouring the content).<br><br>
 					To increase the variability in the sampled data, we selected frames considering that the object is completely visible or occluded by the person's hand, and under different backgrounds. For each frame, the final image is extracted by cropping only the region with the container using <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf"><u>Mask R-CNN</u></a> followed by manual verification. Each crop is associated to an annotation of filling type and level, hand occlusion, and transparency of the container. 
@@ -286,85 +338,76 @@
 					<div align="middle" ,="" style="margin-bottom:15px;margin-top:15px">
 					<img src="images/RTL/accuracy_container.png" style="padding:0px 0px 0px 0px;width:100%" alt="accuracy">
 				</div>
-					<br><br>
-				
-				<p class="xmsonormal" style="text-justify:inter-ideograph;margin-bottom:0px"><b><span style="font-size:14.0pt">Related material</span></b>
-				</p>
-				<!-- <a href="https://ieeexplore.ieee.org/document/9054112" target="_blank"><u>Paper </u></a> -->
-				<a href="https://arxiv.org/abs/2102.04057" target="_blank"><u>Pre-print (arXiv)</u></a>
-				<!-- <br>
-				<a href="" target="_blank"><u>Code</u></a>  (coming soon) -->
-				<br>
-				<a href="https://zenodo.org/record/4518951#.YEIHk_6nw5k" target="_balnk"><u>Models</u></a> (1.5 GB)<br><br>
-				We provide the pre-trained models for all the six different training strategies on the 3 splits of the C-CCM dataset.
-				<br>
-				<br>
-				<h3><span style="font-size:14.0pt"><b>Reference</b></span></h3>
-				<p>
-					<!-- If you use the code, please cite:<br> -->
-					<b>Improving filling level classification with adversarial training</b><br>
-					A. Modas, A. Xompero, R. Sanchez-Matilla, P. Frossard, and A. Cavallaro<br>
-					IEEE International Conference on Image Processing (ICIP), Anchorage, Alaska, USA, 19-22 Sep 2021.
-				</p>
-			</div>	
-		</div>
-	</div>
 
-<!-- ####################################################################################################### -->
-<!-- Begin of Sponsors and Partners div -->
-<div class="wrapper row1">
-	<div id="header" class="clear" style="padding: 0px 0px 0px 20px;width:920px">
-		<div class="fl_left" style="margin-top: 0px;">
-			<ul>
-				<li style="padding: 0 0 0 0">
+				<div>
+					<h3>How to cite</h3>
 					<p>
-						<b>Sponsors</b>
-						<br>
-						<br>
-					</p>
-					<p>
-						<a href="http://www.chistera.eu" TARGET = "_blank"><img src="images/chist-era_logo_crop.png" style="height:35px;" alt="Chistera logo"/></a>
-						<a href="https://epsrc.ukri.org/" target="_blank"><img src="images/EPSRC_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="EPSRC logo"></a>
-						<a href="http://www.agence-nationale-recherche.fr/en/" target="_blank"><img src="images/ANR_logo.png" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="ANR logo"></a>
-						<a href="http://www.snf.ch/en/Pages/default.aspx" target="_blank"><img src="images/FNS_logo.jpg" style="padding:10px 0px 0px 10px;height:35px;margin-bottom: 10px;" alt="FNS logo"></a>
-					</p>
-				</li>
-			</ul>
-		</div>
-		<div class="fl_right" style="margin-top: 0px;">
-			<ul style="margin-bottom: 0px;">
-				<li style="margin: 0px 4px 0px 0; padding: 0 0px 0 0;">
-					<p>
-						<b>Partners</b>
-						<br>
-						<br>
-					</p>
-					<p>
-						<a href="https://www.qmul.ac.uk/" target="_blank"><img src="images/QMUL_logo.jpg" alt="Queen Mary University of London" style="padding:5px 10px 0px 0px;height:45px;"></a>
-						<a href="http://www.sorbonne-universite.fr/en" target="_blank">
-							<img src="images/Sorbonne_University_logo.png" alt="Sorbonne University" style="padding:5px 10px 0px 0px;height:45px;">
+						<a href="https://doi.org/10.1109/ICIP42928.2021.9506112" rel="noopener noreferrer" target="_blank">
+							<b>Improving filling level classification with adversarial training</b>
 						</a>
-						<a href="https://www.epfl.ch/en/home/" target="_blank">
-							<img src="images/EPFL_logo.png" alt="EPFL" style="padding:5px 0px 0px 0px;height:45px;">
-						</a>
+						<br>
+						A. Modas, A. Xompero, R. Sanchez-Matilla, P. Frossard, A. Cavallaro<br>
+						IEEE International Conference on Image Processing (ICIP), Anchorage, Alaska, USA, 19-22 Sep 2021.
 					</p>
-				</li>
-			</ul>
+				</div>
+			</div>
+
+<!-- Back to Top Button -->
+	<button id="backToTop" class="back-to-top" aria-label="Back to top">
+		<i class="fas fa-chevron-up"></i>
+	</button>
+
+	<!-- Modern Footer -->
+	<footer class="modern-footer">
+		<div class="footer-container">
+			<!-- Project Information & Social Media -->
+			<div class="footer-section project-info">
+				<img src="images/CORSMAL_logo.png" alt="CORSMAL Logo" width="75%">
+				<p>Collaborative object recognition, shared manipulation and learning through multimodal sensing and AI.
+				</p>
+				<div class="social-links" style="margin-top: var(--spacing-lg);">
+					<a href="https://github.com/corsmal" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+						<i class="fab fa-github"></i>
+					</a>
+				</div>
+			</div>
+
+			<!-- Sitemap: About -->
+			<div class="footer-section sitemap-column">
+				<h3>About and News</h3>
+				<ul>
+					<li><a href="objectives.html">Objectives</a></li>
+					<li><a href="team.html">Team</a></li>
+					<li><a href="events.html">Events</a></li>
+					<li><a href="blog.html">Blog</a></li>
+				</ul>
+			</div>
+
+			<!-- Sitemap: Resources -->
+			<div class="footer-section sitemap-column">
+				<h3>Resources</h3>
+				<ul>
+					<li><a href="publications.html">Publications</a></li>
+					<li><a href="data.html">Data</a></li>
+					<li><a href="code.html">Software</a></li>
+				</ul>
+			</div>
+
+			<!-- Sitemap: Benchmarking & Contact -->
+			<div class="footer-section sitemap-column">
+				<h3>Benchmarking</h3>
+				<ul>
+					<li><a href="benchmark/competitions.html">Competitions</a></li>
+					<li><a href="benchmark.html">Protocol</a></li>
+					<li><a href="challenge.html">Challenge</a></li>
+				</ul>
+			</div>
 		</div>
-	</div>
-</div>
-<!-- End of Sponsors and Partners div -->
-<br><br>
-<!-- ####################################################################################################### -->
-<!-- <div class="clearing">&nbsp;</div>-->
-<div class="wrapper bottomPg">
-	<div id="copyright">
-		<div id="fl_left" style="font-size:12px">
-			© Copyright CORSMAL 2019-2022
-		</div>	  
-	</div>
-</div>
-<!-- footer -->
-<!--added to clear error with content element -->
+
+		<!-- Footer Bottom / Copyright -->
+		<div class="footer-bottom">
+			<p>&copy; 2019-<span id="currentYear"></span> CORSMAL. All rights reserved.</p>
+		</div>
+	</footer>
 </body>
 </html>
