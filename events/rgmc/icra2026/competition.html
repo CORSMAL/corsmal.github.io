@@ -7,13 +7,18 @@
     <meta name="keywords" content="CORSMAL, robotics, competition, ICRA, human-to-robot, handovers">
     <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
     
-    <title>CORSMAL | Competition | Human-to-Robot Handovers | ICRA 2026</title>
+    <title>Competition | Human-to-Robot Handovers | ICRA 2026</title>
     <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
-    <link rel="stylesheet" href="css/rgmc_track.css" type="text/css">
+    
+    <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
+	<link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
 
     <link href="https://unpkg.com/tabulator-tables@6.3.1/dist/css/tabulator.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://unpkg.com/tabulator-tables@6.3.1/dist/js/tabulator.min.js"></script>
     <script type="text/javascript" src="js/leaderboards.js"></script>
+        
+
+    <script src="../../../js/menu.js" defer></script>
 </head>
 <body id="top">
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -36,15 +41,29 @@
         </div>
         <div class="header-content">
             <h1 class="page-title-header">Human-to-Robot Handovers</h1>
-            <nav>
+            <nav aria-label="Breadcrumb" class="breadcrumb">
+                <div class="menu-toggle"><span></span></div>
                 <ul>
                     <li><a href="index.html">Overview</a></li>
-                    <li><a href="task.html">Task</a></li>
-                    <li><a href="competition.html" class="active">Competition</a></li>
-                    <li><a href="qualification.html">Qualification</a></li>
-                    <li><a href="rules.html">Rules</a></li>
-                    <li><a href="evaluation.html">Evaluation</a></li>
-                    <li><a href="faq.html">FAQs</a></li>
+                    <li class="subnav">
+                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">Competition</a>
+                        <div class="subnav-content">
+                            <a href="task.html">Task</a>
+                            <a href="competition.html" class="active">On-site phase</a>
+                            <a href="qualification.html">Qualification</a>
+                            <a href="evaluation.html">Evaluation</a>
+                            <a href="rules.html">Rules & Policies</a>
+                        </div>
+                    </li>
+                    <li><a href="leaderboards.html">Leaderboards</a></li>
+                    <li class="subnav">
+                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
+                        <div class="subnav-content">
+                            <a href="organisers.html">Organisers</a>
+                            <a href="https://corsmal.github.io/benchmark/competitions.html">History</a>
+                        </div>
+                    </li>
+					<!-- <li><a href="faq.html">FAQs</a></li> -->
                 </ul>
             </nav>
         </div>
@@ -55,7 +74,7 @@
             <div id="container" class="clear">
                 <div id="latestnewspage" class="clear">
                     <div>
-                        <b><span>Page updated on 11 June 2026</span></b>
+                        <!-- <b><span>Page updated on 11 June 2026</span></b> -->
                         <p>
                             The competition was held in Vienna during the conference days. 
                             Teams executed a set of human-to-robot handover configurations with unknown objects 
@@ -71,44 +90,7 @@
                         </p>
                     </div>
 
-                    <div id="corsmal-leaderboard">
-                        <b><span>Leaderboard</span></b>
-                        <div class="corsmal-overall" id="corsmal-overall"></div>
-                        <script type="text/javascript">
-                            var table = new Tabulator("#corsmal-overall",
-                            {
-                                height:(competition_table.length * 35) + 5 + "px",
-                                reactiveData:true,
-                                data:competition_table,
-                                columns:[
-                                    {title:"Team", field:"team"},
-                                    {title:"Overall", field:"score", sorter:"number"}
-                                ],
-                                initialSort:[
-                                    {column:"score", dir:"desc"},
-                                ]
-                            });
-                            table.redraw();
-                        </script>
-                        <p>Notes on results and scoring:</p>
-                        <ul>
-                            <li>Teams AIRLab and Shakey’s Legacy had technical issues and could complete only a few configurations. Not listed in this leaderboard.</li>
-                            <li>Team Youth2Real successfully completed 21 out of 24 handover configurations; Robot Booster and LARICS Gripsters: 20 out of 24;
-                                Broken Arm: 18 out of 24; 3D Vision & Robotics Lab: 19 out of 14; and SIRSIIT: 15 out of 24.
-                            </li>
-                        </ul>
-                        <b><span>Results per configuration</span></b>
-                        <p>Filled black circle denotes the configuration weight.</p>
-                        <img src="images/config_res_1.png" alt="Results per configuration (1/2)" style="width:100%;">
-                        <img src="images/config_res_2.png" alt="Results per configuration (2/2)" style="width:100%;">
-                    </div>
-
-                    <!-- <div>
-                        <b><span>Objects</span></b>
-                        <p>
-                            
-                        </p>
-                    </div> -->
+                    
 
                     <!-- <div>
                         <b><span>Logistics</span></b>
@@ -204,29 +186,6 @@
                         <p>
                             This procedure has been revised from the <a href="https://corsmal.github.io/benchmark/resources/RAL-SI-2020-P19-0835-V1.0.pdf" target="_blank">CORSMAL Human-to-Robot Handover Protocol document</a>.
                         </p>
-                    </div>
-
-                    <div>
-                        <b><span style="font-size: 14.0pt">Rules</span></b>
-                        <ol>
-                            <li>All configurations are executed by the same volunteer from another team using a natural grasp.</li>
-                            <li>The volunteer is instructed to use only one hand and always the same.</li>
-                            <li>Each handover configuration can be executed only once except for hardware failures</li>
-                            <li>The initial location of the container is predefined on the table and 
-                                not reachable by the robotic arm to avoid the robot approaching the container 
-                                before the volunteer graps it.
-                            </li>
-                            <li>Failed handover configurations will get 0 points. Example of failed configurations:
-                                <ul>
-                                    <li>Robot cannot grasp the object during the handover phase</li>
-                                    <li>Robot cannot hold the container during the delivery phase</li>
-                                    <li>Object falls after the robot places it on the table</li>
-                                    <li>Volunteer retreats during the handover phase because of unsafe robot behaviour</li>
-                                    <li>Perception system fails to detect the object for 2 consecutive attempts</li>
-                                </ul>
-                            </li>
-                            <li>System crashes (e.g. hardware failures) or components fails to start (perception or robot) can be re-attempted.</li>
-                        </ol>
                     </div>
 
                     <div>

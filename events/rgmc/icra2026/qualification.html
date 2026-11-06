@@ -7,9 +7,9 @@
     <meta name="keywords" content="CORSMAL, robotics, competition, ICRA, human-to-robot, handovers, qualification">
     <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
     
-    <title>CORSMAL | Qualification | Human-to-Robot Handovers | ICRA 2026</title>
+    <title>Qualification | Human-to-Robot Handovers | ICRA 2026</title>
     <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
-    <link rel="stylesheet" href="css/rgmc_track.css" type="text/css">
+    
     <link href="https://unpkg.com/tabulator-tables@6.3.1/dist/css/tabulator.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://unpkg.com/tabulator-tables@6.3.1/dist/js/tabulator.min.js"></script>
     <script type="text/javascript" src="js/leaderboards.js"></script>
@@ -39,6 +39,11 @@
             display: block;
         }
     </style>
+
+    <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
+	<link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
+
+    <script src="../../../js/menu.js" defer></script>
 </head>
 <body id="top">
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -56,20 +61,34 @@
                 </a>
             </div>
             <div class="competition-section">
-                <a href="https://sites.google.com/view/rgmcomp" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
+                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
             </div>
         </div>
         <div class="header-content">
             <h1 class="page-title-header">Human-to-Robot Handovers</h1>
-            <nav>
+            <nav aria-label="Breadcrumb" class="breadcrumb">
+                <div class="menu-toggle"><span></span></div>
                 <ul>
                     <li><a href="index.html">Overview</a></li>
-                    <li><a href="task.html">Task</a></li>
-                    <li><a href="competition.html">Competition</a></li>
-                    <li><a href="qualification.html" class="active">Qualification</a></li>
-                    <li><a href="rules.html">Rules</a></li>
-                    <li><a href="evaluation.html">Evaluation</a></li>
-                    <li><a href="faq.html">FAQs</a></li>
+                    <li class="subnav">
+                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">Competition</a>
+                        <div class="subnav-content">
+                            <a href="task.html">Task</a>
+                            <a href="competition.html">On-site phase</a>
+                            <a href="qualification.html">Qualification</a>
+                            <a href="evaluation.html">Evaluation</a>
+                            <a href="rules.html" class="active">Rules & Policies</a>
+                        </div>
+                    </li>
+                    <li><a href="leaderboards.html">Leaderboards</a></li>
+                    <li class="subnav">
+                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
+                        <div class="subnav-content">
+                            <a href="organisers.html">Organisers</a>
+                            <a href="https://corsmal.github.io/benchmark/competitions.html">History</a>
+                        </div>
+                    </li>
+					<!-- <li><a href="faq.html">FAQs</a></li> -->
                 </ul>
             </nav>
         </div>
@@ -116,149 +135,6 @@
                         </ul>
                     </div>
 
-                    <div id="corsmal-leaderboard">
-                        <b><span>Leaderboards - CORSMAL Benchmark</span></b>
-                        <p>
-                            Teams are ranked by the benchmark score.
-                        </p>
-                        <p>
-                            The offline score s9 (human intention/hand pose prediction) has not been considered for the ranking as it is not a requirment for the qualification phase, but it is still computed and reported for reference and future comparisons.
-                            The maximum benchmark score is 88.89. The maximum score for the robotic subsystem is 66.67. 
-                        </p>
-                        <p>
-                            We provide the scores obtained by the CORSMAL baseline (see <a href="https://doi.org/10.1109/LRA.2020.2969200" target="_blank"><u>article</u></a> in IEEE Robotics and Automation Letters, 2020) only for references, 
-                            as the computation of various scores has been revised and updated for the qualification.  
-                        </p>
-
-                        <b><span>Benchmark scores</span></b>
-                        <p>
-                            Results are also grouped by vision subsystem, robotic subsystem, and completion of the overall task. 
-                        </p>
-                        <div class="corsmal-overall" id="corsmal-overall"></div>
-                        <script type="text/javascript">
-                            var table = new Tabulator("#corsmal-overall",
-                            {
-                                height:(corsmal_table.length * 35) + 40 + "px",
-                                reactiveData:true,
-                                data:corsmal_table,
-                                columns:[
-                                    {title:"Name", field:"name"},
-                                    {title:"Overall", field:"score", sorter:"number"},
-                                    {title:"Vision", field:"vision", sorter:"number"},
-                                    {title:"Robotic", field:"robotics", sorter:"number"},
-                                    {title:"Task", field:"task", sorter:"number"}
-                                ],
-                                initialSort:[
-                                    {column:"score", dir:"desc"},
-                                ]
-                            });
-                            table.redraw();
-                        </script>
-                        <p>Notes on results and scoring:</p>
-                        <ul>
-                            <li>SIRSIIT and AIRLab (returning teams from previous years) submitted results only for the task scores (s10, s11, s12, s13).</li>
-                            <li>Robot Booster uses prior information of the content density to compute the mass of the containers and content.</li>
-                            <li>3D Vision & Robotics Lab use a rule-based approach for vision-based mass estimation based on prior knowledge of the physical properties of the cups (empty-container weight, and container height). We provide a second entry that does not account for the mass estiimation.</li>
-                            <li>IITGN Robotics Lab completed only 216 configurations: the target delivery location was set for each configuration, but the score is computed with respect to a fixed one due to missing reporting. Timings were not correctly reported.</li>
-                            <li>All teams but SIRSIIT use alternative cups and scores are relative to the measurements provided by the used cups.</li>
-                            <li>Broken Arm, LARICS Gripsters, Robot Booster, Shakey's Legacy, 3D Vision & Robotics Lab, IITGN Robotics Lab, and Youth2Real provided results for end-effector reachability (score s8)</li>
-                        </ul>
-
-                        <div class="corsmal-granular-scores" id="corsmal-granular-scores" style="margin-top: 1.5rem;"></div>
-                        <script type="text/javascript">
-                            var table = new Tabulator("#corsmal-granular-scores",
-                            {
-                                height:(corsmal_table.length * 35) + 40 + "px",
-                                reactiveData:true,
-                                data:corsmal_table,
-                                columns:[
-                                    {title:"Name", field:"name"},
-                                    {title:"s1", field:"s1", sorter:"number"},
-                                    {title:"s2", field:"s2", sorter:"number"},
-                                    {title:"s3", field:"s3", sorter:"number"},
-                                    {title:"s4", field:"s4", sorter:"number"},
-                                    {title:"s5", field:"s5", sorter:"number"},
-                                    {title:"s6", field:"s6", sorter:"number"},
-                                    {title:"s7", field:"s7", sorter:"number"},
-                                    {title:"s8", field:"s8", sorter:"number"},
-                                    {title:"s9", field:"s9", sorter:"number"},
-                                    {title:"s10", field:"s10", sorter:"number"},
-                                    {title:"s11", field:"s11", sorter:"number"},
-                                    {title:"s12", field:"s12", sorter:"number"},
-                                    {title:"s13", field:"s13", sorter:"number"}
-                                ],
-                                initialSort:[
-                                    {column:"s9", dir:"desc"},
-                                ]
-                            });
-                            table.redraw();
-                        </script>
-                        <div style="margin-top: 1.5rem;">
-                            <span class="legend-toggle" onclick="toggleLegend('legend-granular-scores')">Legend</span>
-                        </div>
-                        <div id="legend-granular-scores">
-                            - s1: score for vision-based estimation of the container width at the top (mm)<br>
-                            - s2: score for vision-based estimation of the container width at the bottom (mm)<br>
-                            - s3: score for vision-based estimation of the container height (mm)<br>
-                            - s4: score for vision-based estimation of the container mass (container + filling)<br>
-                            - s5: score for vision-based estimation of the container fullness (%)<br>
-                            - s6: score for robot-based estimation of the container mass (container + filling)<br>
-                            - s7: offline score for robot-based estimation of the human intention or human hand pose trajectory (not computed)<br>
-                            - s8: offline score for robot-based estimation of end-effector reachability<br>
-                            - s9: score for delivery location accuracy<br>
-                            - s10: score for final mass estimation (container + filling) to assess spilling<br>
-                            - s11: score for the human maneuvring time<br> 
-                            <!-- (taken between the first contact of the human hand with the container and the first contact of the robot end-effector) -->
-                            - s12: score for the handover time<br>
-                            <!-- (time between the last contact of the human hand with the container and the first contact of the robot end-effector) -->
-                            - s13: score for the robot maneuvring time
-                            <!-- (taken between the last contact of the human hand with the container and the last contact of the robot end-effector) -->
-                        </div>
-
-                        <div class="corsmal-groups" id="corsmal-groups" style="margin-top: 1.5rem;"></div>
-                        <script type="text/javascript">
-                            var table = new Tabulator("#corsmal-groups",
-                            {
-                                height:(corsmal_table.length * 35) + 40 + "px",
-                                reactiveData:true,
-                                data:corsmal_table,
-                                columns:[
-                                    {title:"Name", field:"name"},
-                                    {title:"C1", field:"cup1", sorter:"number"},
-                                    {title:"C2", field:"cup2", sorter:"number"},
-                                    {title:"C3", field:"cup3", sorter:"number"},
-                                    {title:"C4", field:"cup4", sorter:"number"},
-                                    {title:"Empty", field:"empty", sorter:"number"},
-                                    {title:"Filled", field:"filled", sorter:"number"},
-                                    {title:"G1", field:"grasp1", sorter:"number"},
-                                    {title:"G2", field:"grasp2", sorter:"number"},
-                                    {title:"G3", field:"grasp3", sorter:"number"},
-                                    {title:"HO-L", field:"left", sorter:"number"},
-                                    {title:"HO-C", field:"center", sorter:"number"},
-                                    {title:"HO-R", field:"right", sorter:"number"},
-                                ],
-                                initialSort:[
-                                    {column:"score", dir:"desc"},
-                                ]
-                            });
-                            table.redraw();
-                        </script>
-                        <div style="margin-top: 1.5rem;">
-                            <span class="legend-toggle" onclick="toggleLegend('legend_groups')">Legend</span>
-                        </div>
-                        <div id="legend_groups">
-                            - C1: Cup 1<br>
-                            - C2: Cup 2<br>
-                            - C3: Cup 3<br>
-                            - C4: Cup 4<br>
-                            - G1: Grasp 1<br>
-                            - G2: Grasp 2<br>
-                            - G3: Grasp 3<br>
-                            - HO-L: handover left location<br>
-                            - HO-C: handover centre location<br>
-                            - HO-R: handover right location
-                        </div>
-                    </div>
 
                     <div id="alternative-cups">
                         <b><span style="font-size: 14.0pt">Alternative cups</span></b>

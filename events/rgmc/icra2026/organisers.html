@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Human-to-Robot Handovers track - 11th Robotics Grasping and Manipulation Competition at ICRA 2026">
+    <meta name="keywords" content="CORSMAL, robotics, vision, audio, competition, ICRA, human-to-robot, handovers, 2026">
+    <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
+    <meta property="og:title" content="CORSMAL | Human-to-Robot Handovers | ICRA 2026">
+    <meta property="og:description" content="Benchmark your robotic handover work at ICRA 2026">
+
+	<title>Human-to-Robot Handovers | 11th RGMC | ICRA 2026</title>
+    <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
+
+    <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
+	<link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
+
+    <script src="../../../js/menu.js" defer></script>
+
+    <style>
+		/* Section heading */
+		#people h1 {
+			font-size: 18px;
+			font-weight: bold;
+			text-align: justify;
+			margin-bottom: 20px;
+		}
+
+		/* Header logo image */
+		#header img {
+			height: 75px;
+			padding: 0;
+		}
+
+		/* Navigation spacing */
+		#topnav ul {
+			margin-top: 5px;
+		}
+
+		/* Wrapper spacing */
+		.wrapper.row2 {
+			margin-bottom: 7px;
+		}
+
+		/* Copyright text */
+		#copyright #fl_left {
+			font-size: 12px;
+		}
+
+		/* Team grid layout */
+		.team-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+			gap: 30px;
+			padding: 20px;
+			text-align: center;
+		}
+
+		.team-member {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.team-member img {
+			width: 140px;
+			height: 149px;
+			object-fit: cover;
+			border-radius: 4px;
+			margin-bottom: 10px;
+		}
+
+		.team-member a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		.team-member a:hover img {
+			opacity: 0.8;
+			transition: opacity 0.3s ease;
+		}
+
+		.team-member-name {
+			font-weight: bold;
+			font-size: 14px;
+			margin-top: 10px;
+		}
+
+		@media (max-width: 768px) {
+			#people h1 {
+				font-size: 16px;
+			}
+
+			.team-grid {
+				grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+				gap: 20px;
+				padding: 15px;
+			}
+
+			.team-member img {
+				width: 100px;
+				height: 107px;
+			}
+
+			.team-member-name {
+				font-size: 12px;
+			}
+		}
+	</style>
+
+</head>
+<body id="top">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-section">
+                <a href="https://corsmal.github.io" aria-label="CORSMAL Home">
+                    <img src="https://corsmal.github.io/images/CORSMAL_logo.png" alt="CORSMAL Logo">
+                </a>
+            </div>
+            <div class="icra-section">
+                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer" aria-label="ICRA 2026 Conference (opens in new window)">
+                    <img src="../../../images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna Logo">
+                </a>
+            </div>
+            <div class="competition-section">
+                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer">12th Robotic Grasping and<br>Manipulation Competition</a>
+            </div>
+        </div>
+        <div class="header-content">
+            <h1 class="page-title-header">Human-to-Robot Handovers</h1>
+            <nav aria-label="Breadcrumb" class="breadcrumb">
+                <div class="menu-toggle"><span></span></div>
+                <ul>
+                    <li><a href="index.html">Overview</a></li>
+                    <li class="subnav">
+                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">Competition</a>
+                        <div class="subnav-content">
+                            <a href="task.html">Task</a>
+                            <a href="competition.html">On-site phase</a>
+                            <a href="qualification.html">Qualification</a>
+                            <a href="evaluation.html">Evaluation</a>
+                            <a href="rules.html">Rules & Policies</a>
+                        </div>
+                    </li>
+                    <li><a href="leaderboards.html">Leaderboards</a></li>
+                    <li class="subnav">
+                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
+                        <div class="subnav-content">
+                            <a href="organisers.html" class="active">Organisers</a>
+                            <a href="https://corsmal.github.io/benchmark/competitions.html">History</a>
+                        </div>
+                    </li>
+					<!-- <li><a href="faq.html">FAQs</a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="wrapper row1">
+            <div id="container" class="clear">
+                <div id="latestnewspage" class="clear">
+
+            
+                    <!-- Organizers Section -->
+                    <div id="organisers">
+                        <b><span style="font-size: 14.0pt">Organisers</span></b>
+                        <div class="team-grid">
+                            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                                <a href="https://www.linkedin.com/in/alessioxompero/" target="_blank" rel="noopener">
+                                    <img src="../../../images/team/AlessioXompero.png" alt="Alessio Xompero">
+                                </a>
+                                <div class="team-member-name" itemprop="name">Alessio Xompero</div>
+                                <div class="team-member-role" itemprop="role">Track leader</div>
+                                <!-- <div class="team-member-role" itemprop="role">Independent Researcher (UK)</div> -->
+                                <meta itemprop="url" content="https://www.linkedin.com/in/alessioxompero/">
+                            </div>
+                            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                                <a href="https://www.linkedin.com/in/changjae-oh-42a36685/" target="_blank" rel="noopener">
+                                    <img src="../../../images/team/ChangjaeOh.jpg" alt="Changjae Oh, CORSMAL team member">
+                                </a>
+                                <div class="team-member-name" itemprop="name">Changjae Oh</div>
+                                <!-- <div class="team-member-role" itemprop="role">Lecturer</div> -->
+                                <!-- <div class="team-member-role" itemprop="role">Queen Mary University of London (UK)</div> -->
+                                <meta itemprop="url" content="https://www.linkedin.com/in/changjae-oh-42a36685/">
+                            </div>
+                            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                                <a href="https://www.linkedin.com/in/andrea-cavallaro-b631141/" target="_blank" rel="noopener">
+                                    <img src="../../../images/team/AndreaCavallaro.jpg" alt="Andrea Cavallaro">
+                                </a>
+                                <div class="team-member-name" itemprop="name">Andrea Cavallaro</div>
+                                <meta itemprop="url" content="https://www.linkedin.com/in/andrea-cavallaro-b631141/">
+                            </div>
+                        </div>
+                        <!-- <p>
+                            Alessio Xompero, Independent Researcher and Track leader (UK)<br>
+                            Changjae Oh, Queen Mary University of London (UK)<br>
+                            Andrea Cavallaro, EPFL (Switzerland)<br>
+                        </p> -->
+                        <b><span style="font-size: 14.0pt">Supporting team</span></b>
+                        <p>
+                            Yuekun Wu, Queen Mary University of London (UK)<br>
+                            Chaoran Zhou, Queen Mary University of London (UK)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <p>&copy; All rights reserved.</p>
+            <p>
+                <a href="ethics.html">Ethics Policy</a>
+                <a href="data_retention_policy.html">Data Retention Policy</a>
+            </p>
+        </div>
+    </footer>
+
+	<script src="js/teams.js" defer></script>
+    <script>
+        // Toggle team metadata visibility
+        function toggleTeamMetadata(teamId) {
+            const metadataElements = document.querySelectorAll('.metadata');
+            metadataElements.forEach(el => el.classList.remove('active'));
+            const element = document.getElementById(teamId + '_metadata');
+            if (element) {
+                element.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
+

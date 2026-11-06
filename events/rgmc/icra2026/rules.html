@@ -7,9 +7,13 @@
     <meta name="keywords" content="CORSMAL, robotics, competition, ICRA, human-to-robot, handovers, rules">
     <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
     
-    <title>CORSMAL | Rules | Human-to-Robot Handovers | ICRA 2026</title>
+    <title>Rules | Human-to-Robot Handovers | ICRA 2026</title>
     <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
-    <link rel="stylesheet" href="css/rgmc_track.css" type="text/css">
+    
+    <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
+	<link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
+
+    <script src="../../../js/menu.js" defer></script>
 </head>
 <body id="top">
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -27,20 +31,34 @@
                 </a>
             </div>
             <div class="competition-section">
-                <a href="https://sites.google.com/view/rgmcomp" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
+                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
             </div>
         </div>
         <div class="header-content">
             <h1 class="page-title-header">Human-to-Robot Handovers</h1>
-            <nav>
+            <nav aria-label="Breadcrumb" class="breadcrumb">
+                <div class="menu-toggle"><span></span></div>
                 <ul>
                     <li><a href="index.html">Overview</a></li>
-                    <li><a href="task.html">Task</a></li>
-                    <li><a href="competition.html">Competition</a></li>
-                    <li><a href="qualification.html">Qualification</a></li>
-                    <li><a href="rules.html" class="active">Rules</a></li>
-                    <li><a href="evaluation.html">Evaluation</a></li>
-					<li><a href="faq.html">FAQs</a></li>
+                    <li class="subnav">
+                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">Competition</a>
+                        <div class="subnav-content">
+                            <a href="task.html">Task</a>
+                            <a href="competition.html">On-site phase</a>
+                            <a href="qualification.html">Qualification</a>
+                            <a href="evaluation.html">Evaluation</a>
+                            <a href="rules.html" class="active">Rules & Policies</a>
+                        </div>
+                    </li>
+                    <li><a href="leaderboards.html">Leaderboards</a></li>
+                    <li class="subnav">
+                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
+                        <div class="subnav-content">
+                            <a href="organisers.html">Organisers</a>
+                            <a href="https://corsmal.github.io/benchmark/competitions.html">History</a>
+                        </div>
+                    </li>
+					<!-- <li><a href="faq.html">FAQs</a></li> -->
                 </ul>
             </nav>
         </div>
@@ -83,6 +101,27 @@
                             <li>Learning across executions of configurations</li>
                             <li>Teleoperation</li>
                         </ul>
+                        
+                        <b><span style="font-size: 14.0pt">On-site phase (competition finals)</span></b>
+                        <ol>
+                            <li>All configurations are executed by the same volunteer from another team using a natural grasp.</li>
+                            <li>The volunteer is instructed to use only one hand and always the same.</li>
+                            <li>Each handover configuration can be executed only once except for hardware failures</li>
+                            <li>The initial location of the container is predefined on the table and 
+                                not reachable by the robotic arm to avoid the robot approaching the container 
+                                before the volunteer graps it.
+                            </li>
+                            <li>Failed handover configurations will get 0 points. Example of failed configurations:
+                                <ul>
+                                    <li>Robot cannot grasp the object during the handover phase</li>
+                                    <li>Robot cannot hold the container during the delivery phase</li>
+                                    <li>Object falls after the robot places it on the table</li>
+                                    <li>Volunteer retreats during the handover phase because of unsafe robot behaviour</li>
+                                    <li>Perception system fails to detect the object for 2 consecutive attempts</li>
+                                </ul>
+                            </li>
+                            <li>System crashes (e.g. hardware failures) or components fails to start (perception or robot) can be re-attempted.</li>
+                        </ol>
                     </div>
                 </div>
             </div>

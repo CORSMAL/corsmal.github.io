@@ -7,9 +7,13 @@
     <meta name="keywords" content="CORSMAL, robotics, competition, ICRA, human-to-robot, handovers, task">
     <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
     
-    <title>CORSMAL | Task | Human-to-Robot Handovers | ICRA 2026</title>
+    <title>Task | Human-to-Robot Handovers | ICRA 2026</title>
     <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
-    <link rel="stylesheet" href="css/rgmc_track.css" type="text/css">
+    
+    <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
+	<link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
+
+    <script src="../../../js/menu.js" defer></script>
 </head>
 <body id="top">
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -27,20 +31,34 @@
                 </a>
             </div>
             <div class="competition-section">
-                <a href="https://sites.google.com/view/rgmcomp" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
+                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
             </div>
         </div>
         <div class="header-content">
             <h1 class="page-title-header">Human-to-Robot Handovers</h1>
-            <nav>
+            <nav aria-label="Breadcrumb" class="breadcrumb">
+                <div class="menu-toggle"><span></span></div>
                 <ul>
                     <li><a href="index.html">Overview</a></li>
-                    <li><a href="task.html" class="active">Task</a></li>
-                    <li><a href="competition.html">Competition</a></li>
-                    <li><a href="qualification.html">Qualification</a></li>
-                    <li><a href="rules.html">Rules</a></li>
-                    <li><a href="evaluation.html">Evaluation</a></li>
-					<li><a href="faq.html">FAQs</a></li>
+                    <li class="subnav">
+                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">Competition</a>
+                        <div class="subnav-content">
+                            <a href="task.html" class="active">Task</a>
+                            <a href="competition.html">On-site phase</a>
+                            <a href="qualification.html">Qualification</a>
+                            <a href="evaluation.html">Evaluation</a>
+                            <a href="rules.html">Rules & Policies</a>
+                        </div>
+                    </li>
+                    <li><a href="leaderboards.html">Leaderboards</a></li>
+                    <li class="subnav">
+                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
+                        <div class="subnav-content">
+                            <a href="organisers.html">Organisers</a>
+                            <a href="https://corsmal.github.io/benchmark/competitions.html">History</a>
+                        </div>
+                    </li>
+					<!-- <li><a href="faq.html">FAQs</a></li> -->
                 </ul>
             </nav>
         </div>
@@ -51,6 +69,7 @@
             <div id="container" class="clear">
                 <div id="latestnewspage" class="clear">
                     <div>
+                        <b><span>Task Description</span></b>
                         <p>
                             The task consists of three steps, namely human manoeuvring, dynamic handover, and robot manoeuvring. Any individual that is asked to volunteer and perform the handover task is referred to as a subject. The subject is instructed to handover the container naturally (i.e. with no intention to help or make it difficult for the robot), standing opposite to the robot across the table, which should be covered with a white table-cloth.
                         </p>
@@ -64,7 +83,7 @@
                             We define a configuration as the execution of the human-to-robot handover task with a predefined combination of a container with a content type and amount. All the configurations shall be executed by the subject using the same hand with a natural grasp. Prior to the execution of each configuration, the container (filled with its content, if any) should be placed on a predefined location on the table and at a distance that is not reachable by the robotic arm.
                         </p>
                         <p>
-                            Participants will perform a predefined number of configurations. . 
+                            Participants will perform a predefined number of configurations. 
                             Based on previous editions, we expect that each configuration should be executed within 5 s, and 
                             the preparation and execution of all configurations, and measuring the mass of the delivered container 
                             should take no longer than 30 min for each team. 
