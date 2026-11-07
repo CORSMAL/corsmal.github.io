@@ -1,66 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Human-to-Robot Handovers track - 11th Robotics Grasping and Manipulation Competition at ICRA 2026 Vienna">
-    <meta name="keywords" content="CORSMAL, robotics, vision, audio, competition, ICRA, human-to-robot, handovers, 2026">
+    <meta name="description"
+        content="Human-to-Robot Handovers track - 11th Robotics Grasping and Manipulation Competition at ICRA 2026 Vienna">
+    <meta name="keywords"
+        content="CORSMAL, robotics, vision, audio, competition, ICRA, human-to-robot, handovers, 2026">
     <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
     <meta property="og:title" content="CORSMAL | Human-to-Robot Handovers | ICRA 2026">
     <meta property="og:description" content="Benchmark your robotic handover work at ICRA 2026 in Vienna">
 
-	<title>Human-to-Robot Handovers | 11th RGMC | ICRA 2026</title>
+    <title>Human-to-Robot Handovers | 11th RGMC | ICRA 2026</title>
     <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
 
     <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
-	<link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
+    <link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
 
-    <script src="../../../js/menu.js" defer></script>
+    <script src="js/rgmc-menu.js" defer></script>
 </head>
+
 <body id="top">
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header>
+    <header class="rgmc-header">
         <div class="header-top">
             <div class="logo-section">
-                <a href="https://corsmal.github.io" aria-label="CORSMAL Home">
-                    <img src="https://corsmal.github.io/images/CORSMAL_logo.png" alt="CORSMAL Logo">
+                <a href="https://corsmal.github.io" aria-label="CORSMAL home">
+                    <img src="../../../images/CORSMAL_logo.png" alt="CORSMAL">
                 </a>
             </div>
+
             <div class="icra-section">
-                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer" aria-label="ICRA 2026 Conference (opens in new window)">
-                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna Logo">
+                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer"
+                    aria-label="ICRA 2026 conference (opens in a new window)">
+                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna">
                 </a>
             </div>
+
             <div class="competition-section">
-                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
+                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer"
+                    aria-label="11th Robotic Grasping and Manipulation Competition (opens in a new window)">
+                    <span class="competition-name-full">
+                        11th Robotic Grasping and<br>Manipulation Competition
+                    </span>
+                    <span class="competition-name-short" aria-hidden="true">11th RGMC</span>
+                </a>
             </div>
         </div>
+
         <div class="header-content">
             <h1 class="page-title-header">Human-to-Robot Handovers</h1>
-            <nav aria-label="Breadcrumb" class="breadcrumb">
-                <div class="menu-toggle"><span></span></div>
-                <ul>
-                    <li><a href="index.html" class="active">Overview</a></li>
+
+            <nav class="rgmc-nav" aria-label="Competition navigation">
+                <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"
+                    aria-controls="rgmc-navigation">
+                    <span aria-hidden="true"></span>
+                </button>
+
+                <ul id="rgmc-navigation">
+                    <li><a href="index.html" aria-current="page" class="active">Overview</a></li>
                     <li class="subnav">
-                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">Competition</a>
-                        <div class="subnav-content">
+                        <button type="button" aria-expanded="false" aria-controls="competition-submenu">
+                            Competition
+                        </button>
+                        <div class="subnav-content" id="competition-submenu">
                             <a href="task.html">Task</a>
                             <a href="competition.html">On-site phase</a>
                             <a href="qualification.html">Qualification</a>
                             <a href="evaluation.html">Evaluation</a>
-                            <a href="rules.html">Rules & Policies</a>
+                            <a href="rules.html">Rules &amp; Policies</a>
                         </div>
                     </li>
+                    <li><a href="teams.html">Teams &amp; Demos</a></li>
                     <li><a href="leaderboards.html">Leaderboards</a></li>
                     <li class="subnav">
-                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
-                        <div class="subnav-content">
+                        <button type="button" aria-expanded="false" aria-controls="about-submenu">
+                            About
+                        </button>
+                        <div class="subnav-content" id="about-submenu">
                             <a href="organisers.html">Organisers</a>
                             <a href="https://corsmal.github.io/benchmark/competitions.html">History</a>
                         </div>
                     </li>
-					<!-- <li><a href="faq.html">FAQs</a></li> -->
                 </ul>
             </nav>
         </div>
@@ -72,29 +95,48 @@
                 <div id="latestnewspage" class="clear">
 
                     <!-- Overview Section -->
-                    <div style="text-align: justify;">
+                    <section class="event-section" aria-labelledby="overview-heading">
+                        <h2 id="overview-heading">Overview</h2>
                         <p>
-                            Human-to-Robot Handovers was one of the competition tracks within 
-                            the 11th Robotic Grasping and Manipulation Competition (RGMC) 
-                            held during the 2026 IEEE/RAS International Conference on Robotics and Automation (ICRA) in Vienna, Austria.
+                            Human-to-Robot Handovers was a track of
+                            the 11th Robotic Grasping and Manipulation Competition (RGMC)
+                            held at the 2026 IEEE/RAS International Conference on Robotics and Automation (ICRA) in
+                            Vienna, Austria.
                         </p>
-                        <div style="text-align: center; margin: 1.5rem 0;">
-                            <img src="images/handover_new.png" alt="Robot performing human-to-robot handover with vision-based object property estimation">
-                        </div>
-                    </div>
+                        <p>
+                            The track assessed the generalisation capabilities of a robotic control when
+                            handing over previously unseen objects filled (or not) with unknown content, hence with a
+                            different and unknown mass and stiffness. No object properties are initially known to the
+                            robot (or the team) that must infer these properties on-the-fly, during the execution of the
+                            dynamic handover, through perception of the scene.
+                        </p>
+                        <p><a href="task.html">Read the task and setup description</a></p>
+                        <!-- <div style="text-align: center; margin: 1.5rem 0;">
+                            <img src="images/handover_new.png"
+                                alt="Robot performing human-to-robot handover with vision-based object property estimation">
+                        </div> -->
+                        <img class="overview-image" src="images/handover_new.png"
+                            alt="Robot performing a human-to-robot handover">
+                    </section>
 
                     <!-- Track Description Section -->
-                    <div style="text-align: justify;">
+                    <!-- <div style="text-align: justify;">
                         <p>
-                            The real-time estimation through vision perception of the physical properties of objects manipulated by humans is important to inform the control of robots and perform accurate and safe grasps of objects handed over by humans. However, estimating the physical properties of previously unseen objects using only inexpensive cameras is challenging due to illumination variations, transparencies, reflective surfaces, and occlusions caused both by the human and the robot.
+                            The real-time estimation through vision perception of the physical properties of objects
+                            manipulated by humans is important to inform the control of robots and perform accurate and
+                            safe grasps of objects handed over by humans. However, estimating the physical properties of
+                            previously unseen objects using only inexpensive cameras is challenging due to illumination
+                            variations, transparencies, reflective surfaces, and occlusions caused both by the human and
+                            the robot.
                         </p>
                         <p>
-                            Our dynamic human-to-robot handovers track is based on an affordable experimental setup that does not use a motion capture system, markers, or prior knowledge of specific object models. The track focuses on food containers and drinking glasses that vary in shape and size, and may be empty or filled with an unknown amount of unknown content.
+                            Our dynamic human-to-robot handovers track is based on an affordable experimental setup that
+                            does not use a motion capture system, markers, or prior knowledge of specific object models.
+                            The track focuses on food containers and drinking glasses that vary in shape and size, and
+                            may be empty or filled with an unknown amount of unknown content.
                         </p>
-                        <p>
-                            <strong>Goal:</strong> Assess the generalisation capabilities of the robotic control when handing over previously unseen objects filled (or not) with unknown content, hence with a different and unknown mass and stiffness. No object properties are initially known to the robot (or the team) that must infer these properties on-the-fly, during the execution of the dynamic handover, through perception of the scene.
-                        </p>
-                    </div>
+
+                    </div> -->
 
                     <!-- Application Section -->
                     <!-- <div style="text-align: justify;">
@@ -107,31 +149,8 @@
                         </p>
                     </div> -->
 
-                    <!-- Teams Section -->
-                    <div style="text-align: justify;">
-                        <b><span style="font-size: 14.0pt">Teams</span></b>
-                        <div id="teamsolutions">
-                            <p>
-                                Teams accepted to the Human-to-Robot Handover track. Select a team to see the details. Team leader highlighted in bold.
-                                For some teams, technnical report and code are also provided. 
-                            </p>
-                            <ul id="teams">
-                                <!-- Teams list will be populated by renderTeams() -->
-                            </ul>
-                            <div id="team-blocks">
-                                <!-- Team details will be populated by renderTeams() -->
-                            </div>
-                            <div style="clear: both;"></div>
-                        </div>
-                        <p style="margin-top: 1rem;">
-                            The track involved a qualification phase in which teams performed the handover configurations 
-                            of the <a href="https://corsmal.github.io/benchmark.html">CORSMAL Benchmark protocol</a> 
-                            remotely in their laboratory.
-                        </p>
-                    </div>
-
-                    <div id="winners">
-                        <b><span style="font-size:14.0pt">Winners</span></b>
+                    <section id="winners" class="event-section" aria-labelledby="winners-heading">
+                        <h2 id="winners-heading">Winners</h2>
                         <div class="winners-grid">
                             <div class="winner-item">
                                 <strong>Youth2Real</strong>
@@ -151,59 +170,75 @@
                         </div>
                         <div style="margin-top: 2rem;">
                             <p>
-                                Congratulations to all teams for their participation and achievements! 
-                                Check the <a href="competition.html"><u>competition page</u></a> for details and the leaderboard.
+                                Congratulations to all teams for their participation and achievements!
                             </p>
+                            <p>
+                                <a href="leaderboards.html#competition-finals">View the finals leaderboard</a>
+                                or <a href="leaderboards.html#corsmal-overall">qualification scores</a>.
+                            </p>
+                            <!-- <p style="margin-top: 1rem;">
+                                Check the <a href="competition.html"><u>competition page</u></a> for details.
+                                The track involved a qualification phase in which teams performed the handover
+                                configurations
+                                of the <a href="https://corsmal.github.io/benchmark.html">CORSMAL Benchmark protocol</a>
+                                remotely in their laboratory.
+                            </p> -->
                         </div>
-                    </div>
- 
-                    <!-- -->
-                    <div id="demovideo">
-                        <b><span style="font-size:14.0pt">Demo videos</span></b>
-                        <div class="videos-grid">
-                            <div class="team-video">
-                                <b>Youth2Real team</b><br>
-                                <iframe src="https://www.youtube.com/embed/hhuAczCWY64?si=Hgv-DcLEgdtXF6DO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-                            <div class="team-video">
-                                <b>Robot Booster team</b><br>
-                                <iframe src="https://www.youtube.com/embed/JRe_4EVtEL0?si=MtL2mm1-8U8orhU-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-                            <div class="team-video">
-                                <b>BrokenArm team</b><br>
-                                <iframe src="https://www.youtube.com/embed/0MkqkYvmN5c?si=MU0Fx-xYCeaV_gZc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-                            <div class="team-video">
-                                <b>SirsIIT team</b><br>
-                                <iframe src="https://www.youtube.com/embed/BY_sexPMFQY?si=tnPVAzprZ-NVXVQ6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-                            <div class="team-video">
-                                <span><b>AIRLAB team</b></span><br>
-                                <iframe src="https://www.youtube.com/embed/wsmRqJzTCZc?si=x8Q9Dqye9d1f-Pxm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- -->
+                    </section>
+
+                    <section class="event-section" aria-labelledby="competition-heading">
+                        <h2 id="competition-heading">Explore the competition</h2>
+                        <p>
+                            Teams qualified remotely using the
+                            <a href="https://corsmal.github.io/benchmark.html">CORSMAL Benchmark protocol</a>,
+                            then competed on-site in Vienna.
+                        </p>
+                        <ul>
+                            <li><a href="qualification.html">Qualification</a></li>
+                            <li><a href="competition.html">On-site phase</a></li>
+                            <li><a href="evaluation.html">Evaluation</a></li>
+                            <li><a href="rules.html">Rules and policies</a></li>
+                        </ul>
+                    </section>
+
+                    <section id="teamsolutions" class="event-section" aria-labelledby="teams-heading">
+                        <h2 id="teams-heading">Teams and demonstrations</h2>
+                        <p>
+                            Meet the teams and explore their available reports, code and
+                            demonstration videos.
+                            <a href="teams.html">View teams and demos</a>.
+                        </p>
+                        <p id="demovideo">
+                            <a href="teams.html#demovideo">Watch the demonstration videos</a>.
+                        </p>
+                    </section>
 
                     <!-- Summary slides Section -->
-                    <div>
-                    <b><span style="font-size:14.0pt">Summary</span></b>
-                        <div style="text-align:center;">
-                            <iframe src="https://www.slideshare.net/slideshow/embed_code/key/EUMKgtViTxqrpB"hostedIn=slideshare&page=upload" 
-                            width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe>
-                        </div>
-                    </div>
+                    <section class="event-section" aria-labelledby="summary-heading">
+                        <h2 id="summary-heading">Event summary</h2>
+                        <iframe class="summary-slides"
+                            src="https://www.slideshare.net/slideshow/embed_code/key/EUMKgtViTxqrpB"
+                            title="Human-to-Robot Handovers at ICRA 2026: event summary slides" loading="lazy"
+                            allowfullscreen></iframe>
+                        <p>
+                            <a href="https://www.slideshare.net/slideshow/embed_code/key/EUMKgtViTxqrpB">
+                                Open the summary slides
+                            </a>
+                        </p>
+                    </section>
 
                     <!-- Sponsors Section -->
-                    <div id="sponsors">
-                        <b><span style="font-size: 14.0pt">Sponsors</span></b>
+                    <section id="sponsors" class="event-section" aria-labelledby="sponsors-heading">
+                        <h2 id="sponsors-heading">Sponsors</h2>
                         <p>
-                            We thank our sponsors for the support by providing UR5 and Franka FR3 robots on the competition site 
-                            for teams having difficulty bringing their own, providing table mounts for the robots and objects for the competition, and 
+                            We thank our sponsors for the support by providing UR5 and Franka FR3 robots on the
+                            competition site
+                            for teams having difficulty bringing their own, providing table mounts for the robots and
+                            objects for the competition, and
                             sponsoring the prizes for the winning teams.
                         </p>
-                        <img src="images/sponsors.png" alt="All sponsors logos" style="width:100%;">
-                    </div>
+                        <img src="images/sponsors.png" alt="Competition sponsor logos">
+                    </section>
 
                 </div>
             </div>
@@ -219,19 +254,6 @@
             </p>
         </div>
     </footer>
-
-	<script src="js/teams.js" defer></script>
-    <script>
-        // Toggle team metadata visibility
-        function toggleTeamMetadata(teamId) {
-            const metadataElements = document.querySelectorAll('.metadata');
-            metadataElements.forEach(el => el.classList.remove('active'));
-            const element = document.getElementById(teamId + '_metadata');
-            if (element) {
-                element.classList.add('active');
-            }
-        }
-    </script>
 </body>
-</html>
 
+</html>

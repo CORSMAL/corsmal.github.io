@@ -1,64 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Rules - Human-to-Robot Handovers track at ICRA 2026">
     <meta name="keywords" content="CORSMAL, robotics, competition, ICRA, human-to-robot, handovers, rules">
     <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
-    
+
     <title>Rules | Human-to-Robot Handovers | ICRA 2026</title>
     <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
-    
-    <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
-	<link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
 
-    <script src="../../../js/menu.js" defer></script>
+    <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
+    <link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
+
+    <script src="js/rgmc-menu.js" defer></script>
 </head>
+
 <body id="top">
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header>
+    <header class="rgmc-header">
         <div class="header-top">
             <div class="logo-section">
-                <a href="https://corsmal.github.io" aria-label="CORSMAL Home">
-                    <img src="https://corsmal.github.io/images/CORSMAL_logo.png" alt="CORSMAL Logo">
+                <a href="https://corsmal.github.io" aria-label="CORSMAL home">
+                    <img src="../../../images/CORSMAL_logo.png" alt="CORSMAL">
                 </a>
             </div>
+
             <div class="icra-section">
-                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer" aria-label="ICRA 2026 Conference (opens in new window)">
-                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna Logo">
+                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer"
+                    aria-label="ICRA 2026 conference (opens in a new window)">
+                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna">
                 </a>
             </div>
+
             <div class="competition-section">
-                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
+                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer"
+                    aria-label="11th Robotic Grasping and Manipulation Competition (opens in a new window)">
+                    <span class="competition-name-full">
+                        11th Robotic Grasping and<br>Manipulation Competition
+                    </span>
+                    <span class="competition-name-short" aria-hidden="true">11th RGMC</span>
+                </a>
             </div>
         </div>
+
         <div class="header-content">
             <h1 class="page-title-header">Human-to-Robot Handovers</h1>
-            <nav aria-label="Breadcrumb" class="breadcrumb">
-                <div class="menu-toggle"><span></span></div>
-                <ul>
+
+            <nav class="rgmc-nav" aria-label="Competition navigation">
+                <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"
+                    aria-controls="rgmc-navigation">
+                    <span aria-hidden="true"></span>
+                </button>
+
+                <ul id="rgmc-navigation">
                     <li><a href="index.html">Overview</a></li>
                     <li class="subnav">
-                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">Competition</a>
-                        <div class="subnav-content">
+                        <button type="button" aria-expanded="false" aria-controls="competition-submenu">
+                            Competition
+                        </button>
+                        <div class="subnav-content" id="competition-submenu">
                             <a href="task.html">Task</a>
                             <a href="competition.html">On-site phase</a>
                             <a href="qualification.html">Qualification</a>
-                            <a href="evaluation.html">Evaluation</a>
-                            <a href="rules.html" class="active">Rules & Policies</a>
+                            <a href="evaluation.html" class="active">Evaluation</a>
+                            <a href="rules.html">Rules &amp; Policies</a>
                         </div>
                     </li>
+                    <li><a href="teams.html">Teams &amp; Demos</a></li>
                     <li><a href="leaderboards.html">Leaderboards</a></li>
                     <li class="subnav">
-                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
-                        <div class="subnav-content">
+                        <button type="button" aria-expanded="false" aria-controls="about-submenu">
+                            About
+                        </button>
+                        <div class="subnav-content" id="about-submenu">
                             <a href="organisers.html">Organisers</a>
                             <a href="https://corsmal.github.io/benchmark/competitions.html">History</a>
                         </div>
                     </li>
-					<!-- <li><a href="faq.html">FAQs</a></li> -->
                 </ul>
             </nav>
         </div>
@@ -71,7 +92,8 @@
                     <div id="rules">
                         <b><span>Teams</span></b>
                         <ul>
-                            <li>Teams can include individuals from one or more institutions, and individuals from academia and industry are equally welcome to participate.</li>
+                            <li>Teams can include individuals from one or more institutions, and individuals from
+                                academia and industry are equally welcome to participate.</li>
                             <li>One person can only participate in one team.</li>
                             <li>Each team cannot have more than 5 members (including the team leader).</li>
                             <li>The organizers are not allowed to participate in the competition.</li>
@@ -81,9 +103,13 @@
                         <b><span>Solution design and development</span></b>
                         <ul>
                             <li>A complete robotic system should be used.</li>
-                            <li>Teams are expected to bring and mount their own setup, unless they declare they will use the available robotic arms.</li>
-                            <li>The task should be performed autonomously without any human input (except for the volunteer handing over the containers).</li>
-                            <li>The only prior knowledge available is the (high-level, unspecific) set of categories of the containers for liquids and foods, such as drinking cups or glasses, food boxes, etc.</li>
+                            <li>Teams are expected to bring and mount their own setup, unless they declare they will use
+                                the available robotic arms.</li>
+                            <li>The task should be performed autonomously without any human input (except for the
+                                volunteer handing over the containers).</li>
+                            <li>The only prior knowledge available is the (high-level, unspecific) set of categories of
+                                the containers for liquids and foods, such as drinking cups or glasses, food boxes, etc.
+                            </li>
                             <li>Each volunteer is instructed to use only one hand and always the same.</li>
                             <!-- <li>The target location to deliver the container must be inferred using perception from the initial location (not hard-coded) <strong>TBC</strong>.</li> -->
                         </ul>
@@ -97,18 +123,20 @@
 
                         <p><i>NOT allowed</i></p>
                         <ul>
-                            <li>Prior knowledge of the objects (e.g. prior 3D object models, reconstructed shape of the containers in 3D)</li>
+                            <li>Prior knowledge of the objects (e.g. prior 3D object models, reconstructed shape of the
+                                containers in 3D)</li>
                             <li>Learning across executions of configurations</li>
                             <li>Teleoperation</li>
                         </ul>
-                        
+
                         <b><span style="font-size: 14.0pt">On-site phase (competition finals)</span></b>
                         <ol>
-                            <li>All configurations are executed by the same volunteer from another team using a natural grasp.</li>
+                            <li>All configurations are executed by the same volunteer from another team using a natural
+                                grasp.</li>
                             <li>The volunteer is instructed to use only one hand and always the same.</li>
                             <li>Each handover configuration can be executed only once except for hardware failures</li>
-                            <li>The initial location of the container is predefined on the table and 
-                                not reachable by the robotic arm to avoid the robot approaching the container 
+                            <li>The initial location of the container is predefined on the table and
+                                not reachable by the robotic arm to avoid the robot approaching the container
                                 before the volunteer graps it.
                             </li>
                             <li>Failed handover configurations will get 0 points. Example of failed configurations:
@@ -116,11 +144,13 @@
                                     <li>Robot cannot grasp the object during the handover phase</li>
                                     <li>Robot cannot hold the container during the delivery phase</li>
                                     <li>Object falls after the robot places it on the table</li>
-                                    <li>Volunteer retreats during the handover phase because of unsafe robot behaviour</li>
+                                    <li>Volunteer retreats during the handover phase because of unsafe robot behaviour
+                                    </li>
                                     <li>Perception system fails to detect the object for 2 consecutive attempts</li>
                                 </ul>
                             </li>
-                            <li>System crashes (e.g. hardware failures) or components fails to start (perception or robot) can be re-attempted.</li>
+                            <li>System crashes (e.g. hardware failures) or components fails to start (perception or
+                                robot) can be re-attempted.</li>
                         </ol>
                     </div>
                 </div>
@@ -138,4 +168,5 @@
         </div>
     </footer>
 </body>
+
 </html>

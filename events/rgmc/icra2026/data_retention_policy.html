@@ -13,56 +13,84 @@
     <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
 	<link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
 
-    <script src="../../../js/menu.js" defer></script>
+    <script src="js/rgmc-menu.js" defer></script>
 </head>
 <body id="top">
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header>
-        <div class="header-top">
-            <div class="logo-section">
-                <a href="https://corsmal.github.io" aria-label="CORSMAL Home">
-                    <img src="https://corsmal.github.io/images/CORSMAL_logo.png" alt="CORSMAL Logo">
-                </a>
-            </div>
-            <div class="icra-section">
-                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer" aria-label="ICRA 2026 Conference (opens in new window)">
-                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna Logo">
-                </a>
-            </div>
-            <div class="competition-section">
-                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
-            </div>
+    <header class="rgmc-header">
+    <div class="header-top">
+        <div class="logo-section">
+            <a href="https://corsmal.github.io" aria-label="CORSMAL home">
+                <img src="../../../images/CORSMAL_logo.png" alt="CORSMAL">
+            </a>
         </div>
-        <div class="header-content">
-            <h1 class="page-title-header">Human-to-Robot Handovers</h1>
-            <nav aria-label="Breadcrumb" class="breadcrumb">
-                <div class="menu-toggle"><span></span></div>
-                <ul>
-                    <li><a href="index.html">Overview</a></li>
-                    <li class="subnav">
-                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">Competition</a>
-                        <div class="subnav-content">
-                            <a href="task.html">Task</a>
-                            <a href="competition.html">On-site phase</a>
-                            <a href="qualification.html">Qualification</a>
-                            <a href="evaluation.html">Evaluation</a>
-                            <a href="rules.html">Rules & Policies</a>
-                        </div>
-                    </li>
-                    <li><a href="leaderboards.html">Leaderboards</a></li>
-                    <li class="subnav">
-                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
-                        <div class="subnav-content">
-                            <a href="organisers.html">Organisers</a>
-                            <a href="https://corsmal.github.io/benchmark/competitions.html">History</a>
-                        </div>
-                    </li>
-					<!-- <li><a href="faq.html">FAQs</a></li> -->
-                </ul>
-            </nav>
+
+        <div class="icra-section">
+            <a href="https://2026.ieee-icra.org/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="ICRA 2026 conference (opens in a new window)">
+                <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna">
+            </a>
         </div>
-    </header>
+
+        <div class="competition-section">
+            <a href="https://sites.google.com/view/rgmc2026"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="11th Robotic Grasping and Manipulation Competition (opens in a new window)">
+                <span class="competition-name-full">
+                    11th Robotic Grasping and<br>Manipulation Competition
+                </span>
+                <span class="competition-name-short" aria-hidden="true">11th RGMC</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="header-content">
+        <h1 class="page-title-header">Human-to-Robot Handovers</h1>
+
+        <nav class="rgmc-nav" aria-label="Competition navigation">
+            <button class="menu-toggle"
+                    type="button"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="rgmc-navigation">
+                <span aria-hidden="true"></span>
+            </button>
+
+            <ul id="rgmc-navigation">
+                <li><a href="index.html" aria-current="page">Overview</a></li>
+                <li class="subnav">
+                    <button type="button" aria-expanded="false"
+                            aria-controls="competition-submenu">
+                        Competition
+                    </button>
+                    <div class="subnav-content" id="competition-submenu">
+                        <a href="task.html">Task</a>
+                        <a href="competition.html">On-site phase</a>
+                        <a href="qualification.html">Qualification</a>
+                        <a href="evaluation.html">Evaluation</a>
+                        <a href="rules.html">Rules &amp; Policies</a>
+                    </div>
+                </li>
+                <li><a href="teams.html">Teams &amp; Demos</a></li>
+                <li><a href="leaderboards.html">Leaderboards</a></li>
+                <li class="subnav">
+                    <button type="button" aria-expanded="false"
+                            aria-controls="about-submenu">
+                        About
+                    </button>
+                    <div class="subnav-content" id="about-submenu">
+                        <a href="organisers.html">Organisers</a>
+                        <a href="https://corsmal.github.io/benchmark/competitions.html">History</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <main id="main-content">
         <div class="wrapper row1">

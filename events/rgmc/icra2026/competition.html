@@ -1,69 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Competition - Human-to-Robot Handovers track at ICRA 2026">
     <meta name="keywords" content="CORSMAL, robotics, competition, ICRA, human-to-robot, handovers">
     <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
-    
+
     <title>Competition | Human-to-Robot Handovers | ICRA 2026</title>
     <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
-    
+
     <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
-	<link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
+    <link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
 
     <link href="https://unpkg.com/tabulator-tables@6.3.1/dist/css/tabulator.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://unpkg.com/tabulator-tables@6.3.1/dist/js/tabulator.min.js"></script>
     <script type="text/javascript" src="js/leaderboards.js"></script>
-        
 
-    <script src="../../../js/menu.js" defer></script>
+
+    <script src="js/rgmc-menu.js" defer></script>
 </head>
+
 <body id="top">
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header>
+    <header class="rgmc-header">
         <div class="header-top">
             <div class="logo-section">
-                <a href="https://corsmal.github.io" aria-label="CORSMAL Home">
-                    <img src="https://corsmal.github.io/images/CORSMAL_logo.png" alt="CORSMAL Logo">
+                <a href="https://corsmal.github.io" aria-label="CORSMAL home">
+                    <img src="../../../images/CORSMAL_logo.png" alt="CORSMAL">
                 </a>
             </div>
+
             <div class="icra-section">
-                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer" aria-label="ICRA 2026 Conference (opens in new window)">
-                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna Logo">
+                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer"
+                    aria-label="ICRA 2026 conference (opens in a new window)">
+                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna">
                 </a>
             </div>
+
             <div class="competition-section">
-                <a href="https://sites.google.com/view/rgmcomp" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
+                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer"
+                    aria-label="11th Robotic Grasping and Manipulation Competition (opens in a new window)">
+                    <span class="competition-name-full">
+                        11th Robotic Grasping and<br>Manipulation Competition
+                    </span>
+                    <span class="competition-name-short" aria-hidden="true">11th RGMC</span>
+                </a>
             </div>
         </div>
+
         <div class="header-content">
             <h1 class="page-title-header">Human-to-Robot Handovers</h1>
-            <nav aria-label="Breadcrumb" class="breadcrumb">
-                <div class="menu-toggle"><span></span></div>
-                <ul>
-                    <li><a href="index.html">Overview</a></li>
+
+            <nav class="rgmc-nav" aria-label="Competition navigation">
+                <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"
+                    aria-controls="rgmc-navigation">
+                    <span aria-hidden="true"></span>
+                </button>
+
+                <ul id="rgmc-navigation">
+                    <li><a href="index.html" aria-current="page">Overview</a></li>
                     <li class="subnav">
-                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">Competition</a>
-                        <div class="subnav-content">
+                        <button type="button" aria-expanded="false" aria-controls="competition-submenu">
+                            Competition
+                        </button>
+                        <div class="subnav-content" id="competition-submenu">
                             <a href="task.html">Task</a>
                             <a href="competition.html" class="active">On-site phase</a>
                             <a href="qualification.html">Qualification</a>
                             <a href="evaluation.html">Evaluation</a>
-                            <a href="rules.html">Rules & Policies</a>
+                            <a href="rules.html">Rules &amp; Policies</a>
                         </div>
                     </li>
+                    <li><a href="teams.html">Teams &amp; Demos</a></li>
                     <li><a href="leaderboards.html">Leaderboards</a></li>
                     <li class="subnav">
-                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
-                        <div class="subnav-content">
+                        <button type="button" aria-expanded="false" aria-controls="about-submenu">
+                            About
+                        </button>
+                        <div class="subnav-content" id="about-submenu">
                             <a href="organisers.html">Organisers</a>
                             <a href="https://corsmal.github.io/benchmark/competitions.html">History</a>
                         </div>
                     </li>
-					<!-- <li><a href="faq.html">FAQs</a></li> -->
                 </ul>
             </nav>
         </div>
@@ -76,21 +97,21 @@
                     <div>
                         <!-- <b><span>Page updated on 11 June 2026</span></b> -->
                         <p>
-                            The competition was held in Vienna during the conference days. 
-                            Teams executed a set of human-to-robot handover configurations with unknown objects 
-                            that organizers provided on-site only once. 
+                            The competition was held in Vienna during the conference days.
+                            Teams executed a set of human-to-robot handover configurations with unknown objects
+                            that organizers provided on-site only once.
                         </p>
                         <p>
-                            The set of objects for the competition consists of containers for food and liquids, such as 
-                            drinking cups, drinking glasses, food boxes, etc. 
-                            The containers may be filled with a content different from rice and 
+                            The set of objects for the competition consists of containers for food and liquids, such as
+                            drinking cups, drinking glasses, food boxes, etc.
+                            The containers may be filled with a content different from rice and
                             with a different amount from the set used for the qualification phase.
-                            The containers and content types and amounts are unknown to the teams 
-                            to test the generalisation capabilities of the system to adapt to novel and unseen objects. 
+                            The containers and content types and amounts are unknown to the teams
+                            to test the generalisation capabilities of the system to adapt to novel and unseen objects.
                         </p>
                     </div>
 
-                    
+
 
                     <!-- <div>
                         <b><span>Logistics</span></b>
@@ -140,98 +161,129 @@
                     <div>
                         <b><span>Procedure</span></b>
                         <p>
-                            The following are instructions for each handover configuration (predefined combination of a container with a content type and amount).
-                            The operator is a person from the team who is responsible for controlling the execution of the handover configuration.
-                            For <i>safety</i>, another team member must be ready to stop the robot in case of an anomalous behaviour. 
-                            The operator or any other team member helps prepare the handover configuration and reports the measures for evaluation.
+                            The following are instructions for each handover configuration (predefined combination of a
+                            container with a content type and amount).
+                            The operator is a person from the team who is responsible for controlling the execution of
+                            the handover configuration.
+                            For <i>safety</i>, another team member must be ready to stop the robot in case of an
+                            anomalous behaviour.
+                            The operator or any other team member helps prepare the handover configuration and reports
+                            the measures for evaluation.
                             None of the team members can assist the robot during the handover execution.
-                            The volunteer is a person from another team who is responsible for performing the handover with the robot,
+                            The volunteer is a person from another team who is responsible for performing the handover
+                            with the robot,
                             and oversees the reported measures after the handover execution.
                         </p>
-                        
+
                         <p><i>For the operator (or another team member)</i></p>
                         <p>Before starting the handover configuration:</p>
                         <ol>
-                            <li>Prepare the container either empty or filled with its predefined content type and amount</li>
+                            <li>Prepare the container either empty or filled with its predefined content type and amount
+                            </li>
                             <li>Weight the (filled) container before the execution of the task</li>
-                            <li>Place the container at the centre of the table, at a distance not reachable by the robotic arm (safety)</li>
+                            <li>Place the container at the centre of the table, at a distance not reachable by the
+                                robotic arm (safety)</li>
                         </ol>
                         <p>After the handover configuration is executed:</p>
                         <ol>
                             <li>Measure the delivery location of the container (if not failed)</li>
                             <li>Weight the (filled) container after the execution of the task</li>
-                            <li>Report the measures in the .csv file to submit for evaluation (including handover timing)</li>
+                            <li>Report the measures in the .csv file to submit for evaluation (including handover
+                                timing)</li>
                         </ol>
                         <p>During the handover execution:</p>
                         <ul>
                             <li>Control the start and end of the robotic control and perceptions</li>
                             <li>Ready to stop the robot in case of an anomalous behaviour</li>
                         </ul>
-                        
+
                         <p><i>For the volunteer</i></p>
                         <p>During the handover execution:</p>
                         <ol>
                             <li>The volunteer grasps the container from its location with a natural grasp</li>
-                            <li>The volunteer carries the container with the intention of handing it over to the robot</li>
-                            <li>The robot should track and predict the pose of the container to move the arm towards the handover area</li>
+                            <li>The volunteer carries the container with the intention of handing it over to the robot
+                            </li>
+                            <li>The robot should track and predict the pose of the container to move the arm towards the
+                                handover area</li>
                             <li>The volunteer hands the container over to the robot</li>
                             <li>The robot closes the end effector and grasps the container</li>
                             <li>The robot delivers the container upright at the predefined delivery location.</li>
                         </ol>
                         <p>
-                            Note that the volunteer should avoid assisting the robot (i.e. remaining still at a location until the robot can pick up the container) 
-                            or assuming an adversarial behaviour (i.e. making it harder for the robot to reach the object).<br>
-                            The handover is supposed to be dynamic: robot starts moving and approaching as soon as the volunteer grasps the container.
+                            Note that the volunteer should avoid assisting the robot (i.e. remaining still at a location
+                            until the robot can pick up the container)
+                            or assuming an adversarial behaviour (i.e. making it harder for the robot to reach the
+                            object).<br>
+                            The handover is supposed to be dynamic: robot starts moving and approaching as soon as the
+                            volunteer grasps the container.
                         </p>
                         <p>
-                            This procedure has been revised from the <a href="https://corsmal.github.io/benchmark/resources/RAL-SI-2020-P19-0835-V1.0.pdf" target="_blank">CORSMAL Human-to-Robot Handover Protocol document</a>.
+                            This procedure has been revised from the <a
+                                href="https://corsmal.github.io/benchmark/resources/RAL-SI-2020-P19-0835-V1.0.pdf"
+                                target="_blank">CORSMAL Human-to-Robot Handover Protocol document</a>.
                         </p>
                     </div>
 
                     <div>
                         <b><span style="font-size: 14.0pt">Submission</span></b>
                         <p>
-                            After completing the set of configurations, teams will send a .csv file with the results for each configuration
+                            After completing the set of configurations, teams will send a .csv file with the results for
+                            each configuration
                             by email to the track organisers using the information below.
                         </p>
                         <ul>
-                            <li>The .csv file must be named according to the following format: <i>teamname.csv</i> 
-                            (replace teamname with the name of your team).</li>
-                            <li>The .csv file must be formatted according to the templated provided and all the fields must be filled, also for failed configurations.</li>
-                            <li>Results must be reported with respect to their configuration id, even if executed in a different order.</li>
-                            <li>The initial measured mass of the containers with its content must be reported for all configurations.</li>
+                            <li>The .csv file must be named according to the following format: <i>teamname.csv</i>
+                                (replace teamname with the name of your team).</li>
+                            <li>The .csv file must be formatted according to the templated provided and all the fields
+                                must be filled, also for failed configurations.</li>
+                            <li>Results must be reported with respect to their configuration id, even if executed in a
+                                different order.</li>
+                            <li>The initial measured mass of the containers with its content must be reported for all
+                                configurations.</li>
                             <li>The target delivery location must be reported for each configuration.</li>
-                            <li>If the delivery is successful, the delivery flag must be set to 1. 
-                                The provided template set the flag to the default value of 0 (corresponding to any failure). 
+                            <li>If the delivery is successful, the delivery flag must be set to 1.
+                                The provided template set the flag to the default value of 0 (corresponding to any
+                                failure).
                             </li>
                             <li>
-                                If the delivery is not successfull, then final measured mass must be -1 and the estimated delivery location must be -1 (for x, y, z)
+                                If the delivery is not successfull, then final measured mass must be -1 and the
+                                estimated delivery location must be -1 (for x, y, z)
                             </li>
                             <li>
-                                If there is no contact between the volunteer and the container, then both the human contact time and robot last contact must be set to -1.
+                                If there is no contact between the volunteer and the container, then both the human
+                                contact time and robot last contact must be set to -1.
                             </li>
                             <li>
-                                The robot last contact time must be greater than the human contact time with the container.
-                                We recommend to report the automatic measures of when the robot releases the gripper for the delivery. 
-                                We also recommend to log the timings of the joint-states for any verification of the handover timing.
+                                The robot last contact time must be greater than the human contact time with the
+                                container.
+                                We recommend to report the automatic measures of when the robot releases the gripper for
+                                the delivery.
+                                We also recommend to log the timings of the joint-states for any verification of the
+                                handover timing.
                             </li>
                             <li>
-                                Teams must capture a picture of the initial measures mass and final measured mass on the digital scale for each configuration, 
+                                Teams must capture a picture of the initial measures mass and final measured mass on the
+                                digital scale for each configuration,
                                 and of the delivery location if the delivery is successful.
                             </li>
                             <li>
-                                For reporting in future documents (technical report, website, blog post, manuscript for publication),
-                                we recommend to save videos of the handover executions, log calibration data, and 
-                                any other relevant data for the analysis and discussion of the results, and reproducibility requests.
+                                For reporting in future documents (technical report, website, blog post, manuscript for
+                                publication),
+                                we recommend to save videos of the handover executions, log calibration data, and
+                                any other relevant data for the analysis and discussion of the results, and
+                                reproducibility requests.
                             </li>
                         </ul>
                         <p>
-                            Organizers will provide the set of handovers configurations to fill the submission file on the competition day.
+                            Organizers will provide the set of handovers configurations to fill the submission file on
+                            the competition day.
                         </p>
                         <b><span style="font-size: 12.0pt">Downloads</span></b>
                         <ul>
-                            <li><a href="resources/template_submission_competition.csv" target="_blank"><u>Template of submission form (CSV)</u></a></li>
-                            <li><a href="resources/metadata_submission_competition.md" target="_blank"><u>Metadocumentation of submission form (Markdown)</u></a></li>
+                            <li><a href="resources/template_submission_competition.csv" target="_blank"><u>Template of
+                                        submission form (CSV)</u></a></li>
+                            <li><a href="resources/metadata_submission_competition.md"
+                                    target="_blank"><u>Metadocumentation of submission form (Markdown)</u></a></li>
                         </ul>
                     </div>
                 </div>
@@ -249,4 +301,5 @@
         </div>
     </footer>
 </body>
+
 </html>

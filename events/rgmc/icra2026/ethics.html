@@ -1,64 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ethics - Human-to-Robot Handovers track at ICRA 2026">
-    <meta name="keywords" content="CORSMAL, robotics, competition, ICRA, human-to-robot, handovers, data retention, policy">
+    <meta name="keywords"
+        content="CORSMAL, robotics, competition, ICRA, human-to-robot, handovers, data retention, policy">
     <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
-    
+
     <title>Ethics | Human-to-Robot Handovers | ICRA 2026</title>
     <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
-    
-    <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
-	<link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
 
-    <script src="../../../js/menu.js" defer></script>
+    <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
+    <link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
+
+    <script src="js/rgmc-menu.js" defer></script>
 </head>
+
 <body id="top">
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header>
+    <header class="rgmc-header">
         <div class="header-top">
             <div class="logo-section">
-                <a href="https://corsmal.github.io" aria-label="CORSMAL Home">
-                    <img src="https://corsmal.github.io/images/CORSMAL_logo.png" alt="CORSMAL Logo">
+                <a href="https://corsmal.github.io" aria-label="CORSMAL home">
+                    <img src="../../../images/CORSMAL_logo.png" alt="CORSMAL">
                 </a>
             </div>
+
             <div class="icra-section">
-                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer" aria-label="ICRA 2026 Conference (opens in new window)">
-                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna Logo">
+                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer"
+                    aria-label="ICRA 2026 conference (opens in a new window)">
+                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna">
                 </a>
             </div>
+
             <div class="competition-section">
-                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
+                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer"
+                    aria-label="11th Robotic Grasping and Manipulation Competition (opens in a new window)">
+                    <span class="competition-name-full">
+                        11th Robotic Grasping and<br>Manipulation Competition
+                    </span>
+                    <span class="competition-name-short" aria-hidden="true">11th RGMC</span>
+                </a>
             </div>
         </div>
+
         <div class="header-content">
             <h1 class="page-title-header">Human-to-Robot Handovers</h1>
-            <nav aria-label="Breadcrumb" class="breadcrumb">
-                <div class="menu-toggle"><span></span></div>
-                <ul>
-                    <li><a href="index.html">Overview</a></li>
+
+            <nav class="rgmc-nav" aria-label="Competition navigation">
+                <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"
+                    aria-controls="rgmc-navigation">
+                    <span aria-hidden="true"></span>
+                </button>
+
+                <ul id="rgmc-navigation">
+                    <li><a href="index.html" aria-current="page">Overview</a></li>
                     <li class="subnav">
-                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">Competition</a>
-                        <div class="subnav-content">
+                        <button type="button" aria-expanded="false" aria-controls="competition-submenu">
+                            Competition
+                        </button>
+                        <div class="subnav-content" id="competition-submenu">
                             <a href="task.html">Task</a>
                             <a href="competition.html">On-site phase</a>
                             <a href="qualification.html">Qualification</a>
                             <a href="evaluation.html">Evaluation</a>
-                            <a href="rules.html">Rules & Policies</a>
+                            <a href="rules.html">Rules &amp; Policies</a>
                         </div>
                     </li>
+                    <li><a href="teams.html">Teams &amp; Demos</a></li>
                     <li><a href="leaderboards.html">Leaderboards</a></li>
                     <li class="subnav">
-                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
-                        <div class="subnav-content">
+                        <button type="button" aria-expanded="false" aria-controls="about-submenu">
+                            About
+                        </button>
+                        <div class="subnav-content" id="about-submenu">
                             <a href="organisers.html">Organisers</a>
                             <a href="https://corsmal.github.io/benchmark/competitions.html">History</a>
                         </div>
                     </li>
-					<!-- <li><a href="faq.html">FAQs</a></li> -->
                 </ul>
             </nav>
         </div>
@@ -74,21 +96,24 @@
                             This policy describes how the organisers of the Human-to-Robot Handover Track handle, store, and delete data submitted by participating teams during the qualification and competition phases. The goal is to ensure responsible data management while minimising the collection and storage of personal or identifiable information.
                         </p> -->
                         <p>
-                            The track involves human-to-robot handovers performed by volunteers recruited by participating teams 
-                            (qualification phase) and by volunteers from other teams (competition phase). 
-                            Although humans are involved in the execution of the benchmark, the organisers do 
-                            <strong>not</strong> conduct human-subject research and do  <strong>not</strong> 
+                            The track involves human-to-robot handovers performed by volunteers recruited by
+                            participating teams
+                            (qualification phase) and by volunteers from other teams (competition phase).
+                            Although humans are involved in the execution of the benchmark, the organisers do
+                            <strong>not</strong> conduct human-subject research and do <strong>not</strong>
                             interact with participants directly.
                         </p>
                         <p>
-                            All human interaction occurs within the participating teams' own institutions or at the competition venue.
+                            All human interaction occurs within the participating teams' own institutions or at the
+                            competition venue.
                         </p>
                     </div>
 
                     <div id="responsibilities" style="text-align: justify;">
                         <b><span style="font-size: 12.0pt">1. Ethical responsibilities of participating Teams</span></b>
                         <p>
-                            Each team is fully responsible for ensuring that their local execution of the benchmark complies with:
+                            Each team is fully responsible for ensuring that their local execution of the benchmark
+                            complies with:
                         </p>
                         <ul>
                             <li>their institution's ethics or IRB/HREC requirements</li>
@@ -110,7 +135,7 @@
                             The organisers do <strong>not</strong> collect or store consent forms.
                         </p>
                     </div>
- 
+
                     <div id="informed-consent" style="text-align: justify;">
                         <b><span style="font-size: 12.0pt">2. Informed Consent requirements</span></b>
                         <p>Teams must ensure that volunteers understand:</p>
@@ -122,9 +147,10 @@
                             <li>that they may withdraw at any time</li>
                             <li>that no personal data will be collected or stored</li>
                         </ul>
-                        <p>A lightweight consent template will be provided for teams to adapt to their local regulations.</p>
+                        <p>A lightweight consent template will be provided for teams to adapt to their local
+                            regulations.</p>
                     </div>
- 
+
                     <div id="anonymisation" style="text-align: justify;">
                         <b><span style="font-size: 12.0pt">3. Anonymisation requirements</span></b>
                         <p>To minimise ethical and legal risks, teams must ensure that:</p>
@@ -136,10 +162,11 @@
                         </ul>
                         <!-- <p><strong>Failure to anonymise recordings may result in disqualification.</strong></p> -->
                     </div>
- 
+
                     <div id="demographics" style="text-align: justify;">
                         <b><span style="font-size: 12.0pt">4. Demographic Information</span></b>
-                        <p>Teams may optionally provide <strong>coarse, non-identifying demographics</strong> for each volunteer:</p>
+                        <p>Teams may optionally provide <strong>coarse, non-identifying demographics</strong> for each
+                            volunteer:</p>
                         <ul>
                             <li>age group (e.g., 18-25, 26-35, 36-45, 46+)</li>
                             <li>gender (male, female, non-binary, prefer_not_to_say)</li>
@@ -157,7 +184,7 @@
                         </ul>
                         <p>Demographic data is used only for aggregate analysis and reproducibility.</p>
                     </div>
- 
+
                     <div id="on-site-ethics" style="text-align: justify;">
                         <b><span style="font-size: 12.0pt">5. Ethics for the on-site competition phase</span></b>
                         <p>During the on-site phase:</p>
@@ -171,7 +198,7 @@
                         </ul>
                         <p>This phase does not constitute human-subject research.</p>
                     </div>
- 
+
                     <div id="organisers-ethical-position" style="text-align: justify;">
                         <b><span style="font-size: 12.0pt">6. Organisers' ethical position</span></b>
                         <p>The organisers:</p>
@@ -183,8 +210,8 @@
                             <li>only verify robot performance and task execution</li>
                         </ul>
                         <p>All ethical responsibility for human participation lies with the participating teams.</p>
-                        </div>
- 
+                    </div>
+
                     <div id="compliance-info" style="text-align: justify;">
                         <b><span style="font-size: 12.0pt">7. Compliance Confirmation</span></b>
                         <p>Teams must confirm in their metadata JSON:</p>
@@ -220,4 +247,5 @@
         }
     </script>
 </body>
+
 </html>

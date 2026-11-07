@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Human-to-Robot Handovers track - 11th Robotics Grasping and Manipulation Competition at ICRA 2026 Vienna">
+    <meta name="keywords"
+        content="CORSMAL, robotics, vision, audio, competition, ICRA, human-to-robot, handovers, 2026">
+    <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
+    <meta property="og:title" content="CORSMAL | Human-to-Robot Handovers | ICRA 2026">
+    <meta property="og:description" content="Benchmark your robotic handover work at ICRA 2026 in Vienna">
+
+    <title>Human-to-Robot Handovers | 11th RGMC | ICRA 2026</title>
+    <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
+
+    <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
+    <link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
+
+    <script src="js/rgmc-menu.js" defer></script>
+</head>
+
+<body id="top">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="rgmc-header">
+        <div class="header-top">
+            <div class="logo-section">
+                <a href="https://corsmal.github.io" aria-label="CORSMAL home">
+                    <img src="../../../images/CORSMAL_logo.png" alt="CORSMAL">
+                </a>
+            </div>
+
+            <div class="icra-section">
+                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer"
+                    aria-label="ICRA 2026 conference (opens in a new window)">
+                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna">
+                </a>
+            </div>
+
+            <div class="competition-section">
+                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer"
+                    aria-label="11th Robotic Grasping and Manipulation Competition (opens in a new window)">
+                    <span class="competition-name-full">
+                        11th Robotic Grasping and<br>Manipulation Competition
+                    </span>
+                    <span class="competition-name-short" aria-hidden="true">11th RGMC</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="header-content">
+            <h1 class="page-title-header">Human-to-Robot Handovers</h1>
+
+            <nav class="rgmc-nav" aria-label="Competition navigation">
+                <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"
+                    aria-controls="rgmc-navigation">
+                    <span aria-hidden="true"></span>
+                </button>
+
+                <ul id="rgmc-navigation">
+                    <li><a href="index.html">Overview</a></li>
+                    <li class="subnav">
+                        <button type="button" aria-expanded="false" aria-controls="competition-submenu">
+                            Competition
+                        </button>
+                        <div class="subnav-content" id="competition-submenu">
+                            <a href="task.html">Task</a>
+                            <a href="competition.html">On-site phase</a>
+                            <a href="qualification.html">Qualification</a>
+                            <a href="evaluation.html">Evaluation</a>
+                            <a href="rules.html">Rules &amp; Policies</a>
+                        </div>
+                    </li>
+                    <li><a href="teams.html" aria-current="page" class="active">Teams &amp; Demos</a></li>
+                    <li><a href="leaderboards.html">Leaderboards</a></li>
+                    <li class="subnav">
+                        <button type="button" aria-expanded="false" aria-controls="about-submenu">
+                            About
+                        </button>
+                        <div class="subnav-content" id="about-submenu">
+                            <a href="organisers.html">Organisers</a>
+                            <a href="https://corsmal.github.io/benchmark/competitions.html">History</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div id="container" class="clear">
+            <!-- Teams Section -->
+            <section class="event-section" aria-labelledby="teams-heading">
+                <h2 id="teams-heading">Teams</h2>
+                <div id="teamsolutions">
+                    <p>
+                        Select a team to see its members and affiliations. Team leaders
+                        are highlighted in bold. Reports and code are available for
+                        some teams.
+                    </p>
+                    <ul id="teams"></ul>
+                    <div id="team-blocks"></div>
+                    <div style="clear: both;"></div>
+                </div>
+            </section>
+
+            <section id="demovideo" class="event-section" aria-labelledby="demos-heading">
+                <h2 id="demos-heading">Demonstration videos</h2>
+
+                <div class="videos-grid">
+                    <div class="team-video">
+                        <h3>Youth2Real</h3>
+                        <iframe src="https://www.youtube.com/embed/hhuAczCWY64"
+                            title="Youth2Real team handover demonstration" loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p><a href="https://www.youtube.com/watch?v=hhuAczCWY64">Watch on YouTube</a></p>
+                    </div>
+
+                    <div class="team-video">
+                        <h3>Robot Booster</h3>
+                        <iframe src="https://www.youtube.com/embed/JRe_4EVtEL0"
+                            title="Robot Booster team handover demonstration" loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p><a href="https://www.youtube.com/watch?v=JRe_4EVtEL0">Watch on YouTube</a></p>
+                    </div>
+
+                    <div class="team-video">
+                        <h3>Broken Arm</h3>
+                        <iframe src="https://www.youtube.com/embed/0MkqkYvmN5c"
+                            title="Broken Arm team handover demonstration" loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p><a href="https://www.youtube.com/watch?v=0MkqkYvmN5c">Watch on YouTube</a></p>
+                    </div>
+
+                    <div class="team-video">
+                        <h3>SIRSIIT</h3>
+                        <iframe src="https://www.youtube.com/embed/BY_sexPMFQY"
+                            title="SIRSIIT team handover demonstration" loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p><a href="https://www.youtube.com/watch?v=BY_sexPMFQY">Watch on YouTube</a></p>
+                    </div>
+
+                    <div class="team-video">
+                        <h3>AIRLAB</h3>
+                        <iframe src="https://www.youtube.com/embed/wsmRqJzTCZc"
+                            title="AIRLAB team handover demonstration" loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p><a href="https://www.youtube.com/watch?v=wsmRqJzTCZc">Watch on YouTube</a></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <p>&copy; All rights reserved.</p>
+            <p>
+                <a href="ethics.html">Ethics Policy</a>
+                <a href="data_retention_policy.html">Data Retention Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/teams.js" defer></script>
+    <script>
+        // Toggle team metadata visibility
+        function toggleTeamMetadata(teamId) {
+            const metadataElements = document.querySelectorAll('.metadata');
+            metadataElements.forEach(el => el.classList.remove('active'));
+            const element = document.getElementById(teamId + '_metadata');
+            if (element) {
+                element.classList.add('active');
+            }
+        }
+    </script>
+</body>
+
+</html>

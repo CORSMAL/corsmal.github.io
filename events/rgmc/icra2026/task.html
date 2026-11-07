@@ -1,64 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Task - Human-to-Robot Handovers track at ICRA 2026">
     <meta name="keywords" content="CORSMAL, robotics, competition, ICRA, human-to-robot, handovers, task">
     <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
-    
+
     <title>Task | Human-to-Robot Handovers | ICRA 2026</title>
     <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
-    
-    <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
-	<link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
 
-    <script src="../../../js/menu.js" defer></script>
+    <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
+    <link rel="stylesheet" href="css/rgmc_track.css" type="text/css" />
+
+    <script src="js/rgmc-menu.js" defer></script>
 </head>
+
 <body id="top">
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header>
+    <header class="rgmc-header">
         <div class="header-top">
             <div class="logo-section">
-                <a href="https://corsmal.github.io" aria-label="CORSMAL Home">
-                    <img src="https://corsmal.github.io/images/CORSMAL_logo.png" alt="CORSMAL Logo">
+                <a href="https://corsmal.github.io" aria-label="CORSMAL home">
+                    <img src="../../../images/CORSMAL_logo.png" alt="CORSMAL">
                 </a>
             </div>
+
             <div class="icra-section">
-                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer" aria-label="ICRA 2026 Conference (opens in new window)">
-                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna Logo">
+                <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer"
+                    aria-label="ICRA 2026 conference (opens in a new window)">
+                    <img src="images/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna">
                 </a>
             </div>
+
             <div class="competition-section">
-                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer">11th Robotic Grasping and<br>Manipulation Competition</a>
+                <a href="https://sites.google.com/view/rgmc2026" target="_blank" rel="noopener noreferrer"
+                    aria-label="11th Robotic Grasping and Manipulation Competition (opens in a new window)">
+                    <span class="competition-name-full">
+                        11th Robotic Grasping and<br>Manipulation Competition
+                    </span>
+                    <span class="competition-name-short" aria-hidden="true">11th RGMC</span>
+                </a>
             </div>
         </div>
+
         <div class="header-content">
             <h1 class="page-title-header">Human-to-Robot Handovers</h1>
-            <nav aria-label="Breadcrumb" class="breadcrumb">
-                <div class="menu-toggle"><span></span></div>
-                <ul>
+
+            <nav class="rgmc-nav" aria-label="Competition navigation">
+                <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"
+                    aria-controls="rgmc-navigation">
+                    <span aria-hidden="true"></span>
+                </button>
+
+                <ul id="rgmc-navigation">
                     <li><a href="index.html">Overview</a></li>
                     <li class="subnav">
-                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">Competition</a>
-                        <div class="subnav-content">
-                            <a href="task.html" class="active">Task</a>
+                        <button type="button" aria-expanded="false" aria-controls="competition-submenu">
+                            Competition
+                        </button>
+                        <div class="subnav-content" id="competition-submenu">
+                            <a href="task.html">Task</a>
                             <a href="competition.html">On-site phase</a>
                             <a href="qualification.html">Qualification</a>
-                            <a href="evaluation.html">Evaluation</a>
-                            <a href="rules.html">Rules & Policies</a>
+                            <a href="evaluation.html" class="active">Evaluation</a>
+                            <a href="rules.html">Rules &amp; Policies</a>
                         </div>
                     </li>
+                    <li><a href="teams.html">Teams &amp; Demos</a></li>
                     <li><a href="leaderboards.html">Leaderboards</a></li>
                     <li class="subnav">
-                        <a href="" role="button" aria-expanded="false" aria-haspopup="true">About</a>
-                        <div class="subnav-content">
+                        <button type="button" aria-expanded="false" aria-controls="about-submenu">
+                            About
+                        </button>
+                        <div class="subnav-content" id="about-submenu">
                             <a href="organisers.html">Organisers</a>
                             <a href="https://corsmal.github.io/benchmark/competitions.html">History</a>
                         </div>
                     </li>
-					<!-- <li><a href="faq.html">FAQs</a></li> -->
                 </ul>
             </nav>
         </div>
@@ -71,23 +92,41 @@
                     <div>
                         <b><span>Task Description</span></b>
                         <p>
-                            The task consists of three steps, namely human manoeuvring, dynamic handover, and robot manoeuvring. Any individual that is asked to volunteer and perform the handover task is referred to as a subject. The subject is instructed to handover the container naturally (i.e. with no intention to help or make it difficult for the robot), standing opposite to the robot across the table, which should be covered with a white table-cloth.
+                            The task consists of three steps, namely human manoeuvring, dynamic handover, and robot
+                            manoeuvring. Any individual that is asked to volunteer and perform the handover task is
+                            referred to as a subject. The subject is instructed to handover the container naturally
+                            (i.e. with no intention to help or make it difficult for the robot), standing opposite to
+                            the robot across the table, which should be covered with a white table-cloth.
                         </p>
                         <div>
-                            <img src="images/image14.png" alt="Human-to-robot handover task setup with subject and robot">
+                            <img src="images/image14.png"
+                                alt="Human-to-robot handover task setup with subject and robot">
                         </div>
                         <p>
-                            The subject grasps a (filled or empty) object from a table and hands the object over to a robot arm that must infer the object properties on-the-fly. The subject should carry the container to a location that is roughly constrained by the reachability of the arm, i.e., the location is reachable by the robotic arm but also comfortable for the subject to perform the handover naturally. After the handover, the robot delivers the object upright within a predefined area (e.g. same table or a near table).
+                            The subject grasps a (filled or empty) object from a table and hands the object over to a
+                            robot arm that must infer the object properties on-the-fly. The subject should carry the
+                            container to a location that is roughly constrained by the reachability of the arm, i.e.,
+                            the location is reachable by the robotic arm but also comfortable for the subject to perform
+                            the handover naturally. After the handover, the robot delivers the object upright within a
+                            predefined area (e.g. same table or a near table).
                         </p>
                         <p>
-                            We define a configuration as the execution of the human-to-robot handover task with a predefined combination of a container with a content type and amount. All the configurations shall be executed by the subject using the same hand with a natural grasp. Prior to the execution of each configuration, the container (filled with its content, if any) should be placed on a predefined location on the table and at a distance that is not reachable by the robotic arm.
+                            We define a configuration as the execution of the human-to-robot handover task with a
+                            predefined combination of a container with a content type and amount. All the configurations
+                            shall be executed by the subject using the same hand with a natural grasp. Prior to the
+                            execution of each configuration, the container (filled with its content, if any) should be
+                            placed on a predefined location on the table and at a distance that is not reachable by the
+                            robotic arm.
                         </p>
                         <p>
-                            Participants will perform a predefined number of configurations. 
-                            Based on previous editions, we expect that each configuration should be executed within 5 s, and 
-                            the preparation and execution of all configurations, and measuring the mass of the delivered container 
-                            should take no longer than 30 min for each team. 
-                            Configurations will be split into groups of different degrees of difficulty based on the physical property 
+                            Participants will perform a predefined number of configurations.
+                            Based on previous editions, we expect that each configuration should be executed within 5 s,
+                            and
+                            the preparation and execution of all configurations, and measuring the mass of the delivered
+                            container
+                            should take no longer than 30 min for each team.
+                            Configurations will be split into groups of different degrees of difficulty based on the
+                            physical property
                             of the container and the filled content.
                         </p>
                     </div>
@@ -95,18 +134,34 @@
                     <div>
                         <b><span>Setup and safety</span></b>
                         <p>
-                            The <i>setup</i> includes a robotic arm with at least 6 degrees of freedom (e.g. UR5, KUKA) and equipped with a 2-finger parallel gripper (e.g. Robotiq 2F-85); a table where the handover is happening as well as where the robot is placed; selected containers and contents; up to two cameras (e.g. Intel RealSense D435i); and a digital scale to weigh the container. The table can be covered by a <a href="https://amzn.to/2X5qnaN" title="Purchase link">white table-cloth</a>. The two cameras should be placed at 40 cm from the robotic arm, e.g. using tripods, and oriented in such a way that they both view the centre of the table. Eventually, the setup may include a second table behind the robot for delivering the object in a targeted area (unless the same table where the handover is happening is used).
+                            The <i>setup</i> includes a robotic arm with at least 6 degrees of freedom (e.g. UR5, KUKA)
+                            and equipped with a 2-finger parallel gripper (e.g. Robotiq 2F-85); a table where the
+                            handover is happening as well as where the robot is placed; selected containers and
+                            contents; up to two cameras (e.g. Intel RealSense D435i); and a digital scale to weigh the
+                            container. The table can be covered by a <a href="https://amzn.to/2X5qnaN"
+                                title="Purchase link">white table-cloth</a>. The two cameras should be placed at 40 cm
+                            from the robotic arm, e.g. using tripods, and oriented in such a way that they both view the
+                            centre of the table. Eventually, the setup may include a second table behind the robot for
+                            delivering the object in a targeted area (unless the same table where the handover is
+                            happening is used).
                         </p>
                         <p>
-                            For <i>safety</i>, a second person (e.g. from the team) must be ready to stop the robot in case of an anomalous behaviour.
+                            For <i>safety</i>, a second person (e.g. from the team) must be ready to stop the robot in
+                            case of an anomalous behaviour.
                         </p>
                         <div>
-                            <img style="float: left; width: 50%;" src="images/setup.png" alt="Setup with UR5 robotic arm">
-                            <img style="width: 50%" src="images/rgmc10-icra25-handover-3Dmodel.webp" alt="3D model of handover setup">
+                            <img style="float: left; width: 50%;" src="images/setup.png"
+                                alt="Setup with UR5 robotic arm">
+                            <img style="width: 50%" src="images/rgmc10-icra25-handover-3Dmodel.webp"
+                                alt="3D model of handover setup">
                         </div>
                         <div>
                             <p>
-                                Fig.1: Example of setup with a UR5 robotic arm equipped with Robotiq 2F-85 gripper and two Intel RealSense cameras mounted on a tripod and placed at the sides of the robot, while being oriented towards the table where the handover of an unknown container with unknown content will happen. The table has the following dimensions in the 3D layout: W1800 x D600 x H700 mm (dimensions of the provided tables in Vienna might differ).
+                                Fig.1: Example of setup with a UR5 robotic arm equipped with Robotiq 2F-85 gripper and
+                                two Intel RealSense cameras mounted on a tripod and placed at the sides of the robot,
+                                while being oriented towards the table where the handover of an unknown container with
+                                unknown content will happen. The table has the following dimensions in the 3D layout:
+                                W1800 x D600 x H700 mm (dimensions of the provided tables in Vienna might differ).
                             </p>
                         </div>
                     </div>
@@ -114,7 +169,7 @@
             </div>
         </div>
     </main>
-    
+
     <footer id="footer">
         <div class="footer-content">
             <p>&copy; All rights reserved.</p>
@@ -125,4 +180,5 @@
         </div>
     </footer>
 </body>
+
 </html>
