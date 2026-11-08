@@ -1,0 +1,22 @@
+[
+  {
+    "id": "",
+    "name": "",
+    "members": [
+      {
+        "name": "",
+        "affiliation": "",
+        "lead": true
+      },
+      {
+        "name": "",
+        "affiliation": "",
+        "lead": false
+      }
+    ],
+    "report": {
+      "title": "",
+      "file": ""
+    }
+  }
+]

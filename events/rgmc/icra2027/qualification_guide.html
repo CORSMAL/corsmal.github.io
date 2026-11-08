@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Qualification Guide | Human-to-Robot Handovers | ICRA 2027</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Qualification Guide for the Human-to-Robot Handovers track at ICRA 2027.">
+    <meta name="keywords"
+        content="CORSMAL, robotics, vision, audio, competition, ICRA, human-to-robot, handovers, 2027">
+
+    <meta property="og:title" content="Qualification Guide | Human-to-Robot Handovers | ICRA 2027">
+    <meta property="og:description" content="Qualification Guide for the Human-to-Robot Handovers track at ICRA 2027.">
+    <meta property="og:image" content="https://corsmal.github.io/images/CORSMAL_logo.png">
+
+
+    <link rel="shortcut icon" href="https://corsmal.github.io/images/favicon.ico">
+
+    <link rel="stylesheet" href="../../../css/layout.css" type="text/css">
+    <link rel="stylesheet" href="../shared/css/rgmc_track.css" type="text/css" />
+
+    <!-- <script src="../shared/js/menu.js" defer></script> -->
+    <script src="../shared/js/rgmc-menu.js" defer></script>
+</head>
+
+<body id="top">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="rgmc-header">
+        <div class="header-top">
+            <div class="logo-section">
+                <a href="https://corsmal.github.io" aria-label="CORSMAL Home">
+                    <img src="https://corsmal.github.io/images/CORSMAL_logo.png" alt="CORSMAL Logo">
+                </a>
+            </div>
+
+            <div class="icra-section">
+                <a href="https://2027.ieee-icra.org/" target="_blank" rel="noopener noreferrer"
+                    aria-label="ICRA 2027 Conference (opens in new window)">
+                    <img src="../../../images/ICRA2027_LOGOICRA-1-scaled.jpg" alt="ICRA 2027 Seoul Logo">
+                </a>
+            </div>
+
+            <div class="competition-section">
+                <a href="https://sites.google.com/view/rgmcomp" target="_blank" rel="noopener noreferrer"
+                    aria-label="12th Robotic Grasping and Manipulation Competition (opens in a new window)">
+                    <span class="competition-name-full">
+                        12th Robotic Grasping and<br>Manipulation Competition
+                    </span>
+                    <span class="competition-name-short" aria-hidden="true">12th RGMC</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="header-content">
+            <h1 class="page-title-header">Human-to-Robot Handovers</h1>
+
+            <nav class="rgmc-nav" aria-label="Competition navigation">
+                <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"
+                    aria-controls="rgmc-navigation">
+                    <span aria-hidden="true"></span>
+                </button>
+
+                <ul id="rgmc-navigation">
+                    <li><a href="index.html">Overview</a></li>
+                    <li class="subnav">
+                        <button type="button" aria-expanded="false" aria-controls="competition-submenu">
+                            Competition
+                        </button>
+                        <div class="subnav-content" id="competition-submenu">
+                            <a href="task.html">Task</a>
+                            <a href="competition.html">On-site phase</a>
+                            <a href="qualification.html">Qualification</a>
+                            <a href="qualification_guide.html" aria-current="page" class="active">Qualification
+                                Guide</a>
+                            <a href="evaluation.html">Evaluation</a>
+                            <a href="rules.html">Rules & Policies</a>
+                        </div>
+                    </li>
+                    <li><a href="teams.html">Teams &amp; Demos</a></li>
+                    <li><a href="leaderboards.html">Leaderboards</a></li>
+                    <li><a href="news.html">News & Media</a></li>
+                    <li class="subnav">
+                        <button type="button" aria-expanded="false" aria-controls="about-submenu">
+                            About
+                        </button>
+                        <div class="subnav-content" id="about-submenu">
+                            <a href="organisers.html">Organisers</a>
+                            <a href="https://corsmal.github.io/benchmark/competitions.html">History</a>
+                        </div>
+                    </li>
+                    <li><a href="faq.html">FAQs</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        <div class="wrapper row1">
+            <div id="container" class="clear">
+                <div id="latestnewspage" class="clear">
+                    <section class="event-section" aria-labelledby="guide-heading">
+                        <h1 id="guide-heading">Qualification guide</h1>
+                        <p>
+                            Practical instructions and submission requirements for the 2027
+                            qualification phase will be published when confirmed.
+                        </p>
+                    </section>
+
+                    <section id="guidelines" class="event-section" aria-labelledby="guidelines-heading">
+                        <h2 id="guidelines-heading">Guidelines</h2>
+                        <p>Setup and participation guidance will be announced.</p>
+                        <p>
+                            Consult the <a href="ethics.html">Ethics Policy</a> and
+                            <a href="data_retention_policy.html">Data Retention Policy</a>.
+                        </p>
+                    </section>
+
+                    <section id="starting-kit" class="event-section" aria-labelledby="resources-heading">
+                        <h2 id="resources-heading">Reference resources</h2>
+                        <p>
+                            The following resources provide background on the CORSMAL Benchmark.
+                            Their inclusion does not establish 2027 qualification requirements.
+                        </p>
+
+                        <details>
+                            <summary>Benchmark publication</summary>
+                            <p>
+                                <cite>Benchmark for human-to-robot handovers of unseen containers
+                                    with unknown filling</cite>:
+                                <a href="https://doi.org/10.1109/LRA.2020.2969200">Read the publication</a>.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>Reference software and data</summary>
+                            <ul>
+                                <li>
+                                    <a href="https://github.com/CORSMAL/Benchmark">CORSMAL Benchmark software</a>
+                                </li>
+                                <li>
+                                    <a href="https://corsmal.github.io/containers_manip.html">CORSMAL Containers
+                                        Manipulation dataset</a>
+                                </li>
+                                <li>
+                                    <a href="https://qm-ipalab.github.io/StereoHO/">Stereo Hand-Object Reconstruction
+                                        for Human-to-Robot Handover</a>
+                                </li>
+                            </ul>
+                        </details>
+                    </section>
+
+
+                    <!-- <div>
+                        <p>
+                            Below we also provide details, <a href="#guidelines">guidelines and instructions</a>, and <a
+                                href="#starting-kit">documentation</a> for preparing the solution, including reference
+                            software, publications, and data.
+                        </p>
+                        <p>
+                            The <a href="https://corsmal.github.io/containers_manip.html" target="_blank">CORSMAL
+                                Containers Manipulation dataset</a> can be used to design perception-based solutions for
+                            the approaching phase and prior to the handover of the object to a robot.
+                        </p>
+                    </div> -->
+
+
+                    <!-- <div id="alternative-cups">
+                        <b><span style="font-size: 14.0pt">Alternative cups</span></b>
+                        <p>
+                            The benchmark protocol includes 4 cups with different dimensions and materials.
+                            If teams do not have access to the exact sames cups (e.g. due to geographical location or
+                            broken/outdated purchase links),
+                            they can use alternative cups with similar physical properties (e.g. weights, dimensions,
+                            materials).
+                        </p>
+                        <p>
+                            Teams must provide the details of the alternative cups following the template provided below
+                            (filled with the benchmark cups information as an example),
+                            and submit them to the track organisers for <strong>approval before performing the handover
+                                configurations</strong>.
+                            Submitted alternative cups will be checked to asses their similarity within tolerable ranges
+                            of the physical properties.
+                        </p>
+                        <p>
+                            Images of the cups must also be provided.
+                        </p>
+                        <b><span style="font-size: 12.0pt">Checklist</span></b>
+                        <ul>
+                            <li>Alternative cups details using the JSON template</li>
+                            <li>Images of the alternative cups (top, side, bottom, empty, filled) next to a coin and at
+                                a fixed distance from the camera</li>
+                        </ul>
+                        <b><span style="font-size: 12.0pt">Download</span></b>
+                        <a href="resources/cups_template.json" target="_blank"><u>Template for alternative cups
+                                (JSON)</u></a>
+                    </div> -->
+
+                    <!-- <div id="submissions">
+                        <b><span style="font-size: 14.0pt">Submission</span></b>
+                        <p>
+                            Teams will submit their results by email to the track organisers using the information below. 
+                            The package of files and links must be submitted by April 16. Qualification will be based on this submission.
+                            Teams will be able to updated their submission after the deadline to further prepare for the competition in Vienna if qualified,
+                            or to update their results on the leaderboard to share their performance with the community and for future comparisons to use in publications.
+                        </p>
+                        <b><span style="font-size: 12.0pt">Checklist</span></b>
+                        <ul>
+                            <li>
+                                <strong>Metadata JSON form</strong> filled with all required information 
+                                (team information, assumptions, ethics compliance, optional demographics, video links, robot reachability, target delivery location)
+                            </li>
+                            <li><strong>Submission CSV form</strong> filled with all required information (measurements for each configuration)</li>
+                            <li>
+                                <strong>CSV file for offline score s8</strong>, named s8_submission_TEAM_NAME.csv and containing
+                                    all 18 pose records (3 reps x 6 poses), positions in millimeters, and motion times in milliseconds
+                            </li>
+                            <li><strong>Anonymised video links</strong> accessible to the organisers (no identifying people present; one or more videos can be shared grouping configurations)</li>
+                            <li>Optional logs (e.g. joint-state, intermediate measurements) and calibration files (highly recommended to save and store them for reproducibility, especially for every change occuring across configurations)</li> 
+                        </ul>
+                        <p>Notes:</p>
+                        <ul>
+                            <li>The offline score s7 will not be computed (no need to submit anything).</li>
+                            <li>The targeted delivery location (same for all configurations) must be reported in the metadata JSON form</li>
+                            <li>The submission CSV form must use <strong>comma separators</strong>, must not containd additional columns or renamed headers, and must not contain any missing values (e.g. empty cells or 'NA'). Please follow the metadocumentation for the values to be reported.</li>
+                            <li>Handover configurarions can be executed across multiple days. We would expect that configurations executed by a volunteer will be performed in the same session (same date and time slot). Detailed logs indicating the date and time of each recorded configuration can be provided but are optional.</li>
+                            <li>Repeating a configuration if the handover fails is allowed. Please report failed and repeated cases in a separate file and show also the recording.</li>
+                            <li>For the videos, providing a caption of the executed configuration and timing would be useful. Please include some short documentation for the video structure and continuity in case of multiple files.</li>
+                            <li>Check the <a href="ethics.html" target="_blank"><u>Ethics policy</u></a>, 
+                                <a href="#safe-recording-content" target="_blank"><u>Safe recording practices</u></a>,
+                                <a href="#demographics-content" target="_blank"><u>Demographics</u></a>, and
+                                <a href="data_retention_policy.html" target="_blank"><u>Data retention policy</u></a>
+                                before performing the configurations with participants, and for the preparation of the videos
+                                and metadata information to be reported.
+                            </li>
+                            <li>
+                                Detailed information about the offline score s8 are available 
+                                <a href="https://github.com/CORSMAL/Benchmark/tree/master/offlineScores/s8_end-effector" target="_blank"><u>here</u></a>.
+                            </li>
+                            <li>
+                                The protocol for s8 would require the gripper orientation to not be fixed, and to be adjusted smoothly 
+                                during the arm motion to point towards the central pose (0, r/2, 0) at each final pose. 
+                                Teams are not be penalized if the end effector orientation is ignored for the reporting. 
+                                We will use these measurements to ensure the score is fully computed for the future and we can observe differences in the score
+                            </li>
+                        </ul>
+                        <b><span style="font-size: 12.0pt">Downloads</span></b>
+                        <ul>
+                            <li><a href="resources/benchmark_configs.csv" target="_blank"><u>Benchmark Configurations (CSV)</u></a></li>
+                            <li><a href="resources/metadata_template.json" target="_blank"><u>Template of metadata (JSON)</u></a></li>
+                            <li><a href="resources/submission_form_template.csv" target="_blank"><u>Template of submission form (CSV)</u></a></li>
+                            <li><a href="resources/metadata_submission.md" target="_blank"><u>Metadocumentation of submission form (Markdown)</u></a></li>
+                            <li><a href="https://github.com/CORSMAL/Benchmark/tree/master/offlineScores/s8_end-effector" target="_blank"><u>Documentation of offline score s8 (end-effector reachability)</u></a></li>
+                            <li><a href="resources/s8_submission_template.csv" target="_blank"><u>Template of submission form for offline score s8 (CSV)</u></a></li>
+                        </ul>
+                        
+                    </div> -->
+
+                    <!-- <div id="guidelines">
+                        <button class="toggle-btn" onclick="toggleSection('guidelines-content')"></button>
+                        <b><span style="font-size: 14.0pt">Guidelines</span></b>
+                        <b><span style="font-size: 12.0pt">1. Setting up instructions</span></b>
+                        <button class="toggle-btn collapsed"
+                            onclick="toggleSection('setting-up-instructions')"></button>
+                        <div id="setting-up-instructions" class="toggle-section collapsed">
+                            <p>
+                                The <i>setup</i> includes a robotic arm with at least 6 degrees of freedom (e.g., UR5,
+                                KUKA) and equipped with a 2-finger parallel gripper (e.g., Robotiq 2F-85); a table where
+                                the handover is happening as well as where the robot is placed; selected containers and
+                                contents; up to two cameras (e.g., Intel RealSense D435i); and a digital scale to weigh
+                                the container. The table is covered by a <a href="https://amzn.to/2X5qnaN"
+                                    title="Purchase link">white table-cloth</a>. The two cameras should be placed at 40
+                                cm from the robotic arm, e.g. using tripods, and oriented in such a way that they both
+                                view the centre of the table. The illustration below represents the layout in 3D of the
+                                setup within a space of 4.5 x 4.5 meters.
+                            </p>
+                            <div>
+                                <img src="images/rgmc10-icra25-handover-3Dmodel.webp"
+                                    alt="3D model of qualification setup" style="width: 75%;">
+                            </div>
+                            <ul>
+                                <li>Teams must prepare the sensing setup such that the cameras are synchronised,
+                                    calibrated and localised with respect to a calibration board. We recommend the
+                                    cameras recording RGB sequences at 30 Hz with a resolution of 1280 × 720 pixels
+                                    (based on the setup used in the CORSMAL Benchmark).</li>
+                                <li>Teams should verify the behaviour of the robotic arm prior to the execution of the
+                                    task (e.g., end-effector, speed, kinematics, etc.)</li>
+                                <li>Teams will prepare all configurations with their corresponding container and filling
+                                    before starting the task.</li>
+                                <li>Teams must weigh the mass of the container and content, if any, for each
+                                    configuration before and after executing the handover to the robot, using a weight
+                                    scale.</li>
+                                <li>A volunteer from the team will be the person who will hand the container over to the
+                                    robot using a random/natural grasp for each configuration.</li>
+                                <li>Any initial robot pose can be chosen with respect to the environment setup; however,
+                                    the subject is expected to stand on the opposite side of the table with respect to
+                                    the robot.</li>
+                            </ul>
+                            <p>
+                                These instructions have been revised from the <a
+                                    href="https://corsmal.github.io/benchmark/resources/RAL-SI-2020-B19-0835-V1.0.pdf"
+                                    target="_blank">CORSMAL Human-to-Robot Handover Benchmark document</a>.
+                            </p>
+                        </div>
+                        <div id="guidelines-content" class="toggle-section">
+                            <b><span style="font-size: 12.0pt">2. Safe recording practices</span></b>
+                            <button class="toggle-btn collapsed"
+                                onclick="toggleSection('safe-recording-content')"></button>
+                            <div id="safe-recording-content" class="toggle-section collapsed">
+                                <ul>
+                                    <li>Position cameras so that only the hands, arms, and the objects involved in the
+                                        handover are visible.</li>
+                                    <li>Avoid capturing faces, torsos, or identifiable body features.</li>
+                                    <li>Use a fixed camera angle whenever possible.</li>
+                                </ul>
+
+                                <b><span style="font-size: 11.0pt">Background Requirements</span></b>
+                                <ul>
+                                    <li>Use a neutral, non-identifying background (e.g., plain wall, table surface).
+                                    </li>
+                                    <li>Remove or cover:
+                                        <ul>
+                                            <li>whiteboards</li>
+                                            <li>posters</li>
+                                            <li>screens</li>
+                                            <li>personal items</li>
+                                            <li>documents</li>
+                                            <li>lab identifiers</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <b><span style="font-size: 11.0pt">Audio</span></b>
+                                <ul>
+                                    <li>Disable audio recording whenever possible.</li>
+                                    <li>If audio is unavoidable, ensure no names, conversations, or identifying
+                                        information
+                                        are captured.</li>
+                                </ul>
+
+                                <b><span style="font-size: 11.0pt">Lighting</span></b>
+                                <ul>
+                                    <li>Ensure adequate lighting to clearly see the handover, but avoid shadows that
+                                        reveal
+                                        facial features or silhouettes.</li>
+                                </ul>
+
+                                <b><span style="font-size: 11.0pt">Clothing and Accessories</span></b>
+                                <ul>
+                                    <li>Volunteers should avoid:
+                                        <ul>
+                                            <li>distinctive clothing</li>
+                                            <li>jewellery</li>
+                                            <li>watches</li>
+                                            <li>tattoos</li>
+                                            <li>badges</li>
+                                            <li>lab IDs</li>
+                                        </ul>
+                                    </li>
+                                    <li>If unavoidable, blur these elements before submission.</li>
+                                </ul>
+
+                                <b><span style="font-size: 11.0pt">Anonymisation Requirements</span></b>
+                                <ul>
+                                    <li>blur any accidental identifying features</li>
+                                    <li>crop frames to exclude faces</li>
+                                    <li>remove audio if it contains speech</li>
+                                    <li>verify the final video before submission</li>
+                                </ul>
+
+                                <b><span style="font-size: 11.0pt">File Sharing</span></b>
+                                <ul>
+                                    <li>Videos must be uploaded via a private link (e.g., unlisted YouTube, private
+                                        cloud
+                                        link).</li>
+                                    <li>Public links are not allowed unless explicit consent is obtained.</li>
+                                </ul>
+                            </div>
+
+                            <b><span style="font-size: 12.0pt">3. Demographics</span></b>
+                            <button class="toggle-btn collapsed"
+                                onclick="toggleSection('demographics-content')"></button>
+                            <div id="demographics-content" class="toggle-section collapsed">
+                                <div style="text-align: justify;">
+                                    <b><span style="font-size: 11.0pt">Allowed Demographic Fields (Coarse Categories
+                                            Only)</span></b>
+                                    <p>Teams may provide the following for each volunteer:</p>
+                                    <ul>
+                                        <li><strong>age_group:</strong> "18-25", "26-35", "36-45", "46+"</li>
+                                        <li><strong>gender:</strong> "male", "female", "non-binary", "prefer_not_to_say"
+                                        </li>
+                                        <li><strong>dominant_hand:</strong> "left", "right", "ambidextrous"</li>
+                                        <li><strong>experience_level</strong> (with robot systems): "novice",
+                                            "intermediate", "expert"</li>
+                                    </ul>
+
+                                    <b><span style="font-size: 11.0pt">Prohibited Demographic Fields</span></b>
+                                    <p>Teams must <strong>not</strong> provide:</p>
+                                    <ul>
+                                        <li>exact age</li>
+                                        <li>ethnicity</li>
+                                        <li>height or weight</li>
+                                        <li>health or disability information</li>
+                                        <li>biometric traits</li>
+                                        <li>occupation or job title</li>
+                                        <li>years of experience</li>
+                                        <li>any free-text that could identify a person</li>
+                                    </ul>
+
+                                    <b><span style="font-size: 11.0pt">Optionality</span></b>
+                                    <ul>
+                                        <li>All demographic fields are optional.</li>
+                                        <li>Volunteers may choose "prefer_not_to_say" for any field.</li>
+                                    </ul>
+
+                                    <b><span style="font-size: 11.0pt">Storage</span></b>
+                                    <ul>
+                                        <li>Demographic data is stored only in the submission metadata.</li>
+                                        <li>It is not linked to identifiable video content.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    <!-- <div id="starting-kit">
+                        <b><span>Starting kit and documentation</span></b>
+                        <button class="toggle-btn collapsed" onclick="toggleSection('starting-kit-content')"></button>
+                        <div id="starting-kit-content" class="toggle-section collapsed">
+
+                            <b><span>Reference publications</span></b>
+                            <p>
+                                <i>Benchmark for human-to-robot handovers of unseen containers with unknown
+                                    filling</i><br>
+                                R. Sanchez-Matilla, K. Chatzilygeroudis, K., A. Modas, N.F. Duarte, A., Xompero, A., P.
+                                Frossard, A. Billard, A. Cavallaro<br>
+                                IEEE Robotics and Automation Letters, 5(2), pp.1642-1649, 2020<br>
+                                [<a href="https://doi.org/10.1109/LRA.2020.2969200" target="_blank">Open Access</a>]
+                            </p>
+                            <p>
+                                <i>The CORSMAL benchmark for the prediction of the properties of containers</i><br>
+                                A. Xompero, S. Donaher, V. Iashin, F. Palermo, G. Solak, C. Coppola, R. Ishikawa, Y.
+                                Nagao, R. Hachiuma, Q. Liu, F. Feng, C. Lan, R. H. M. Chan, G. Christmann, J. Song, G.
+                                Neeharika, C. K. T. Reddy, D. Jain, B. U. Rehman, A. Cavallaro<br>
+                                IEEE Access, vol. 10, 2022.
+                                [<a href="https://doi.org/10.1109/ACCESS.2022.3166906" target="_blank">Open Access</a>]
+                            </p>
+                            <p>
+                                <i>Towards safe human-to-robot handovers of unknown containers</i><br>
+                                Y. L. Pang, A. Xompero, C. Oh, A. Cavallaro<br>
+                                IEEE International Conference on Robot and Human Interactive Communication (RO-MAN),
+                                Virtual, 8-12 Aug 2021<br>
+                                [<a href="https://doi.org/10.1109/RO-MAN50785.2021.9515350" target="_blank">Open
+                                    Access</a>]
+                                [<a href="https://github.com/CORSMAL/safe_handover/" target="_blank">code</a>]
+                                [<a href="https://corsmal.github.io/safe_handover.html" target="_blank">webpage</a>]
+                            </p>
+                            <p>
+                                <i>Stereo Hand-Object Reconstruction for Human-to-Robot Handover</i><br>
+                                Y. L. Pang, A. Xompero, C. Oh, A. Cavallaro<br>
+                                IEEE Robotics and Automation Letters, 2025<br>
+                                [<a href="https://doi.org/10.48550/arXiv.2412.07487" target="_blank">arxiv</a>]
+                                [<a href="https://github.com/QM-IPAlab/StereoHO" target="_blank">code</a>]
+                                [<a href="https://qm-ipalab.github.io/StereoHO/" target="_blank">webpage</a>]
+                            </p>
+                            <p>
+                                <i>The CORSMAL Challenge contains perception solutions for the estimation of the
+                                    physical properties of manipulated objects prior to a handover to a robot
+                                    arm.</i><br>
+                                [<a href="https://corsmal.github.io/challenge.html">challenge</a>]
+                                [<a href="https://doi.org/10.1109/ACCESS.2022.3166906" target="_blank">paper 1</a>]
+                                [<a href="https://doi.org/10.48550/arXiv.2203.01977" target="_blank">paper 2</a>]
+                            </p>
+                            <p>
+                                <i>Additional references</i><br>
+                                [<a href="https://corsmal.github.io/resources/challenge/Additional_References.pdf"
+                                    target="_blank">document</a>]
+                            </p>
+
+                            <b><span>Reference software</span></b>
+                            <p>
+                                <i>Vision baseline</i><br>
+                                A vision-based algorithm, part of a larger system, proposed for localising, tracking and
+                                estimating the dimensions of a container with a stereo camera.<br>
+                                [<a href="https://ieeexplore.ieee.org/document/8968407/" target="_blank">paper</a>]
+                                [<a href="https://github.com/CORSMAL/Benchmark" target="_blank">code</a>]
+                                [<a href="https://corsmal.github.io/benchmark.html" target="_blank">webpage</a>]
+                            </p>
+                            <p>
+                                <i>LoDE</i><br>
+                                A method that jointly localises container-like objects and estimates their dimensions
+                                with a generative 3D sampling model and a multi-view 3D-2D iterative shape fitting,
+                                using two wide-baseline, calibrated RGB cameras.<br>
+                                [<a href="https://doi.org/10.1109/ICASSP40776.2020.9054112" target="_blank">paper</a>]
+                                [<a href="https://arxiv.org/abs/1911.12354" target="_blank">arxiv</a>]
+                                [<a href="https://github.com/CORSMAL/LoDE" target="_blank">code</a>]
+                                [<a href="https://corsmal.github.io/LoDE.html" target="_blank">webpage</a>]
+                            </p>
+
+                            <b><span>Reference data</span></b>
+                            <p>
+                                <i>CORSMAL Containers Manipulation (1.0) [Data set]</i><br>
+                                A. Xompero, R. Sanchez-Matilla, R. Mazzon, and A. Cavallaro<br>
+                                Queen Mary University of London. <a
+                                    href="https://doi.org/10.17636/101CORSMAL1">https://doi.org/10.17636/101CORSMAL1</a><br>
+                                [<a href="https://qmro.qmul.ac.uk/xmlui/handle/123456789/103670"
+                                    target="_blank">data</a>]
+                                [<a href="https://corsmal.github.io/containers_manip.html" target="_blank">webpage</a>]
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <p>&copy; All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleLegend(legendId) {
+            var legend = document.getElementById(legendId);
+            legend.classList.toggle('visible');
+        }
+
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            var button = event.target;
+            section.classList.toggle('collapsed');
+            button.classList.toggle('collapsed');
+        }
+    </script>
+</body>
+
+</html>
